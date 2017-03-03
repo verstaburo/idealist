@@ -1,6 +1,208 @@
 @import "basics";
 
+.button {text-align:center; border:0; display:inline-block; font-size:16px; background-color: #5c1bbf; border-radius: 1000px; line-height: 50px; font-weight: 600; padding: 0 50px; box-shadow: 0px 6px 18px 0px rgba(92, 27, 191, 0.5);
+	&:hover {background-color: #7323ec;}
+	&_pink {background-color: #c41162; box-shadow: 0px 4px 22px 0px rgba(196, 17, 98, 0.42);
+		&:hover {background-color: #e91575;}
+		&.active {box-shadow: inset 0 0 0 1px #e91575; background-color: transparent; color: #e91575;}
+	}
+	&_small {font-size: 14px; line-height: 39px; padding: 0 10px; min-width: 99px;}
+}
+
+.avatar {width: 55px; height: 55px; border-radius: 1000px; overflow: hidden; position: relative; display: inline-block;
+	img {position: absolute; left: 0; right: 0; top: 0; bottom: 0; margin: auto; min-width: 100%; min-height: 100%; width: 0; object-fit: cover;}
+	&_small {width: 39px; height: 39px;}
+}
+
+.heading {font-size: 30px; font-weight: 300; letter-spacing: 0.05em;
+	&_big {font-size: 36px;}
+}
+
+.overlay {display: none; position: absolute; left: 0; top: 0; width: 100%; height: 100%; background-color: #050915; opacity: 0.7;}
+
+.calendar {width: 505px; box-sizing: border-box; padding: 39px 47px 43px 57px; background-color: #2d3039;
+	&__head {display: flex; align-items: center; justify-content: space-between; padding-right: 5px;}
+	&__month {color: #fff; font-weight: 600; letter-spacing: 0.15em; padding: 0 34px; position: relative;
+		&:before, &:after {content: ""; display: inline-block; width: 0; height: 0; border: 5px solid #fff; position: absolute; top: 0; bottom: 0; margin: auto; cursor: pointer;}
+		&:before {border-color: transparent #fff transparent transparent; left: 0;}
+		&:after {border-color: transparent transparent transparent #fff; right: 0;}
+	}
+	&__closest {font-size: 14px; color: #5c1bbf; text-transform: uppercase; font-weight: 600; letter-spacing: 0.05em;
+		a {margin-left: 32px;}
+		a:hover {opacity: 0.6;}
+	}
+	&__daysoftheweek {margin-top: 32px; margin-bottom: 20px; display: flex; justify-content: space-between; align-items: center; padding: 0 5px;
+		a {font-size: 14px; color: #6d6e72; letter-spacing: 0.05em;}
+	}
+	&__week {margin-top: 8px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; align-content: space-between;
+		a {font-size: 14px; color: #fff; letter-spacing: 0.05em; display: inline-block; border-radius: 5px; border: 1px solid transparent; width: 29px; height: 29px; text-align: center; line-height: 29px;
+			&:hover {border-color: #c41162; background-color: #c41162;}
+			&.active {border-color: #c41162;}
+			&.nextmonth {opacity: 0.1; pointer-events: none;}
+		}
+	}
+}
+
+.event {display: inline-flex; flex-direction: column; justify-content: flex-end; position: relative; overflow: hidden; box-sizing: border-box; vertical-align: top; border-radius: 5px; overflow: hidden; padding: 19px 21px; text-align: left; width: 23.36%;
+	&:hover {
+		.event__info {opacity: 1; pointer-events: all;}
+	}
+	&_banner {width: 73.27%; height: 552px; padding: 62px; border-radius: 0;
+		.event__bg {opacity: 1;}
+		.event__type {position: static; font-size: 14px; font-weight: 600; opacity: 1;}
+		.event__name {margin-top: 20px; font-size: 60px; letter-spacing: 0.025em; line-height: 1em;}
+		.event__date {margin-top: 38px; font-size: 16px; font-weight: 600;
+			span {margin: 0 15px;}
+		}
+	}
+	&_card {height: 180px;}
+	&_bigcard, &_specialcard {height: 380px;
+		.event__info {padding: 18px 27px;
+			.button {bottom: 45% !important; right: 93px !important;}
+		}
+		.event__likes {position: absolute; left: 85px; bottom: 132px; margin: 0;}
+		.event__watches {position: absolute; right: 79px; bottom: 132px; margin: 0;}
+	}
+	&_specialcard {height: 380px; padding: 19px 23px;
+		.event__date {position: absolute; left: 22px; top: 19px; margin: 0;}
+		.event__name {font-size: 64px; font-style: italic; font-weight: 900; letter-spacing: 0.05em; max-width: 100%;
+			span {display: block; font-size: 12px; font-weight: 600; font-style: normal; line-height: 1em; letter-spacing: 0.05em; margin-left: 4px; margin-top: 14px;
+				&:first-child {margin-top: -2px;}
+			}
+		}
+	}
+	&__bg {position: absolute; left: 0; right: 0; top: 0; bottom: 0; margin: auto; min-width: 100%; min-height: 100%; width: 0; object-fit: cover; z-index: -1; opacity: 0.4;}
+	&__type {font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.5; position: absolute; left: 21px; top: 21px;}
+	&__name {font-size: 18px; font-weight: 600; letter-spacing: 0.05em; line-height: 1.4em; max-width: 50%;}
+	&__date {margin-top: 11px; letter-spacing: 0.075em;
+		span {margin: 0 9px;}
+	}
+	&__time {letter-spacing: 0.16em; margin-top: 84px;}
+	&__info {opacity: 0; pointer-events: none; position: absolute; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(#050915,0.95); box-sizing: border-box; padding: 18px; transition: all 0.25s ease-in-out;
+		.button {position: absolute; right: 15px !important; bottom: 15px !important;}
+	}
+	&__likes {display: inline-block; margin-top: 79px;
+		img {vertical-align: middle; margin-right: 9px;}
+	}
+	&__watches {display: inline-block; margin-top: 79px; margin-left: 18px;
+		img {vertical-align: middle; margin-right: 9px;}
+	}
+	&__organizer {font-weight: 600; letter-spacing: 0.025em;
+		.avatar {vertical-align: middle; margin-right: 19px;}
+	}
+	.button	{position: absolute; right: 76px; bottom: 62px;}
+	&__place {position: absolute; right: 17px; bottom: 18px; font-size: 16px; font-weight: 300; letter-spacing: 0.05em;}
+}
+
+.last-published {display: inline-block; width: 25.13%; border-radius: 5px; border: 1px solid #2b1329; padding: 10px 10px 70px; box-sizing: border-box; text-align: center;
+	.event_card {width: 100%; margin-top: 20px;
+		&:first-of-type {margin-top: 0;}
+	}
+	&__heading {padding: 29px 33px 44px; position: relative; text-align: left;
+		&:after {content: ""; position: absolute; left: 36px; top: 100%; border: 6px solid #050915; border-color: #050915 transparent transparent transparent;}
+	}
+	&__seemore {display: inline-block; font-size: 14px; color: #fff; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; margin-top: 74px;
+		&:hover {opacity: 0.6;}
+		span {display: inline-block; height: 16px; width: 2px; background-color: #bb105f; position: relative; margin-bottom: 17px;
+			&:after {content: ""; display: inline-block; width: 2px; height: 16px; background-color: #bb105f; position: absolute; left: 0; right: 0; top: 0; bottom: 0; margin: auto; transform: rotate(90deg);}
+		}
+	}
+}
+
+.map-search {display: inline-flex; vertical-align: top; position: relative; border-radius: 5px; overflow: hidden; justify-content: space-between; align-items: center; width: 48.4%; height: 182px; box-sizing: border-box; padding: 55px 55px 55px 61px;
+	&__bg {position: absolute; left: 0; top: 0; bottom: 0; right: 0; margin: auto; min-width: 100%; min-height: 100%; width: 0; object-fit: cover; z-index: -1; opacity: 0.62;}
+	&__heading {margin-top: -12px;}
+}
+
+.organizers {background-color: #2d3039; display: inline-block; position: relative; vertical-align: top; width: 23.4%; box-sizing: border-box; padding: 37px 33px 44px 37px;
+	&__list li {margin-top: 41px;}
+	&__person {position: relative; padding-left: 78px; font-size: 16px; letter-spacing: 0.025em;
+		.avatar {position: absolute; left: 0; top: 0; bottom: 0; margin: auto;}
+		.eventcount {display: block; font-size: 14px; opacity: 0.3; margin-top: 7px;}
+		.number {position: absolute; display: inline-block; width: 20px; height: 20px; border-radius: 1000px; text-align: center; line-height: 20px; top: -7px; left: 40px; background-color: #c41162; font-size: 12px; letter-spacing: 0.025em; opacity: 0; pointer-events: none; transition: all 0.25s ease-in-out;
+			&.active {opacity: 1; pointer-events: all;}
+		}
+	}
+	&__field {position: relative; width: 100%; padding-right: 3px; margin-top: 43px; margin-left: -9px;
+		input {display: inline-block; line-height: 48px; color: #838488; border-radius: 1000px; border: 1px solid #581db4; background-color: transparent; padding: 0 42px 0 21px; letter-spacing: 0.025em; width: 100%;}
+		::-webkit-input-placeholder {color:#838488}
+		::-moz-placeholder {color:#838488}
+		:-ms-input-placeholder {color:#838488}
+		:-moz-placeholder {color:#838488}
+		button {position: absolute; right: 25px; top: 0; bottom: 0; margin: auto; display: inline-block; width: 14px; height: 14px;
+			&:hover {opacity: 0.6;}
+			svg {position: absolute; left: 0; right: 0; top: 0; bottom: 0; margin: auto;}
+		}
+	}
+}
+
+.most-popular {
+	&__heading {box-sizing: border-box; width: 23.36%; display: inline-block; height: 180px; padding: 56px 64px 40px;}
+}
+
 // Секции, header, footer и т.д. //
+
+.header {
+	.container {display: flex; align-items: center; height: 100px;}
+	&__logo {margin-top: -4px; margin-left: 9px;}
+	&__searchfield {margin-left: 80px; display: flex; align-items: center;
+		input {font-size: 14px; color: #6b5a6a; font-weight: 300; letter-spacing: 0.03em; background-color: transparent;}
+		button {background-color: transparent; border: 0; padding: 0; margin-left: 17px; transition: all 0.25s ease-in-out;
+			&:hover {opacity: 0.6;}
+		}
+	}
+	&__date {margin-left: 11px; width: 211px; position: relative; height: 100%; display: flex; align-items: center; justify-content: center;}
+	&__link {font-size: 14px; color: #fff; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; position: relative; padding-right: 22px;
+		&:after {content: ""; display: inline-block; width: 0; height: 0; border: 3px solid #fff; border-color: #fff transparent transparent transparent; position: absolute; top: 0; right: 0; bottom: 0; margin: auto; transform: translateY(25%); transform-origin: 25% 50%;}
+		&:hover {opacity: 0.6;}
+	}
+	&__events {width: 294px; background-color: #2d3039; height: 100%; display: flex; align-items: center; justify-content: center;}
+	&__account {background-color: #373a43; height: 100%; width: 315px; display: flex; align-items: center; justify-content: center; position: relative;
+		.header__link {padding-right: 0; letter-spacing: 0.1em; margin: 0 44px;
+			&:after {display: none;}
+		}
+	}
+	&__calendar {display: none; position: absolute; left: 0; top: 100%; margin-top: -5px;}
+	&__hint {opacity: 0; pointer-events: none; position: absolute; left: -161px; top: 100%; margin-top: -5px; display: inline-block; border: 1px solid #c41162; border-top: 0; z-index: 2; font-size: 16px; font-weight: 600; letter-spacing: 0.05em; box-sizing: border-box; width: 286px; padding: 65px 60px 67px 65px; line-height: 1.5em;
+		&:before {content: ""; position: absolute; left: 0; top: 0; width: 235px; border-top: 1px solid #c41162;}
+		&:after {content: ""; position: absolute; right: 0; top: 0; width: 31px; border-top: 1px solid #c41162;}
+		span {position: absolute; left: 235px; top: 0; width: 12px; border-top: 1px solid #c41162; transform: rotate(-35deg); transform-origin: left;
+			&:after {content: ""; position: absolute; right: 0; top: -1px; width: 12px; border-top: 1px solid #c41162; transform: rotate(250deg); transform-origin: right;}
+		}
+	}
+	&__username {display: none;}
+	&__usermenu {display: none;}
+}
+
+.main {padding-bottom: 621px;
+	.container {position: relative;}
+	.event_banner {margin-left: 0.8%;}
+	.last-published {margin-top: 0.7%; margin-left: 0.8%;}
+	.map-search {position: absolute; left: 0; top: 570px; margin-left: 0.8%; margin-right: 0.8%;}
+	.organizers {position: absolute; left: 610px; top: 570px; margin-left: 0.8%;}
+	.most-popular__heading {position: absolute; left: 0; top: 770px; margin-left: 0.8%;}
+	.tmp1 {position: absolute; left: 315px; top: 770px;}
+	.tmp2 {position: absolute; left: 10px; top: 971px;}
+	.tmp3 {position: absolute; left: 315px; top: 971px;}
+	.tmp4 {position: absolute; left: 315px; top: 1171px;}
+	.tmp5 {position: absolute; left: 621px; top: 1171px;}
+	.tmp6 {position: absolute; left: 925px; top: 1171px;}
+	.tmp7 {position: absolute; left: 10px; top: 1371px;}
+	.tmp8 {position: absolute; left: 315px; top: 1371px;}
+	.tmp9 {position: absolute; left: 621px; top: 1371px;}
+	.tmp10 {position: absolute; left: 10px; top: 1571px;}
+	.tmp11 {position: absolute; left: 621px; top: 1571px;}
+	.tmp12 {position: absolute; left: 925px; top: 1571px;}
+}
+
+.footer {background-color: #2d3039; padding: 48px 0 58px;
+	.container {display: flex; justify-content: space-between; align-items: center; box-sizing: border-box; padding: 0 10px;}
+	&__text {opacity: 0.5; letter-spacing: 0.05em; font-size: 14px;}
+	&__mail:hover {opacity: 1;}
+	&__apptext {font-weight: 500; letter-spacing: 0.05em; margin-bottom: 33px;}
+	&__app {text-align: center; margin-left: -60px; margin-top: -5px;}
+	&__appshop {vertical-align: middle; margin: 0 26px;}
+}
 
 // Секции, header, footer и т.д. //
 

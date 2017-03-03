@@ -1,44 +1,76 @@
 @font-face {
-font-family: 'Museo Sans';
-font-style: normal;
-font-weight: 100;
-src: url('MuseoSansCyrl100.otf') format('opentype'),
-	 url('MuseoSansCyrl100.ttf') format('truetype'),
-	 url('MuseoSansCyrl100.woff') format('woff');
+    font-family: 'Proxima Nova';
+    font-style: normal;
+    font-weight: 100;
+    src: url('ProximaNovaThin.otf') format('opentype');
 }
 
 @font-face {
-font-family: 'Museo Sans';
-font-style: normal;
-font-weight: 300;
-src: url('MuseoSansCyrl300.otf') format('opentype'),
-	 url('MuseoSansCyrl300.ttf') format('truetype'),
-	 url('MuseoSansCyrl300.woff') format('woff');
+    font-family: 'Proxima Nova';
+    font-style: italic;
+    font-weight: 100;
+    src: url('ProximaNovaThinItalic.otf') format('opentype');
 }
 
 @font-face {
-font-family: 'Museo Sans';
-font-style: normal;
-font-weight: 500;
-src: url('MuseoSansCyrl500.otf') format('opentype'),
-	 url('MuseoSansCyrl500.ttf') format('truetype'),
-	 url('MuseoSansCyrl500.woff') format('woff');
+    font-family: 'Proxima Nova';
+    font-style: normal;
+    font-weight: 300;
+    src: url('ProximaNovaLight.otf') format('opentype');
 }
 
 @font-face {
-font-family: 'Museo Sans';
-font-style: normal;
-font-weight: 700;
-src: url('MuseoSansCyrl700.otf') format('opentype'),
-	 url('MuseoSansCyrl700.ttf') format('truetype'),
-	 url('MuseoSansCyrl700.woff') format('woff');
+    font-family: 'Proxima Nova';
+    font-style: italic;
+    font-weight: 300;
+    src: url('ProximaNovaLightItalic.otf') format('opentype');
 }
 
 @font-face {
-font-family: 'Museo Sans';
-font-style: normal;
-font-weight: 900;
-src: url('MuseoSansCyrl900.otf') format('opentype'),
-	 url('MuseoSansCyrl900.ttf') format('truetype'),
-	 url('MuseoSansCyrl900.woff') format('woff');
+    font-family: 'Proxima Nova';
+    font-style: normal;
+    font-weight: 400;
+    src: url('ProximaNovaRegular.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Proxima Nova';
+    font-style: italic;
+    font-weight: 400;
+    src: url('ProximaNovaRegularItalic.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Proxima Nova';
+    font-style: normal;
+    font-weight: 500;
+    src: url('ProximaNovaSemibold.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Proxima Nova';
+    font-style: italic;
+    font-weight: 500;
+    src: url('ProximaNovaSemiboldItalic.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Proxima Nova';
+    font-style: normal;
+    font-weight: 600;
+    src: url('ProximaNovaBold.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Proxima Nova';
+    font-style: normal;
+    font-weight: 900;
+    src: url('ProximaNovaExtrabold.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Proxima Nova';
+    font-style: italic;
+    font-weight: 900;
+    src: url('ProximaNovaExtraboldItalic.otf') format('opentype');
 }

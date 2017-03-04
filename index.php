@@ -5,7 +5,7 @@
     <?php include "blocks/head.php"; ?>
     <meta name="robots" content="all">
     <?php include "blocks/meta.php"; ?>
-    <title></title>
+    <title>Idealist</title>
     <?php include "blocks/css.php"; ?>
 </head>
 
@@ -37,9 +37,9 @@
 				<p class="event__name">Night rave</p>
 				<p class="event__date">21 DEC <span>&middot;</span> 21:00</p>
 				<div class="event__info">
-					<p class="event__publisher"><span class="avatar"><img src="" alt="@@"></span>Alexander Longer</p>
-					<p class="event__likes"><img src="" alt="@@">370</p>
-					<p class="event__watches"><img src="" alt="@@">750</p>
+					<a href="#" class="event__organizer"><span class="avatar avatar_small"><img src="img/avatar1.png" alt="@@"></span>Alexander Longer</a>
+					<a href="#" class="event__likes"><img src="img/icon_like.svg" alt="@@">370</a>
+					<a href="#" class="event__watches"><img src="img/icon_camera.svg" alt="@@">750</a>
 					<a href="#" class="button button_small button_pink">Join</a>
 				</div>
 			</div>
@@ -49,9 +49,9 @@
 				<p class="event__name">DJ Atmos</p>
 				<p class="event__date">21 DEC <span>&middot;</span> 21:00</p>
 				<div class="event__info">
-					<p class="event__publisher"><span class="avatar"><img src="" alt="@@"></span>Alexander Longer</p>
-					<p class="event__likes"><img src="" alt="@@">370</p>
-					<p class="event__watches"><img src="" alt="@@">750</p>
+					<a href="#" class="event__organizer"><span class="avatar avatar_small"><img src="img/avatar1.png" alt="@@"></span>Alexander Longer</a>
+					<a href="#" class="event__likes"><img src="img/icon_like.svg" alt="@@">370</a>
+					<a href="#" class="event__watches"><img src="img/icon_camera.svg" alt="@@">750</a>
 					<a href="#" class="button button_small button_pink">Join</a>
 				</div>
 			</div>
@@ -61,9 +61,9 @@
 				<p class="event__name">New album Kira Wong</p>
 				<p class="event__date">21 DEC <span>&middot;</span> 21:00</p>
 				<div class="event__info">
-					<p class="event__publisher"><span class="avatar"><img src="" alt="@@"></span>Alexander Longer</p>
-					<p class="event__likes"><img src="" alt="@@">370</p>
-					<p class="event__watches"><img src="" alt="@@">750</p>
+					<a href="#" class="event__organizer"><span class="avatar avatar_small"><img src="img/avatar1.png" alt="@@"></span>Alexander Longer</a>
+					<a href="#" class="event__likes"><img src="img/icon_like.svg" alt="@@">370</a>
+					<a href="#" class="event__watches"><img src="img/icon_camera.svg" alt="@@">750</a>
 					<a href="#" class="button button_small button_pink">Join</a>
 				</div>
 			</div>
@@ -73,9 +73,9 @@
 				<p class="event__name">Night rave</p>
 				<p class="event__date">21 DEC <span>&middot;</span> 21:00</p>
 				<div class="event__info">
-					<p class="event__publisher"><span class="avatar"><img src="" alt="@@"></span>Alexander Longer</p>
-					<p class="event__likes"><img src="" alt="@@">370</p>
-					<p class="event__watches"><img src="" alt="@@">750</p>
+					<a href="#" class="event__organizer"><span class="avatar avatar_small"><img src="img/avatar1.png" alt="@@"></span>Alexander Longer</a>
+					<a href="#" class="event__likes"><img src="img/icon_like.svg" alt="@@">370</a>
+					<a href="#" class="event__watches"><img src="img/icon_camera.svg" alt="@@">750</a>
 					<a href="#" class="button button_small button_pink">Join</a>
 				</div>
 			</div>
@@ -94,18 +94,18 @@
 		<!-- Top organizers  -->
 		<div class="organizers">
 			<p class="heading heading_big organizers__heading">Top organizers</p>
-			<ul class="organizers__list">
+			<ul class="organizers__list scrollbar-inner">
 				<li>
-					<p class="organizers__person"><span class="avatar"><img src="img/avatar1.png" alt="@@"></span><span class="number"></span>Dmitriy Kovalev<span class="eventcount">753 events</span></p>
+					<a href="#" class="organizers__person"><span class="avatar"><img src="img/avatar1.png" alt="@@"></span><span class="number active"></span>Dmitriy Kovalev<span class="eventcount">753 events</span></a>
 				</li>
 				<li>
-					<p class="organizers__person"><span class="avatar"><img src="img/avatar2.png" alt="@@"></span><span class="number active">1</span>Oxana Polishuk<span class="eventcount">521 events</span></p>
+					<a href="#" class="organizers__person"><span class="avatar"><img src="img/avatar2.png" alt="@@"></span><span class="number active">1</span>Oxana Polishuk<span class="eventcount">521 events</span></a>
 				</li>
 				<li>
-					<p class="organizers__person"><span class="avatar"><img src="img/avatar3.png" alt="@@"></span><span class="number"></span>Sergey Goncharov<span class="eventcount">329 events</span></p>
+					<a href="#" class="organizers__person"><span class="avatar"><img src="img/avatar3.png" alt="@@"></span><span class="number"></span>Sergey Goncharov<span class="eventcount">329 events</span></a>
 				</li>
 				<li>
-					<p class="organizers__person"><span class="avatar"><img src="img/avatar4.png" alt="@@"></span><span class="number active">7</span>Dmitriy Kunica<span class="eventcount">753 events</span></p>
+					<a href="#" class="organizers__person"><span class="avatar"><img src="img/avatar4.png" alt="@@"></span><span class="number active">7</span>Dmitriy Kunica<span class="eventcount">753 events</span></a>
 				</li>
 			</ul>
 			<div class="organizers__field">
@@ -124,9 +124,9 @@
 			<p class="event__name">Man in black</p>
 			<p class="event__date">21 DEC <span>&middot;</span> 21:00</p>
 			<div class="event__info">
-				<p class="event__organizer"><span class="avatar avatar_small"><img src="img/avatar1.png" alt="@@"></span>Alexander Longer</p>
-				<p class="event__likes"><img src="img/icon_like.svg" alt="@@">370</p>
-				<p class="event__watches"><img src="img/icon_camera.svg" alt="@@">750</p>
+				<a href="#" class="event__organizer"><span class="avatar avatar_small"><img src="img/avatar1.png" alt="@@"></span>Alexander Longer</a>
+				<a href="#" class="event__likes"><img src="img/icon_like.svg" alt="@@">370</a>
+				<a href="#" class="event__watches"><img src="img/icon_camera.svg" alt="@@">750</a>
 				<a href="#" class="button button_small button_pink">Join</a>
 			</div>
 		</div>
@@ -137,9 +137,9 @@
 			<p class="event__name">Night rave</p>
 			<p class="event__date">21 DEC <span>&middot;</span> 21:00</p>
 			<div class="event__info">
-				<p class="event__organizer"><span class="avatar avatar_small"><img src="img/avatar1.png" alt="@@"></span>Alexander Longer</p>
-				<p class="event__likes"><img src="img/icon_like.svg" alt="@@">370</p>
-				<p class="event__watches"><img src="img/icon_camera.svg" alt="@@">750</p>
+				<a href="#" class="event__organizer"><span class="avatar avatar_small"><img src="img/avatar1.png" alt="@@"></span>Alexander Longer</a>
+				<a href="#" class="event__likes"><img src="img/icon_like.svg" alt="@@">370</a>
+				<a href="#" class="event__watches"><img src="img/icon_camera.svg" alt="@@">750</a>
 				<a href="#" class="button button_small button_pink active">Joined</a>
 			</div>
 		</div>
@@ -150,9 +150,9 @@
 			<p class="event__name">Night rave</p>
 			<p class="event__date">21 DEC <span>&middot;</span> 21:00</p>
 			<div class="event__info">
-				<p class="event__organizer"><span class="avatar avatar_small"><img src="img/avatar1.png" alt="@@"></span>Alexander Longer</p>
-				<p class="event__likes"><img src="img/icon_like.svg" alt="@@">370</p>
-				<p class="event__watches"><img src="img/icon_camera.svg" alt="@@">750</p>
+				<a href="#" class="event__organizer"><span class="avatar avatar_small"><img src="img/avatar1.png" alt="@@"></span>Alexander Longer</a>
+				<a href="#" class="event__likes"><img src="img/icon_like.svg" alt="@@">370</a>
+				<a href="#" class="event__watches"><img src="img/icon_camera.svg" alt="@@">750</a>
 				<a href="#" class="button button_small button_pink">Join</a>
 			</div>
 		</div>
@@ -163,9 +163,9 @@
 			<p class="event__name">Night rave</p>
 			<p class="event__date">21 DEC <span>&middot;</span> 21:00</p>
 			<div class="event__info">
-				<p class="event__organizer"><span class="avatar avatar_small"><img src="img/avatar1.png" alt="@@"></span>Alexander Longer</p>
-				<p class="event__likes"><img src="img/icon_like.svg" alt="@@">370</p>
-				<p class="event__watches"><img src="img/icon_camera.svg" alt="@@">750</p>
+				<a href="#" class="event__organizer"><span class="avatar avatar_small"><img src="img/avatar1.png" alt="@@"></span>Alexander Longer</a>
+				<a href="#" class="event__likes"><img src="img/icon_like.svg" alt="@@">370</a>
+				<a href="#" class="event__watches"><img src="img/icon_camera.svg" alt="@@">750</a>
 				<a href="#" class="button button_small button_pink">Join</a>
 			</div>
 		</div>
@@ -176,9 +176,9 @@
 			<p class="event__name">Night rave</p>
 			<p class="event__date">21 DEC <span>&middot;</span> 21:00</p>
 			<div class="event__info">
-				<p class="event__organizer"><span class="avatar avatar_small"><img src="img/avatar1.png" alt="@@"></span>Alexander Longer</p>
-				<p class="event__likes"><img src="img/icon_like.svg" alt="@@">370</p>
-				<p class="event__watches"><img src="img/icon_camera.svg" alt="@@">750</p>
+				<a href="#" class="event__organizer"><span class="avatar avatar_small"><img src="img/avatar1.png" alt="@@"></span>Alexander Longer</a>
+				<a href="#" class="event__likes"><img src="img/icon_like.svg" alt="@@">370</a>
+				<a href="#" class="event__watches"><img src="img/icon_camera.svg" alt="@@">750</a>
 				<a href="#" class="button button_small button_pink">Join</a>
 			</div>
 		</div>
@@ -193,9 +193,9 @@
 			<p class="event__time">21:00</p>
 			<p class="event__place">Club <b>Aura</b></p>
 			<div class="event__info">
-				<p class="event__organizer"><span class="avatar avatar_small"><img src="img/avatar1.png" alt="@@"></span>Alexander Longer</p>
-				<p class="event__likes"><img src="img/icon_like.svg" alt="@@">370</p>
-				<p class="event__watches"><img src="img/icon_camera.svg" alt="@@">750</p>
+				<a href="#" class="event__organizer"><span class="avatar avatar_small"><img src="img/avatar1.png" alt="@@"></span>Alexander Longer</a>
+				<a href="#" class="event__likes"><img src="img/icon_like.svg" alt="@@">370</a>
+				<a href="#" class="event__watches"><img src="img/icon_camera.svg" alt="@@">750</a>
 				<a href="#" class="button button_small button_pink">Join</a>
 			</div>
 		</div>
@@ -206,9 +206,9 @@
 			<p class="event__name">Night rave</p>
 			<p class="event__date">21 DEC <span>&middot;</span> 21:00</p>
 			<div class="event__info">
-				<p class="event__organizer"><span class="avatar avatar_small"><img src="img/avatar1.png" alt="@@"></span>Alexander Longer</p>
-				<p class="event__likes"><img src="img/icon_like.svg" alt="@@">370</p>
-				<p class="event__watches"><img src="img/icon_camera.svg" alt="@@">750</p>
+				<a href="#" class="event__organizer"><span class="avatar avatar_small"><img src="img/avatar1.png" alt="@@"></span>Alexander Longer</a>
+				<a href="#" class="event__likes"><img src="img/icon_like.svg" alt="@@">370</a>
+				<a href="#" class="event__watches"><img src="img/icon_camera.svg" alt="@@">750</a>
 				<a href="#" class="button button_small button_pink">Join</a>
 			</div>
 		</div>
@@ -219,9 +219,9 @@
 			<p class="event__name">Night rave</p>
 			<p class="event__date">21 DEC <span>&middot;</span> 21:00</p>
 			<div class="event__info">
-				<p class="event__organizer"><span class="avatar avatar_small"><img src="img/avatar1.png" alt="@@"></span>Alexander Longer</p>
-				<p class="event__likes"><img src="img/icon_like.svg" alt="@@">370</p>
-				<p class="event__watches"><img src="img/icon_camera.svg" alt="@@">750</p>
+				<a href="#" class="event__organizer"><span class="avatar avatar_small"><img src="img/avatar1.png" alt="@@"></span>Alexander Longer</a>
+				<a href="#" class="event__likes"><img src="img/icon_like.svg" alt="@@">370</a>
+				<a href="#" class="event__watches"><img src="img/icon_camera.svg" alt="@@">750</a>
 				<a href="#" class="button button_small button_pink">Join</a>
 			</div>
 		</div>
@@ -232,9 +232,9 @@
 			<p class="event__name">Night rave</p>
 			<p class="event__date">21 DEC <span>&middot;</span> 21:00</p>
 			<div class="event__info">
-				<p class="event__organizer"><span class="avatar avatar_small"><img src="img/avatar1.png" alt="@@"></span>Alexander Longer</p>
-				<p class="event__likes"><img src="img/icon_like.svg" alt="@@">370</p>
-				<p class="event__watches"><img src="img/icon_camera.svg" alt="@@">750</p>
+				<a href="#" class="event__organizer"><span class="avatar avatar_small"><img src="img/avatar1.png" alt="@@"></span>Alexander Longer</a>
+				<a href="#" class="event__likes"><img src="img/icon_like.svg" alt="@@">370</a>
+				<a href="#" class="event__watches"><img src="img/icon_camera.svg" alt="@@">750</a>
 				<a href="#" class="button button_small button_pink">Join</a>
 			</div>
 		</div>
@@ -245,9 +245,9 @@
 			<p class="event__name">Night rave</p>
 			<p class="event__date">21 DEC <span>&middot;</span> 21:00</p>
 			<div class="event__info">
-				<p class="event__organizer"><span class="avatar avatar_small"><img src="img/avatar1.png" alt="@@"></span>Alexander Longer</p>
-				<p class="event__likes"><img src="img/icon_like.svg" alt="@@">370</p>
-				<p class="event__watches"><img src="img/icon_camera.svg" alt="@@">750</p>
+				<a href="#" class="event__organizer"><span class="avatar avatar_small"><img src="img/avatar1.png" alt="@@"></span>Alexander Longer</a>
+				<a href="#" class="event__likes"><img src="img/icon_like.svg" alt="@@">370</a>
+				<a href="#" class="event__watches"><img src="img/icon_camera.svg" alt="@@">750</a>
 				<a href="#" class="button button_small button_pink">Join</a>
 			</div>
 		</div>
@@ -258,9 +258,9 @@
 			<p class="event__name">Night rave</p>
 			<p class="event__date">21 DEC <span>&middot;</span> 21:00</p>
 			<div class="event__info">
-				<p class="event__organizer"><span class="avatar avatar_small"><img src="img/avatar1.png" alt="@@"></span>Alexander Longer</p>
-				<p class="event__likes"><img src="img/icon_like.svg" alt="@@">370</p>
-				<p class="event__watches"><img src="img/icon_camera.svg" alt="@@">750</p>
+				<a href="#" class="event__organizer"><span class="avatar avatar_small"><img src="img/avatar1.png" alt="@@"></span>Alexander Longer</a>
+				<a href="#" class="event__likes"><img src="img/icon_like.svg" alt="@@">370</a>
+				<a href="#" class="event__watches"><img src="img/icon_camera.svg" alt="@@">750</a>
 				<a href="#" class="button button_small button_pink">Join</a>
 			</div>
 		</div>
@@ -271,9 +271,9 @@
 			<p class="event__name">Night rave</p>
 			<p class="event__date">21 DEC <span>&middot;</span> 21:00</p>
 			<div class="event__info">
-				<p class="event__organizer"><span class="avatar avatar_small"><img src="img/avatar1.png" alt="@@"></span>Alexander Longer</p>
-				<p class="event__likes"><img src="img/icon_like.svg" alt="@@">370</p>
-				<p class="event__watches"><img src="img/icon_camera.svg" alt="@@">750</p>
+				<a href="#" class="event__organizer"><span class="avatar avatar_small"><img src="img/avatar1.png" alt="@@"></span>Alexander Longer</a>
+				<a href="#" class="event__likes"><img src="img/icon_like.svg" alt="@@">370</a>
+				<a href="#" class="event__watches"><img src="img/icon_camera.svg" alt="@@">750</a>
 				<a href="#" class="button button_small button_pink">Join</a>
 			</div>
 		</div>

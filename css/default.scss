@@ -18,7 +18,9 @@
 	&_big {font-size: 36px;}
 }
 
-.overlay {display: none; position: absolute; left: 0; top: 0; width: 100%; height: 100%; background-color: #050915; opacity: 0.7;}
+.overlay {opacity: 0; pointer-events: none; position: absolute; left: 0; top: 0; width: 100%; height: 100%; background-color: #050915; z-index: 2; transition: all 0.25s ease-in-out;
+	&.active {opacity: 0.7; pointer-events: all;}
+}
 
 .calendar {width: 505px; box-sizing: border-box; padding: 39px 47px 43px 57px; background-color: #2d3039;
 	&__head {display: flex; align-items: center; justify-content: space-between; padding-right: 5px;}
@@ -58,7 +60,7 @@
 	&_card {height: 180px;}
 	&_bigcard, &_specialcard {height: 380px;
 		.event__info {padding: 18px 27px;
-			.button {bottom: 45% !important; right: 93px !important;}
+			.button {bottom: 45% !important; right: 0 !important; left: 0 !important; margin: auto;}
 		}
 		.event__likes {position: absolute; left: 85px; bottom: 132px; margin: 0;}
 		.event__watches {position: absolute; right: 79px; bottom: 132px; margin: 0;}
@@ -79,15 +81,16 @@
 	}
 	&__time {letter-spacing: 0.16em; margin-top: 84px;}
 	&__info {opacity: 0; pointer-events: none; position: absolute; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(#050915,0.95); box-sizing: border-box; padding: 18px; transition: all 0.25s ease-in-out;
-		.button {position: absolute; right: 15px !important; bottom: 15px !important;}
+		.button {width: 99px; position: absolute; right: 15px !important; bottom: 15px !important;}
+		a:not(.button):hover {opacity: 0.6;}
 	}
-	&__likes {display: inline-block; margin-top: 79px;
+	&__likes {display: inline-block; font-size: 14px; margin-top: 79px;
 		img {vertical-align: middle; margin-right: 9px;}
 	}
-	&__watches {display: inline-block; margin-top: 79px; margin-left: 18px;
+	&__watches {display: inline-block; font-size: 14px; margin-top: 79px; margin-left: 18px;
 		img {vertical-align: middle; margin-right: 9px;}
 	}
-	&__organizer {font-weight: 600; letter-spacing: 0.025em;
+	&__organizer {font-weight: 600; font-size: 14px; letter-spacing: 0.025em; display: block;
 		.avatar {vertical-align: middle; margin-right: 19px;}
 	}
 	.button	{position: absolute; right: 76px; bottom: 62px;}
@@ -114,22 +117,27 @@
 	&__heading {margin-top: -12px;}
 }
 
-.organizers {background-color: #2d3039; display: inline-block; position: relative; vertical-align: top; width: 23.4%; box-sizing: border-box; padding: 37px 33px 44px 37px;
-	&__list li {margin-top: 41px;}
-	&__person {position: relative; padding-left: 78px; font-size: 16px; letter-spacing: 0.025em;
+.organizers {background-color: #2d3039; display: inline-block; position: relative; vertical-align: top; width: 23.4%; box-sizing: border-box; padding: 37px 9px 44px 37px;
+	&__list {margin-top: 32px; height: 303px;
+		li {margin-top: 24px; padding: 7px 0;
+			&:first-child {margin-top: 0;}
+		}
+	}
+	&__person {display: inline-block; position: relative; padding-left: 78px; font-size: 16px; letter-spacing: 0.025em;
+		&:hover {opacity: 0.6;}
 		.avatar {position: absolute; left: 0; top: 0; bottom: 0; margin: auto;}
 		.eventcount {display: block; font-size: 14px; opacity: 0.3; margin-top: 7px;}
 		.number {position: absolute; display: inline-block; width: 20px; height: 20px; border-radius: 1000px; text-align: center; line-height: 20px; top: -7px; left: 40px; background-color: #c41162; font-size: 12px; letter-spacing: 0.025em; opacity: 0; pointer-events: none; transition: all 0.25s ease-in-out;
 			&.active {opacity: 1; pointer-events: all;}
 		}
 	}
-	&__field {position: relative; width: 100%; padding-right: 3px; margin-top: 43px; margin-left: -9px;
-		input {display: inline-block; line-height: 48px; color: #838488; border-radius: 1000px; border: 1px solid #581db4; background-color: transparent; padding: 0 42px 0 21px; letter-spacing: 0.025em; width: 100%;}
+	&__field {position: relative; width: 100%; padding-right: 18px; box-sizing: border-box; margin-top: 36px; margin-left: -9px;
+		input {display: inline-block; line-height: 48px; color: #fff; border-radius: 1000px; border: 1px solid #581db4; background-color: transparent; padding: 0 42px 0 21px; letter-spacing: 0.025em; width: 100%;}
 		::-webkit-input-placeholder {color:#838488}
 		::-moz-placeholder {color:#838488}
 		:-ms-input-placeholder {color:#838488}
 		:-moz-placeholder {color:#838488}
-		button {position: absolute; right: 25px; top: 0; bottom: 0; margin: auto; display: inline-block; width: 14px; height: 14px;
+		button {position: absolute; right: 40px; top: 0; bottom: 0; margin: auto; display: inline-block; width: 14px; height: 14px;
 			&:hover {opacity: 0.6;}
 			svg {position: absolute; left: 0; right: 0; top: 0; bottom: 0; margin: auto;}
 		}
@@ -151,7 +159,11 @@
 			&:hover {opacity: 0.6;}
 		}
 	}
-	&__date {margin-left: 11px; width: 211px; position: relative; height: 100%; display: flex; align-items: center; justify-content: center;}
+	&__date {margin-left: 11px; width: 211px; position: relative; height: 100%; display: flex; align-items: center; justify-content: center;
+		&.active {background-color: #2d3039; z-index: 2;
+			.header__calendar {opacity: 1; pointer-events: all;}
+		}
+	}
 	&__link {font-size: 14px; color: #fff; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; position: relative; padding-right: 22px;
 		&:after {content: ""; display: inline-block; width: 0; height: 0; border: 3px solid #fff; border-color: #fff transparent transparent transparent; position: absolute; top: 0; right: 0; bottom: 0; margin: auto; transform: translateY(25%); transform-origin: 25% 50%;}
 		&:hover {opacity: 0.6;}
@@ -162,13 +174,14 @@
 			&:after {display: none;}
 		}
 	}
-	&__calendar {display: none; position: absolute; left: 0; top: 100%; margin-top: -5px;}
-	&__hint {opacity: 0; pointer-events: none; position: absolute; left: -161px; top: 100%; margin-top: -5px; display: inline-block; border: 1px solid #c41162; border-top: 0; z-index: 2; font-size: 16px; font-weight: 600; letter-spacing: 0.05em; box-sizing: border-box; width: 286px; padding: 65px 60px 67px 65px; line-height: 1.5em;
+	&__calendar {opacity: 0; pointer-events: none; position: absolute; left: 0; top: 100%; margin-top: -5px; transition: all 0.25s ease-in-out;}
+	&__hint {opacity: 0; pointer-events: none; position: absolute; left: -161px; top: 100%; margin-top: -5px; display: inline-block; border: 1px solid #c41162; border-top: 0; z-index: 2; font-size: 16px; font-weight: 600; letter-spacing: 0.05em; box-sizing: border-box; width: 286px; padding: 65px 60px 67px 65px; line-height: 1.5em; transition: all 0.25s ease-in-out;
 		&:before {content: ""; position: absolute; left: 0; top: 0; width: 235px; border-top: 1px solid #c41162;}
 		&:after {content: ""; position: absolute; right: 0; top: 0; width: 31px; border-top: 1px solid #c41162;}
 		span {position: absolute; left: 235px; top: 0; width: 12px; border-top: 1px solid #c41162; transform: rotate(-35deg); transform-origin: left;
 			&:after {content: ""; position: absolute; right: 0; top: -1px; width: 12px; border-top: 1px solid #c41162; transform: rotate(250deg); transform-origin: right;}
 		}
+		&.active {opacity: 1; pointer-events: all;}
 	}
 	&__username {display: none;}
 	&__usermenu {display: none;}
@@ -201,7 +214,9 @@
 	&__mail:hover {opacity: 1;}
 	&__apptext {font-weight: 500; letter-spacing: 0.05em; margin-bottom: 33px;}
 	&__app {text-align: center; margin-left: -60px; margin-top: -5px;}
-	&__appshop {vertical-align: middle; margin: 0 26px;}
+	&__appshop {display: inline-block; vertical-align: middle; margin: 0 26px;
+		&:hover {opacity: 0.6;}
+	}
 }
 
 // Секции, header, footer и т.д. //

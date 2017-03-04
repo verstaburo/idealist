@@ -4,3 +4,5 @@
 <link rel="stylesheet" href="css/normalize.css"/>
 <link rel="stylesheet" href="fonts/fonts.css"/>
 <link rel="stylesheet" href="css/default.css"/>
+
+<link rel="stylesheet" href="js/scrollbar/jquery.scrollbar.css"/>

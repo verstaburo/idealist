@@ -120,7 +120,7 @@ $col:(100-($col-m*11))/12; // Ширина колонки
 html {width:100%; height:100%}
 body {width:100%; min-height:100%; font-size:0; font-family: 'Proxima Nova', Arial, sans-serif; background-color: #190018; color: #fff; position: relative;}
 
-html, body {min-width: 1440px;}
+html, body {overflow-x: hidden;}
 
 header, section, footer {width:100%; /*float:left;*/}
 .container {width:1220px; margin:0 auto;}

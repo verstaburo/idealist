@@ -104,8 +104,7 @@ input:-webkit-autofill:active {
     vertical-align: top; }
 
 html {
-  width: 100%;
-  height: 100%; }
+  width: 100%; }
 
 body {
   width: 100%;
@@ -1074,7 +1073,10 @@ button {
   .footer__text {
     opacity: 0.5;
     letter-spacing: 0.05em;
-    font-size: 14px; }
+    font-size: 14px;
+    width: 170px; }
+    .footer__text:last-child {
+      text-align: right; }
   .footer__mail:hover {
     opacity: 1; }
   .footer__apptext {
@@ -1083,7 +1085,6 @@ button {
     margin-bottom: 33px; }
   .footer__app {
     text-align: center;
-    margin-left: -60px;
     margin-top: -5px; }
   .footer__appshop {
     display: inline-block;
@@ -1253,13 +1254,35 @@ button {
   .main .column_med .column:last-child {
     padding-left: 0;
     padding-right: 0;
-    margin-top: 20px; } }
+    margin-top: 20px; }
+  .most-popular__heading {
+    height: 132px; }
+  .footer__text {
+    width: auto; }
+  .header__logo {
+    margin-top: -30px;
+    margin-left: 1px; }
+  .header__searchfield {
+    position: absolute;
+    margin-left: 0;
+    left: 0;
+    bottom: 20px; }
+  .header__leftside {
+    position: relative;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between; }
+  .header__date, .header__account, .header__events {
+    width: 160px; }
+  .calendar {
+    width: 430px;
+    padding: 30px 30px 30px 30px; } }
 
 @media (max-width: 768px) {
   .container {
     width: 580px; }
   .header__account {
-    width: 190px; }
+    width: 120px; }
   .header__events {
     width: 119px; }
   .event_banner {
@@ -1270,8 +1293,6 @@ button {
     margin-top: 20px;
     display: block;
     max-width: 130px; }
-  .event__info .button {
-    position: absolute; }
   .event__name {
     max-width: 100%; }
   .event_banner .event__name {
@@ -1286,20 +1307,52 @@ button {
     padding-bottom: 71px;
     margin-top: 20px; }
   .last-published__seemore {
-    margin-top: 64px; }
+    margin-top: 76px; }
   .last-published__heading {
-    padding: 62px 33px 88px; }
+    padding: 25px 20px 38px; }
   .header__account .header__link:first-child {
     margin-right: 28px; }
   .header__hint {
     left: -146px; }
   .calendar {
-    width: 407px;
-    padding: 20px; }
+    width: 390px;
+    padding: 26px 30px 30px; }
   .footer__app {
     max-width: 180px; }
   .organizers {
-    padding-bottom: 63px; } }
+    padding-bottom: 63px; }
+  .calendar__closest a {
+    margin-top: 4px;
+    margin-bottom: 4px;
+    display: inline-block; }
+  .most-popular__heading {
+    padding: 20px; }
+  .header__leftside {
+    -webkit-flex: initial;
+    -ms-flex: initial;
+    flex: initial;
+    width: 350px; }
+  .header .container {
+    position: relative; }
+  .header__events {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 50%;
+    width: 230px; }
+  .header__account {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    height: 50%;
+    width: 230px;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row; }
+  .footer__appshop + .footer__appshop {
+    margin-top: 15px; }
+  .header__hint {
+    left: -190px; } }
 
 @media (max-width: 640px) {
   .container {
@@ -1327,7 +1380,43 @@ button {
   .footer__apptext {
     margin-bottom: 20px; }
   .main .container > .column:last-child {
-    margin-top: 20px; } }
+    margin-top: 20px; }
+  .footer__text:last-child {
+    text-align: center; }
+  .header .container {
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    height: auto; }
+  .header__leftside {
+    width: 100%;
+    height: 100px; }
+  .header__events {
+    position: static;
+    width: 50%;
+    height: 45px; }
+  .header__account {
+    position: static;
+    width: 50%;
+    height: 45px; }
+  .calendar {
+    left: auto;
+    right: 0; }
+  .header__date {
+    margin-right: -34px; }
+  .header__link {
+    font-size: 13px; }
+  .heading_big {
+    font-size: 30px; }
+  .organizers {
+    padding-left: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    height: auto; }
+  .organizers__field {
+    padding-right: 0; }
+  .header__hint {
+    left: 17px; } }
 
 @media (max-width: 480px) {
   .container {
@@ -1335,4 +1424,14 @@ button {
   .event_bigcard .event__likes, .event_specialcard .event__likes {
     right: 152px; }
   .event_bigcard .event__watches, .event_specialcard .event__watches {
-    left: 156px; } }
+    left: 156px; }
+  .header__hint {
+    left: 0; }
+  .header__hint span {
+    left: 170px; }
+  .header__hint:before {
+    width: 171px; }
+  .header__hint:after {
+    width: 95px; }
+  .calendar {
+    width: 360px; } }

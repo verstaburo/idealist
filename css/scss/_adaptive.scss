@@ -2,9 +2,19 @@
 @media (max-width:1280px) {
 	.container {width: 1110px;}
 	.event__watches {margin-left: 12px;}
-	.event_bigcard .event__likes, .event_specialcard .event__likes {right: 137px;}
-	.event_bigcard .event__watches, .event_specialcard .event__watches {left: 141px;}
+	.event_bigcard .event__likes, .event_specialcard .event__likes {right: 53%;}
+	.event_bigcard .event__watches, .event_specialcard .event__watches {left: 53%;}
 	.organizers__person {padding-left: 70px;}
+	.header__account {width:288px;}
+	.header__leftside {flex:1}
+	.header__searchfield {margin-left:65px;}
+	.header__date {width:180px;}
+	.header__events {width:260px}
+	.calendar {padding:39px 40px 35px 40px}
+
+	.event__watches, .event__likes {margin-top:30px}
+	.event__info .button {position: static; margin-top:15px; display:block;}
+	.event_bigcard .event__info .button, .event_specialcard .event__info .button {position: absolute}
 }
 
 @media (max-width:1170px) {
@@ -13,33 +23,45 @@
 	.header__account .header__link:first-child {margin-right: 48px;}
 	.header__events {width: 290px;}
 	.event__name {max-width: 60%;}
-	.event__likes, .event__watches {margin-top: 20px;}
-	.event_bigcard .event__likes, .event_specialcard .event__likes {right: 117px;}
-	.event_bigcard .event__watches, .event_specialcard .event__watches {left: 121px;}
-	.event_specialcard .event__name {font-size: 46px;}
+	//.event_bigcard .event__likes, .event_specialcard .event__likes {right: 117px;}
+	//.event_bigcard .event__watches, .event_specialcard .event__watches {left: 121px;}
 	.header__hint {left: -176px; padding: 55px;}
-}
 
-@media (max-width:1024px) {
-	.container {width: 708px;}
+
 	.column {width: 33.3333%;}
 	.column_big {width: 66.6666%;}
 	.event_banner {height: 352px; padding: 40px;}
 	.event_banner .event__name {font-size: 40px;}
 	.event .button {right: 40px; bottom: 40px;}
-	.heading_big {font-size: 30px;}
-	.map-search {height: 170px;}
-	.heading {font-size: 28px;}
-	.event_card {height: 170px;}
-	.event_bigcard, .event_specialcard {height: 360px;}
-	.most-popular__heading {height: 170px; padding: 40px;}
+	.most-popular__heading {padding: 40px;}
 	.last-published {padding-bottom: 61px;}
+	.map-search {padding:40px;}
+
 	.column_big > .column {width: 50%;}
 	.main .column_big > .column {padding-left: 0; padding-right: 10px;}
 	.column_big > .column_med {width: 100%;}
 	.main .column_big .column_med {padding-right: 0; margin-top: 0;}
 	.event_bigcard .event__info, .event_specialcard .event__info {padding: 18px;}
-	.header__leftside {flex-wrap: wrap; justify-content: space-between;}
+
+	.header__account {width:165px;}
+	.header__events {width:166px}
+	.header__date {margin-left:45px;}
+	.header__searchfield {margin-left:90px;}
+	.header__account .header__link {margin:5px auto !important; width:100% !important; text-align: center;}
+	.header__account {flex-direction: column; justify-content: center;}
+
+	.last-published__seemore {margin-top:80px;}
+	.last-published {padding-bottom:66px;}
+
+	.map-search__heading {margin-top:0}
+	.most-popular__heading {display:inline-flex; align-items:center}
+	.header__hint {left:auto; right:40px;}
+}
+
+@media (max-width:1024px) {
+	.container {width: 708px;}
+
+	/*.header__leftside {flex-wrap: wrap; justify-content: space-between;}
 	.header__searchfield {order: 3; width: 100%; margin-left: 10px; margin-top: -40px;}
 	.header__account {width: 245px;}
 	.header__events {width: 108px;}
@@ -52,11 +74,8 @@
 	.header__hint span {left: 185px;}
 	.header__hint:after {width: 30px;}
 	.calendar {width: 461px; padding: 50px;}
-	.last-published__heading {padding: 43px 33px 59px;}
-}
+	.last-published__heading {padding: 43px 33px 59px;}*/
 
-@media (max-width:768px) {
-	.container {width: 580px;}
 	.column {width: 50%;}
 	.column_big {width: 100%;}
 	.column_big > .column_med {width: 50%;}
@@ -65,6 +84,14 @@
 	.main .column_big > .column {padding-left: 10px; padding-right: 0;}
 	.main .column_big .column_med {padding-left: 0; padding-right: 10px;}
 	.main .column_med .column:nth-child(2) {padding-right: 0;}
+
+	.column_med > .column {width: 100%;}
+	.main .column_med .column:last-child {padding-left: 0; padding-right: 0; margin-top: 20px;}
+}
+
+@media (max-width:768px) {
+	.container {width: 580px;}
+
 	.header__account {width: 190px;}
 	.header__events {width: 119px;}
 	.event_banner {height: 252px; padding: 20px;}
@@ -74,8 +101,7 @@
 	.event_banner .event__name {font-size: 30px;}
 	.event_banner .event__date {margin-top: 20px; font-size: 14px; font-weight: 400;}
 	.map-search {padding: 20px;}
-	.column_med > .column {width: 100%;}
-	.main .column_med .column:last-child {padding-left: 0; padding-right: 0; margin-top: 20px;}
+
 	.last-published {padding-bottom: 71px; margin-top: 20px;}
 	.last-published__seemore {margin-top: 64px;}
 	.last-published__heading {padding: 62px 33px 88px;}
@@ -105,18 +131,3 @@
 	.event_bigcard .event__watches, .event_specialcard .event__watches {left: 156px;}
 }
 // Адаптивная верстка //
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

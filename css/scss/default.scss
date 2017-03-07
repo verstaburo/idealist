@@ -1,3 +1,7 @@
+@import "normalize.css";
+
+@import "../fonts/fonts.css";
+
 @import "basics";
 
 .button {text-align:center; border:0; display:inline-block; font-size:16px; background-color: #5c1bbf; border-radius: 1000px; line-height: 50px; font-weight: 600; padding: 0 50px; box-shadow: 0px 6px 18px 0px rgba(92, 27, 191, 0.5);
@@ -18,7 +22,7 @@
 	&_big {font-size: 36px;}
 }
 
-.overlay {opacity: 0; pointer-events: none; position: absolute; left: 0; top: 0; width: 100%; height: 100%; background-color: #050915; z-index: 2; transition: all 0.25s ease-in-out;
+.overlay {opacity: 0; pointer-events: none; position: absolute; left: 0; top: 0; width: 100%; height: 100%; background-color: #050915; z-index: 50; transition: all 0.25s ease-in-out;
 	&.active {opacity: 0.7; pointer-events: all;}
 }
 
@@ -55,7 +59,7 @@
 	}
 }
 
-.event {display: inline-flex; flex-direction: column; justify-content: flex-end; position: relative; overflow: hidden; box-sizing: border-box; vertical-align: top; border-radius: 5px; overflow: hidden; padding: 19px 21px; text-align: left; width: 100%;
+.event {display: inline-flex; flex-direction: column; justify-content: flex-end; position: relative; overflow: hidden; box-sizing: border-box; vertical-align: top; border-radius: 5px; overflow: hidden; padding: 19px 21px; text-align: left; width: 100%; transform:translate3d(0,0,0);
 	&:hover {
 		.event__info {opacity: 1; pointer-events: all;}
 	}
@@ -83,9 +87,9 @@
 			}
 		}
 	}
-	&__bg {position: absolute; left: 0; right: 0; top: 0; bottom: 0; margin: auto; min-width: 100%; min-height: 100%; width: 0; object-fit: cover; z-index: -1; opacity: 0.4;}
+	&__bg {position: absolute; left: 0; right: 0; top: 0; bottom: 0; margin: auto; min-width: 100%; min-height: 100%; width: 0; object-fit: cover; z-index: -1; opacity: 0.4; transition:opacity .25s ease-in-out;}
 	&__type {font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.5; position: absolute; left: 21px; top: 21px;}
-	&__name {font-size: 18px; font-weight: 600; letter-spacing: 0.05em; line-height: 1.4em; max-width: 50%;}
+	&__name {font-size: 18px; font-weight: 600; letter-spacing: 0.05em; line-height: 1.4em;}
 	&__date {margin-top: 11px; letter-spacing: 0.075em;
 		span {margin: 0 9px;}
 	}
@@ -94,11 +98,13 @@
 		.button {width: 99px; position: absolute; right: 15px !important; bottom: 15px !important;}
 		a:not(.button):hover {opacity: 0.6;}
 	}
-	&__likes {display: inline-block; font-size: 14px; margin-top: 79px;
-		img {vertical-align: middle; margin-right: 9px;}
+	&__likes {display: inline-block; font-size: 14px; margin-top: 79px; letter-spacing: 0.075em;
+    font-weight: 300;
+		img {vertical-align: middle; margin-right: 9px;     margin-top: -5px;}
 	}
-	&__watches {display: inline-block; font-size: 14px; margin-top: 79px; margin-left: 18px;
-		img {vertical-align: middle; margin-right: 9px;}
+	&__watches {display: inline-block; font-size: 14px; margin-top: 79px; margin-left: 18px; letter-spacing: 0.075em;
+    font-weight: 300;
+		img {vertical-align: middle; margin-right: 9px;     margin-top: -5px;}
 	}
 	&__organizer {font-weight: 600; font-size: 14px; letter-spacing: 0.025em; display: block;
 		.avatar {vertical-align: middle; margin-right: 19px;}
@@ -107,12 +113,12 @@
 	&__place {position: absolute; right: 17px; bottom: 18px; font-size: 16px; font-weight: 300; letter-spacing: 0.05em;}
 }
 
-.last-published {display: inline-block; padding: 10px 0 70px; box-sizing: border-box; text-align: center; width: 100%; margin-top: 10px; position: relative;
-	&:after {content: ""; position: absolute; left: -10px; top: 0; border-radius: 5px; border: 1px solid #2b1329; width: calc(100% + 20px); height: 100%; pointer-events: none;}
+.last-published {display: inline-block; padding: 10px 0 72px; box-sizing: border-box; text-align: center; width: 100%; margin-top: 9px; position: relative;
+	&:after {content: ""; position: absolute; left: -10px; top: 0; border-radius: 5px; border: 1px solid #2b1329; width: calc(100% + 20px); height: 100%; pointer-events: none; box-sizing:border-box;}
 	.event_card {width: 100%;
 		&:first-of-type {margin-top: 0;}
 	}
-	&__heading {padding: 29px 33px 44px; position: relative; text-align: left;
+	&__heading {padding: 30px 33px 44px; position: relative; text-align: left;
 		&:after {content: ""; position: absolute; left: 36px; top: 100%; border: 6px solid #050915; border-color: #050915 transparent transparent transparent;}
 	}
 	&__seemore {display: inline-block; font-size: 14px; color: #fff; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; margin-top: 74px;
@@ -128,8 +134,8 @@
 	&__heading {margin-top: -12px;}
 }
 
-.organizers {background-color: #2d3039; display: inline-block; position: relative; vertical-align: top; box-sizing: border-box; padding: 37px 9px 44px 37px; width: 100%;
-	&__list {margin-top: 32px; height: 303px;
+.organizers {background-color: #2d3039; display: inline-block; position: relative; vertical-align: top; box-sizing: border-box; padding: 35px 9px 44px 37px; width: 100%; height:579px;
+	&__list {margin-top: 32px; height: 303px; padding-right:15px !important;
 		li {margin-top: 24px; padding: 7px 0;
 			&:first-child {margin-top: 0;}
 		}
@@ -165,14 +171,14 @@
 	.container {display: flex; align-items: center; height: 100px;}
 	&__leftside {width: 50%; height: 100%; display: flex; align-items: center;}
 	&__logo {margin-top: -4px; margin-left: 9px;}
-	&__searchfield {margin-left: 80px; display: flex; align-items: center;
+	&__searchfield {margin-left: 81px; display: flex; align-items: center;
 		input {font-size: 14px; color: #6b5a6a; font-weight: 300; letter-spacing: 0.03em; background-color: transparent;}
-		button {background-color: transparent; border: 0; padding: 0; margin-left: 17px; transition: all 0.25s ease-in-out;
+		button {background-color: transparent; border: 0; padding: 0; margin-left: 16px; transition: all 0.25s ease-in-out;
 			&:hover {opacity: 0.6;}
 		}
 	}
 	&__date {margin-left: 11px; width: 211px; position: relative; height: 100%; display: flex; align-items: center; justify-content: center;
-		&.active {background-color: #2d3039; z-index: 2;
+		&.active {background-color: #2d3039; z-index: 60;
 			.header__calendar {opacity: 1; pointer-events: all;}
 		}
 	}
@@ -181,14 +187,14 @@
 		&:hover {opacity: 0.6;}
 	}
 	&__events {width: 295px; background-color: #2d3039; height: 100%; display: flex; align-items: center; justify-content: center;}
-	&__account {background-color: #373a43; height: 100%; width: 315px; display: flex; align-items: center; justify-content: center; position: relative;
-		.header__link {padding-right: 0; letter-spacing: 0.1em;
-			&:first-child {margin-right: 88px;}
+	&__account {background-color: #373a43; height: 100%; width: 315px; display: flex; align-items: center; justify-content: space-between; position: relative;
+		.header__link {padding-right: 0; letter-spacing: 0.1em; margin-right:55px;
+			&:first-child {margin-left: 55px; margin-right:0}
 			&:after {display: none;}
 		}
 	}
 	&__calendar {opacity: 0; pointer-events: none; position: absolute; left: 0; top: 100%; margin-top: -5px; transition: all 0.25s ease-in-out;}
-	&__hint {opacity: 0; pointer-events: none; position: absolute; left: -161px; top: 100%; margin-top: -5px; display: inline-block; border: 1px solid #c41162; border-top: 0; z-index: 2; font-size: 16px; font-weight: 600; letter-spacing: 0.05em; box-sizing: border-box; width: 286px; padding: 65px 60px 67px 65px; line-height: 1.5em; transition: all 0.25s ease-in-out;
+	&__hint {opacity: 0; pointer-events: none; position: absolute; left: -161px; top: 100%; margin-top: -5px; display: inline-block; border: 1px solid #c41162; border-top: 0; z-index: 60; font-size: 16px; font-weight: 600; letter-spacing: 0.05em; box-sizing: border-box; width: 286px; padding: 65px 60px 67px 65px; line-height: 1.5em; transition: all 0.25s ease-in-out;
 		&:before {content: ""; position: absolute; left: 0; top: 0; width: 235px; border-top: 1px solid #c41162;}
 		&:after {content: ""; position: absolute; right: 0; top: 0; width: 31px; border-top: 1px solid #c41162;}
 		span {position: absolute; left: 235px; top: 0; width: 12px; border-top: 1px solid #c41162; transform: rotate(-35deg); transform-origin: left;

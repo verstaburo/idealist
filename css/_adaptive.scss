@@ -11,10 +11,17 @@
 	.header__date {width:180px;}
 	.header__events {width:260px}
 	.calendar {padding:39px 40px 35px 40px}
-
 	.event__watches, .event__likes {margin-top:30px}
-	.event__info .button {position: static; margin-top:15px; display:block;}
+	.event__info .button {position: relative; margin-top:15px; display:block; top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;}
 	.event_bigcard .event__info .button, .event_specialcard .event__info .button {position: absolute}
+	.shortinfo {padding: 45px 15px;}
+	.avatar_big {width: 60px; height: 60px;}
+	.invited__more {width: 60px; height: 60px; line-height: 60px;}
+	.popup {width: 1090px;}
+	.all-invited__row li {width: 13%;}
 }
 
 @media (max-width:1170px) {
@@ -56,6 +63,18 @@
 	.map-search__heading {margin-top:0}
 	.most-popular__heading {display:inline-flex; align-items:center}
 	.header__hint {left:auto; right:40px;}
+	.shortinfo {padding: 20px 10px 15px;}
+	.shortinfo__text {font-size: 14px; margin-top: 15px;}
+	.shortinfo__link {margin-top: 15px;}
+	.avatar_big {width: 70px; height: 70px;}
+	.invited__more {width: 70px; height: 70px; line-height: 70px;}
+	.costumes, .gifts, .recommendation {width: 33.3333%;}
+	.costumes .column {width: 100%;
+		&:last-child {margin-top: 19px;}
+	}
+	.tags {padding: 0 60px;}
+	
+	.popup {width: 944px;}
 }
 
 @media (max-width:1024px) {
@@ -94,6 +113,30 @@
 	.header__leftside {position: relative; justify-content: space-between;}
 	.header__date, .header__account, .header__events {width:160px}
 	.calendar {width:430px; padding:30px 30px 30px 30px}
+	.invited__list li {margin-right: 10px;}
+	.photos {margin-top: 100px;}
+	.photos .column:nth-child(odd) {padding-right: 10px;}
+	.photos .column:nth-child(even) {padding-left: 10px;}
+	.costumes {width: 100%;}
+	.costumes .column {width: 50%;}
+	.costumes .column:nth-child(even) {padding-right: 10px;}
+	.costumes .column:nth-child(odd) {padding-left: 10px;}
+	.costumes .column:last-child {margin-top: 0;}
+	.gifts {width: 50%;}
+	.recommendation {width: 50%;}
+	.comments {padding: 0; padding-right: 10px;}
+	.tags {padding: 0; padding-left: 40px;}
+	
+	.event-page .column {padding: 0;}
+	.event-page .column_big + .column {width: 100%;}
+	.event-page__middle .column:last-child {width: 100%; margin-top: 19px;}
+	
+	.gifts .column {padding-right: 10px;}
+	.recommendation .column {padding-left: 10px;}
+	
+	.popup {width: 688px;}
+	.all-invited__row {margin-top: 20px;}
+	.all-invited__row li {width: 26%; margin-top: 20px;}
 }
 
 @media (max-width:768px) {
@@ -102,7 +145,7 @@
 
 	.header__events {width: 119px;}
 	.event_banner {height: 252px; padding: 20px;}
-	.event .button {position: static; margin-top: 20px; display: block; max-width: 130px;}
+	.event .button {position: relative; right:0; bottom:0; margin-top: 20px; display: block; max-width: 130px;}
 	.event__name {max-width: 100%;}
 	.event_banner .event__name {font-size: 30px;}
 	.event_banner .event__date {margin-top: 20px; font-size: 14px; font-weight: 400;}
@@ -125,6 +168,11 @@
 	.header__account {position: absolute;right: 0; bottom: 0; height: 50%; width: 230px; flex-direction: row;}
 	.footer__appshop+.footer__appshop {margin-top:15px}
 	.header__hint {left:-190px}
+	
+	.comments {width: 100%; padding: 0;}
+	.tags {width: 100%; padding: 0; margin-top: 50px;}
+	
+	.popup {width: 560px;}
 }
 
 @media (max-width:640px) {
@@ -151,6 +199,19 @@
 	.organizers {padding-left:20px; padding-top:20px; padding-bottom:20px; height:auto;}
 	.organizers__field {padding-right:0}
 	.header__hint {left:17px;}
+	.invited__list li {margin-right: 30px;}
+	.photos__filter {left: auto; right: 9px;}
+	.photos .column:nth-child(odd) {padding-right: 0;}
+	.photos .column:nth-child(even) {padding-left: 0;}
+	.costumes .column {width: 100%; padding: 0 !important;}
+	.costumes .column:last-child {margin-top: 19px;}
+	.gifts, .recommendation {width: 100%;}
+	.photos {margin-top: 50px;}
+	.photos__heading {position: static; margin-left: 30px;}
+	.photos__filter {position: static; margin-left: 30px; margin-top: 20px; margin-bottom: 20px;}
+	
+	.popup {width: 400px;}
+	.all-invited__row li {width: 48%;}
 }
 
 @media (max-width:480px) {
@@ -162,5 +223,15 @@
 	.header__hint:before {width:171px}
 	.header__hint:after {width:95px;}
 	 .calendar {width:360px}
+	.invited__list li {margin-right: 0;}
+	.comments__form textarea {margin-left: 10px;}
+	.comments__list li {padding-left: 65px;}
+	.comments__time {display: block; margin-left: 0; margin-top: 3px;}
+	.comments__answer {margin-left: 65px;}
+	
+	.popup {width: 270px;}
+	.all-invited__row .avatar {width: 70px; height: 70px;}
+	.all-invited__name {font-size: 14px;}
 }
+
 // Адаптивная верстка //

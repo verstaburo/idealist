@@ -56,10 +56,10 @@ border: none;
 ::-webkit-selection {background: blue;color:white;}
 
 // Цвет плейсхолдера //
-::-webkit-input-placeholder {color:#6b5a6a}
-::-moz-placeholder {color:#6b5a6a}
-:-ms-input-placeholder {color:#6b5a6a}
-:-moz-placeholder {color:#6b5a6a}
+::-webkit-input-placeholder {color:rgba(white,.5)}
+::-moz-placeholder {color:rgba(white,.5)}
+:-ms-input-placeholder {color:rgba(white,.5)}
+:-moz-placeholder {color:rgba(white,.5)}
 
 // Фиксирование для body (при кастомных модальных окнах)
 .noscroll {position: fixed;}
@@ -118,7 +118,7 @@ $col:(100-($col-m*11))/12; // Ширина колонки
 
 // Основы //
 html {width:100%}
-body {width:100%; min-height:100%; font-size:0; font-family: 'Proxima Nova', Arial, sans-serif; background-color: #190018; color: #fff; position: relative;}
+body {width:100%; min-height:100%; font-size:0; font-family: 'Proxima Nova', Arial, sans-serif; background-color: #050915; color: #fff; position: relative;}
 
 html, body {overflow-x: hidden;}
 

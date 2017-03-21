@@ -9,6 +9,7 @@
     <link rel="icon" href="favicon.ico?v=2" type="image/x-icon"/>
     <link rel="stylesheet" href="css/default.css?v=2"/>
     <link rel="stylesheet" href="js/libs/scrollbar/jquery.scrollbar.css"/>
+    <link rel="stylesheet" href="js/libs/fancybox/jquery.fancybox.css"/>
 </head>
 
 <body>
@@ -104,12 +105,12 @@
 			<p class="header__hint"><span></span>Login to get access to personal account</p>
 			<!-- // Hint -->
 			<!-- Logged -->
-			<p class="header__username"><span class="avatar"><img src="" alt="@@"></span>Alexander</p>
+			<a class="header__username"><span class="avatar avatar_small"><img src="img/avatar17.png" alt="@@"></span>Alexander</a>
 			<ul class="header__usermenu">
 				<li><a href="#" class="header__link">My profile</a></li>
 				<li><a href="#" class="header__link">Settings</a></li>
 				<li><a href="#" class="header__link">Send profile</a></li>
-				<li class="header__logout"><a href="#" class="header__link">Log out</a></li>
+				<li class="logout"><a class="header__link">Log out</a></li>
 			</ul>
 			<!-- // Logged -->
 		</div>
@@ -417,6 +418,9 @@
 
 <!-- Scroll animation effects !-->
 <script src="js/libs/scrollreveal.min.js"></script>
+
+<!-- Fancybox -->
+<script src="js/libs/fancybox/jquery.fancybox.js"></script>
 
 <!-- ################################### !-->
 <!-- ### scripts ####################### !-->

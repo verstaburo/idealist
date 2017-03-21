@@ -6,6 +6,7 @@ jQuery(window).load(function () {
     }, 410);
 });
 
+
 $("a[href]").click(function(event){
 	if (!$(this).hasClass('fancybox')) {
 		var href = $(this).attr("href");

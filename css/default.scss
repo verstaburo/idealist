@@ -565,11 +565,11 @@
 		}
 		&.active {opacity: 1; pointer-events: all;}
 	}
-	&__username {display: block; position: relative; padding-left: 53px; padding-right: 16px; font-size: 16px; letter-spacing: 0.025em; margin: auto; display: none; cursor: pointer; position: relative; z-index: 60;
+	&__username {display: block; position: relative; padding-left: 53px; padding-right: 16px; font-size: 16px; letter-spacing: 0.025em; margin: auto; display: none; cursor: pointer; position: relative;
 		&:after {content: ""; display: inline-block; width: 0; height: 0; border: 3px solid #fff; border-color: #fff transparent transparent transparent; position: absolute; top: 20%; right: 0; bottom: 0; margin: auto; transform-origin: 50% 25%; transition: all 0.25s ease-in-out;}
 		.avatar {position: absolute; left: 0; top: 0; bottom: 0; margin: auto;}
 		&:hover {opacity: 0.7;}
-		&.active:after {transform: translate3d(0,0,0) rotate(180deg);}
+		&.active:after {transform: translate3d(0,0,0) rotate(180deg); z-index: 60;}
 	}
 	&__usermenu {position: absolute; left: 0; top: 100%; width: 100%; z-index: 2; background-color: #100824; border-top: 1px solid rgba(#5c1bbf,0.1); padding-top: 34px; overflow: hidden; opacity: 0; pointer-events: none; transition: all 0.25s ease-in-out;
 		&.active {opacity: 1; pointer-events: all;}

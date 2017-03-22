@@ -77,9 +77,9 @@
 	.eventinfo__heading {width: 50%;}
 	.eventinfo__filter {padding-left: 10px;}
 	
-	.personal .column_big .column {width: 50%;}
-	.personal .column_big .column:nth-child(3) {padding-right: 0;}
-	.personal .column_big .column_med {width: 50%;}
+	.profile .column_big .column {width: 50%;}
+	.profile .column_big .column:nth-child(3) {padding-right: 0;}
+	.profile .column_big .column_med {width: 50%;}
 	.following__list {padding-left: 10px;}
 	.following__list li {padding-right: 50px;}
 	.settings-page .column_med {width: 66.6666%;}
@@ -144,9 +144,10 @@
 	.popup {width: 688px;}
 	.all-invited__row {margin-top: 20px;}
 	.all-invited__row li {width: 26%; margin-top: 20px;}
-	.personal .column_userinfo {width: 100%; padding: 0;}
-	.personal .column_big {padding: 0;}
+	.profile .column_userinfo {width: 100%; padding: 0;}
+	.profile .column_big {padding: 0;}
 	.settings-page .column {padding: 0; width: 100%;}
+	.userinfo .dots__menu {left: auto; right: -25px;}
 }
 
 @media (max-width:768px) {
@@ -224,12 +225,12 @@
 	
 	.popup {width: 400px;}
 	.all-invited__row li {width: 48%;}
-	.personal .column_big .column {width: 100%; padding: 0;}
-	.personal .eventinfo .column {margin-top: 20px;}
+	.profile .column_big .column {width: 100%; padding: 0;}
+	.profile .eventinfo .column {margin-top: 20px;}
 	.eventinfo__head {flex-wrap: wrap; margin-bottom: 10px;}
 	.eventinfo__heading {width: 100%;}
 	.eventinfo__filter {margin-top: 20px;}
-	.personal .column_big .column_med {width: 100%; padding: 0;}
+	.profile .column_big .column_med {width: 100%; padding: 0;}
 	.settings__field {flex-wrap: wrap;}
 	.settings__fieldname {width: 100%; margin-bottom: 10px;}
 	.settings input, .settings select, .settings textarea {width: 100%;}

@@ -229,6 +229,14 @@ button {
     background-color: #7323ec; }
     .button:hover:before {
       border-color: #7323ec; }
+  .button.active {
+    box-shadow: inset 0 0 0 1px #5c1bbf;
+    background-color: transparent;
+    color: #5c1bbf;
+    letter-spacing: 0.025em;
+    font-weight: 300; }
+    .button.active:before {
+      display: none; }
   .button_pink {
     background-color: #c41162;
     box-shadow: 0px 4px 22px 0px rgba(196, 17, 98, 0.42); }
@@ -428,6 +436,80 @@ button {
         pointer-events: none; }
 
 /*----------------------------------------*/
+.dots {
+  display: block;
+  height: 10px;
+  text-align: center;
+  width: 25px;
+  cursor: pointer;
+  transition: all 0.25s ease-in-out; }
+  .dots:hover span {
+    opacity: 0.7; }
+  .dots span {
+    display: inline-block;
+    width: 5px;
+    height: 5px;
+    border-radius: 1000px;
+    background-color: #5c1bbf;
+    position: relative;
+    transition: all 0.25s ease-in-out; }
+    .dots span:before, .dots span:after {
+      content: "";
+      display: inline-block;
+      width: 5px;
+      height: 5px;
+      border-radius: 1000px;
+      background-color: #5c1bbf;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      margin: auto; }
+    .dots span:before {
+      left: -10px; }
+    .dots span:after {
+      right: -10px; }
+  .dots__menu {
+    position: absolute;
+    right: -25px;
+    top: 100%;
+    width: 298px;
+    z-index: 3;
+    background-color: #100824;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.25s ease-in-out;
+    padding-bottom: 34px;
+    cursor: auto;
+    text-align: left; }
+    .dots__menu:after {
+      content: "";
+      border: 5px solid #100824;
+      border-color: transparent transparent #100824 transparent;
+      position: absolute;
+      right: 40px;
+      top: -10px; }
+    .dots__menu.active {
+      opacity: 1;
+      pointer-events: all; }
+    .dots__menu li {
+      margin: 24px auto 0;
+      padding: 0 42px; }
+      .dots__menu li:first-child {
+        margin-top: 0; }
+      .dots__menu li.unfollow {
+        padding: 33px 42px 31px;
+        position: relative;
+        border-bottom: 1px solid rgba(92, 27, 191, 0.1);
+        margin-bottom: 36px; }
+    .dots__menu a {
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase; }
+      .dots__menu a:hover {
+        opacity: 0.7; }
+
+/*----------------------------------------*/
 .column {
   display: inline-block;
   vertical-align: top;
@@ -539,8 +621,6 @@ button {
       font-size: 16px; }
     .event_banner .event__watches {
       margin-left: 30px; }
-  .event .button_pink.active:before {
-    display: none !important; }
   .event_card {
     height: 180px;
     background-color: #120323; }
@@ -1541,7 +1621,8 @@ button {
 .userinfo {
   background-color: #100824;
   text-align: center;
-  padding-top: 43px; }
+  padding-top: 43px;
+  position: relative; }
   .userinfo__avatar {
     width: 100px;
     height: 100px; }
@@ -1635,6 +1716,25 @@ button {
     transform: translate3d(0, 0, 0); }
     .userinfo__delete:hover {
       opacity: 0.7; }
+  .userinfo__dots {
+    position: absolute;
+    right: 22px;
+    top: 22px; }
+  .userinfo__shortinfo {
+    font-weight: 300;
+    letter-spacing: 0.025em;
+    opacity: 0.3;
+    margin-top: 12px; }
+  .userinfo__button {
+    margin-top: 27px;
+    padding: 0 38px;
+    min-width: 140px; }
+  .userinfo .dots__menu {
+    right: auto;
+    left: -13px; }
+    .userinfo .dots__menu:after {
+      right: auto;
+      left: 21px; }
 
 /*----------------------------------------*/
 .eventinfo {
@@ -1671,15 +1771,15 @@ button {
     width: 100%;
     margin-top: 29px;
     padding-left: 22px; }
-    .following__list li {
+    .following__list > li {
       margin-top: 22px;
       padding: 7px 0;
       position: relative;
       padding-right: 55px; }
-      .following__list li:first-child {
+      .following__list > li:first-child {
         margin-top: 0; }
-      .following__list li:last-child .following__menu {
-        top: -45%; }
+      .following__list > li:last-child .dots__menu {
+        top: -50px; }
   .following__person {
     display: inline-block;
     position: relative;
@@ -1721,74 +1821,15 @@ button {
       .following__person .number.active {
         opacity: 1;
         pointer-events: all; }
-  .following__actions {
-    display: block;
-    height: 10px;
+  .following__dots {
     position: absolute;
     right: 19px;
     top: -7px;
     bottom: 0;
-    margin: auto;
-    text-align: center;
-    width: 25px;
-    cursor: pointer;
-    transition: all 0.25s ease-in-out; }
-    .following__actions:hover {
-      opacity: 0.7; }
-    .following__actions span {
-      display: inline-block;
-      width: 5px;
-      height: 5px;
-      border-radius: 1000px;
-      background-color: #5c1bbf;
-      position: relative; }
-      .following__actions span:before, .following__actions span:after {
-        content: "";
-        display: inline-block;
-        width: 5px;
-        height: 5px;
-        border-radius: 1000px;
-        background-color: #5c1bbf;
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        margin: auto; }
-      .following__actions span:before {
-        left: -10px; }
-      .following__actions span:after {
-        right: -10px; }
-  .following__menu {
-    position: absolute;
-    right: -6px;
-    top: 53%;
-    width: 298px;
-    z-index: 2;
-    background-color: #100824;
-    overflow: hidden;
-    opacity: 0;
-    pointer-events: none;
-    transition: all 0.25s ease-in-out;
-    padding-bottom: 34px; }
-    .following__menu.active {
-      opacity: 1;
-      pointer-events: all; }
-    .following__menu li {
-      margin: 24px auto 0;
-      padding: 0 42px; }
-      .following__menu li:first-child {
-        margin-top: 0; }
-      .following__menu li.unfollow {
-        padding: 33px 42px 31px;
-        position: relative;
-        border-bottom: 1px solid rgba(92, 27, 191, 0.1);
-        margin-bottom: 36px; }
-    .following__menu a {
-      font-size: 14px;
-      font-weight: 600;
-      letter-spacing: 0.05em;
-      text-transform: uppercase; }
-      .following__menu a:hover {
-        opacity: 0.7; }
+    margin: auto; }
+  .following_followers .following__dots {
+    right: 8px;
+    top: -5px; }
 
 /*----------------------------------------*/
 .settings {
@@ -2141,30 +2182,30 @@ button {
     margin-top: 15px; }
 
 /*----------------------------------------*/
-.personal {
+.profile {
   padding-bottom: 20px; }
-  .personal .column {
+  .profile .column {
     padding: 0 10px; }
-  .personal .column_big .column {
+  .profile .column_big .column {
     width: 33.3333%; }
-  .personal .column_big .column_med {
+  .profile .column_big .column_med {
     width: 66.6666%;
     padding-right: 10px;
     box-sizing: border-box; }
-  .personal .column_big .column:last-child {
+  .profile .column_big .column:last-child {
     padding-right: 0; }
-  .personal .eventinfo .column:nth-child(2) {
+  .profile .eventinfo .column:nth-child(2) {
     padding-left: 0; }
-  .personal .following {
+  .profile .following {
     display: none; }
-  .personal .last-published {
+  .profile .last-published {
     padding-bottom: 0; }
-  .personal .last-published:after {
+  .profile .last-published:after {
     display: none; }
-  .personal .last-published__heading {
+  .profile .last-published__heading {
     padding: 27px 38px 41px;
     line-height: 1.35em; }
-  .personal .last-published__heading:after {
+  .profile .last-published__heading:after {
     display: none; }
 
 /*----------------------------------------*/
@@ -2400,11 +2441,11 @@ button {
     width: 50%; }
   .eventinfo__filter {
     padding-left: 10px; }
-  .personal .column_big .column {
+  .profile .column_big .column {
     width: 50%; }
-  .personal .column_big .column:nth-child(3) {
+  .profile .column_big .column:nth-child(3) {
     padding-right: 0; }
-  .personal .column_big .column_med {
+  .profile .column_big .column_med {
     width: 50%; }
   .following__list {
     padding-left: 10px; }
@@ -2520,14 +2561,17 @@ button {
   .all-invited__row li {
     width: 26%;
     margin-top: 20px; }
-  .personal .column_userinfo {
+  .profile .column_userinfo {
     width: 100%;
     padding: 0; }
-  .personal .column_big {
+  .profile .column_big {
     padding: 0; }
   .settings-page .column {
     padding: 0;
-    width: 100%; } }
+    width: 100%; }
+  .userinfo .dots__menu {
+    left: auto;
+    right: -25px; } }
 
 @media (max-width: 768px) {
   .container {
@@ -2705,10 +2749,10 @@ button {
     width: 400px; }
   .all-invited__row li {
     width: 48%; }
-  .personal .column_big .column {
+  .profile .column_big .column {
     width: 100%;
     padding: 0; }
-  .personal .eventinfo .column {
+  .profile .eventinfo .column {
     margin-top: 20px; }
   .eventinfo__head {
     flex-wrap: wrap;
@@ -2717,7 +2761,7 @@ button {
     width: 100%; }
   .eventinfo__filter {
     margin-top: 20px; }
-  .personal .column_big .column_med {
+  .profile .column_big .column_med {
     width: 100%;
     padding: 0; }
   .settings__field {

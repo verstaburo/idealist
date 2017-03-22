@@ -7,10 +7,12 @@
 .button {text-align:center; border:0; display:inline-block; font-size:16px; background-color: #5c1bbf; border-radius: 1000px; line-height: 50px; font-weight: 600; padding: 0 50px; box-shadow: 0px 6px 18px 0px rgba(92, 27, 191, 0.5); position:relative; z-index:2;
     &:before {content: ''; position: absolute; border: #5c1bbf solid 6px; top: 0; right: 0; bottom: 0; left: 0; -webkit-animation-duration: 1s; animation-duration: 1s; border-radius:1000px; transition:border-color .25s ease-in-out; z-index:-1;}
     &:hover:before, &:focus:before, &:active:before {-webkit-animation-name: hvr-ripple-out; animation-name: hvr-ripple-out;}
-
 	&:hover {background-color: #7323ec;
         &:before {border-color: #7323ec;}
     }
+	&.active {box-shadow: inset 0 0 0 1px #5c1bbf; background-color: transparent; color: #5c1bbf; letter-spacing: 0.025em; font-weight: 300;
+		&:before {display: none;}
+	}
 	&_pink {background-color: #c41162; box-shadow: 0px 4px 22px 0px rgba(196, 17, 98, 0.42);
         &:before {border-color:#c41162}
 		&:hover {background-color: #e91575;
@@ -101,6 +103,28 @@
 
 /*----------------------------------------*/
 
+.dots {display: block; height: 10px; text-align: center; width: 25px; cursor: pointer; transition: all 0.25s ease-in-out;
+	&:hover span {opacity: 0.7;}
+	span {display: inline-block; width: 5px; height: 5px; border-radius: 1000px; background-color: #5c1bbf; position: relative; transition: all 0.25s ease-in-out;
+		&:before, &:after {content: ""; display: inline-block; width: 5px; height: 5px; border-radius: 1000px; background-color: #5c1bbf; position: absolute; top: 0; bottom: 0; margin: auto;}
+		&:before {left: -10px;}
+		&:after {right: -10px;}
+	}
+	&__menu {position: absolute; right: -25px; top: 100%; width: 298px; z-index: 3; background-color: #100824; opacity: 0; pointer-events: none; transition: all 0.25s ease-in-out; padding-bottom: 34px; cursor: auto; text-align: left;
+		&:after {content: ""; border: 5px solid #100824; border-color: transparent transparent #100824 transparent; position: absolute; right: 40px; top: -10px;}
+		&.active {opacity: 1; pointer-events: all;}
+		li {margin: 24px auto 0;  padding: 0 42px;
+			&:first-child {margin-top: 0;}
+			&.unfollow {padding: 33px 42px 31px; position: relative; border-bottom: 1px solid rgba(#5c1bbf,0.1); margin-bottom: 36px;}
+		}
+		a {font-size: 14px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase;
+			&:hover {opacity: 0.7;}
+		}
+	}
+}
+
+/*----------------------------------------*/
+
 .column {display: inline-block; vertical-align: top; width: 25%; box-sizing: border-box;
 	&_big {display: inline-flex; justify-content: space-between; flex-wrap: wrap; align-content: flex-start; width: 75%;
 		> .column {width: 33.3333%;}
@@ -143,7 +167,6 @@
 		.event__likes, .event__watches {margin-top: 29px; font-size: 16px;}
 		.event__watches {margin-left: 30px;}
 	}
-	.button_pink.active:before {display:none !important}
 	&_card {height: 180px; background-color:#120323}
 	&_bigcard, &_specialcard {height: 380px;
 		.event__info {padding: 18px 27px;
@@ -450,7 +473,7 @@
 
 /*----------------------------------------*/
 
-.userinfo {background-color: #100824; text-align: center; padding-top: 43px;
+.userinfo {background-color: #100824; text-align: center; padding-top: 43px; position: relative;
 	&__avatar {width: 100px; height: 100px;}
 	&__imgupload {display: block; width: 30px; height: 30px; border-radius: 1000px; background-color: #100824; overflow: hidden; position: relative; margin: auto; margin-top: -18px; cursor: pointer;
 		&:hover img {opacity: 0.7;}
@@ -475,6 +498,12 @@
 	&__delete {display: inline-block; font-size: 14px; font-weight: 600; color: #c41162; letter-spacing: 0.1em; margin-top: 39px; padding-left: 21px; text-transform: uppercase; transform: translate3d(0,0,0);
 		&:hover {opacity: 0.7;}
 	}
+	&__dots {position: absolute; right: 22px; top: 22px;}
+	&__shortinfo {font-weight: 300; letter-spacing: 0.025em; opacity: 0.3; margin-top: 12px;}
+	&__button {margin-top: 27px; padding: 0 38px; min-width: 140px;}
+	.dots__menu {right: auto; left: -13px;
+		&:after {right: auto; left: 21px;}
+	}
 }
 
 /*----------------------------------------*/
@@ -496,9 +525,9 @@
 	&__heading {width: 100%; margin-top: 48px; padding-left: 21px;}
 	&__nofollow {width: 100%; display: none;}
 	&__list {width: 100%; margin-top: 29px; padding-left: 22px;
-		li {margin-top: 22px; padding: 7px 0; position: relative; padding-right: 55px;
+		> li {margin-top: 22px; padding: 7px 0; position: relative; padding-right: 55px;
 			&:first-child {margin-top: 0;}
-			&:last-child .following__menu {top: -45%;}
+			&:last-child .dots__menu {top: -50px;}
 		}
 	}
 	&__person {display: inline-block; position: relative; padding-left: 78px; font-size: 16px; letter-spacing: 0.025em;
@@ -509,24 +538,8 @@
 			&.active {opacity: 1; pointer-events: all;}
 		}
 	}
-	&__actions {display: block; height: 10px; position: absolute; right: 19px; top: -7px; bottom: 0; margin: auto; text-align: center; width: 25px; cursor: pointer; transition: all 0.25s ease-in-out;
-		&:hover {opacity: 0.7;}
-		span {display: inline-block; width: 5px; height: 5px; border-radius: 1000px; background-color: #5c1bbf; position: relative;
-			&:before, &:after {content: ""; display: inline-block; width: 5px; height: 5px; border-radius: 1000px; background-color: #5c1bbf; position: absolute; top: 0; bottom: 0; margin: auto;}
-			&:before {left: -10px;}
-			&:after {right: -10px;}
-		}
-	}
-	&__menu {position: absolute; right: -6px; top: 53%; width: 298px; z-index: 2; background-color: #100824; overflow: hidden; opacity: 0; pointer-events: none; transition: all 0.25s ease-in-out; padding-bottom: 34px;
-		&.active {opacity: 1; pointer-events: all;}
-		li {margin: 24px auto 0;  padding: 0 42px;
-			&:first-child {margin-top: 0;}
-			&.unfollow {padding: 33px 42px 31px; position: relative; border-bottom: 1px solid rgba(#5c1bbf,0.1); margin-bottom: 36px;}
-		}
-		a {font-size: 14px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase;
-			&:hover {opacity: 0.7;}
-		}
-	}
+	&__dots {position: absolute; right: 19px; top: -7px; bottom: 0; margin: auto;}
+	&_followers .following__dots {right: 8px; top: -5px;}
 }
 
 /*----------------------------------------*/
@@ -650,7 +663,7 @@
 
 /*----------------------------------------*/
 
-.personal {padding-bottom: 20px;
+.profile {padding-bottom: 20px;
 	.column {padding: 0 10px;}
 	.column_big {
 		.column {width: 33.3333%;}

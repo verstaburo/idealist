@@ -1623,6 +1623,18 @@ button {
     padding: 25px 21px 28px; }
     .userinfo__registration-date span {
       color: #a6a5aa; }
+  .userinfo__delete {
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 600;
+    color: #c41162;
+    letter-spacing: 0.1em;
+    margin-top: 39px;
+    padding-left: 21px;
+    text-transform: uppercase;
+    transform: translate3d(0, 0, 0); }
+    .userinfo__delete:hover {
+      opacity: 0.7; }
 
 /*----------------------------------------*/
 .eventinfo {
@@ -1777,6 +1789,73 @@ button {
       text-transform: uppercase; }
       .following__menu a:hover {
         opacity: 0.7; }
+
+/*----------------------------------------*/
+.settings {
+  width: 100%;
+  padding-top: 48px;
+  padding-left: 21px;
+  text-align: center; }
+  .settings input, .settings select, .settings textarea {
+    width: 78%;
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+    letter-spacing: 0.025em;
+    background-color: transparent;
+    border: 1px solid #211539;
+    border-radius: 5px;
+    padding: 0 25px; }
+    .settings input:focus, .settings select:focus, .settings textarea:focus {
+      border-color: #5c1bbf; }
+  .settings input, .settings select {
+    height: 50px;
+    line-height: 50px; }
+  .settings select {
+    padding: 0 21px; }
+  .settings textarea {
+    height: 123px;
+    resize: none;
+    padding: 12px 25px;
+    font-weight: 400;
+    line-height: 1.75em; }
+  .settings__heading {
+    margin-bottom: 41px;
+    text-align: left; }
+  .settings__field {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    margin-top: 30px;
+    text-align: left; }
+    .settings__field:first-of-type {
+      margin-top: 0; }
+    .settings__field_username {
+      margin: 60px 0; }
+    .settings__field_location {
+      margin-bottom: 60px; }
+      .settings__field_location select {
+        width: 37%; }
+      .settings__field_location input {
+        width: 37%;
+        margin-left: 4%; }
+    .settings__field_birthday select {
+      width: 23%; }
+      .settings__field_birthday select + select {
+        margin-left: 4.5%; }
+    .settings__field_textarea {
+      align-items: flex-start; }
+      .settings__field_textarea .settings__fieldname {
+        margin-top: 18px; }
+  .settings__fieldname {
+    font-weight: 300;
+    opacity: 0.3;
+    letter-spacing: 0.025em;
+    width: 22%; }
+  .settings__button {
+    margin-top: 60px;
+    margin-left: -21px;
+    padding: 0 45px; }
 
 .header .container {
   display: flex;
@@ -2089,6 +2168,12 @@ button {
     display: none; }
 
 /*----------------------------------------*/
+.settings-page {
+  padding-bottom: 60px; }
+  .settings-page .column {
+    padding: 0 10px; }
+
+/*----------------------------------------*/
 .footer {
   background-color: #100824;
   padding: 48px 0 58px; }
@@ -2324,7 +2409,9 @@ button {
   .following__list {
     padding-left: 10px; }
   .following__list li {
-    padding-right: 50px; } }
+    padding-right: 50px; }
+  .settings-page .column_med {
+    width: 66.6666%; } }
 
 @media (max-width: 1024px) {
   .container {
@@ -2437,7 +2524,10 @@ button {
     width: 100%;
     padding: 0; }
   .personal .column_big {
-    padding: 0; } }
+    padding: 0; }
+  .settings-page .column {
+    padding: 0;
+    width: 100%; } }
 
 @media (max-width: 768px) {
   .container {
@@ -2629,7 +2719,25 @@ button {
     margin-top: 20px; }
   .personal .column_big .column_med {
     width: 100%;
-    padding: 0; } }
+    padding: 0; }
+  .settings__field {
+    flex-wrap: wrap; }
+  .settings__fieldname {
+    width: 100%;
+    margin-bottom: 10px; }
+  .settings input, .settings select, .settings textarea {
+    width: 100%; }
+  .settings__field_location select {
+    width: 48%; }
+  .settings__field_location input {
+    width: 48%;
+    margin-left: 4%; }
+  .settings__field_birthday select {
+    width: 30%; }
+  .settings__field_birthday select + select {
+    margin-left: 5%; }
+  .settings__field_textarea .settings__fieldname {
+    margin-top: 0; } }
 
 @media (max-width: 480px) {
   .container {
@@ -2666,6 +2774,28 @@ button {
     width: 70px;
     height: 70px; }
   .all-invited__name {
-    font-size: 14px; } }
+    font-size: 14px; }
+  .settings {
+    padding-left: 0; }
+  .settings__heading {
+    padding-left: 21px; }
+  .settings__button {
+    margin-left: 0; }
+  .settings input, .settings select, .settings textarea {
+    padding: 0 15px; }
+  .settings__field_location select {
+    width: 100%; }
+  .settings__field_location input {
+    width: 100%;
+    margin-left: 0;
+    margin-top: 10px; }
+  .settings__field_birthday select {
+    width: 100%; }
+  .settings__field_birthday select + select {
+    margin-left: 0;
+    margin-top: 10px; }
+  .settings textarea {
+    padding: 15px;
+    height: 152px; } }
 
 /*# sourceMappingURL=default.css.map */

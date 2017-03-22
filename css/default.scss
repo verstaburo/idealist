@@ -472,6 +472,9 @@
 	&__registration-date {text-align: left; border-top: 1px solid rgba(#5c1bbf,0.4); font-size: 12px; letter-spacing: 0.025em; color: #79777f; opacity: 0.3; padding: 25px 21px 28px;
 		span {color: #a6a5aa;}
 	}
+	&__delete {display: inline-block; font-size: 14px; font-weight: 600; color: #c41162; letter-spacing: 0.1em; margin-top: 39px; padding-left: 21px; text-transform: uppercase; transform: translate3d(0,0,0);
+		&:hover {opacity: 0.7;}
+	}
 }
 
 /*----------------------------------------*/
@@ -524,6 +527,36 @@
 			&:hover {opacity: 0.7;}
 		}
 	}
+}
+
+/*----------------------------------------*/
+
+.settings {width: 100%; padding-top: 48px; padding-left: 21px; text-align: center;
+	input, select, textarea {width: 78%; font-size: 14px; font-weight: 600; color: #fff; letter-spacing: 0.025em; background-color: transparent; border: 1px solid #211539; border-radius: 5px; padding: 0 25px;
+		&:focus {border-color: #5c1bbf;}
+	}
+	input, select {height: 50px; line-height: 50px;}
+	select {padding: 0 21px;}
+	textarea {height: 123px; resize: none; padding: 12px 25px; font-weight: 400; line-height: 1.75em;}
+	&__heading {margin-bottom: 41px; text-align: left;}
+	&__field {display: flex; width: 100%; align-items: center; margin-top: 30px; text-align: left;
+		&:first-of-type {margin-top: 0;}
+		&_username {margin: 60px 0;}
+		&_location {margin-bottom: 60px;
+			select {width: 37%;}
+			input {width: 37%; margin-left: 4%;}
+		}
+		&_birthday {
+			select {width: 23%;
+				+ select {margin-left: 4.5%;}
+			}
+		}
+		&_textarea {align-items: flex-start;
+			.settings__fieldname {margin-top: 18px;}
+		}
+	}
+	&__fieldname {font-weight: 300; opacity: 0.3; letter-spacing: 0.025em; width: 22%;}
+	&__button {margin-top: 60px; margin-left: -21px; padding: 0 45px;}
 }
 
 // Секции, header, footer и т.д. //
@@ -632,6 +665,12 @@
 	.last-published:after {display: none;}
 	.last-published__heading {padding: 27px 38px 41px; line-height: 1.35em;}
 	.last-published__heading:after {display: none;}
+}
+
+/*----------------------------------------*/
+
+.settings-page {padding-bottom: 60px;
+	.column {padding: 0 10px;}
 }
 
 /*----------------------------------------*/

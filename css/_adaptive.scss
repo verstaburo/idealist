@@ -82,6 +82,7 @@
 	.personal .column_big .column_med {width: 50%;}
 	.following__list {padding-left: 10px;}
 	.following__list li {padding-right: 50px;}
+	.settings-page .column_med {width: 66.6666%;}
 }
 
 @media (max-width:1024px) {
@@ -145,6 +146,7 @@
 	.all-invited__row li {width: 26%; margin-top: 20px;}
 	.personal .column_userinfo {width: 100%; padding: 0;}
 	.personal .column_big {padding: 0;}
+	.settings-page .column {padding: 0; width: 100%;}
 }
 
 @media (max-width:768px) {
@@ -228,6 +230,14 @@
 	.eventinfo__heading {width: 100%;}
 	.eventinfo__filter {margin-top: 20px;}
 	.personal .column_big .column_med {width: 100%; padding: 0;}
+	.settings__field {flex-wrap: wrap;}
+	.settings__fieldname {width: 100%; margin-bottom: 10px;}
+	.settings input, .settings select, .settings textarea {width: 100%;}
+	.settings__field_location select {width: 48%;}
+	.settings__field_location input {width: 48%; margin-left: 4%;}
+	.settings__field_birthday select {width: 30%;}
+	.settings__field_birthday select + select {margin-left: 5%;}
+	.settings__field_textarea .settings__fieldname {margin-top: 0;}
 }
 
 @media (max-width:480px) {
@@ -248,6 +258,15 @@
 	.popup {width: 270px;}
 	.all-invited__row .avatar {width: 70px; height: 70px;}
 	.all-invited__name {font-size: 14px;}
+	.settings {padding-left: 0;}
+	.settings__heading {padding-left: 21px;}
+	.settings__button {margin-left: 0;}
+	.settings input, .settings select, .settings textarea {padding: 0 15px;}
+	.settings__field_location select {width: 100%;}
+	.settings__field_location input {width: 100%; margin-left: 0; margin-top: 10px;}
+	.settings__field_birthday select {width: 100%;}
+	.settings__field_birthday select + select {margin-left: 0; margin-top: 10px;}
+	.settings textarea {padding: 15px; height: 152px;}
 }
 
 // Адаптивная верстка //

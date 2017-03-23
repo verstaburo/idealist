@@ -20,11 +20,3 @@ $('[data-filter]').click(function(){
 		$('[data-category='+category+']').show();
 	}
 });
-
-// Контент на странице Personal area
-$('[data-tab]').click(function(e){
-	e.preventDefault();
-	var tab = $(this).data('tab');
-	$('[data-content]').hide();
-	$('[data-content='+tab+']').show();
-});

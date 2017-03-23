@@ -81,7 +81,7 @@
 <header class="header">
 	<div class="container">
 		<div class="header__leftside">
-			<a href="#" class="header__logo">
+			<a href="index.html" class="header__logo">
 				<img src="img/logo.svg" alt="@@">
 			</a>
 			<form action="#" method="post" class="header__searchfield">
@@ -223,15 +223,16 @@
 				</div>
 			</div>
 			<div class="column column_med">
-				<div class="map">
-					<div class="map__zoom">
-						<span class="map__plus"></span>
-						<span class="map__minus"></span>
+				<div class="map-block">
+					<div id="googlemap"></div>
+					<div class="map-block__zoom">
+						<span class="map-block__plus"></span>
+						<span class="map-block__minus"></span>
 					</div>
-					<div class="map__marker"></div>
-					<div class="map__info">
-						<p class="map__place">Club «Angels»</p>
-						<p class="map__address">Moskow, Kutuzovsky <br> Prospect, 12 seconds. 3</p>
+					<span class="map-block__marker"></span>
+					<div class="map-block__info">
+						<p class="map-block__place">Club «Angels»</p>
+						<p class="map-block__address">Moskow, Kutuzovsky <br> Prospect, 12 seconds. 3</p>
 					</div>
 				</div>
 			</div>
@@ -432,5 +433,8 @@
 <script src="js/content-changer.js"></script>
 <script src="js/cards-reveal.js"></script>
 <script src="js/page-loading.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyCUaCNfcDZQL7nZK07DQmAHsEetCCMIQ5w"></script>
+<script src="js/CustomGoogleMapMarker.js"></script>
+<script src="js/googlemaps.js"></script>
 </body>
 </html>

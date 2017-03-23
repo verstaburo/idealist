@@ -62,7 +62,7 @@ border: none;
 :-moz-placeholder {color:rgba(white,.5)}
 
 // Фиксирование для body (при кастомных модальных окнах)
-.noscroll {position: fixed;}
+.noscroll {position: fixed; padding-right: 17px; box-sizing: border-box;}
 
 // Настройки для автозаполнения Chrome
 input:-webkit-autofill {

@@ -118,90 +118,122 @@
 </header>
 
 <!-- ### main content ####################### !-->
-<section class="settings-page">
+<section class="maps">
+	<div class="bigmap" id="googlemap"></div>
 	<div class="container">
-		<div class="column column_userinfo">
-			<div class="userinfo">
-				<div class="userinfo__head">
-					<div class="userinfo__avatar avatar">
-						<img src="img/avatar17.png" alt="@@">
+		<div class="column column_search">
+			<div class="search">
+				<p class="heading search__heading">Search</p>
+				<form action="" class="search__topform">
+					<input type="text" name="search" value="Crazy party">
+					<button type="submit"><img src="img/icon_search.svg" alt="@@"></button>
+				</form>
+				<form action="" class="search__detailform">
+					<div class="search__field">
+						<p class="search__select">set date</p>
+						<p class="search__value">27.01.2016</p>
+						<div class="search__hidden">
+							<div class="calendar search__calendar">
+								<div class="calendar__head">
+									<p class="calendar__month">December</p>
+								</div>
+								<div class="calendar__daysoftheweek">
+									<a href="#">Su</a>
+									<a href="#">Mo</a>
+									<a href="#">Tu</a>
+									<a href="#">We</a>
+									<a href="#">Th</a>
+									<a href="#">Fr</a>
+									<a href="#">Sa</a>
+								</div>
+								<div class="calendar__week">
+									<a href="#"></a>
+									<a href="#" class="active">01</a>
+									<a href="#">02</a>
+									<a href="#">03</a>
+									<a href="#">04</a>
+									<a href="#">05</a>
+									<a href="#">06</a>
+								</div>
+								<div class="calendar__week">
+									<a href="#">07</a>
+									<a href="#">08</a>
+									<a href="#">09</a>
+									<a href="#">10</a>
+									<a href="#">11</a>
+									<a href="#">12</a>
+									<a href="#">13</a>
+								</div>
+								<div class="calendar__week">
+									<a href="#">14</a>
+									<a href="#">15</a>
+									<a href="#">16</a>
+									<a href="#">17</a>
+									<a href="#">18</a>
+									<a href="#">19</a>
+									<a href="#">20</a>
+								</div>
+								<div class="calendar__week">
+									<a href="#">21</a>
+									<a href="#">22</a>
+									<a href="#">23</a>
+									<a href="#">24</a>
+									<a href="#">25</a>
+									<a href="#">26</a>
+									<a href="#">27</a>
+								</div>
+								<div class="calendar__week">
+									<a href="#">28</a>
+									<a href="#">29</a>
+									<a href="#">30</a>
+									<a href="#">31</a>
+									<a href="#" class="nextmonth">01</a>
+									<a href="#" class="nextmonth">02</a>
+									<a href="#" class="nextmonth">03</a>
+								</div>
+							</div>
+							<a class="search__hidden-close">Close</a>
+						</div>
 					</div>
-					<div class="userinfo__imgupload">
-						<img src="img/icon_arrow.svg" alt="@@">
+					<div class="search__field">
+						<p class="search__select">set time</p>
+						<p class="search__value">21:30</p>
+						<div class="search__hidden">
+							<div class="search__time">
+								<input type="text" name="hours">
+								<span>:</span>
+								<input type="text" name="minutes">
+							</div>
+							<a class="search__hidden-close">Close</a>
+						</div>
 					</div>
-					<p class="userinfo__name">Alexander Lovalsky</p>
-				</div>
-				<ul class="userinfo__tablinks">
-					<li><a class="userinfo__link" data-tab="events">Events<span class="userinfo__count">11</span></a></li>
-					<li><a class="userinfo__link">Followers<span class="userinfo__count">750</span></a></li>
-					<li><a class="userinfo__link" data-tab="following">Following<span class="userinfo__count">30</span></a></li>
-				</ul>
-				<div class="userinfo__about">
-					<p class="userinfo__about-heading">About me</p>
-					<p class="userinfo__about-text">Composer with experience in writing for, and collaborating with various types of instrumental/vocal ensembles from solo instrumental to large orchestral as well as solo vocal and choral music.</p>
-				</div>
-				<p class="userinfo__registration-date">Registered: <span>October 3, 2012</span></p>
+					<div class="search__field">
+						<p class="search__select">address</p>
+						<p class="search__value">USA, New York ...</p>
+						<div class="search__hidden">
+							<div class="search__address">
+								<input type="text" name="country" placeholder="Country" value="USA">
+								<input type="text" name="city" placeholder="City">
+								<input type="text" name="street" placeholder="Street">
+								<input type="text" name="house" placeholder="House">
+							</div>
+							<a class="search__hidden-close">Close</a>
+						</div>
+					</div>
+					<div class="search__field">
+						<p class="search__select">type of event</p>
+						<p class="search__value">Party</p>
+					</div>
+					<div class="search__switch">
+						<p class="search__option active">All events</p>
+						<div class="search__selector"><span></span></div>
+						<p class="search__option">Followings</p>
+					</div>
+					<button class="button search__button">Show events (5)</button>
+				</form>
 			</div>
-			<a href="#" class="userinfo__delete">Delete profile</a>
 		</div>
-		<div class="column column_med">
-			<!-- Settings -->
-			<form class="settings" action="">
-				<p class="heading settings__heading">Settings</p>
-				<div class="settings__field">
-					<p class="settings__fieldname">First name:</p>
-					<input type="text" name="firstname" value="Alexander">
-				</div>
-				<div class="settings__field">
-					<p class="settings__fieldname">Middle name:</p>
-					<input type="text" name="midname" value="Ivanovich">
-				</div>
-				<div class="settings__field">
-					<p class="settings__fieldname">Last name:</p>
-					<input type="text" name="lastname" value="Lovalsky">
-				</div>
-				<div class="settings__field settings__field_username">
-					<p class="settings__fieldname">Username:</p>
-					<input type="text" name="username" value="Stiffler">
-				</div>
-				<div class="settings__field">
-					<p class="settings__fieldname">E-Mail:</p>
-					<input type="email" name="email" value="alexander@al.com">
-				</div>
-				<div class="settings__field">
-					<p class="settings__fieldname">Telephon:</p>
-					<input type="tel" name="tel" value="+ 7 (960) 185 58 84">
-				</div>
-				<div class="settings__field settings__field_location">
-					<p class="settings__fieldname">Location:</p>
-					<select name="location">
-						<option value="Russian Federation">Russian Federation</option>
-					</select>
-					<input type="text" name="city" value="Moskow">
-				</div>
-				<div class="settings__field">
-					<p class="settings__fieldname">Sex:</p>
-					<input type="text" name="sex" value="Male">
-				</div>
-				<div class="settings__field settings__field_birthday">
-					<p class="settings__fieldname">Birthday:</p>
-					<select name="day">
-						<option value="">Day</option>
-					</select>
-					<select name="month">
-						<option value="">Month</option>
-					</select>
-					<select name="year">
-						<option value="">Year</option>
-					</select>
-				</div>
-				<div class="settings__field settings__field_textarea">
-					<p class="settings__fieldname">About me:</p>
-					<textarea name="about">Composer with experience in writing for, and collaborating with various types of instrumental/vocal ensembles from solo instrumental to large orchestral as well as solo vocal and choral music</textarea>
-				</div>
-				<button class="button settings__button">Save</button>
-			</form>
-			<!-- // Settings -->
+		<div class="column column_big">
 		</div>
 	</div>
 </section>
@@ -227,6 +259,9 @@
 <!-- jQuery Scrollbar !-->
 <script src="js/libs/scrollbar/jquery.scrollbar.js"></script>
 
+<!-- Scroll animation effects !-->
+<script src="js/libs/scrollreveal.min.js"></script>
+
 <!-- Fancybox -->
 <script src="js/libs/fancybox/jquery.fancybox.js"></script>
 
@@ -237,6 +272,13 @@
 <!-- main scripts !-->
 <script src="js/libs.js"></script>
 <script src="js/header-scripts.js?v=3"></script>
+<script src="js/index-columns.js"></script>
+<script src="js/content-changer.js"></script>
+<script src="js/map-search.js"></script>
+<script src="js/cards-reveal.js"></script>
 <script src="js/page-loading.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyCUaCNfcDZQL7nZK07DQmAHsEetCCMIQ5w"></script>
+<script src="js/CustomGoogleMapMarker.js"></script>
+<script src="js/googlemaps.js"></script>
 </body>
 </html>

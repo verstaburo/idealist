@@ -16,12 +16,84 @@
 <!-- ### forms ####################### !-->
 <div class="overlay"></div>
 <div class="page-loading"><img src="img/loading-bars.svg" alt="@@"></div>
+<div class="login">
+	<div class="login__left-side">
+		<div class="login__help">
+			<!-- Log in -->
+			<div class="login__helpblock" data-login="login">
+				<p class="heading heading_small login__helpheading">Don’t Have an account?</p>
+				<p class="login__helptext">Go through a quick registration, it will not take more than 3 minutes</p>
+				<a class="button button_bordered" data-link="signup">Sign up</a>
+			</div>
+			<!-- // Log in -->
+			<!-- Sign up -->
+			<div class="login__helpblock" data-login="signup">
+				<p class="heading heading_small login__helpheading">Do you already have <br>an account?</p>
+				<p class="login__helptext">Please sign into your account</p>
+				<a class="button button_bordered" data-link="login">Login</a>
+			</div>
+			<!-- // Sign up -->
+		</div>
+	</div>
+	<div class="login__right-side">
+		<!-- Log in -->
+		<form action="" class="login__form" data-login="login" id="login">
+			<p class="heading login__heading">Log in</p>
+			<div class="login__field">
+				<input type="email" placeholder="Email">
+				<p class="login__errortext">Incorrect email</p>
+			</div>
+			<div class="login__field error">
+				<input type="password" placeholder="Password">
+				<p class="login__errortext">Incorrect password</p>
+			</div>
+			<div class="login__buttonblock">
+				<button class="button login__button">Log in</button>
+				<a href="#" class="login__addtext">Forgot your password?</a>
+			</div>
+			<div class="login__social">
+				<p class="login__socialtext"><span>or login with</span></p>
+				<a href="#" class="login__socialbutton"><img src="img/icon_fb.svg" alt="@@">Facebook</a>
+				<a href="#" class="login__socialbutton"><img src="img/icon_vk.svg" alt="@@">Vkontakte</a>
+			</div>
+		</form>
+		<!-- // Log in -->
+		<!-- Sign up -->
+		<form action="" class="login__form" data-login="signup" id="signup">
+			<p class="heading login__heading">Sign up</p>
+			<div class="login__field login__field_half">
+				<input type="firstname" placeholder="First name" value="Alexander">
+				<input type="lastname" placeholder="Last name">
+			</div>
+			<div class="login__field">
+				<input type="email" placeholder="Email">
+			</div>
+			<div class="login__field">
+				<input type="tel" placeholder="Telephone">
+			</div>
+			<div class="login__field">
+				<input type="password" placeholder="Password">
+			</div>
+			<div class="login__buttonblock">
+				<button class="button login__button">Sign up</button>
+				<a href="#" class="login__addtext">Terms of service</a>
+			</div>
+		</form>
+		<!-- // Sign up -->
+		<!-- Congratulations -->
+		<div class="login__success">
+			<p class="heading login__heading">Congratulations!</p>
+			<p class="login__successtext">You have successfully signed up, <br>go to your <a href="personal.html">personal cabinet</a></p>
+		</div>
+		<!-- // Congratulations -->
+	</div>
+</div>
 
 <!-- ### header ####################### !-->
 <header class="header">
 	<div class="container">
 		<div class="header__leftside">
-			<a href="#" class="header__logo">
+			<a href="index.html" class="header__logo">
 				<img src="img/logo.svg" alt="@@">
 			</a>
 			<form action="#" method="post" class="header__searchfield">
@@ -99,8 +171,8 @@
 			<a href="#" class="header__link">All events</a>
 		</div>
 		<div class="header__account">
-			<a class="header__link">Log in</a>
-			<a class="header__link">Sign up</a>
+			<a class="header__link" data-link="login">Log in</a>
+			<a class="header__link" data-link="signup">Sign up</a>
 			<!-- Hint -->
 			<p class="header__hint"><span></span>Login to get access to personal account</p>
 			<!-- // Hint -->

@@ -27,13 +27,6 @@ $('html').click(function(){
 	$('.header__account').removeClass('active');
 });
 
-// Вход в аккаунт
-$('.header__account > .header__link').click(function(e){
-	e.preventDefault();
-	$('.header__account > .header__link').hide();
-	$('.header__username').show();
-});
-
 // Меню аккаунта
 $('.header__username').click(function(e){
 	e.preventDefault();
@@ -53,4 +46,39 @@ $('.header__usermenu .logout a').click(function(e){
 	$('.header__account > .header__link').show();
 });
 
+// Фиксировать экран для самописных модальных окон
+function fixscreen() {
+  window.scroll = $(window).scrollTop();
+  $("body").css('top', -scroll + 'px').addClass('noscroll');
+}
 
+function unfixscreen() {
+  $("body").css('top', "0").removeClass('noscroll');
+  $(window).scrollTop(scroll);
+}
+
+// Авторизация / регистрация
+$('[data-link]').click(function(){
+	var link = $(this).data('link');
+	fixscreen();
+	$('.header').addClass('active');
+	$('.login').addClass('active');
+	$('[data-login]').hide();
+	$('[data-login="'+link+'"]').show();
+	$('.login__success').hide();
+});
+
+$('#login').submit(function(e){
+	e.preventDefault();
+	unfixscreen();
+	$('.header').removeClass('active');
+	$('.login').removeClass('active');
+	$('.header [data-link]').hide();
+	$('.header__username').show();
+});
+
+$('#signup').submit(function(e){
+	e.preventDefault();
+	$(this).hide();
+	$('.login__success').show();
+});

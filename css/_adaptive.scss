@@ -22,6 +22,8 @@
 	.invited__more {width: 60px; height: 60px; line-height: 60px;}
 	.popup {width: 1090px;}
 	.all-invited__row li {width: 13%;}
+	.login__form, .login__success {width: 100%;}
+	.login__socialbutton {width: 47%; min-width: 0;}
 }
 
 @media (max-width:1170px) {
@@ -83,6 +85,8 @@
 	.following__list {padding-left: 10px;}
 	.following__list li {padding-right: 50px;}
 	.settings-page .column_med {width: 66.6666%;}
+	.login__socialbutton img {left: 12px;}
+	.login__help {width: 100%;}
 }
 
 @media (max-width:1024px) {
@@ -148,6 +152,12 @@
 	.profile .column_big {padding: 0;}
 	.settings-page .column {padding: 0; width: 100%;}
 	.userinfo .dots__menu {left: auto; right: -25px;}
+	.login__buttonblock {flex-wrap: wrap; justify-content: center;}
+	.login__addtext {width: 100%; margin-top: 15px;}
+	.login__social {justify-content: center;}
+	.login__socialbutton {width: 51%; margin-top: 20px;}
+	.login__right-side {padding: 120px 40px;}
+	.login__help {padding: 20px 60px;}
 }
 
 @media (max-width:768px) {
@@ -186,6 +196,11 @@
 	.popup {width: 560px;}
 	.eventinfo__filter li {margin-left: 57px;}
 	.following__list li {padding-right: 55px;}
+	.login {flex-wrap: wrap;}
+	.login__left-side {order: 2; width: 100%;}
+	.login__right-side {width: 100%; padding: 60px 40px; justify-content: center;}
+	.login__form, .login__success, .login__helpblock {width: 70%; margin: auto;}
+	.login__help {position: static; transform: translateY(0); padding: 60px 40px; height: auto; text-align: center;}
 }
 
 @media (max-width:640px) {
@@ -239,6 +254,8 @@
 	.settings__field_birthday select {width: 30%;}
 	.settings__field_birthday select + select {margin-left: 5%;}
 	.settings__field_textarea .settings__fieldname {margin-top: 0;}
+	.header.active .container:after {display: none;}
+	.login {top: 145px;}
 }
 
 @media (max-width:480px) {
@@ -268,6 +285,14 @@
 	.settings__field_birthday select {width: 100%;}
 	.settings__field_birthday select + select {margin-left: 0; margin-top: 10px;}
 	.settings textarea {padding: 15px; height: 152px;}
+	.login__right-side {padding: 60px 15px;}
+	.login__help {padding: 40px 15px;}
+	.login__form, .login__success, .login__helpblock {width: 290px;}
+	.login__socialbutton {width: 60%;}
+	.login__field_half {flex-wrap: wrap;}
+	.login__field_half input {width: 100%;
+		+ input {margin-top: 30px;}
+	}
 }
 
 // Адаптивная верстка //

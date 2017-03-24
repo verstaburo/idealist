@@ -174,9 +174,13 @@
 				</div>
 				<div class="settings__field settings__field_location">
 					<p class="settings__fieldname">Location:</p>
-					<select name="location">
-						<option value="Russian Federation">Russian Federation</option>
-					</select>
+					<div class="selectbox">
+						<select name="location">
+							<option value="Russia">Russian Federation</option>
+							<option value="USA">USA</option>
+						</select>
+						<ul></ul>
+					</div>
 					<input type="text" name="city" value="Moskow">
 				</div>
 				<div class="settings__field">
@@ -185,15 +189,33 @@
 				</div>
 				<div class="settings__field settings__field_birthday">
 					<p class="settings__fieldname">Birthday:</p>
-					<select name="day">
-						<option value="">Day</option>
-					</select>
-					<select name="month">
-						<option value="">Month</option>
-					</select>
-					<select name="year">
-						<option value="">Year</option>
-					</select>
+					<div class="selectbox">
+						<select name="day">
+							<option value="">Day</option>
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+						</select>
+						<ul></ul>
+					</div>
+					<div class="selectbox">
+						<select name="month">
+							<option value="">Month</option>
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+						</select>
+						<ul></ul>
+					</div>
+					<div class="selectbox">
+						<select name="year">
+							<option value="">Year</option>
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+						</select>
+						<ul></ul>
+					</div>
 				</div>
 				<div class="settings__field settings__field_textarea">
 					<p class="settings__fieldname">About me:</p>
@@ -238,5 +260,6 @@
 <script src="js/libs.js"></script>
 <script src="js/header-scripts.js?v=3"></script>
 <script src="js/page-loading.js"></script>
+<script src="js/custom-select.js"></script>
 </body>
 </html>

@@ -24,6 +24,7 @@
 	.all-invited__row li {width: 13%;}
 	.login__form, .login__success {width: 100%;}
 	.login__socialbutton {width: 47%; min-width: 0;}
+	.search__calendar {padding: 32px 0;}
 }
 
 @media (max-width:1170px) {
@@ -87,6 +88,12 @@
 	.settings-page .column_med {width: 66.6666%;}
 	.login__socialbutton img {left: 12px;}
 	.login__help {width: 100%;}
+	.maps .column_big .column {width: 50%;}
+	.maps .search-result .column:nth-child(odd) {padding-left: 0; padding-right: 10px;}
+	.maps .search-result .column:nth-child(even) {padding-right: 0; padding-left: 10px;}
+	.maps .search-result .column:nth-child(n+3) {margin-top: 20px;}
+	.maps .column_search {width: 41%;}
+	.maps .column_big {width: 59%;}
 }
 
 @media (max-width:1024px) {
@@ -158,6 +165,14 @@
 	.login__socialbutton {width: 51%; margin-top: 20px;}
 	.login__right-side {padding: 120px 40px;}
 	.login__help {padding: 20px 60px;}
+	.maps .column_big .column {width: 100%;}
+	.maps .search-result .column:nth-child(odd) {padding: 0 10px;}
+	.maps .search-result .column:nth-child(even) {padding: 0 10px;}
+	.maps .search-result .column:nth-child(n+2) {margin-top: 20px;}
+	.maps .column_search {width: 50%;}
+	.maps .column_big {width: 50%;}
+	.search__heading, .search__topform, .search__field, .search__switch, .search__hidden {padding-left: 20px; padding-right: 20px;}
+	.search__calendar {padding: 32px 0; width: 100%;}
 }
 
 @media (max-width:768px) {
@@ -197,10 +212,20 @@
 	.eventinfo__filter li {margin-left: 57px;}
 	.following__list li {padding-right: 55px;}
 	.login {flex-wrap: wrap;}
-	.login__left-side {order: 2; width: 100%;}
+	.login__left-side {order: 2; width: 100%; padding-bottom: 60px;}
 	.login__right-side {width: 100%; padding: 60px 40px; justify-content: center;}
 	.login__form, .login__success, .login__helpblock {width: 70%; margin: auto;}
-	.login__help {position: static; transform: translateY(0); padding: 60px 40px; height: auto; text-align: center;}
+	.login__help { padding: 60px 40px; text-align: center;}
+	.maps .column_search {padding: 0; width: 100%;}
+	.search__heading, .search__topform, .search__field, .search__switch, .search__hidden {padding-left: 40px; padding-right: 40px;}
+	.maps .column_big {width: 100%; padding: 0;}
+	.maps .search-result .column {width: 50%; margin-top: 20px;}
+	.maps .search-result .column:nth-child(odd) {padding-left: 0; padding-right: 10px;}
+	.maps .search-result .column:nth-child(even) {padding-left: 10px; padding-right: 0;}
+	.search__calendar {padding: 32px 0; width: 100%;}
+	.maps {min-height: 1200px;}
+	.bigmap {top: 680px;}
+	.maps .column_resultmap {top: 680px; padding: 0;}
 }
 
 @media (max-width:640px) {
@@ -248,14 +273,15 @@
 	.profile .column_big .column_med {width: 100%; padding: 0;}
 	.settings__field {flex-wrap: wrap;}
 	.settings__fieldname {width: 100%; margin-bottom: 10px;}
-	.settings input, .settings select, .settings textarea {width: 100%;}
-	.settings__field_location select {width: 48%;}
+	.settings input, .settings .selectbox, .settings textarea {width: 100%;}
+	.settings__field_location .selectbox {width: 48%;}
 	.settings__field_location input {width: 48%; margin-left: 4%;}
-	.settings__field_birthday select {width: 30%;}
-	.settings__field_birthday select + select {margin-left: 5%;}
+	.settings__field_birthday .selectbox {width: 30%;}
+	.settings__field_birthday .selectbox + .selectbox {margin-left: 5%;}
 	.settings__field_textarea .settings__fieldname {margin-top: 0;}
 	.header.active .container:after {display: none;}
 	.login {top: 145px;}
+	.maps .search-result .column {width: 100%; padding: 0 !important;}
 }
 
 @media (max-width:480px) {
@@ -279,11 +305,11 @@
 	.settings {padding-left: 0;}
 	.settings__heading {padding-left: 21px;}
 	.settings__button {margin-left: 0;}
-	.settings input, .settings select, .settings textarea {padding: 0 15px;}
-	.settings__field_location select {width: 100%;}
+	.settings input, .settings select, .settings textarea, .settings .selectbox li {padding: 0 15px;}
+	.settings__field_location .selectbox {width: 100%;}
 	.settings__field_location input {width: 100%; margin-left: 0; margin-top: 10px;}
-	.settings__field_birthday select {width: 100%;}
-	.settings__field_birthday select + select {margin-left: 0; margin-top: 10px;}
+	.settings__field_birthday .selectbox {width: 100%;}
+	.settings__field_birthday .selectbox + .selectbox {margin-left: 0; margin-top: 10px;}
 	.settings textarea {padding: 15px; height: 152px;}
 	.login__right-side {padding: 60px 15px;}
 	.login__help {padding: 40px 15px;}
@@ -293,6 +319,10 @@
 	.login__field_half input {width: 100%;
 		+ input {margin-top: 30px;}
 	}
+	.search__heading, .search__topform, .search__field, .search__switch, .search__hidden {padding-left: 20px; padding-right: 20px;}
+	.search__topform button {right: 33px;}
+	.search__calendar {width: 100%;}
+	.search__value {max-width: 80px;}
 }
 
 // Адаптивная верстка //

@@ -737,12 +737,12 @@
 /*----------------------------------------*/
 
 .create-party {
-    width: 100%; margin-top: 20px;
+    width: 100%;
     &__link {display: inline-block;  width: 100%; box-sizing: border-box; transition: all .25s ease-in-out; background-color: #050915;
       &:hover {background-color: #c41162;}
       &:hover .create-party__text {color: #fff;}
     }
-    &__text {width: 100%; text-align:center; border:0; display:inline-block; font-size:16px;  line-height: 50px; font-weight: 600; padding: 0 50px; cursor: pointer; color: #c41162; transition: all .25s ease-in-out;}
+    &__text {width: 100%; text-align:center; border:0; display:inline-block; font-size:16px;  line-height: 60px; font-weight: 700; padding: 0 50px; cursor: pointer; color: #c41162; transition: all .25s ease-in-out;}
 }
 
 .sticky {position: fixed; bottom: 0; left: 0; z-index: 10;}
@@ -910,9 +910,24 @@
 
 
 // Всплывающие окна и другие элементы сайта //
-.popup {display: none; width: 1200px; background-color: #050915; box-sizing: border-box;}
+.popup {display: none; width: 1200px; background-color: transparent; box-sizing: border-box;}
 
-.all-invited {padding: 37px 8px 37px 15px;
+.popup-close {position: absolute; top: 0; right: 0; width: 18px; height: 18px; background: transparent url('../img/icon_cross.svg') 50% 50% no-repeat; background-size: 18px 18px; cursor: pointer;}
+
+.slider-arrow {position: absolute; top: 50%; width: 16px; height: 30px; background: rgba(#050915, .3) url('../img/icon_arrow_slider.svg') 50% 50% no-repeat; background-size: 16px 29px; cursor: pointer; z-index: 99995;transition: opacity .25s ease-in-out; opacity: 0;
+  &__left {left: 60px; transform: translate(0, -50%) rotate(180deg);}
+  &__right {right: 60px; transform: translate(0, -50%);}
+  &[disabled] {opacity: .5}
+  &:hover {opacity: .8 }
+  .fancybox-show-nav & {opacity: 1;}
+}
+
+
+.fancybox-is-open .fancybox-bg {opacity: .8;}
+
+.fancybox-bg {background: #050915;}
+
+.all-invited {padding: 20px 8px 20px 15px;
 	&__heading {padding-left: 7px;}
 	&__list {margin-top: 25px;}
 	&__row {margin-top: 39px; display: flex; justify-content: space-between; flex-wrap: wrap;
@@ -926,7 +941,7 @@
 	&__name {font-size: 18px; font-weight: 600; letter-spacing: 0.025em; margin-top: 14px; line-height: 1.35em;}
 }
 
-.all-photos {padding: 34px 0;
+.all-photos {padding: 20px 0;
 	.column {padding: 0 10px; margin-top: 17px;}
 	&__heading {padding-left: 21px;}
 }

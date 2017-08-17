@@ -7,7 +7,7 @@ jQuery(window).load(function () {
 });
 
 
-$("a[href]").click(function(event){
+$("a[href])").click(function(event){
 	if (!$(this).hasClass('fancybox')) {
 		var href = $(this).attr("href");
     	event.preventDefault();

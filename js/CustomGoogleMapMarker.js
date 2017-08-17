@@ -11,7 +11,10 @@ CustomMarker.prototype.draw = function() {
 	var self = this;
 	
 	var div = this.div;
-	
+  var addClass;
+  
+  if(self.args.addclass) {addClass = "marker_" + self.args.addclass;} else {addClass = ''}
+	console.log(addClass);
 	if (!div) {
 	
 		div = this.div = document.createElement('div');
@@ -21,7 +24,7 @@ CustomMarker.prototype.draw = function() {
 		div.style.position = 'absolute';
 		div.style.width = '1px';
 		div.style.height = '1px';
-        div.innerHTML = '<span class="marker"></span>';
+        div.innerHTML = '<span class="marker ' + addClass + '"></span>';
 			
 		
 		if (typeof(self.args.marker_id) !== 'undefined') {

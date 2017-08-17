@@ -1,4 +1,12 @@
 function initialize() {
+  
+  var addClass;
+  
+  if($('#googlemap').data('marker')) {
+    addClass = $('#googlemap').data('marker')
+  } else {
+    addClass = ''
+  }
 	
 	//Координаты маркеров
     var myLatlng1 = new google.maps.LatLng(59.957006, 30.341755);
@@ -20,14 +28,15 @@ function initialize() {
 	//карта
 	var map = new google.maps.Map(document.getElementById('googlemap'), mapOptions);
     map.setOptions({styles: styles});
-	
+
 	//Кастомные маркеры
 	overlay = new CustomMarker(
 		myLatlng1, 
 		map,
 		{
-			marker_id: 'event1'
-		}
+			marker_id: 'event1',
+      addclass: addClass
+		},
 	);
 }
 google.maps.event.addDomListener(window, 'load', initialize);

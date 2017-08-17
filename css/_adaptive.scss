@@ -149,8 +149,8 @@
 	.event-page .column {padding: 0;}
 	.event-page .column_big + .column {width: 100%;}
 	.event-page__middle .column:last-child {width: 100%; margin-top: 19px;}
-	
-	.gifts .column {padding-right: 10px;}
+  .event-page__middle .column:first-child {padding-right: 20px;}
+  .gifts .column {padding-right: 10px;}
 	.recommendation .column {padding-left: 10px;}
 	.popup {width: 688px;}
 	.all-invited__row {margin-top: 20px;}
@@ -231,6 +231,7 @@
 @media (max-width:640px) {
 	.container {width: 420px;}
 	.column {width: 100%;}
+  .event-page__middle .column:first-child {padding-right: 0; margin-bottom: 19px;}
 	.column_big > .column {width: 100%; margin-top: 20px;}
 	.column_big > .column_med {width: 100%;}
 	.main .column {padding: 0 !important;}
@@ -282,6 +283,7 @@
 	.header.active .container:after {display: none;}
 	.login {top: 145px;}
 	.maps .search-result .column {width: 100%; padding: 0 !important;}
+  .create-party {margin-top: 0;}
 }
 
 @media (max-width:480px) {

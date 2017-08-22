@@ -25,8 +25,6 @@
 	.login__form, .login__success {width: 100%;}
 	.login__socialbutton {width: 47%; min-width: 0;}
 	.search__calendar {padding: 32px 0;}
-  .slider-arrow__left {left: -14px;}
-  .slider-arrow__right {right: -14px;}
 }
 
 @media (max-width:1170px) {
@@ -96,6 +94,8 @@
 	.maps .search-result .column:nth-child(n+3) {margin-top: 20px;}
 	.maps .column_search {width: 41%;}
 	.maps .column_big {width: 59%;}
+  .slider-arrow__left {left: -25px;}
+  .slider-arrow__right {right: -25px;}
 }
 
 @media (max-width:1024px) {
@@ -175,6 +175,8 @@
 	.maps .column_big {width: 50%;}
 	.search__heading, .search__topform, .search__field, .search__switch, .search__hidden {padding-left: 20px; padding-right: 20px;}
 	.search__calendar {padding: 32px 0; width: 100%;}
+  .slider-arrow__left {left: 0px;}
+  .slider-arrow__right {right: 0px;}
 }
 
 @media (max-width:768px) {
@@ -286,6 +288,7 @@
 	.login {top: 145px;}
 	.maps .search-result .column {width: 100%; padding: 0 !important;}
   .create-party {margin-top: 0;}
+  .fancybox-inner .event__like {bottom: 28px;}
 }
 
 @media (max-width:480px) {

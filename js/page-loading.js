@@ -1,5 +1,5 @@
 // Показ анимации загрузки при загрузке сайта и переходе между страницами
-jQuery(window).load(function () {
+$(window).load(function () {
     $(".page-loading").addClass("hidden");
     setTimeout(function(){
       $(".page-loading").hide();
@@ -7,8 +7,8 @@ jQuery(window).load(function () {
 });
 
 
-$("a[href])").click(function(event){
-	if (!$(this).hasClass('fancybox')) {
+$("a[href]").click(function(event){
+	if (!($(this).hasClass('fancybox') || $(this).hasClass('js-photo'))) {
 		var href = $(this).attr("href");
     	event.preventDefault();
     	$(".page-loading").show();

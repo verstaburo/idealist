@@ -40,6 +40,8 @@
 	position: absolute; left: 0; top: 0; right: 0; bottom: 0; margin: auto; min-width: 100%; min-height: 100%; width: 0; object-fit: cover;
 }
 
+$main-font: 'Proxima Nova', 'Arial', sans-serif;
+
 button::-moz-focus-inner,
 input[type="reset"]::-moz-focus-inner,
 input[type="button"]::-moz-focus-inner,
@@ -118,7 +120,7 @@ $col:(100-($col-m*11))/12; // Ширина колонки
 
 // Основы //
 html {width:100%}
-body {width:100%; min-height:100%; font-size:0; font-family: 'Proxima Nova', Arial, sans-serif; background-color: #050915; color: #fff; position: relative;}
+body {width:100%; min-height:100%; font-size:0; font-family: $main-font; background-color: #050915; color: #fff; position: relative;}
 
 html, body {overflow-x: hidden;}
 

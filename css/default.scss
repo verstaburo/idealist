@@ -53,6 +53,21 @@
 	img {position: absolute; left: 0; right: 0; top: 0; bottom: 0; margin: auto; min-width: 100%; min-height: 100%; width: 0; object-fit: cover;}
 	&_big {width: 70px; height: 70px;}
 	&_small {width: 39px; height: 39px;}
+  &__text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    color: #fff;
+    font-family: $main-font;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 1em;
+    text-transform: uppercase;
+    transform: translate(-50%, -50%);
+  }
+  &_purple {
+    background: $purple;
+  }
 }
 
 /*----------------------------------------*/
@@ -133,6 +148,7 @@
 	&_big {display: inline-flex; justify-content: space-between; flex-wrap: wrap; align-content: flex-start; width: 75%;
 		> .column {width: 33.3333%;}
 		> .column_med {width: 66.6666%;}
+    > .column_half {width: 50%;}
 	}
 	&_med {display: inline-flex; justify-content: space-between; flex-wrap: wrap; align-content: flex-start; width: 50%;
 		> .column {width: 50%;}
@@ -848,6 +864,7 @@
 	.column_big {
 		.column {width: 33.3333%;}
 		.column_med {width: 66.6666%; padding-right: 10px; box-sizing: border-box;}
+    .column_half {width: 50%; box-sizing: border-box;}
 		.column:last-child {padding-right: 0;}
 	}
 	.eventinfo {
@@ -857,6 +874,16 @@
 	.last-published:after {display: none;}
 	.last-published__heading {padding: 27px 38px 41px; line-height: 1.35em;}
 	.last-published__heading:after {display: none;}
+  .messages {
+    padding: 0;
+    padding-top: 49px;
+    padding-right: 44px;
+  }
+
+  .info-messages {
+    padding: 0;
+    padding-top: 99px;
+  }
 }
 
 /*----------------------------------------*/
@@ -935,7 +962,7 @@
   line-height: 17px;
   transform: translate(-50%, 0);
   cursor: pointer;
-  
+
   img {
     width: 19px;
     height: 17px;
@@ -966,5 +993,58 @@
 	&__heading {padding-left: 21px;}
 }
 // Всплывающие окна и другие элементы сайта //
+
+.messages {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  box-sizing: border-box;
+  padding: 0;
+  padding-right: 44px;
+
+  &__heading {
+    padding: 0 20px;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  &__list {
+    flex: 1;
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid rgba($light-violet, .8);
+  }
+}
+
+.info-messages {
+  box-sizing: border-box;
+  padding: 0;
+
+  &__event {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: stretch;
+    width: 100%;
+
+    &-col {
+      flex: 1;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: flex-start;
+
+      .event {
+        max-width: 285px;
+      }
+
+      &_dot {
+        width: 25px;
+        max-width: 25px;
+      }
+    }
+  }
+}
 
 @import "adaptive";

@@ -106,7 +106,6 @@ gulp.task('copy', function () {
   return gulp.src([
     'fonts/**/*',
     'js/**/*',
-    '*.html',
     '*.php',
     '*.ico',
     ],
@@ -115,6 +114,19 @@ gulp.task('copy', function () {
     })
     .pipe(changed('dist'))
     .pipe(gulp.dest('dist'
+  ));
+});
+
+gulp.task('html', function () {
+  return gulp.src(
+    [
+      '*.html'
+    ],
+    {
+      base: '.'
+    })
+  .pipe(changed('dist'))
+  .pipe(gulp.dest('dist'
   ));
 });
 
@@ -154,13 +166,13 @@ gulp.task('watch', function () {
   watch('icons/**/*', function () { runSequence('icons') });
   watch('img/**/*', function () {runSequence('images')});
   watch('js/**/*', function () {runSequence('copy')});
-  watch(['*.html'], function () {runSequence('copy')});
+  watch(['*.html'], function () {runSequence('html')});
   watch(['css/**/*.scss'], function () {runSequence('styles')});
   gulp.start('watch');
 });
 
 gulp.task('build', function (cb) {
-  runSequence('clean', ['styles', 'images', 'icons', 'copy'], cb)
+  runSequence('clean', ['styles', 'images', 'icons', 'html', 'copy'], cb)
 });
 
 gulp.task('deploy', function () {

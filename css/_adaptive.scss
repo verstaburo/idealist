@@ -29,6 +29,7 @@
 
 @media (max-width:1170px) {
 	.container {width: 964px;}
+  .container_flexrow {flex-wrap: wrap; align-content: flex-start;}
 	.header__searchfield {margin-left: 30px;}
 	.header__account .header__link:first-child {margin-right: 48px;}
 	.header__events {width: 290px;}
@@ -36,6 +37,8 @@
 	//.event_bigcard .event__likes, .event_specialcard .event__likes {right: 117px;}
 	//.event_bigcard .event__watches, .event_specialcard .event__watches {left: 121px;}
 	.header__hint {left: -176px; padding: 55px;}
+  .messages {width: 66%;}
+  .info-messages {width: 50%; padding-left: 10px;}
 
 
 	.column {width: 33.3333%;}
@@ -79,7 +82,7 @@
 	.popup {width: 944px;}
 	.eventinfo__heading {width: 50%;}
 	.eventinfo__filter {padding-left: 10px;}
-	
+
 	.profile .column_big .column {width: 50%;}
 	.profile .column_big .column:nth-child(3) {padding-right: 0;}
 	.profile .column_big .column_med {width: 50%;}
@@ -147,7 +150,7 @@
 	.recommendation {width: 50%;}
 	.comments {padding: 0; padding-right: 10px;}
 	.tags {padding: 0; padding-left: 40px;}
-	
+
 	.event-page .column {padding: 0;}
 	.event-page .column_big + .column {width: 100%;}
 	.event-page__middle .column:last-child {width: 100%; margin-top: 19px;}
@@ -177,6 +180,9 @@
 	.search__calendar {padding: 32px 0; width: 100%;}
   .slider-arrow__left {left: 0px;}
   .slider-arrow__right {right: 0px;}
+  .messages {width: 100%; padding-left: 0; padding-right: 0;}
+  .info-messages {width: 100%; padding-left: 0; padding-right: 0;}
+  .info-messages__event {padding-right: 0;}
 }
 
 @media (max-width:768px) {
@@ -208,10 +214,10 @@
 	.header__account {position: absolute;right: 0; bottom: 0; height: 50%; width: 230px; flex-direction: row;}
 	.footer__appshop+.footer__appshop {margin-top:15px}
 	.header__hint {left:-190px}
-	
+
 	.comments {width: 100%; padding: 0;}
 	.tags {width: 100%; padding: 0; margin-top: 50px;}
-	
+
 	.popup {width: 560px;}
 	.eventinfo__filter li {margin-left: 57px;}
 	.following__list li {padding-right: 55px;}
@@ -267,7 +273,7 @@
 	.photos {margin-top: 50px;}
 	.photos__heading {position: static; margin-left: 30px;}
 	.photos__filter {position: static; margin-left: 30px; margin-top: 20px; margin-bottom: 20px;}
-	
+
 	.popup {width: 400px;}
 	.all-invited__row li {width: 48%;}
 	.profile .column_big .column {width: 100%; padding: 0;}
@@ -288,7 +294,7 @@
 	.login {top: 145px;}
 	.maps .search-result .column {width: 100%; padding: 0 !important;}
   .create-party {margin-top: 0;}
-  .fancybox-inner .event__like {bottom: 28px;}
+  .fancybox-inner .like {bottom: 28px;}
 }
 
 @media (max-width:480px) {
@@ -305,7 +311,7 @@
 	.comments__list li {padding-left: 65px;}
 	.comments__time {display: block; margin-left: 0; margin-top: 3px;}
 	.comments__answer {margin-left: 65px;}
-	
+
 	.popup {width: 270px;}
 	.all-invited__row .avatar {width: 70px; height: 70px;}
 	.all-invited__name {font-size: 14px;}
@@ -330,6 +336,10 @@
 	.search__topform button {right: 33px;}
 	.search__calendar {width: 100%;}
 	.search__value {max-width: 80px;}
+  .message__header {flex-direction: column; align-items: flex-start;}
+  .info-messages__event {position: relative;}
+  .info-messages__event-col {width: 100%;}
+  .info-messages__event-col_dot {position: absolute; right: 0; top: -30px;}
 }
 
 // Адаптивная верстка //

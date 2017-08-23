@@ -125,7 +125,7 @@ $col:(100-($col-m*11))/12; // Ширина колонки
 
 // Основы //
 html {width:100%}
-body {width:100%; min-height:100%; font-size:0; font-family: $main-font; background-color: #050915; color: #fff; position: relative;}
+body {width:100%; min-height:100%; font-size:0; font-family: $main-font; background-color: #050915; color: #fff;}
 
 html, body {overflow-x: hidden;}
 
@@ -135,7 +135,7 @@ header, section, footer {width:100%; /*float:left;*/}
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
-    align-items: stretch;
+    align-items: flex-start;
   }
 }
 // Основы //

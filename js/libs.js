@@ -23,11 +23,26 @@ $(".js-photo").fancybox({
     arrows: true,
     closeBtn: false,
     tpl: {
-      image: '<img class="fancybox-image" src="{href}" alt="" /><a href="#" class="event__like"><img src="img/icon_like.svg" alt="@@">150</a>',
+      image: '<img class="fancybox-image" src="{href}" alt="" /><a href="#" class="like"><svg><use xlink:href="img/icon.svg#icon_like"></use></svg><span class="like__counter"></span></a>',
       next: '<button title="Next" class="fancybox-nav slider-arrow slider-arrow__right" type="button"></button>',
 	    prev: '<button title="Previous" class="fancybox-nav slider-arrow slider-arrow__left" type="button"></button>'
     },
-    loop: true
+    loop: true,
+    afterShow: function () {
+      var elem = this.element;
+      console.log(elem);
+      $(this.inner).find('.like__counter').text(this.element.data('like-counter'));
+      $(this.inner).find('.like').click(function () {
+        var voteCount = 0;
+        console.log(elem);
+        if(!$(this).hasClass('vote')) {
+          $(this).addClass('vote');
+          voteCount = parseInt($(this).find('.like__counter').text()) + 1;
+          $(this).find('.like__counter').text(voteCount);
+          elem[0].setAttribute('data-like-counter', voteCount);
+        }
+      });
+    }
 });
 
 //button create party at index page
@@ -59,3 +74,39 @@ if ($('.create-party').length > 0) {
 }
 
 //#######################
+
+//add class active to message at personal messages page
+
+$('.messages__item').click(function () {
+  event.preventDefault();
+  $('.messages__item').each(function() {
+    $(this).removeClass('active');
+  });
+  $(this).addClass('active');
+});
+
+//########
+
+//height message column
+
+function messageHeight() {
+  var donorEl = $('.column_userinfo');
+  var messagesEl = $('.messages');
+  var donorHeight = $(donorEl).outerHeight();
+  $(messagesEl).css({ height: donorHeight });
+}
+
+$(document).ready(messageHeight);
+$(window).resize(messageHeight);
+
+//#####
+
+$('.like img').click(function (event) {
+  console.log('click');
+  var voteCount = 0;
+  if(!$(this).hasClass('vote')) {
+    $(this).addClass('vote');
+    voteCount += $(this).find('.like__counter').text() + 1;
+    $(this).find('.like__counter').text(voteCount);
+  }
+});

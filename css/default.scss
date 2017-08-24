@@ -24,6 +24,28 @@
 	&_bordered {box-shadow: inset 0 0 0 1px #5c1bbf; background-color: transparent;
 		&:before {display: none;}
 	}
+  &_bold {
+    font-weight: 700;
+    letter-spacing: .025em;
+  }
+
+  &_text {
+    color: $pink;
+    font-family: $main-font;
+    font-weight: 400;
+    letter-spacing: .025em;
+    box-shadow: none;
+    background-color: transparent;
+
+    &:before {
+      display: none;
+    }
+
+    &:hover {
+      background-color: transparent;
+      color: #fff;
+    }
+  }
 }
 
 /*----------------------------------------*/
@@ -1264,7 +1286,7 @@
   box-sizing: border-box;
   padding: 0;
   padding-left: 34px;
-  padding-top: 120px;
+  padding-top: 115px;
   width: 41%;
 
   &__list {
@@ -1427,6 +1449,41 @@
     &:hover {
       color: rgba(#fff, 1);
     }
+  }
+}
+
+.delete-correspondence {
+  min-height: 100%;
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 42px 96px 20px 96px;
+    box-sizing: border-box;
+    width: 100%;
+    margin: 0 auto;
+    max-width: 429px;
+    background-color: $violet;
+    overflow: hidden;
+  }
+
+  p {
+    width: 100%;
+    color: #fff;
+    font-family: $main-font;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5em;
+    letter-spacing: .025em;
+    text-align: center;
+    margin-bottom: 22px;
+  }
+
+  &__delete {
+    padding: 0 40px;
+    margin-bottom: 5px;
   }
 }
 

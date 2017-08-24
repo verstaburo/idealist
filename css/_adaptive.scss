@@ -345,6 +345,11 @@
   .info-messages__event {position: relative;}
   .info-messages__event-col {width: 100%;}
   .info-messages__event-col_dot {position: absolute; right: 0; top: -30px;}
+  .delete-correspondence {
+    &__wrapper {
+      padding: 42px 20px 20px;
+    }
+  }
 }
 
 // Адаптивная верстка //

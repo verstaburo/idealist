@@ -13,6 +13,14 @@ $(".fancybox").fancybox({
     closeEffect : 'fade',
 });
 
+$('.js-popup-nocross').fancybox({
+  fitToView   : false,
+  autoSize    : true,
+  openEffect  : 'fade',
+  closeEffect : 'fade',
+  modal: true,
+});
+
 $(".js-photo").fancybox({
     fitToView: true,
     autoSize: true,
@@ -34,7 +42,6 @@ $(".js-photo").fancybox({
       $(this.inner).find('.like__counter').text(this.element.data('like-counter'));
       $(this.inner).find('.like').click(function () {
         var voteCount = 0;
-        console.log(elem);
         if(!$(this).hasClass('vote')) {
           $(this).addClass('vote');
           voteCount = parseInt($(this).find('.like__counter').text()) + 1;
@@ -43,6 +50,10 @@ $(".js-photo").fancybox({
         }
       });
     }
+});
+
+$('.js-popup-close').click(function () {
+  $.fancybox.close();
 });
 
 //button create party at index page

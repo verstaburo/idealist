@@ -172,7 +172,7 @@
             </button>
           </div>
         </li>
-        <li class="messages__item active">
+        <li class="messages__item">
           <a href="#" class="message">
             <div class="avatar">
               <img src="img/avatar5.png" alt="@@">
@@ -198,7 +198,7 @@
             </button>
           </div>
         </li>
-        <li class="messages__item">
+        <li class="messages__item  active">
           <a href="#" class="message">
             <div class="avatar">
               <img src="img/avatar20.jpg" alt="@@">
@@ -217,7 +217,7 @@
                 <use xlink:href="img/icon.svg#icon_sound"></use>
               </svg>
             </button>
-            <button class="messages__button messages__button_remove" type="button">
+            <button class="messages__button messages__button_remove js-popup-nocross" type="button" href="#delete-correspondence">
               <svg>
                 <use xlink:href="img/icon.svg#icon_cross"></use>
               </svg>
@@ -393,6 +393,40 @@
 					<p class="comment__text">Great work! The website is very clean and simple. I love the minimal use of colour and the choice of font.</p>
 					<a href="#" class="comment__reply">Reply</a>
 				</li>
+				<li class="correspondence__item comment">
+					<span class="avatar"><img src="img/avatar9.png" alt="@@"></span>
+					<div class="comment__header">
+					  <span class="comment__author">Ivan Balalan</span>
+					  <time class="comment__time">5.10.2017</time>
+            <div class="comment__dots dots">
+              <span></span>
+              <ul class="dots__menu">
+                <li><a href="#">complain</a></li>
+                <li><a href="#">into a black list</a></li>
+                <li><a href="#">Delete</a></li>
+              </ul>
+            </div>
+          </div>
+					<p class="comment__text">Great work! The website is very clean and simple. I love the minimal use of colour and the choice of font.</p>
+					<a href="#" class="comment__reply">Reply</a>
+				</li>
+				<li class="correspondence__item comment">
+					<span class="avatar"><img src="img/avatar10.png" alt="@@"></span>
+					<div class="comment__header">
+					  <span class="comment__author">Ivan Balalan</span>
+					  <time class="comment__time">5.10.2017</time>
+            <div class="comment__dots dots">
+              <span></span>
+              <ul class="dots__menu">
+                <li><a href="#">complain</a></li>
+                <li><a href="#">into a black list</a></li>
+                <li><a href="#">Delete</a></li>
+              </ul>
+            </div>
+          </div>
+					<p class="comment__text">Great work! The website is very clean and simple. I love the minimal use of colour and the choice of font.</p>
+					<a href="#" class="comment__reply">Reply</a>
+				</li>
 			</ul>
     </div>
   <!-- Messages end -->
@@ -411,6 +445,14 @@
 		<a href="mailto:hi@idealist.com" class="footer__text footer__mail">hi@idealist.com</a>
 	</div>
 </footer>
+
+<div class="popup delete-correspondence" id="delete-correspondence">
+  <div class="delete-correspondence__wrapper">
+    <p>Are you sure you want to delete all correspondence?</p>
+    <button class="button button_pink button_bold delete-correspondence__delete" type="button">Delete</button>
+    <button class="button button_text delete-correspondence__close js-popup-close" type="button">Cancel</button>
+  </div>
+</div>
 
 <!-- ################################### !-->
 <!-- ### libs ####################### !-->

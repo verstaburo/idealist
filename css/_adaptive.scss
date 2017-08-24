@@ -39,7 +39,9 @@
 	.header__hint {left: -176px; padding: 55px;}
   .messages {width: 66%;}
   .info-messages {width: 50%; padding-left: 10px;}
-
+  .correspondence {width: 50%; padding-left: 10px; padding-top: 60px;
+    .message-form {padding-right: 0;}
+  }
 
 	.column {width: 33.3333%;}
 	.column_big {width: 66.6666%;}
@@ -183,6 +185,9 @@
   .messages {width: 100%; padding-left: 0; padding-right: 0;}
   .info-messages {width: 100%; padding-left: 0; padding-right: 0;}
   .info-messages__event {padding-right: 0;}
+  .correspondence {width: 100%; padding-left: 0; padding-right: 0;
+    &__list {padding-right: 0;}
+  }
 }
 
 @media (max-width:768px) {

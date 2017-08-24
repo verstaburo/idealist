@@ -135,7 +135,7 @@ gulp.task('clean', function () {
 });
 
 gulp.task('ghpages', function () {
-  gulp.src('dist/**/*')
+  return gulp.src('./dist/**/*')
     .pipe(ghpages())
 });
 

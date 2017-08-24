@@ -16,6 +16,7 @@ $(".fancybox").fancybox({
 $('.js-popup-nocross').fancybox({
   fitToView   : false,
   autoSize    : true,
+  autoResize: true,
   openEffect  : 'fade',
   closeEffect : 'fade',
   modal: true,
@@ -121,3 +122,107 @@ $('.like img').click(function (event) {
     $(this).find('.like__counter').text(voteCount);
   }
 });
+
+//upload avatar
+
+var $uploadCrop;
+
+function readFile(input) {
+  if (input.files && input.files[0]) {
+    var reader = new FileReader();
+
+    reader.onload = function (e) {
+      $('.js-dropzone').hide();
+      $('.js-imagepreview').show();
+      $.fancybox.update();
+      $uploadCrop.croppie('bind', {
+        url: e.target.result
+      }).then(function() {
+        console.log('jQuery bind complete');
+      });
+    }
+
+    reader.readAsDataURL(input.files[0]);
+    } else {
+      swal("Sorry - you're browser doesn't support the FileReader API");
+    }
+}
+
+function readDropFile(droppedfiles) {
+  if (droppedfiles[0]) {
+    var reader = new FileReader();
+
+    reader.onload = function (e) {
+      $('.js-dropzone').hide();
+      $('.js-imagepreview').show();
+      $.fancybox.update();
+      $uploadCrop.croppie('bind', {
+        url: e.target.result
+      }).then(function() {
+        console.log('jQuery bind complete');
+      });
+    }
+
+    reader.readAsDataURL(droppedfiles[0]);
+    } else {
+      swal("Sorry - you're browser doesn't support the FileReader API");
+    }
+}
+
+
+$uploadCrop = $('.popup-upload__cropzone').croppie({
+  viewport: {
+    width: 150,
+    height: 150
+  },
+  showZoomer: false,
+  customClass: 'cropzone'
+});
+
+$('#upload-file').on('change', function () { readFile(this); });
+
+$('.js-dropzone').on('drag dragstart dragend dragover dragenter dragleave drop', function(e) {
+    e.preventDefault();
+    e.stopPropagation();
+  })
+  .on('dragover dragenter', function() {
+    $(this).addClass('dragover');
+  })
+  .on('dragleave dragend drop', function() {
+    $(this).removeClass('dragover');
+  })
+  .on('drop', function(e) {
+    var droppedFiles;
+    droppedFiles = e.originalEvent.dataTransfer.files;
+    readDropFile(droppedFiles);
+});
+
+$('.popup-upload__submit').on('click', function (ev) {
+  ev.preventDefault();
+  $.fancybox.close();
+  $uploadCrop.croppie('result', {
+    type: 'base64',
+    size: 'viewport'
+  }).then(function (resp) {
+    $('.userinfo__avatar').find('img').attr('src', resp);
+    $('#upload-form').append('<input type="hidden" name="file[]" value="' + resp + '">');
+    $('.js-dropzone').show().css({display: 'flex'});
+    $('.js-imagepreview').hide();
+    $.fancybox.update();
+    $('#upload-form')[0].submit();
+  });
+});
+
+$('.popup-upload__back').click(function () {
+  $('.js-dropzone').show().css({display: 'flex'});
+  $('.js-imagepreview').hide();
+  $.fancybox.update();
+});
+
+$('body').keydown(function (event) {
+  if (event.which === 27) {
+    $.fancybox.close();
+  }
+});
+
+//########

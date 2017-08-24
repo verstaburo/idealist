@@ -300,6 +300,14 @@
 	.maps .search-result .column {width: 100%; padding: 0 !important;}
   .create-party {margin-top: 0;}
   .fancybox-inner .like {bottom: 28px;}
+  .popup-upload__buttons {flex-direction: column; justify-content: flex-start; align-items: center;
+    .button { width: 100%;
+       &:not(:last-child) { margin-right: 0; margin-bottom: 30px;
+      }
+    }
+  }
+  .popup-upload__resize {padding: 0 20px 30px;}
+  .popup-upload__title {padding: 30px 20px;}
 }
 
 @media (max-width:480px) {

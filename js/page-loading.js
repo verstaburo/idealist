@@ -8,7 +8,7 @@ $(window).load(function () {
 
 
 $("a[href]").click(function(event){
-	if (!($(this).hasClass('fancybox') || $(this).hasClass('js-photo'))) {
+	if (!($(this).hasClass('fancybox') || $(this).hasClass('js-photo') || $(this).hasClass('js-nopreload'))) {
 		var href = $(this).attr("href");
     	event.preventDefault();
     	$(".page-loading").show();

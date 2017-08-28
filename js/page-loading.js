@@ -1,5 +1,5 @@
 // Показ анимации загрузки при загрузке сайта и переходе между страницами
-$(window).load(function () {
+$(window).on('load', function () {
     $(".page-loading").addClass("hidden");
     setTimeout(function(){
       $(".page-loading").hide();

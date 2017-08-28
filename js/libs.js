@@ -226,3 +226,56 @@ $('body').keydown(function (event) {
 });
 
 //########
+
+//form accordion
+
+$( ".accordion" ).accordion({
+  collapsible: true,
+  header: '.accordion__title',
+  active: false,
+  classes: {
+    "ui-accordion": "accordion",
+    "ui-accordion-header": "accordion__title",
+    "ui-accordion-header-active": "open",
+    "ui-accordion-header-icon": "accordion__icon",
+    "ui-accordion-content": "accordion__content",
+    "ui-accordion-content-active": "open"
+  },
+  icons: false,
+  heightStyle: "content"
+});
+
+//####
+
+//swithch steps form
+
+$(document).on('click', '.event-create__step', function (event) {
+  var previousContent = $('.event-create__step.active').data('step-target');
+  var nextContent = $(this).data('step-target');
+  $('.event-create__step.active').removeClass('active', 250);
+  $(this).addClass('active');
+  $('.event-create__step-section').hide('blind', 400, function () {
+    $(this).removeClass('active');
+  });
+  $('[data-step="' + nextContent + '"]').show('blind', 400, function () {
+    $(this).addClass('active');
+  });
+});
+
+$(document).on('click', '.js-next-form-section', function (event) {
+  var previousContent = $(this).parents('.event-create__step-section').data('step');
+  console.log(previousContent);
+  var nextContent = $(this).data('step-target');
+  $('.event-create__step.active').removeClass('active', 0).addClass('complete', 250);
+  $('.event-create__step[data-step-target="' + nextContent + '"]').addClass('active');
+  $('.event-create__step-section').hide('blind', 400, function () {
+    $(this).removeClass('active');
+  });
+  $('[data-step="' + nextContent + '"]').show('blind', 400, function () {
+    $(this).addClass('active');
+  });
+});
+
+
+
+

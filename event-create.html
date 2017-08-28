@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Idealist</title>
+    <link rel="shortcut icon" href="favicon.ico?v=2" type="image/x-icon"/>
+    <link rel="icon" href="favicon.ico?v=2" type="image/x-icon"/>
+    <link rel="stylesheet" href="css/default.css?v=2"/>
+    <link rel="stylesheet" href="js/libs/scrollbar/jquery.scrollbar.css"/>
+    <link rel="stylesheet" href="js/libs/fancybox/jquery.fancybox.css"/>
+</head>
+
+<body>
+<!-- ### forms ####################### !-->
+<div class="overlay"></div>
+<div class="page-loading"><img src="img/loading-bars.svg" alt="@@"></div>
+
+<!-- ### header ####################### !-->
+<header class="header">
+	<div class="container">
+		<div class="header__leftside">
+			<a href="index.html" class="header__logo">
+				<img src="img/logo.svg" alt="@@">
+			</a>
+			<form action="#" method="post" class="header__searchfield">
+				<input type="text" placeholder="Search by name events">
+				<button type="submit"><img src="img/icon_search.svg" alt="@@"></button>
+			</form>
+			<div class="header__date">
+				<a class="header__link">Set date</a>
+				<div class="calendar header__calendar">
+					<div class="calendar__head">
+						<p class="calendar__month">December</p>
+						<div class="calendar__closest">
+							<a href="#">Today</a>
+							<a href="#">Tomorrow</a>
+						</div>
+					</div>
+					<div class="calendar__daysoftheweek">
+						<a href="#">Su</a>
+						<a href="#">Mo</a>
+						<a href="#">Tu</a>
+						<a href="#">We</a>
+						<a href="#">Th</a>
+						<a href="#">Fr</a>
+						<a href="#">Sa</a>
+					</div>
+					<div class="calendar__week">
+						<a href="#"></a>
+						<a href="#" class="active">01</a>
+						<a href="#">02</a>
+						<a href="#">03</a>
+						<a href="#">04</a>
+						<a href="#">05</a>
+						<a href="#">06</a>
+					</div>
+					<div class="calendar__week">
+						<a href="#">07</a>
+						<a href="#">08</a>
+						<a href="#">09</a>
+						<a href="#">10</a>
+						<a href="#">11</a>
+						<a href="#">12</a>
+						<a href="#">13</a>
+					</div>
+					<div class="calendar__week">
+						<a href="#">14</a>
+						<a href="#">15</a>
+						<a href="#">16</a>
+						<a href="#">17</a>
+						<a href="#">18</a>
+						<a href="#">19</a>
+						<a href="#">20</a>
+					</div>
+					<div class="calendar__week">
+						<a href="#">21</a>
+						<a href="#">22</a>
+						<a href="#">23</a>
+						<a href="#">24</a>
+						<a href="#">25</a>
+						<a href="#">26</a>
+						<a href="#">27</a>
+					</div>
+					<div class="calendar__week">
+						<a href="#">28</a>
+						<a href="#">29</a>
+						<a href="#">30</a>
+						<a href="#">31</a>
+						<a href="#" class="nextmonth">01</a>
+						<a href="#" class="nextmonth">02</a>
+						<a href="#" class="nextmonth">03</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="header__events">
+			<a href="#" class="header__link">All events</a>
+		</div>
+		<div class="header__account">
+			<a class="header__link">Log in</a>
+			<a class="header__link">Sign up</a>
+			<!-- Hint -->
+			<p class="header__hint"><span></span>Login to get access to personal account</p>
+			<!-- // Hint -->
+			<!-- Logged -->
+			<a class="header__username"><span class="avatar avatar_small"><img src="img/avatar17.png" alt="@@"></span>Alexander</a>
+			<ul class="header__usermenu">
+				<li><a href="#" class="header__link">My profile</a></li>
+				<li><a href="#" class="header__link">Settings</a></li>
+				<li><a href="#" class="header__link">Send profile</a></li>
+				<li class="logout"><a class="header__link">Log out</a></li>
+			</ul>
+			<!-- // Logged -->
+		</div>
+	</div>
+</header>
+
+<!-- ### main content ####################### !-->
+<form class="event-create form">
+	<div class="container">
+		<div class="column event-create__steps">
+		  <a class="event-create__step step active js-nopreload" data-step-target="step1">
+		    <p class="step__number">Step 1</p>
+		    <p class="step__title">Scenario</p>
+		    <p class="step__describe">Find a ready script or create your own party</p>
+		  </a>
+		  <a class="event-create__step step js-nopreload" data-step-target="step2">
+		    <p class="step__number">Step 2</p>
+		    <p class="step__title">Location and Time</p>
+		    <p class="step__describe">Tell your friends where and when you will hold a party</p>
+		  </a>
+		  <a class="event-create__step step js-nopreload" data-step-target="step3">
+		    <p class="step__number">Step 3</p>
+		    <p class="step__title">Invitation</p>
+		    <p class="step__describe">Invite your friends to celebrate all together</p>
+		  </a>
+		  <a class="event-create__step step js-nopreload" data-step-target="step4">
+		    <p class="step__number">Step 4</p>
+		    <p class="step__title">Gifts</p>
+		    <p class="step__describe">Select a gift that you want to be presented</p>
+		  </a>
+		  <a class="event-create__step step js-nopreload" data-step-target="step5">
+		    <p class="step__number">Step 5</p>
+		    <p class="step__title">Cover</p>
+		    <p class="step__describe">Upload photo for the cover of your event</p>
+		  </a>
+		</div>
+		<div class="column column_event-create event-create__content">
+			<section class="event-create__step-section active form__section" data-step="step1">
+			  <h2 class="form__title">Create a party</h2>
+			  <div class="form__row form__row__bigmargin">
+			    <div class="form__col">
+			      <label for="party-name" class="form__label">Name of your party:</label>
+			    </div>
+			    <div class="form__col form__col_main">
+			      <div class="form__wrapper">
+			        <input type="text" class="form__input" id="party-name">
+			      </div>
+			    </div>
+			  </div>
+			  <div class="form__row">
+			    <div class="form__col">
+			      <label for="event-subject" class="form__label">Subject:</label>
+			    </div>
+			    <div class="form__col form__col_main">
+			      <div class="form__wrapper">
+			        <div class="selectbox">
+                <select name="subject" id="event-subject">
+                  <option value="1">Birthday</option>
+                  <option value="2">Birthday</option>
+                  <option value="3">Birthday</option>
+                </select>
+                <ul></ul>
+              </div>
+			      </div>
+			    </div>
+			  </div>
+			  <div class="form__row">
+			    <div class="form__col">
+			      <label for="event-availability" class="form__label">Availability:</label>
+			    </div>
+			    <div class="form__col form__col_main">
+			      <div class="form__wrapper">
+			        <div class="selectbox">
+                <select name="availability" id="event-availability">
+                  <option value="1">Private</option>
+                  <option value="2">Private</option>
+                  <option value="3">Public</option>
+                </select>
+                <ul></ul>
+              </div>
+			      </div>
+			    </div>
+			  </div>
+			  <div class="form__row">
+			    <div class="form__col">
+			      <label for="event-scenario" class="form__label">Scenario:</label>
+			    </div>
+			    <div class="form__col form__col_main">
+			      <div class="form__wrapper">
+			        <div class="selectbox">
+                <select name="scenario" id="event-scenario">
+                  <option value="1">Space party</option>
+                  <option value="2">Space party</option>
+                  <option value="3">Space party</option>
+                </select>
+                <ul></ul>
+              </div>
+			      </div>
+			    </div>
+			  </div>
+			  <div class="form__accordion accordion">
+			    <div class="accordion__title form__accordion-title">
+			      <span class="accordion__legend">Extra options</span>
+            <span class="accordion__icon">
+              <svg>
+                <use xlink:href="img/icon.svg#icon_arrow"></use>
+              </svg>
+            </span>
+			    </div>
+			    <div class="accordion__content form__accordion-content">
+            <div class="form__row">
+              <div class="form__col">
+                <label for="event-music" class="form__label">Music:</label>
+              </div>
+              <div class="form__col form__col_main">
+                <div class="form__wrapper">
+                  <div class="selectbox-multiple">
+                    <div class="selectbox-multiple__value">Music...</div>
+                    <select name="music" id="event-music" multiple>
+                      <option value="1">Deep House</option>
+                      <option value="2">Indie</option>
+                      <option value="3">Reggae</option>
+                      <option value="4">Dark Ambient</option>
+                    </select>
+                    <ul class="scrollbar-inner"></ul>
+                  </div>
+                  <ul class="selectbox-output">
+                    <li data-option="1">Deep House<span class="selectbox-output__del"></span></li>
+                    <li data-option="2">Indie<span class="selectbox-output__del"></span></li>
+                    <li data-option="3">Reggae<span class="selectbox-output__del"></span></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="form__row">
+              <div class="form__col">
+                <label for="event-costumes" class="form__label">Costumes:</label>
+              </div>
+              <div class="form__col form__col_main">
+                <div class="form__wrapper">
+                  <div class="selectbox-multiple">
+                    <div class="selectbox-multiple__value">Costumes...</div>
+                    <select name="costumes" id="event-costumes" multiple>
+                      <option value="1">Black Tie</option>
+                      <option value="2">Cocktail</option>
+                      <option value="3">Semi-Format</option>
+                      <option value="4">White Tie</option>
+                      <option value="5">Jackets</option>
+                    </select>
+                    <ul class="scrollbar-inner"></ul>
+                  </div>
+                  <ul class="selectbox-output">
+                    <li data-option="2">Cocktail<span class="selectbox-output__del"></span></li>
+                    <li data-option="4">White Tie<span class="selectbox-output__del"></span></li>
+                    <li data-option="5">Jackets<span class="selectbox-output__del"></span></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="form__row">
+              <div class="form__col">
+                <label for="event-beverage" class="form__label">Beverages:</label>
+              </div>
+              <div class="form__col form__col_main">
+                <div class="form__wrapper">
+                  <div class="selectbox">
+                    <select name="beverage" id="event-beverage">
+                      <option value="">Beverages...</option>
+                      <option value="1">Champagne</option>
+                      <option value="2">Beer</option>
+                      <option value="3">Wine</option>
+                    </select>
+                    <ul></ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form__row">
+              <div class="form__col">
+                <label for="event-food" class="form__label">Food:</label>
+              </div>
+              <div class="form__col form__col_main">
+                <div class="form__wrapper">
+                  <div class="selectbox">
+                    <select name="food" id="event-food">
+                       <option value="">Food...</option>
+                      <option value="1">No food</option>
+                      <option value="2">Snacks</option>
+                    </select>
+                    <ul></ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form__row">
+              <div class="form__col">
+                <label for="event-accessory" class="form__label">Accessory:</label>
+              </div>
+              <div class="form__col form__col_main">
+                <div class="form__wrapper">
+                  <div class="selectbox">
+                    <select name="accessory" id="event-accessory">
+                       <option value="">Accessory...</option>
+                      <option value="1" selected>No accessories</option>
+                      <option value="2" selected>Underground</option>
+                    </select>
+                    <ul></ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form__row">
+              <div class="form__col">
+                <label for="event-description" class="form__label">Description:</label>
+              </div>
+              <div class="form__col form__col_main">
+                <div class="form__wrapper">
+                  <textarea name="description" id="event-description">Anyone who’s anyone knows that when yiu’re in Vegas. you want to party – not waste your time standing in line. That’s where the Club Crawl comes in handy.
+                  </textarea>
+                </div>
+              </div>
+            </div>
+			    </div>
+			  </div>
+			  <div class="form__row">
+			    <a href="#" class="button button_pink form__next form__next_centered js-next-form-section js-nopreload" data-step-target="step2">Next</a>
+			  </div>
+			</section>
+			<section class="event-create__step-section step-section form__section" data-step="step2">
+			  <h2 class="heading step-section__title">Location and Time</h2>
+			  <div class="form__row">
+			    <a href="#" class="button button_pink js-next-form-section js-nopreload" data-step-target="step3">Next</a>
+			  </div>
+			</section>
+			<section class="event-create__step-section step-section form__section" data-step="step3">
+			  <h2 class="heading step-section__title">Invitation</h2>
+			  <div class="form__row">
+			    <a href="#" class="button button_pink js-next-form-section js-nopreload" data-step-target="step4">Next</a>
+			  </div>
+			</section>
+			<section class="event-create__step-section step-section form__section" data-step="step4">
+			  <h2 class="heading step-section__title">Gifts</h2>
+			  <div class="form__row">
+			    <a href="#" class="button button_pink js-next-form-section js-nopreload" data-step-target="step5">Next</a>
+			  </div>
+			</section>
+			<section class="event-create__step-section step-section form__section" data-step="step5">
+			  <h2 class="heading step-section__title">Cover</h2>
+			  <div class="form__row">
+			    <a href="#" class="button button_pink js-next-form-section js-nopreload" data-step-target="step6">Next</a>
+			  </div>
+			</section>
+		</div>
+	</div>
+	<section class="event-create__final" data-step-target="step6"></section>
+</form>
+
+<!-- ### footer ####################### !-->
+<footer class="footer">
+	<div class="container">
+		<p class="footer__text">All rights reserved 2016</p>
+		<div class="footer__app">
+			<p class="footer__apptext">Available on the App Store and Google Play</p>
+			<a href="#" class="footer__appshop"><img src="img/google.svg" alt="@@" ></a>
+			<a href="#" class="footer__appshop"><img src="img/apple.svg" alt="@@"></a>
+		</div>
+		<a href="mailto:hi@idealist.com" class="footer__text footer__mail">hi@idealist.com</a>
+	</div>
+</footer>
+
+<div id="popup-upload" class="popup popup-upload">
+  <div class="popup-upload__wrapper">
+    <p class="popup-upload__title">Profile photo</p>
+    <div class="popup-upload__dropzone js-dropzone">
+      <div class="popup-upload__icon">
+        <img src="img/cloud.svg" alt="@@">
+      </div>
+      <label for="upload-file" class="popup-upload__button button button_pink button_bold">
+        Choose file
+        <input type="file" id="upload-file" class="popup-upload__input" value="Choose file" accept="image/*">
+      </label>
+      <p class="popup-upload__text">
+        or drag and drop here.
+      </p>
+    </div>
+    <form class="popup-upload__resize js-imagepreview" id="upload-form">
+      <div class="popup-upload__cropzone"></div>
+      <div class="popup-upload__buttons">
+        <button class="button button_pink button_bold popup-upload__submit" type="submit">Save</button>
+        <button class="button button_pink button_bordered button_bordered_pink button_bold popup-upload__back" type="button">Back</button>
+      </div>
+    </form>
+
+    <div id="popup-calendar" class="calendar">
+      <div class="calendar__head">
+        <p class="calendar__month">December</p>
+        <div class="calendar__closest">
+          <a href="#">Today</a>
+          <a href="#">Tomorrow</a>
+        </div>
+      </div>
+      <div class="calendar__daysoftheweek">
+        <a href="#">Su</a>
+        <a href="#">Mo</a>
+        <a href="#">Tu</a>
+        <a href="#">We</a>
+        <a href="#">Th</a>
+        <a href="#">Fr</a>
+        <a href="#">Sa</a>
+      </div>
+      <div class="calendar__week">
+        <a href="#"></a>
+        <a href="#" class="active">01</a>
+        <a href="#">02</a>
+        <a href="#">03</a>
+        <a href="#">04</a>
+        <a href="#">05</a>
+        <a href="#">06</a>
+      </div>
+      <div class="calendar__week">
+        <a href="#">07</a>
+        <a href="#">08</a>
+        <a href="#">09</a>
+        <a href="#">10</a>
+        <a href="#">11</a>
+        <a href="#">12</a>
+        <a href="#">13</a>
+      </div>
+      <div class="calendar__week">
+        <a href="#">14</a>
+        <a href="#">15</a>
+        <a href="#">16</a>
+        <a href="#">17</a>
+        <a href="#">18</a>
+        <a href="#">19</a>
+        <a href="#">20</a>
+      </div>
+      <div class="calendar__week">
+        <a href="#">21</a>
+        <a href="#">22</a>
+        <a href="#">23</a>
+        <a href="#">24</a>
+        <a href="#">25</a>
+        <a href="#">26</a>
+        <a href="#">27</a>
+      </div>
+      <div class="calendar__week">
+        <a href="#">28</a>
+        <a href="#">29</a>
+        <a href="#">30</a>
+        <a href="#">31</a>
+        <a href="#" class="nextmonth">01</a>
+        <a href="#" class="nextmonth">02</a>
+        <a href="#" class="nextmonth">03</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ################################### !-->
+<!-- ### libs ####################### !-->
+<!-- ################################### !-->
+<script src="js/libs/jquery.min.js"></script>
+
+<!-- JQuery UI -->
+<script src="js/libs/jquery-ui.min.js"></script>
+
+<!-- jQuery Scrollbar !-->
+<script src="js/libs/scrollbar/jquery.scrollbar.js"></script>
+
+<!-- Fancybox -->
+<script src="js/libs/fancybox/jquery.fancybox.js"></script>
+
+<!-- SVG support -->
+<script src="js/libs/svg4everybody.min.js"></script>
+
+<!-- Croppie and Exif for croped img -->
+<script src="js/libs/exif.js"></script>
+<script src="js/libs/croppie.min.js"></script>
+
+<!-- ################################### !-->
+<!-- ### scripts ####################### !-->
+<!-- ################################### !-->
+
+<!-- main scripts !-->
+<script src="js/libs.js"></script>
+<script src="js/header-scripts.js?v=3"></script>
+<script src="js/page-loading.js"></script>
+<script src="js/custom-select.js"></script>
+</body>
+</html>

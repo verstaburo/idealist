@@ -45,6 +45,7 @@
 
 	.column {width: 33.3333%;}
 	.column_big {width: 66.6666%;}
+  .column_event-create{width: 66.6666%;}
 	.event_banner {height: 352px; padding: 40px;}
 	.event_banner .event__name {font-size: 40px;}
 	.event .button {right: 40px; bottom: 40px;}
@@ -101,6 +102,8 @@
 	.maps .column_big {width: 59%;}
   .slider-arrow__left {left: -25px;}
   .slider-arrow__right {right: -25px;}
+  .form__col_main {padding-right: 0;}
+  .accordion__icon {padding-right: 0; width: 34px; right: 0;}
 }
 
 @media (max-width:1024px) {
@@ -124,6 +127,50 @@
 	.column {width: 50%;}
 	.column_big {width: 100%;}
 	.column_big > .column_med {width: 50%;}
+  .column_event-create {
+    width: calc(100% - 100px);
+    padding: 0;
+  }
+  .event-create {
+    .container {
+      align-items: stretch;
+    }
+
+    &__steps {
+      width: 100px;
+      padding: 0;
+    }
+  }
+
+  .step {
+    width: 100px;
+    min-height: 100px;
+  }
+
+  p.step__describe {
+    display: none;
+  }
+
+  p.step__title {
+    display: none;
+  }
+
+  .form {
+
+    &__row {
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+    }
+
+    &__col {
+      padding: 0;
+      padding-left: 23px;
+      width: 100%;
+    }
+  }
+
+
 	.main .container {flex-wrap: wrap;}
 	.main .column_big {padding: 0;}
 	.main .column_big > .column {padding-left: 10px; padding-right: 0;}
@@ -308,6 +355,49 @@
   }
   .popup-upload__resize {padding: 0 20px 30px;}
   .popup-upload__title {padding: 30px 20px;}
+  .column_event-create {
+    width: 100%;
+    padding: 0;
+  }
+  .event-create {
+    .container {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    &__steps {
+      flex-direction: row;
+      align-items: stretch;
+      width: 100%;
+      padding: 0;
+    }
+  }
+
+  .step {
+    padding: 10px;
+    min-height: 100px;
+    flex: 1;
+  }
+
+  .form__col {
+    padding-left: 0;
+  }
+  
+  .form__title {
+    padding: 25px 15px;
+  }
+
+  .accordion__legend {
+    padding-left: 0;
+  }
+
+  p.step__describe {
+    display: none;
+  }
+
+  p.step__title {
+    display: none;
+  }
 }
 
 @media (max-width:480px) {
@@ -357,6 +447,15 @@
     &__wrapper {
       padding: 42px 20px 20px;
     }
+  }
+
+  .step {
+    padding: 5px;
+    min-height: 60px;
+  }
+
+  p.step__number {    
+    font-size: 10px;
   }
 }
 

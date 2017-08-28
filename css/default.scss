@@ -186,7 +186,7 @@
 	}
 
   &_event-create {
-    width: 56%;
+    width: 75%;
   }
 }
 
@@ -221,6 +221,7 @@
 		}
 		.event__likes, .event__watches {margin-top: 29px; font-size: 16px;}
 		.event__watches {margin-left: 30px;}
+    &:hover .event__info {background-color: transparent; z-index: 1;}
 	}
 	&_card {height: 180px; background-color:#120323}
 	&_bigcard, &_specialcard {height: 380px;
@@ -1805,6 +1806,7 @@
     align-items: flex-start;
     width: 100%;
     box-sizing: border-box;
+    padding-bottom: 20px;
   }
 
   &__row {
@@ -1820,6 +1822,7 @@
     }
 
     &_bigmargin {
+      
       &:not(:last-child) {
         margin-bottom: 60px;
       }
@@ -1839,11 +1842,27 @@
   }
 
   &__wrapper {
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: stretch;
     width: 100%;
   }
 
   &__input {
     width: 100%;
+    
+    &_date {
+      width: calc(50% - 10px);
+      
+      &:not(:last-child) {
+        margin-right: 20px;
+      }
+    }
+    
+    &_time {
+      width: 29%;
+    }
   }
 
   &__label {
@@ -1860,6 +1879,22 @@
     line-height: 1.7em;
     text-align: left;
     letter-spacing: .025em;
+    
+    &_inner {
+      width: 81px;
+      min-width: 81px;
+      padding-right: 20px;
+      box-sizing: border-box;
+    }
+    
+    &_dot {
+      color: #fff;
+      font-weight: 700;
+      width: 36px;
+      min-width: 36px;
+      justify-content: center;
+      align-items: center;
+    }
   }
 
   &__next {
@@ -1910,7 +1945,7 @@
     top: 0;
     opacity: 0;
     left: 10px;
-    width: 100%;
+    width: 76.5%;
     box-sizing: border-box;
     pointer-events: none;
 

@@ -158,8 +158,6 @@ function readDropFile(droppedfiles) {
       $.fancybox.update();
       $uploadCrop.croppie('bind', {
         url: e.target.result
-      }).then(function() {
-        console.log('jQuery bind complete');
       });
     }
 
@@ -205,6 +203,7 @@ $('.popup-upload__submit').on('click', function (ev) {
     size: 'viewport'
   }).then(function (resp) {
     $('.userinfo__avatar').find('img').attr('src', resp);
+    $('#upload-form').find('input[type="hidden"]').remove();
     $('#upload-form').append('<input type="hidden" name="file[]" value="' + resp + '">');
     $('.js-dropzone').show().css({display: 'flex'});
     $('.js-imagepreview').hide();
@@ -278,7 +277,96 @@ $(document).on('click', '.js-next-form-section', function (event) {
 
 //#######
 
+//upload cover
 
+var $uploadCover;
+
+function readCoverFile(files) {
+  if (files && files[0]) {
+    var reader = new FileReader();
+
+    reader.onload = function (e) {
+      $('.js-dropzone-cover').hide().removeClass('active');
+      $('.js-coverpreview').show().addClass('active');
+      $('.image-upload__button_choose').show();
+      $('.image-upload__button_save').show();
+      $('.image-upload__button_edit').hide();
+      $('.image-upload__button_next').hide();
+      $('.image-upload__buttons').addClass('active');
+      $uploadCover.croppie('bind', {
+        url: e.target.result
+      });
+    }
+
+    reader.readAsDataURL(files[0]);
+    } else {
+      swal("Sorry - you're browser doesn't support the FileReader API");
+    }
+}
+
+$uploadCover = $('.image-upload__cropzone').croppie({
+  viewport: {
+    width: '86%',
+    height: 355
+  },
+  showZoomer: false,
+  enableResize: true,
+  customClass: 'cover-cropzone'
+});
+
+$(document).on('change', '#upload-cover', function () { 
+  var files = this.files;
+  readCoverFile(files);
+});
+
+$(document).on('drag dragstart dragend dragover dragenter dragleave drop', '.js-dropzone-cover', function(e) {
+    e.preventDefault();
+    e.stopPropagation();
+  })
+  .on('dragover dragenter', '.js-dropzone-cover', function() {
+    $(this).addClass('dragover');
+  })
+  .on('dragleave dragend drop', '.js-dropzone-cover', function() {
+    $(this).removeClass('dragover');
+  })
+  .on('drop', '.js-dropzone-cover', function(e) {
+    var droppedFiles;
+    droppedFiles = e.originalEvent.dataTransfer.files;
+    readCoverFile(droppedFiles);
+});
+
+$(document).on('click', '.image-upload__button_save', function (ev) {
+  ev.preventDefault();
+  $uploadCover.croppie('result', {
+    type: 'base64',
+    size: 'original'
+  }).then(function (resp) {
+    $('.event__bg').attr('src', resp);
+    $('.image-upload').find('input[type="hidden"]').remove();
+    $('.image-upload').append('<input type="hidden" name="file[]" value="' + resp + '">');
+    $('.js-coverpreview').hide().removeClass('active');
+    $('.image-upload__button_choose').hide();
+    $('.image-upload__button_save').hide();
+    $('.image-upload__button_edit').show();
+    $('.image-upload__button_next').show();
+    $('.image-upload__result').addClass('active');
+  });
+});
+
+$(document).on('click', '.image-upload__button_edit', function () {
+  $('.image-upload__button_choose').show();
+  $('.image-upload__button_save').show();
+  $('.image-upload__button_edit').hide();
+  $('.image-upload__button_next').hide();
+  $('.image-upload__result').removeClass('active');
+  $('.js-coverpreview').show().addClass('active');
+});
+
+$(document).on('resize', function () {
+  
+});
+
+//########
 
 
 

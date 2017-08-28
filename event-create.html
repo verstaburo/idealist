@@ -150,7 +150,7 @@
 		<div class="column column_event-create event-create__content">
 			<section class="event-create__step-section active form__section" data-step="step1">
 			  <h2 class="form__title">Create a party</h2>
-			  <div class="form__row form__row__bigmargin">
+			  <div class="form__row form__row_bigmargin">
 			    <div class="form__col">
 			      <label for="party-name" class="form__label">Name of your party:</label>
 			    </div>
@@ -339,28 +339,126 @@
 			    <a href="#" class="button button_pink form__next form__next_centered js-next-form-section js-nopreload" data-step-target="step2">Next</a>
 			  </div>
 			</section>
-			<section class="event-create__step-section step-section form__section" data-step="step2">
-			  <h2 class="heading step-section__title">Location and Time</h2>
+			<section class="event-create__step-section form__section" data-step="step2">
+			  <h2 class="form__title">Location and Time</h2>
+			  <div class="form__row form__row_bigmargin">
+			    <div class="form__col">
+			      <span class="form__label">Date:</span>
+			    </div>
+			    <div class="form__col form__col_main">
+			      <div class="form__wrapper">
+			        <input type="text" id="date-from" class="form__input form__input_date js-popup-nocross" placeholder="From" href="#popup-calendar">
+			        <input type="text" id="date-to" class="form__input form__input_date js-popup-nocross" placeholder="To" href="#popup-calendar">
+			      </div>
+			    </div>
+			  </div>
 			  <div class="form__row">
-			    <a href="#" class="button button_pink js-next-form-section js-nopreload" data-step-target="step3">Next</a>
+			    <div class="form__col">
+			      <span class="form__label">Time:</span>
+			    </div>
+			    <div class="form__col form__col_main">
+			      <div class="form__wrapper form__wrapper_mobile-row">
+              <span class="form__label form__label_inner">From</span>
+			        <input type="text" class="form__input form__input_time" placeholder="Hour">
+			        <span class="form__label form__label_dot">:</span>
+			        <input type="text" class="form__input form__input_time" placeholder="Min">
+			      </div>
+			    </div>
+			  </div>
+			  <div class="form__row form__row_bigmargin">
+			    <div class="form__col">
+			    </div>
+			    <div class="form__col form__col_main">
+			      <div class="form__wrapper form__wrapper_mobile-row">
+			        <span class="form__label form__label_inner">To</span>
+			        <input type="text" class="form__input form__input_time" placeholder="Hour">
+			        <span class="form__label form__label_dot">:</span>
+			        <input type="text" class="form__input form__input_time" placeholder="Min">
+			      </div>
+			    </div>
+			  </div>
+			  <div class="form__row">
+			    <div class="form__col">
+			      <label for="event-country" class="form__label">Address:</label>
+			    </div>
+			    <div class="form__col form__col_main">
+			      <div class="form__wrapper">
+			        <div class="selectbox">
+                <select name="country" id="event-country">
+                  <option value="1">Russian Federation</option>
+                  <option value="2">USA</option>
+                  <option value="3">Germany</option>
+                </select>
+                <ul></ul>
+              </div>
+			      </div>
+			    </div>
+			  </div>
+			  <div class="form__row">
+			    <div class="form__col">
+			    </div>
+			    <div class="form__col form__col_main">
+			      <div class="form__wrapper">
+			        <div class="selectbox">
+                <select name="city" id="event-city">
+                  <option>City</option>
+                  <option value="1">Moscow</option>
+                  <option value="2">St. Petersburg</option>
+                </select>
+                <ul></ul>
+              </div>
+			      </div>
+			    </div>
+			  </div>
+			  <div class="form__row">
+			    <div class="form__col">
+			    </div>
+			    <div class="form__col form__col_main">
+			      <div class="form__wrapper">
+			        <input type="text" class="form__input" placeholder="Street">
+			      </div>
+			    </div>
+			  </div>
+			  <div class="form__row form__row_bigmargin">
+			    <div class="form__col">
+			    </div>
+			    <div class="form__col form__col_main">
+			      <div class="form__wrapper">
+			        <input type="text" class="form__input" placeholder="House">
+			      </div>
+			    </div>
+			  </div>
+			  <div class="form__row">
+			    <a href="#" class="button button_pink form__next form__next_centered js-next-form-section js-nopreload" data-step-target="step3">Next</a>
 			  </div>
 			</section>
-			<section class="event-create__step-section step-section form__section" data-step="step3">
-			  <h2 class="heading step-section__title">Invitation</h2>
+			<section class="event-create__step-section form__section" data-step="step3">
+			  <h2 class="form__title">Invitation</h2>
 			  <div class="form__row">
-			    <a href="#" class="button button_pink js-next-form-section js-nopreload" data-step-target="step4">Next</a>
+			    <a href="#" class="button button_pink form__next form__next_centered js-next-form-section js-nopreload" data-step-target="step4">Next</a>
 			  </div>
 			</section>
-			<section class="event-create__step-section step-section form__section" data-step="step4">
-			  <h2 class="heading step-section__title">Gifts</h2>
+			<section class="event-create__step-section form__section" data-step="step4">
+			  <h2 class="form__title">Gifts</h2>
 			  <div class="form__row">
-			    <a href="#" class="button button_pink js-next-form-section js-nopreload" data-step-target="step5">Next</a>
+			    <a href="#" class="button button_pink form__next form__next_centered js-next-form-section js-nopreload" data-step-target="step5">Next</a>
 			  </div>
 			</section>
-			<section class="event-create__step-section step-section form__section" data-step="step5">
-			  <h2 class="heading step-section__title">Cover</h2>
+			<section class="event-create__step-section form__section" data-step="step5">
+			  <h2 class="form__title">Cover</h2>
+			  <div class="image-upload">
+			    <div class="form__upload-image image-upload__step event event_banner">
+			      <img src="" alt="@@" class="event__bg">
+            <p class="event__type">Costume party</p>
+            <p class="event__name">Angels <br>fashion place</p>
+            <p class="event__date">21 DEC <span>&middot;</span> 21:00 &mdash; 23:30</p>
+            <a href="#" class="button button_pink">Join</a>
+			    </div>
+			    <div class="form__upload-image image-upload__step image-upload__step_first"></div>
+			    <div class="form__upload-image image-upload__step image-upload__step_first"></div>
+			  </div>
 			  <div class="form__row">
-			    <a href="#" class="button button_pink js-next-form-section js-nopreload" data-step-target="step6">Next</a>
+			    <a href="#" class="button button_pink form__next form__next_centered js-next-form-section js-nopreload" data-step-target="step6">Next</a>
 			  </div>
 			</section>
 		</div>

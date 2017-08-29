@@ -25,6 +25,9 @@
 	.login__form, .login__success {width: 100%;}
 	.login__socialbutton {width: 47%; min-width: 0;}
 	.search__calendar {padding: 32px 0;}
+  .event-create__step-section {
+    width: 100%;
+  }
 }
 
 @media (max-width:1170px) {
@@ -104,6 +107,8 @@
   .slider-arrow__right {right: -25px;}
   .form__col_main {padding-right: 0;}
   .accordion__icon {padding-right: 0; width: 34px; right: 0;}
+  .form__checkbox-tree {padding-right: 0;}
+  .form__title_search {padding-right: 0;}
 }
 
 @media (max-width:1024px) {
@@ -293,6 +298,17 @@
 	.maps {min-height: 1200px;}
 	.bigmap {top: 680px;}
 	.maps .column_resultmap {top: 680px; padding: 0;}
+  .form-search {
+    flex: 1;
+    margin-left: auto;
+    
+    &:not(:last-child) {
+      margin-right: 30px;
+    }
+  }
+  .checkbox-tree__group-head .members {
+    margin-right: 30px;
+  }
 }
 
 @media (max-width:640px) {
@@ -406,6 +422,31 @@
 
   p.step__title {
     display: none;
+  }
+  
+  .form__checkbox-tree {
+    padding-left: 0;
+  }
+  
+  .form-search {
+    max-width: none;
+    order: 3;
+    flex: none;
+    margin-top: 30px;
+  }
+  
+  .checkbox-tree__group-head {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    align-content: flex-start;
+  }
+  
+  .form__title_search {
+    flex-wrap: wrap;
+    align-content: flex-start;
   }
 }
 

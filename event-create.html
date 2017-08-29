@@ -118,7 +118,10 @@
 </header>
 
 <!-- ### main content ####################### !-->
-<form class="event-create form">
+<form action="post" id="search-human"></form>
+<form action="post" id="search-human-by-email"></form>
+<form action="post" id="search-human-by-phone"></form>
+<form class="event-create form" id="create-event">
 	<div class="container">
 		<div class="column event-create__steps">
 		  <a class="event-create__step step active js-nopreload" data-step-target="step1">
@@ -346,7 +349,7 @@
 			      <span class="form__label">Date:</span>
 			    </div>
 			    <div class="form__col form__col_main">
-			      <div class="form__wrapper">
+			      <div class="form__wrapper form__wrapper_flex form__wrapper_flex">
 			        <input type="text" id="date-from" class="form__input form__input_date js-popup-nocross" placeholder="From" href="#popup-calendar">
 			        <input type="text" id="date-to" class="form__input form__input_date js-popup-nocross" placeholder="To" href="#popup-calendar">
 			      </div>
@@ -357,7 +360,7 @@
 			      <span class="form__label">Time:</span>
 			    </div>
 			    <div class="form__col form__col_main">
-			      <div class="form__wrapper form__wrapper_mobile-row">
+			      <div class="form__wrapper form__wrapper_mobile-row form__wrapper_flex">
               <span class="form__label form__label_inner">From</span>
 			        <input type="text" class="form__input form__input_time" placeholder="Hour">
 			        <span class="form__label form__label_dot">:</span>
@@ -369,7 +372,7 @@
 			    <div class="form__col">
 			    </div>
 			    <div class="form__col form__col_main">
-			      <div class="form__wrapper form__wrapper_mobile-row">
+			      <div class="form__wrapper form__wrapper_mobile-row  form__wrapper_flex">
 			        <span class="form__label form__label_inner">To</span>
 			        <input type="text" class="form__input form__input_time" placeholder="Hour">
 			        <span class="form__label form__label_dot">:</span>
@@ -429,11 +432,348 @@
 			    </div>
 			  </div>
 			  <div class="form__row">
-			    <a href="#" class="button button_pink form__next form__next_centered js-next-form-section js-nopreload" data-step-target="step3">Next</a>
+          <div class="form__col">
+			    </div>
+			    <div class="form__col form__col_main">
+			      <a href="#" class="button button_pink form__next form__next_centered js-next-form-section js-nopreload" data-step-target="step3">Next</a>
+          </div>
 			  </div>
 			</section>
 			<section class="event-create__step-section form__section" data-step="step3">
-			  <h2 class="form__title">Invitation</h2>
+			  <h2 class="form__title form__title_search">
+          <span>Invitation</span>
+          <div class="form-search">
+            <input type="search" class="form-search__input" placeholder="Enter username" form="search-human">
+            <button class="form-search__button" type="submit" form="search-human">
+              <svg class="form-search__icon">
+                <use xlink:href="img/icon.svg#icon_loupe"></use>
+              </svg>
+            </button>
+          </div>
+			  </h2>
+			  <div class="form__accordion accordion accordion_nomargin">
+			    <div class="accordion__title form__accordion-title">
+			      <span class="accordion__legend">Search e–mail</span>
+            <span class="accordion__icon">
+              <svg>
+                <use xlink:href="img/icon.svg#icon_arrow"></use>
+              </svg>
+            </span>
+			    </div>
+			    <div class="accordion__content form__accordion-content">
+            <ul class="form__checkbox-tree checkbox-tree">
+              <li class="checkbox-tree__item">
+                <div class="checkbox-tree__group-head">
+                  <p class="members">Members: <span class="members__counter">2</span></p>
+                  <div class="form-search">
+                    <input type="search" class="form-search__input" placeholder="Enter  E–Mail" form="search-human-by-mail">
+                    <button class="form-search__button" type="submit" form="search-human-by-mail">
+                      <svg class="form-search__icon">
+                        <use xlink:href="img/icon.svg#icon_loupe"></use>
+                      </svg>
+                    </button>
+                  </div>
+                  <div class="checkbox checkbox_empty">
+                    <input type="checkbox" name="all-human-mail" class="checkbox__input" id="all-human-mail">
+                    <label class="checkbox__label" for="all-human-mail">
+                      <span class="checkbox__check checkbox__check_square">
+                        <svg class="checkbox__icon checkbox__icon_check checkbox__icon_check_white">
+                          <use xlink:href="img/icon.svg#icon_check"></use>
+                        </svg>
+                      </span>
+                    </label>
+                  </div>
+                </div>
+                <ul class="checkbox-tree__group">
+                  <li class="checkbox-tree__item">
+                    <div class="contact-group">
+                      <div class="candidate">
+                        <div class="avatar">
+                          <img src="img/avatar8.png" alt="@@">
+                        </div>
+                        <p class="candidate__name">Irina Kovaleva</p>
+                        <p class="candidate__info">Moskow, Russian Federation</p>
+                      </div>
+                      <div class="contact-group__open">
+                        <svg class="contact-group__icon">
+                          <use xlink:href="img/icon.svg#icon_arrow"></use>
+                        </svg>
+                      </div>
+                      <ul class="contact-group__list checkbox-tree__group">
+                        <li class="checkbox-tree__item contact-group__item">
+                          <div class="checkbox">
+                            <input type="checkbox" name="mail-candidate" class="checkbox" id="c1-m1" checked>
+                            <label class="checkbox__label" for="c1-m1">
+                              <p>Irina_kovaleva@mail.ru</p>
+                              <div class="checkbox__check">
+                                <svg class="checkbox__icon checkbox__icon_plus">
+                                  <use xlink:href="img/icon.svg#icon_plus"></use>
+                                </svg>
+                                <svg class="checkbox__icon checkbox__icon_check">
+                                  <use xlink:href="img/icon.svg#icon_check"></use>
+                                </svg>
+                              </div>
+                            </label>
+                          </div>
+                        </li>
+                        <li class="checkbox-tree__item contact-group__item">
+                          <div class="checkbox">
+                            <input type="checkbox" name="mail-candidate" class="checkbox" id="c1-m2" checked>
+                            <label class="checkbox__label" for="c1-m2">
+                              <p>Irina_1984@mail.ru</p>
+                              <div class="checkbox__check">
+                                <svg class="checkbox__icon checkbox__icon_plus">
+                                  <use xlink:href="img/icon.svg#icon_plus"></use>
+                                </svg>
+                                <svg class="checkbox__icon checkbox__icon_check">
+                                  <use xlink:href="img/icon.svg#icon_check"></use>
+                                </svg>
+                              </div>
+                            </label>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li class="checkbox-tree__item">
+                    <div class="checkbox">
+                      <input type="checkbox" name="mail-candidate" class="checkbox" id="c2-m" checked>
+                      <label class="checkbox__label" for="c2-m">
+                        <div class="candidate">
+                          <div class="avatar">
+                            <img src="img/avatar7.png" alt="@@">
+                          </div>
+                          <p class="candidate__name">Oxana Polishuk</p>
+                          <p class="candidate__info">Parice, France</p>
+                        </div>
+                        <div class="checkbox__check">
+                          <svg class="checkbox__icon checkbox__icon_plus">
+                            <use xlink:href="img/icon.svg#icon_plus"></use>
+                          </svg>
+                          <svg class="checkbox__icon checkbox__icon_check">
+                            <use xlink:href="img/icon.svg#icon_check"></use>
+                          </svg>
+                        </div>
+                      </label>
+                    </div>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="form__accordion accordion">
+			    <div class="accordion__title form__accordion-title">
+			      <span class="accordion__legend">Search phone number</span>
+            <span class="accordion__icon">
+              <svg>
+                <use xlink:href="img/icon.svg#icon_arrow"></use>
+              </svg>
+            </span>
+			    </div>
+			    <div class="accordion__content form__accordion-content">
+            <ul class="form__checkbox-tree checkbox-tree">
+              <li class="checkbox-tree__item">
+                <div class="checkbox-tree__group-head">
+                  <p class="members">Members: <span class="members__counter">2</span></p>
+                  <div class="form-search">
+                    <input type="search" class="form-search__input" placeholder="Enter  phone number" form="search-human-by-phone">
+                    <button class="form-search__button" type="submit" form="search-human-by-phone">
+                      <svg class="form-search__icon">
+                        <use xlink:href="img/icon.svg#icon_loupe"></use>
+                      </svg>
+                    </button>
+                  </div>
+                  <div class="checkbox checkbox_empty">
+                    <input type="checkbox" name="all-human-phone" class="checkbox__input" id="all-human-phone">
+                    <label class="checkbox__label" for="all-human-phone">
+                      <span class="checkbox__check checkbox__check_square">
+                        <svg class="checkbox__icon checkbox__icon_check checkbox__icon_check_white">
+                          <use xlink:href="img/icon.svg#icon_check"></use>
+                        </svg>
+                      </span>
+                    </label>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="form__row form__row_bigmargin">
+          <ul class="form__checkbox-tree checkbox-tree">
+            <li class="checkbox-tree__item">
+              <div class="checkbox-tree__group-head">
+                <span class="members">Members: <span class="members__counter">3</span></span>
+                <div class="checkbox checkbox_empty">
+                  <input type="checkbox" name="all-human" class="checkbox__input" id="all-human">
+                  <label class="checkbox__label" for="all-human">
+                    <span class="checkbox__check checkbox__check_square">
+                      <svg class="checkbox__icon checkbox__icon_check checkbox__icon_check_white">
+                        <use xlink:href="img/icon.svg#icon_check"></use>
+                      </svg>
+                    </span>
+                  </label>
+                </div>
+              </div>
+              <ul class="checkbox-tree__group">
+                <li class="checkbox-tree__item">
+                  <div class="checkbox">
+                    <input type="checkbox" name="human" class="checkbox__input" id="human-1" checked>
+                    <label class="checkbox__label" for="human-1">
+                      <div class="candidate">
+                        <div class="avatar">
+                          <img src="img/avatar12.png" alt="@@">
+                        </div>
+                        <p class="candidate__name">Diana Gorobcova</p>
+                        <p class="candidate__info">Voronezh, USA</p>
+                      </div>
+                      <div class="checkbox__check">
+                        <svg class="checkbox__icon checkbox__icon_plus">
+                          <use xlink:href="img/icon.svg#icon_plus"></use>
+                        </svg>
+                        <svg class="checkbox__icon checkbox__icon_check">
+                          <use xlink:href="img/icon.svg#icon_check"></use>
+                        </svg>
+                      </div>
+                    </label>
+                  </div>
+                </li>
+                <li class="checkbox-tree__item">
+                  <div class="checkbox">
+                    <input type="checkbox" name="human" class="checkbox__input" id="human-2" checked>
+                    <label class="checkbox__label" for="human-2">
+                      <div class="candidate">
+                        <div class="avatar">
+                          <img src="img/avatar9.png" alt="@@">
+                        </div>
+                        <p class="candidate__name">Igor Kavabanga</p>
+                        <p class="candidate__info">London, UK</p>
+                      </div>
+                      <div class="checkbox__check">
+                        <svg class="checkbox__icon checkbox__icon_plus">
+                          <use xlink:href="img/icon.svg#icon_plus"></use>
+                        </svg>
+                        <svg class="checkbox__icon checkbox__icon_check">
+                          <use xlink:href="img/icon.svg#icon_check"></use>
+                        </svg>
+                      </div>
+                    </label>
+                  </div>
+                </li>
+                <li class="checkbox-tree__item">
+                  <div class="checkbox">
+                    <input type="checkbox" name="human" class="checkbox__input" id="human-3" checked>
+                    <label class="checkbox__label" for="human-3">
+                      <div class="candidate">
+                        <div class="avatar">
+                          <img src="img/avatar10.png" alt="@@">
+                        </div>
+                        <p class="candidate__name">Alexander Viking</p>
+                        <p class="candidate__info">Ullapool, Scotland</p>
+                      </div>
+                      <div class="checkbox__check">
+                        <svg class="checkbox__icon checkbox__icon_plus">
+                          <use xlink:href="img/icon.svg#icon_plus"></use>
+                        </svg>
+                        <svg class="checkbox__icon checkbox__icon_check">
+                          <use xlink:href="img/icon.svg#icon_check"></use>
+                        </svg>
+                      </div>
+                    </label>
+                  </div>
+                </li>
+                <li class="checkbox-tree__item">
+                  <div class="checkbox">
+                    <input type="checkbox" name="human" class="checkbox__input" id="human-4">
+                    <label class="checkbox__label" for="human-4">
+                      <div class="candidate">
+                        <div class="avatar">
+                          <img src="img/avatar11.png" alt="@@">
+                        </div>
+                        <p class="candidate__name">Sergey Basta</p>
+                        <p class="candidate__info">Voronezh, USA</p>
+                      </div>
+                      <div class="checkbox__check">
+                        <svg class="checkbox__icon checkbox__icon_plus">
+                          <use xlink:href="img/icon.svg#icon_plus"></use>
+                        </svg>
+                        <svg class="checkbox__icon checkbox__icon_check">
+                          <use xlink:href="img/icon.svg#icon_check"></use>
+                        </svg>
+                      </div>
+                    </label>
+                  </div>
+                </li>
+                <li class="checkbox-tree__item">
+                  <div class="checkbox">
+                    <input type="checkbox" name="human" class="checkbox__input" id="human-5">
+                    <label class="checkbox__label" for="human-5">
+                      <div class="candidate">
+                        <div class="avatar">
+                          <img src="img/avatar2.png" alt="@@">
+                        </div>
+                        <p class="candidate__name">Oxana Polishuk</p>
+                        <p class="candidate__info">Voronezh, Russian Federation</p>
+                      </div>
+                      <div class="checkbox__check">
+                        <svg class="checkbox__icon checkbox__icon_plus">
+                          <use xlink:href="img/icon.svg#icon_plus"></use>
+                        </svg>
+                        <svg class="checkbox__icon checkbox__icon_check">
+                          <use xlink:href="img/icon.svg#icon_check"></use>
+                        </svg>
+                      </div>
+                    </label>
+                  </div>
+                </li>
+                <li class="checkbox-tree__item">
+                  <div class="checkbox">
+                    <input type="checkbox" name="human" class="checkbox__input" id="human-6">
+                    <label class="checkbox__label" for="human-6">
+                      <div class="candidate">
+                        <div class="avatar">
+                          <img src="img/avatar8.png" alt="@@">
+                        </div>
+                        <p class="candidate__name">Irina Kovaleva</p>
+                        <p class="candidate__info">Moskow, Russian Federation</p>
+                      </div>
+                      <div class="checkbox__check">
+                        <svg class="checkbox__icon checkbox__icon_plus">
+                          <use xlink:href="img/icon.svg#icon_plus"></use>
+                        </svg>
+                        <svg class="checkbox__icon checkbox__icon_check">
+                          <use xlink:href="img/icon.svg#icon_check"></use>
+                        </svg>
+                      </div>
+                    </label>
+                  </div>
+                </li>
+                <li class="checkbox-tree__item">
+                  <div class="checkbox">
+                    <input type="checkbox" name="human" class="checkbox__input" id="human-7">
+                    <label class="checkbox__label" for="human-7">
+                      <div class="candidate">
+                        <div class="avatar">
+                          <img src="img/avatar7.png" alt="@@">
+                        </div>
+                        <p class="candidate__name">Oxana Polishuk</p>
+                        <p class="candidate__info">Parice, France</p>
+                      </div>
+                      <div class="checkbox__check">
+                        <svg class="checkbox__icon checkbox__icon_plus">
+                          <use xlink:href="img/icon.svg#icon_plus"></use>
+                        </svg>
+                        <svg class="checkbox__icon checkbox__icon_check">
+                          <use xlink:href="img/icon.svg#icon_check"></use>
+                        </svg>
+                      </div>
+                    </label>
+                  </div>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
 			  <div class="form__row">
 			    <a href="#" class="button button_pink form__next form__next_centered js-next-form-section js-nopreload" data-step-target="step4">Next</a>
 			  </div>

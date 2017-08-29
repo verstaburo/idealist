@@ -306,7 +306,7 @@ function readCoverFile(files) {
 
 $uploadCover = $('.image-upload__cropzone').croppie({
   viewport: {
-    width: '86%',
+    width: '64%',
     height: 355
   },
   showZoomer: false,
@@ -314,7 +314,7 @@ $uploadCover = $('.image-upload__cropzone').croppie({
   customClass: 'cover-cropzone'
 });
 
-$(document).on('change', '#upload-cover', function () { 
+$(document).on('change', '#upload-cover', function () {
   var files = this.files;
   readCoverFile(files);
 });
@@ -363,10 +363,18 @@ $(document).on('click', '.image-upload__button_edit', function () {
 });
 
 $(document).on('resize', function () {
-  
+
 });
 
 //########
 
+//contact group open
 
+$(document).on('click', '.contact-group__open', function () {
+  if ($(this).closest('.contact-group').hasClass('open')) {
+    $(this).closest('.contact-group').removeClass('open', 0);
+  } else {
+    $(this).closest('.contact-group').addClass('open', 0);
+  }
+});
 

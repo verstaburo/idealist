@@ -1,4 +1,5 @@
 svg4everybody();
+//objectFitImages();
 
 // Кастомный скроллбар (jQuery Scrollbar)
 $(document).ready(function(){
@@ -20,6 +21,30 @@ $('.js-popup-nocross').fancybox({
   openEffect  : 'fade',
   closeEffect : 'fade',
   modal: true,
+  helpers: {
+    overlay: {
+      closeClick: true
+    }
+  }
+});
+
+$('.js-popup-modal').fancybox({
+  fitToView : false,
+  autoSize: true,
+  autoResize: true,
+  openEffect  : 'fade',
+  closeEffect : 'fade',
+  modal: true,
+  helpers: {
+    overlay: {
+      closeClick: true
+    }
+  },
+  afterShow: function() {
+    if ($(this.element).parent().hasClass('gift-list__item')) {
+      $(this.content).attr('data-source-id', $(this.element)[0].id);
+    }
+  }
 });
 
 $(".js-photo").fancybox({
@@ -362,10 +387,6 @@ $(document).on('click', '.image-upload__button_edit', function () {
   $('.js-coverpreview').show().addClass('active');
 });
 
-$(document).on('resize', function () {
-
-});
-
 //########
 
 //contact group open
@@ -378,3 +399,95 @@ $(document).on('click', '.contact-group__open', function () {
   }
 });
 
+//######
+
+//gift preview
+
+$(document).on('change', '#gift-image', function () {
+  var files = this.files;
+  var output = $(this).closest('.form__action').siblings('.form__previews');
+  var li = document.createElement('li');
+  var img = document.createElement('img');
+  li.setAttribute('class', 'form__preview-item');
+  var reader = new FileReader();
+  reader.readAsDataURL(files[0]);
+  reader.onload = (function(theImg) {
+    return function(e) {
+      $(output).find('li').remove();
+      $(img).attr('src', e.target.result);
+      $(li).append(img);
+      $(output).append(li);
+    }
+  })(files[0]);
+});
+
+//####
+
+//gift choose
+
+$(document).on('click', '.gift-choice__field', function () {
+  $(this).closest('.gift-choice').addClass('active');
+  $(this).closest('.form__col').prev().find('.form__label').addClass('active');
+});
+
+$(document).on('keydown', '.gift-choice__field', function (event) {
+  var text = $(this).text();
+  if (event.which == 27 ) {
+    $(this).closest('.gift-choice').removeClass('active');
+    $(this).closest('.gift-choice').find('.gift-choice__self').css({opacity: '', 'z-index': ''});
+    $(this).closest('.gift-choice').find('.gift-choice__list').css({opacity: '', 'pointer-events' : ''});
+    $(this).closest('.gift-choice').find('.gift-choice__field').attr('contenteditable', false)
+    return false;
+  } else if(event.which == 13) {
+    $(this).closest('.gift-choice').removeClass('active');
+    $(this).closest('.gift-choice').find('.gift-choice__self').css({opacity: '', 'z-index': ''});
+    $(this).closest('.gift-choice').find('.gift-choice__input').val(text);
+    $(this).closest('.gift-choice').find('.gift-choice__list').css({opacity: '', 'pointer-events' : ''});
+    $(this).closest('.gift-choice').find('.gift-choice__field').attr('contenteditable', false)
+    return false;
+  } else {
+    $(this).closest('.gift-choice').find('.gift-choice__self span').html(text);
+  }
+});
+
+$(document).on('click', '.gift', function () {
+  var giftName, giftPartner, giftImage;
+  if ($(this).hasClass('js-nochoose')) {
+    if ($(this).hasClass('js-mygift')) {
+      $(this).closest('.gift-choice__list').css({opacity: 0, 'pointer-events' : 'none'});
+      $(this).closest('.gift-choice').find('.gift-choice__field').attr('contenteditable', true).focus();
+      $(this).closest('.gift-choice').find('.gift-choice__self').css({opacity: 1, 'z-index' : '51'});
+      if($(this).parents('[data-source-id]').length > 0) {
+        var sourceId = $(this).parents('[data-source-id]').data('source-id');
+        $('#'+sourceId).closest('.gift-choice__list').css({opacity: 0, 'pointer-events' : 'none'});
+        $('#'+sourceId).closest('.gift-choice').find('.gift-choice__self').css({opacity: 1, 'z-index' : '51'});
+        $('#'+sourceId).closest('.gift-choice').find('.gift-choice__field').attr('contenteditable', true).focus();
+        $.fancybox.close();
+      }
+    } else {
+      $.fancybox.open();
+    }
+  } else {
+    $(this).closest('.gift-choice').removeClass('active');
+    giftName = $(this).data('value');
+    giftPartner = $(this).data('partner');
+    if( $(this).closest('.gift-choice').length >0 ) {
+      giftImage = $(this).data('image');
+      $(this).closest('.gift-choice').removeClass('active');
+      $(this).closest('.gift-choice').find('.gift-choice__field').html(giftName + '<span>' + giftPartner + '</span>');
+      $(this).closest('.accordion').find('.form__previews li').remove();
+      $(this).closest('.accordion').find('.form__previews').append('<li class="form__preview-item"><img src="' + giftImage + '"></li>');
+      $(this).closest('.gift-choice').find('.gift-choice__input').val(giftName);
+    } else {
+      giftImage = $(this).find('img').attr('src');
+      var sourceId = $(this).parents('[data-source-id]').data('source-id');
+      $('#'+sourceId).closest('.gift-choice').removeClass('active');
+      $('#'+sourceId).closest('.gift-choice').find('.gift-choice__field').html(giftName + '<span>' + giftPartner + '</span>');
+      $('#'+sourceId).closest('.accordion').find('.form__previews li').remove();
+      $('#'+sourceId).closest('.accordion').find('.form__previews').append('<li class="form__preview-item"><img src="' + giftImage + '"></li>');
+      $('#'+sourceId).closest('.gift-choice').find('.gift-choice__input').val(giftName);
+      $.fancybox.close();
+    }
+    $('.form__label.active').removeClass('active');
+  }
+});

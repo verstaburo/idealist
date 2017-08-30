@@ -299,7 +299,7 @@
                 <div class="form__wrapper">
                   <div class="selectbox">
                     <select name="food" id="event-food">
-                       <option value="">Food...</option>
+                      <option value="">Food...</option>
                       <option value="1">No food</option>
                       <option value="2">Snacks</option>
                     </select>
@@ -780,6 +780,179 @@
 			</section>
 			<section class="event-create__step-section form__section" data-step="step4">
 			  <h2 class="form__title">Gifts</h2>
+			  <div class="form__accordion accordion accordion_wide-title">
+			    <div class="accordion__title form__accordion-title">
+			      <span class="accordion__legend">Gift 1</span>
+            <span class="accordion__icon">
+              <svg>
+                <use xlink:href="img/icon.svg#icon_arrow"></use>
+              </svg>
+            </span>
+			    </div>
+			    <div class="accordion__content form__accordion-content">
+            <div class="form__row">
+              <div class="form__col form__col_small">
+                <span class="form__label">Gift name:</span>
+              </div>
+              <div class="form__col form__col_main form__col_main_big">
+                <div class="form__wrapper gift-choice">
+                  <input type="hidden" placeholder="" id="gift-name" class="gift-choice__input">
+                  <div class="form__input gift-choice__field"></div>
+                  <div class="gift-choice__overlay"></div>
+                  <ul class="gift-list gift-choice__list">
+                    <li class="gift-list__item gift gift_short" data-value="Iphone 7 Plus" data-partner="Amazon partner" data-image="img/gift-1.png">
+                      <div class="gift__col">
+                        <p class="gift__title">
+                          Iphone 7 Plus
+                        </p>
+                        <p>
+                          Amazon partner
+                        </p>
+                      </div>
+                      <div class="gift__col gift__col_price">
+                        <p class="gift__title">
+                          1000 $
+                        </p>
+                      </div>
+                    </li>
+                    <li class="gift-list__item gift gift_short" data-value="Ipod Shuffle" data-partner="Amazon partner" data-image="img/gift-2.png">
+                      <div class="gift__col">
+                        <p class="gift__title">
+                          Ipod Shuffle
+                        </p>
+                        <p>
+                          Amazon partner
+                        </p>
+                      </div>
+                      <div class="gift__col gift__col_price">
+                        <p class="gift__title">
+                          90 $
+                        </p>
+                      </div>
+                    </li>
+                    <li class="gift-list__item gift gift_short" data-value="Iphone 6S" data-partner="Ebay" data-image="img/gift-3.png">
+                      <div class="gift__col">
+                        <p class="gift__title">
+                          Iphone 6S
+                        </p>
+                        <p>
+                          Ebay
+                        </p>
+                      </div>
+                      <div class="gift__col gift__col_price">
+                        <p class="gift__title">
+                          990 $
+                        </p>
+                      </div>
+                    </li>
+                    <li class="gift-list__item gift gift_short" data-value="Iphone 6" data-partner="Amazon partner" data-image="img/gift-4.png">
+                      <div class="gift__col">
+                        <p class="gift__title">
+                          Iphone 6
+                        </p>
+                        <p>
+                          Amazon partner
+                        </p>
+                      </div>
+                      <div class="gift__col gift__col_price">
+                        <p class="gift__title">
+                          790 $
+                        </p>
+                      </div>
+                    </li>
+                    <li class="gift-list__item js-nochoose  gift gift_short js-mygift">
+                      <div class="gift__col">
+                        <p class="gift__title">
+                          My gift
+                        </p>
+                      </div>
+                      <div class="gift__col gift__col_price">
+                      </div>
+                    </li>
+                    <li class="gift-list__item js-nochoose">
+                      <a href="#popup-gift-choice" class="more js-nopreload js-popup-modal" id="gift-choice-1">
+                        <svg>
+                          <use xlink:href="img/icon.svg#icon_plus"></use>
+                        </svg>
+                        See All (<span>25</span>)
+                      </a>
+                    </li>
+                  </ul>
+                  <div class="gift-choice__self">
+                    Gift - <span></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form__row">
+              <div class="form__col form__col_small">
+                <span class="form__label">Photo:</span>
+              </div>
+              <div class="form__col form__col_main form__col_main_big">
+                <div class="form__wrapper">
+                  <div class="form__action">
+                    <input type="file" name="gift-image[]" id="gift-image" class="form__upload-input" accept="image/*">
+                    <label class="form__input form__action-field js-upload-image" for="gift-image">
+                      Upload
+                      <svg>
+                        <use xlink:href="img/icon.svg#icon_plus"></use>
+                      </svg>
+                    </label>
+                  </div>
+                  <ul class="form__previews">
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="form__row">
+              <div class="form__col form__col_small">
+                <label class="form__label" for="gift-availability">Gift availability:</label>
+              </div>
+              <div class="form__col form__col_main form__col_main_big">
+                <div class="form__wrapper">
+                  <div class="selectbox">
+                    <select name="gift-availability" id="gift-availability">
+                      <option value="0">Collective gift</option>
+                      <option value="1">Collective</option>
+                      <option value="2">Individual</option>
+                    </select>
+                    <ul></ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form__row">
+              <div class="form__col form__col_small">
+                <span class="form__label">Member:</span>
+              </div>
+              <div class="form__col form__col_main form__col_main_big">
+                <div class="form__wrapper">
+                  <div class="form__action">
+                    <input type="hidden" name="member" id="gift-member">
+                    <div class="form__input form__action-field">
+                      Add members
+                      <svg>
+                        <use xlink:href="img/icon.svg#icon_plus"></use>
+                      </svg>
+                    </div>
+                  </div>
+                  <ul class="form__gifted">
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="form_row add-line">
+          <a class="add-line__title  js-nopreload" href="#">
+			      <span class="add-line__legend">Add gift</span>
+            <span class="add-line__icon">
+              <svg>
+                <use xlink:href="img/icon.svg#icon_plus"></use>
+              </svg>
+            </span>
+			    </a>
+        </div>
 			  <div class="form__row">
 			    <a href="#" class="button button_pink form__next form__next_centered js-next-form-section js-nopreload" data-step-target="step5">Next</a>
 			  </div>
@@ -857,69 +1030,249 @@
         <button class="button button_pink button_bordered button_bordered_pink button_bold popup-upload__back" type="button">Back</button>
       </div>
     </form>
+  </div>
+</div>
 
-    <div id="popup-calendar" class="calendar">
-      <div class="calendar__head">
-        <p class="calendar__month">December</p>
-        <div class="calendar__closest">
-          <a href="#">Today</a>
-          <a href="#">Tomorrow</a>
+<div class="popup gift-choose" id="popup-gift-choice">
+  <div class="gift-choose__wrapper">
+    <h2 class="heading">Gift choice</h2>
+    <ul class="gift-choose__list">
+      <li class="gift-choose__item gift" data-value="Iphone 7 Plus" data-partner="Amazon partner">
+        <div class="gift__col gift__col_image">
+          <div class="gift__image">
+            <img src="img/gift-1.png" alt="">
+          </div>
         </div>
+        <div class="gift__col">
+          <p class="gift__title">
+            Iphone 7 Plus
+          </p>
+          <p>
+            36gb / 64 / 128gb, color Gold/Black/Silver</p>
+          <p>
+            Amazon partner
+          </p>
+        </div>
+        <div class="gift__col gift__col_price">
+          <p class="gift__title">
+            1000 $
+          </p>
+        </div>
+      </li>
+      <li class="gift-choose__item gift" data-value="Ipod Shuffle" data-partner="Amazon partner">
+        <div class="gift__col gift__col_image">
+          <div class="gift__image">
+            <img src="img/gift-2.png" alt="">
+          </div>
+        </div>
+        <div class="gift__col">
+          <p class="gift__title">
+            Ipod Shuffle
+          </p>
+          <p>
+            36gb / 64 / 128gb, color Gold/Black/Silver
+          </p>
+          <p>
+            Amazon partner
+          </p>
+        </div>
+        <div class="gift__col gift__col_price">
+          <p class="gift__title">
+            90 $
+          </p>
+        </div>
+      </li>
+      <li class="gift-choose__item gift" data-value="Iphone 6S" data-partner="Ebay">
+        <div class="gift__col gift__col_image">
+          <div class="gift__image">
+            <img src="img/gift-3.png" alt="">
+          </div>
+        </div>
+        <div class="gift__col">
+          <p class="gift__title">
+            Iphone 6S
+          </p>
+          <p>
+            36gb / 64 / 128gb, color Gold/Black/Silver
+          </p>
+          <p>
+            Ebay
+          </p>
+        </div>
+        <div class="gift__col gift__col_price">
+          <p class="gift__title">
+            990 $
+          </p>
+        </div>
+      </li>
+      <li class="gift-choose__item gift" data-value="Iphone 6" data-partner="Amazon partner">
+        <div class="gift__col gift__col_image">
+          <div class="gift__image">
+            <img src="img/gift-4.png" alt="">
+          </div>
+        </div>
+        <div class="gift__col">
+          <p class="gift__title">
+            Iphone 7
+          </p>
+          <p>
+            36gb / 64 / 128gb, color Gold/Black/Silver
+          </p>
+          <p>
+            Amazon partner
+          </p>
+        </div>
+        <div class="gift__col gift__col_price">
+          <p class="gift__title">
+            790 $
+          </p>
+        </div>
+      </li>
+      <li class="gift-choose__item gift" data-value="Iphone 7 Plus" data-partner="Amazon partner">
+        <div class="gift__col gift__col_image">
+          <div class="gift__image">
+            <img src="img/gift-1.png" alt="">
+          </div>
+        </div>
+        <div class="gift__col">
+          <p class="gift__title">
+            Iphone 7 Plus
+          </p>
+          <p>
+            36gb / 64 / 128gb, color Gold/Black/Silver</p>
+          <p>
+            Amazon partner
+          </p>
+        </div>
+        <div class="gift__col gift__col_price">
+          <p class="gift__title">
+            1000 $
+          </p>
+        </div>
+      </li>
+      <li class="gift-choose__item gift" data-value="Iphone 7 Plus" data-partner="Amazon partner">
+        <div class="gift__col gift__col_image">
+          <div class="gift__image">
+            <img src="img/gift-1.png" alt="">
+          </div>
+        </div>
+        <div class="gift__col">
+          <p class="gift__title">
+            Iphone 7 Plus
+          </p>
+          <p>
+            36gb / 64 / 128gb, color Gold/Black/Silver</p>
+          <p>
+            Amazon partner
+          </p>
+        </div>
+        <div class="gift__col gift__col_price">
+          <p class="gift__title">
+            1000 $
+          </p>
+        </div>
+      </li>
+      <li class="gift-choose__item gift" data-value="Iphone 7 Plus" data-partner="Amazon partner">
+        <div class="gift__col gift__col_image">
+          <div class="gift__image">
+            <img src="img/gift-1.png" alt="">
+          </div>
+        </div>
+        <div class="gift__col">
+          <p class="gift__title">
+            Iphone 7 Plus
+          </p>
+          <p>
+            36gb / 64 / 128gb, color Gold/Black/Silver</p>
+          <p>
+            Amazon partner
+          </p>
+        </div>
+        <div class="gift__col gift__col_price">
+          <p class="gift__title">
+            1000 $
+          </p>
+        </div>
+      </li>
+      <li class="gift-list__item js-mygift js-nochoose gift">
+        <div class="gift__col gift__col_image">
+          <div class="gift__image gift__image_empty">
+          </div>
+        </div>
+        <div class="gift__col">
+          <p class="gift__title">
+            My gift
+          </p>>
+        </div>
+        <div class="gift__col gift__col_price">
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="popup" id="popup-calendar">
+  <div class="calendar">
+    <div class="calendar__head">
+      <p class="calendar__month">December</p>
+      <div class="calendar__closest">
+        <a href="#">Today</a>
+        <a href="#">Tomorrow</a>
       </div>
-      <div class="calendar__daysoftheweek">
-        <a href="#">Su</a>
-        <a href="#">Mo</a>
-        <a href="#">Tu</a>
-        <a href="#">We</a>
-        <a href="#">Th</a>
-        <a href="#">Fr</a>
-        <a href="#">Sa</a>
-      </div>
-      <div class="calendar__week">
-        <a href="#"></a>
-        <a href="#" class="active">01</a>
-        <a href="#">02</a>
-        <a href="#">03</a>
-        <a href="#">04</a>
-        <a href="#">05</a>
-        <a href="#">06</a>
-      </div>
-      <div class="calendar__week">
-        <a href="#">07</a>
-        <a href="#">08</a>
-        <a href="#">09</a>
-        <a href="#">10</a>
-        <a href="#">11</a>
-        <a href="#">12</a>
-        <a href="#">13</a>
-      </div>
-      <div class="calendar__week">
-        <a href="#">14</a>
-        <a href="#">15</a>
-        <a href="#">16</a>
-        <a href="#">17</a>
-        <a href="#">18</a>
-        <a href="#">19</a>
-        <a href="#">20</a>
-      </div>
-      <div class="calendar__week">
-        <a href="#">21</a>
-        <a href="#">22</a>
-        <a href="#">23</a>
-        <a href="#">24</a>
-        <a href="#">25</a>
-        <a href="#">26</a>
-        <a href="#">27</a>
-      </div>
-      <div class="calendar__week">
-        <a href="#">28</a>
-        <a href="#">29</a>
-        <a href="#">30</a>
-        <a href="#">31</a>
-        <a href="#" class="nextmonth">01</a>
-        <a href="#" class="nextmonth">02</a>
-        <a href="#" class="nextmonth">03</a>
-      </div>
+    </div>
+    <div class="calendar__daysoftheweek">
+      <a href="#">Su</a>
+      <a href="#">Mo</a>
+      <a href="#">Tu</a>
+      <a href="#">We</a>
+      <a href="#">Th</a>
+      <a href="#">Fr</a>
+      <a href="#">Sa</a>
+    </div>
+    <div class="calendar__week">
+      <a href="#"></a>
+      <a href="#" class="active">01</a>
+      <a href="#">02</a>
+      <a href="#">03</a>
+      <a href="#">04</a>
+      <a href="#">05</a>
+      <a href="#">06</a>
+    </div>
+    <div class="calendar__week">
+      <a href="#">07</a>
+      <a href="#">08</a>
+      <a href="#">09</a>
+      <a href="#">10</a>
+      <a href="#">11</a>
+      <a href="#">12</a>
+      <a href="#">13</a>
+    </div>
+    <div class="calendar__week">
+      <a href="#">14</a>
+      <a href="#">15</a>
+      <a href="#">16</a>
+      <a href="#">17</a>
+      <a href="#">18</a>
+      <a href="#">19</a>
+      <a href="#">20</a>
+    </div>
+    <div class="calendar__week">
+      <a href="#">21</a>
+      <a href="#">22</a>
+      <a href="#">23</a>
+      <a href="#">24</a>
+      <a href="#">25</a>
+      <a href="#">26</a>
+      <a href="#">27</a>
+    </div>
+    <div class="calendar__week">
+      <a href="#">28</a>
+      <a href="#">29</a>
+      <a href="#">30</a>
+      <a href="#">31</a>
+      <a href="#" class="nextmonth">01</a>
+      <a href="#" class="nextmonth">02</a>
+      <a href="#" class="nextmonth">03</a>
     </div>
   </div>
 </div>
@@ -941,9 +1294,11 @@
 <!-- SVG support -->
 <script src="js/libs/svg4everybody.min.js"></script>
 
-<!-- Croppie and Exif for croped img -->
-<script src="js/libs/exif.js"></script>
+<!-- Croppie croped img -->
 <script src="js/libs/croppie.min.js"></script>
+
+<!-- Object Fit -->
+<script src="js/libs/ofi.min.js"></script>
 
 <!-- ################################### !-->
 <!-- ### scripts ####################### !-->

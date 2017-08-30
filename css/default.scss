@@ -1781,7 +1781,7 @@
 }
 
 .form {
-  input, select, textarea, &__input {
+  input, select, textarea, &__input, .scroll-textarea {
     width: 100%;
     font-size: 14px;
     font-weight: 600;
@@ -1791,6 +1791,7 @@
     border: 1px solid #211539;
     border-radius: 5px;
     padding: 0 25px;
+    box-sizing: border-box;
 
     &:focus {border-color: #5c1bbf;}
   }
@@ -1803,13 +1804,18 @@
     padding: 0 21px;
   }
 
+  .scroll-textarea {
+    height: 108px;
+  }
+
   textarea {
     height: 108px;
     resize: none;
-    padding: 12px 25px;
+    padding: 12px 25px !important;
     font-weight: 400;
     line-height: 1.75em;
   }
+
   .selectbox, .selectbox-multiple {
     width: 100%;
   }
@@ -2171,6 +2177,7 @@
     background-color: $dark-violet;
     transition: all .25s ease-in-out;
     letter-spacing: .025em;
+    white-space: nowrap;
   }
 
   &__icon {
@@ -2888,6 +2895,7 @@
     background-color: $dark-violet;
     transition: all .25s ease-in-out;
     letter-spacing: .025em;
+    white-space: nowrap;
   }
 
   &__icon {
@@ -3108,7 +3116,7 @@
   &__wrapper {
     width: 100%;
     max-width: 730px;
-    padding: 33px 65px 33px 65px;
+    padding: 33px 65px;
     background-color: $violet;
     box-sizing: border-box;
     overflow: hidden;

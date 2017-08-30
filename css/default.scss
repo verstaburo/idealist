@@ -1987,6 +1987,7 @@
     &-field {
       padding-right: 30px;
       cursor: pointer;
+      color: #fff !important;
 
       &:hover {
         border-color: #5c1bbf;
@@ -2619,6 +2620,10 @@
     }
   }
 
+  input:disabled ~ .checkbox__label .checkbox__icon {
+    fill: #313233;
+  }
+
   &__label {
     display: inline-block;
     width: 100%;
@@ -2647,6 +2652,21 @@
       &:hover {
         border-color: #fff;
       }
+    }
+
+    span {
+      position: absolute;
+      left: 0;
+      top: 50%;
+      padding-right: 17px;
+      color: #313233;
+      font-family: $main-font;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 1.7em;
+      transform: translate(-100%, -50%);
+      white-space: nowrap;
+      box-sizing: border-box;
     }
 
     &:hover {
@@ -3167,6 +3187,176 @@
     svg {
       fill: #fff;
     }
+  }
+}
+
+.add-gifted {
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+
+  &.hidden {
+    display: none;
+  }
+
+  &_individual.hidden ~ .gifted {
+    display: none;
+  }
+
+  &__input {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    box-sizing: border-box;
+  }
+
+  &__indicator {
+    width: 58px;
+    max-width: 58px;
+    height: 26px;
+    color: #ffffff;
+    font-family: $main-font;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 26px;
+    text-align: center;
+    border-radius: 13px;
+    background-color: #313233;
+    box-sizing: border-box;
+  }
+
+  &_collective {
+
+    .add-gifted {
+
+      input {
+        width: 100%;
+        box-sizing: border-box;
+        padding-right: 90px;
+      }
+
+      &__indicator {
+        position: absolute;
+        top: 50%;
+        right: 26px;
+        transform: translate(0, -50%);
+      }
+    }
+  }
+
+  &_individual {
+
+    .add-gifted {
+
+      &__indicator {
+        display: inline-block;
+        vertical-align: middle;
+        margin-left: 15px;
+        box-shadow: 0 6px 18px rgba(92, 27, 191, 0.5);
+        background-color: $light-purple;
+      }
+    }
+  }
+}
+
+.gifted {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: center;
+  flex-wrap: wrap;
+
+  &__item {
+    margin-top: 15px;
+    margin-right: 20px;
+    position: relative;
+    width: 55px;
+    height: 55px;
+    min-width: 55px;
+    background-color: transparent;
+  }
+
+  &__link {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    color: #fff !important;
+    font-family: $main-font;
+    font-size: 18px;
+    font-weight: 400;
+    text-align: center;
+    line-height: 55px;
+    border-radius: 50%;
+    background-color: $pink;
+
+    &:hover {
+      background-color: rgba($pink, .8);
+    }
+  }
+
+  &__remove {
+    position: absolute;
+    top: -3px;
+    right: -3px;
+    width: 22px;
+    height: 22px;
+    background-color: $violet;
+    transition: all .25s ease-in-out;
+    cursor: pointer;
+    border-radius: 50%;
+
+    svg {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 8px;
+      height: 8px;
+      fill: #fff;
+      transform: translate(-50%, -50%);
+    }
+  }
+}
+
+.popup-add-gifted {
+
+  &__container {
+    width: 100%;
+    max-width: 714px;
+    padding: 53px 75px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    overflow: hidden;
+    background-color: $violet;
+  }
+
+  &__title {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    width: 100%;
+    color: #fff;
+    font-family: $main-font;
+    font-size: 24px;
+    font-weight: 300;
+    line-height: 1.67em;
+    margin-bottom: 37px;
+
+    span {
+      margin-right: 30px;
+    }
+  }
+
+  &__buttons {
+    margin-top: 48px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
   }
 }
 

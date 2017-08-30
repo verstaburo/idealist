@@ -927,16 +927,65 @@
               </div>
               <div class="form__col form__col_main form__col_main_big">
                 <div class="form__wrapper">
-                  <div class="form__action">
-                    <input type="hidden" name="member" id="gift-member">
-                    <div class="form__input form__action-field">
+                  <div class="form__action js-add-gifted add-gifted" data-gift-type="0">
+                    <input type="hidden" name="gifted" id="gift-member" placeholder="Enter the number of members">
+                    <a class="form__input form__action-field add-gifted__input js-nopreload js-popup-modal" href="#popup-add-gifted-members">
                       Add members
                       <svg>
                         <use xlink:href="img/icon.svg#icon_plus"></use>
                       </svg>
-                    </div>
+                    </a>
                   </div>
-                  <ul class="form__gifted">
+                  <div class="form__action js-add-gifted add-gifted add-gifted_individual hidden" data-gift-type="2">
+                    <input type="hidden" name="gifted" id="gift-member" placeholder="Enter the number of members">
+                    <a class="form__input form__action-field add-gifted__input js-nopreload js-popup-modal" href="#popup-add-gifted-members">
+                      Add members
+                      <div class="add-gifted__indicator">18/30</div>
+                      <svg>
+                        <use xlink:href="img/icon.svg#icon_plus"></use>
+                      </svg>
+                    </a>
+                  </div>
+                  <div class="form__action js-add-gifted add-gifted add-gifted_collective hidden" data-gift-type="1">
+                    <input type="text" name="gifted" id="gift-member" placeholder="Enter the number of members">
+                    <div class="add-gifted__indicator">0/30</div>
+                  </div>
+                  <ul class="form__gifted gifted">
+                    <li class="gifted__item">
+                      <span class="avatar">
+                        <img src="img/avatar12.png" alt="@@">
+                      </span>
+                      <span class="gifted__remove">
+                        <svg>
+                          <use xlink:href="img/icon.svg#icon_cross"></use>
+                        </svg>
+                      </span>
+                    </li>
+                    <li class="gifted__item">
+                      <span class="avatar">
+                        <img src="img/avatar9.png" alt="@@">
+                      </span>
+                      <span class="gifted__remove">
+                        <svg>
+                          <use xlink:href="img/icon.svg#icon_cross"></use>
+                        </svg>
+                      </span>
+                    </li>
+                    <li class="gifted__item">
+                      <span class="avatar">
+                        <img src="img/avatar10.png" alt="@@">
+                      </span>
+                      <span class="gifted__remove">
+                        <svg>
+                          <use xlink:href="img/icon.svg#icon_cross"></use>
+                        </svg>
+                      </span>
+                    </li>
+                    <li class="gifted__item">
+                      <a class="gifted__link" href="#">
+                        +15
+                      </a>
+                    </li>
                   </ul>
                 </div>
               </div>
@@ -1208,6 +1257,243 @@
         </div>
       </li>
     </ul>
+  </div>
+</div>
+
+<div class="popup popup-add-gifted" id="popup-add-gifted-members">
+  <div class="popup-add-gifted__container">
+    <h2 class="popup-add-gifted__title">
+      <span>Add members</span>
+      <form class="form-search form" id="search-gifted">
+        <input type="search" class="form-search__input form__input" placeholder="Enter username">
+        <button class="form-search__button" type="submit">
+          <svg class="form-search__icon">
+            <use xlink:href="img/icon.svg#icon_loupe"></use>
+          </svg>
+        </button>
+      </form>
+    </h2>
+    <ul class="checkbox-tree">
+      <li class="checkbox-tree__item">
+        <div class="checkbox-tree__group-head">
+          <span class="members">Members: <span class="members__counter">3/9</span></span>
+          <div class="checkbox checkbox_empty">
+            <input type="checkbox" name="all-human" class="checkbox__input" id="all-gifted">
+            <label class="checkbox__label" for="all-gifted">
+              <span class="checkbox__check checkbox__check_square">
+                <svg class="checkbox__icon checkbox__icon_check checkbox__icon_check_white">
+                  <use xlink:href="img/icon.svg#icon_check"></use>
+                </svg>
+              </span>
+            </label>
+          </div>
+        </div>
+        <ul class="checkbox-tree__group">
+          <li class="checkbox-tree__item">
+            <div class="checkbox">
+              <input type="checkbox" name="human" class="checkbox__input" id="gifted-1" checked disabled>
+              <label class="checkbox__label" for="gifted-1">
+                <div class="candidate">
+                  <div class="avatar">
+                    <img src="img/avatar12.png" alt="@@">
+                  </div>
+                  <p class="candidate__name">Diana Gorobcova</p>
+                  <p class="candidate__info">Voronezh, USA</p>
+                </div>
+                <div class="checkbox__check">
+                  <span>Gift 1</span>
+                  <svg class="checkbox__icon checkbox__icon_plus">
+                    <use xlink:href="img/icon.svg#icon_plus"></use>
+                  </svg>
+                  <svg class="checkbox__icon checkbox__icon_check">
+                    <use xlink:href="img/icon.svg#icon_check"></use>
+                  </svg>
+                </div>
+              </label>
+            </div>
+          </li>
+          <li class="checkbox-tree__item">
+            <div class="checkbox">
+              <input type="checkbox" name="human" class="checkbox__input" id="gifted-2" checked>
+              <label class="checkbox__label" for="gifted-2">
+                <div class="candidate">
+                  <div class="avatar">
+                    <img src="img/avatar9.png" alt="@@">
+                  </div>
+                  <p class="candidate__name">Igor Kavabanga</p>
+                  <p class="candidate__info">London, UK</p>
+                </div>
+                <div class="checkbox__check">
+                  <svg class="checkbox__icon checkbox__icon_plus">
+                    <use xlink:href="img/icon.svg#icon_plus"></use>
+                  </svg>
+                  <svg class="checkbox__icon checkbox__icon_check">
+                    <use xlink:href="img/icon.svg#icon_check"></use>
+                  </svg>
+                </div>
+              </label>
+            </div>
+          </li>
+          <li class="checkbox-tree__item">
+            <div class="checkbox">
+              <input type="checkbox" name="human" class="checkbox__input" id="gifted-3" checked>
+              <label class="checkbox__label" for="gifted-3">
+                <div class="candidate">
+                  <div class="avatar">
+                    <img src="img/avatar10.png" alt="@@">
+                  </div>
+                  <p class="candidate__name">Alexander Viking</p>
+                  <p class="candidate__info">Ullapool, Scotland</p>
+                </div>
+                <div class="checkbox__check">
+                  <svg class="checkbox__icon checkbox__icon_plus">
+                    <use xlink:href="img/icon.svg#icon_plus"></use>
+                  </svg>
+                  <svg class="checkbox__icon checkbox__icon_check">
+                    <use xlink:href="img/icon.svg#icon_check"></use>
+                  </svg>
+                </div>
+              </label>
+            </div>
+          </li>
+          <li class="checkbox-tree__item">
+            <div class="checkbox">
+              <input type="checkbox" name="human" class="checkbox__input" id="gifted-4">
+              <label class="checkbox__label" for="gifted-4">
+                <div class="candidate">
+                  <div class="avatar">
+                    <img src="img/avatar11.png" alt="@@">
+                  </div>
+                  <p class="candidate__name">Sergey Basta</p>
+                  <p class="candidate__info">Voronezh, USA</p>
+                </div>
+                <div class="checkbox__check">
+                  <svg class="checkbox__icon checkbox__icon_plus">
+                    <use xlink:href="img/icon.svg#icon_plus"></use>
+                  </svg>
+                  <svg class="checkbox__icon checkbox__icon_check">
+                    <use xlink:href="img/icon.svg#icon_check"></use>
+                  </svg>
+                </div>
+              </label>
+            </div>
+          </li>
+          <li class="checkbox-tree__item">
+            <div class="checkbox">
+              <input type="checkbox" name="human" class="checkbox__input" id="gifted-5">
+              <label class="checkbox__label" for="gifted-5">
+                <div class="candidate">
+                  <div class="avatar">
+                    <img src="img/avatar2.png" alt="@@">
+                  </div>
+                  <p class="candidate__name">Oxana Polishuk</p>
+                  <p class="candidate__info">Voronezh, Russian Federation</p>
+                </div>
+                <div class="checkbox__check">
+                  <svg class="checkbox__icon checkbox__icon_plus">
+                    <use xlink:href="img/icon.svg#icon_plus"></use>
+                  </svg>
+                  <svg class="checkbox__icon checkbox__icon_check">
+                    <use xlink:href="img/icon.svg#icon_check"></use>
+                  </svg>
+                </div>
+              </label>
+            </div>
+          </li>
+          <li class="checkbox-tree__item">
+            <div class="checkbox">
+              <input type="checkbox" name="human" class="checkbox__input" id="gifted-6">
+              <label class="checkbox__label" for="gifted-6">
+                <div class="candidate">
+                  <div class="avatar">
+                    <img src="img/avatar8.png" alt="@@">
+                  </div>
+                  <p class="candidate__name">Irina Kovaleva</p>
+                  <p class="candidate__info">Moskow, Russian Federation</p>
+                </div>
+                <div class="checkbox__check">
+                  <svg class="checkbox__icon checkbox__icon_plus">
+                    <use xlink:href="img/icon.svg#icon_plus"></use>
+                  </svg>
+                  <svg class="checkbox__icon checkbox__icon_check">
+                    <use xlink:href="img/icon.svg#icon_check"></use>
+                  </svg>
+                </div>
+              </label>
+            </div>
+          </li>
+          <li class="checkbox-tree__item">
+            <div class="checkbox">
+              <input type="checkbox" name="human" class="checkbox__input" id="gifted-7">
+              <label class="checkbox__label" for="gifted-7">
+                <div class="candidate">
+                  <div class="avatar">
+                    <img src="img/avatar7.png" alt="@@">
+                  </div>
+                  <p class="candidate__name">Oxana Polishuk</p>
+                  <p class="candidate__info">Parice, France</p>
+                </div>
+                <div class="checkbox__check">
+                  <svg class="checkbox__icon checkbox__icon_plus">
+                    <use xlink:href="img/icon.svg#icon_plus"></use>
+                  </svg>
+                  <svg class="checkbox__icon checkbox__icon_check">
+                    <use xlink:href="img/icon.svg#icon_check"></use>
+                  </svg>
+                </div>
+              </label>
+            </div>
+          </li>
+          <li class="checkbox-tree__item">
+            <div class="checkbox">
+              <input type="checkbox" name="human" class="checkbox__input" id="gifted-8">
+              <label class="checkbox__label" for="gifted-8">
+                <div class="candidate">
+                  <div class="avatar">
+                    <img src="img/avatar1.png" alt="@@">
+                  </div>
+                  <p class="candidate__name">Afftor Boluchevsky</p>
+                  <p class="candidate__info">NY, USA</p>
+                </div>
+                <div class="checkbox__check">
+                  <svg class="checkbox__icon checkbox__icon_plus">
+                    <use xlink:href="img/icon.svg#icon_plus"></use>
+                  </svg>
+                  <svg class="checkbox__icon checkbox__icon_check">
+                    <use xlink:href="img/icon.svg#icon_check"></use>
+                  </svg>
+                </div>
+              </label>
+            </div>
+          </li>
+          <li class="checkbox-tree__item">
+            <div class="checkbox">
+              <input type="checkbox" name="human" class="checkbox__input" id="gifted-9">
+              <label class="checkbox__label" for="gifted-9">
+                <div class="candidate">
+                  <div class="avatar">
+                    <img src="img/avatar19.png" alt="@@">
+                  </div>
+                  <p class="candidate__name">Oxana Polishuk</p>
+                  <p class="candidate__info">Moskow, Russian Federation</p>
+                </div>
+                <div class="checkbox__check">
+                  <svg class="checkbox__icon checkbox__icon_plus">
+                    <use xlink:href="img/icon.svg#icon_plus"></use>
+                  </svg>
+                  <svg class="checkbox__icon checkbox__icon_check">
+                    <use xlink:href="img/icon.svg#icon_check"></use>
+                  </svg>
+                </div>
+              </label>
+            </div>
+          </li>
+        </ul>
+      </li>
+    </ul>
+    <div class="popup-add-gifted__buttons">
+      <button class="button button_pink popup-add-gifted__button js-popup-close" type="submit">Done</button>
+    </div>
   </div>
 </div>
 

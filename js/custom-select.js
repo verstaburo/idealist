@@ -9,10 +9,10 @@ $(".selectbox").each(function(){
         $(this).parents(".selectbox").find("ul").append(li);
     });
 
-    $(this).find("ul li").click(function(){
+    $(this).find("ul li").on('click', function(){
         var newval = $(this).data("val");
-        $(this).parent().parent().find("select").val(newval);
-		var inputval = $(this).parent().parent().find("select option[value="+newval+"]").text();
+        $(this).parent().parent().find("select").val(newval).change();
+		var inputval = $(this).parent().parent().find("select option[value="+newval+"]").val();
 		$(this).parent().parent().find("input").val(inputval);
     });
 

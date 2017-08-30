@@ -9,10 +9,10 @@ $(".selectbox").each(function(){
         $(this).parents(".selectbox").find("ul").append(li);
     });
 
-    $(this).find("ul li").click(function(){
+    $(this).find("ul li").on('click', function(){
         var newval = $(this).data("val");
-        $(this).parent().parent().find("select").val(newval);
-		var inputval = $(this).parent().parent().find("select option[value="+newval+"]").text();
+        $(this).parent().parent().find("select").val(newval).change();
+		var inputval = $(this).parent().parent().find("select option[value="+newval+"]").val();
 		$(this).parent().parent().find("input").val(inputval);
     });
 
@@ -35,27 +35,35 @@ $(".selectbox").each(function(){
 
 $('.selectbox-multiple select').each( function() {
     $(this).children('option').each(function(){
-        var ttext = $(this).text();
-        var vval = $(this).val();
-        var li = '<li data-val="'+vval+'">'+ttext+'<svg class="selectbox-multiple__button"><use xlink:href="img/icon.svg#icon_plus"></svg></li>';
+      var ttext = $(this).text();
+      var vval = $(this).val();
+      var li = '<li data-val="'+vval+'">'+ttext+'<svg class="selectbox-multiple__button"><use xlink:href="img/icon.svg#icon_plus"></svg></li>';
+      var liSelected = '<li class="selected" data-val="'+vval+'">'+ttext+'<svg class="selectbox-multiple__button"><use xlink:href="img/icon.svg#icon_check"></svg></li>';
+      var selectState = $(this).prop('selected');
+
+      if(selectState) {
+        $(this).parents('.selectbox-multiple').find('ul').append(liSelected);
+      } else {
         $(this).parents('.selectbox-multiple').find('ul').append(li);
+      }
+
     });
 
-    console.log($(this));
-
-    $(this).parent().find('ul li').on('click', function(event) {
+    $(document).on('click', '.selectbox-multiple ul li', function(event) {
         var newval = $(this).data('val');
         var newtext = $(this).text();
+        console.log( $(this).closest('.selectbox-multiple').find('select option[value="'+newval+'"]'));
         $(this).addClass('selected');
         $(this).find('svg').html('<use xlink:href="img/icon.svg#icon_check">');
-        $(this).parent().parent().children('select option[value="'+newval+'"]').prop('selected', true);
-        $(this).parent().parent().children('.selectbox-multiple__value').text(newtext);
-        if ($('.selectbox-output li[data-option="' + newval + '"]').length == 0) {
-          $(this).parent().parent().siblings('.selectbox-output').append('<li data-option="' + newval + '">'+newtext+'<span class="selectbox-output__del">');
+        $(this).closest('.selectbox-multiple').find('select option[value="'+newval+'"]').prop('selected', true);
+        $(this).closest('.selectbox-multiple').find('.selectbox-multiple__value').text(newtext);
+        if (!$(this).closest('.selectbox-multiple').siblings('.selectbox-output').find(' li[data-option="' + newval + '"]').length > 0) {
+          var tagEl = '<li data-option="' + newval + '">'+newtext+'<span class="selectbox-output__del">';
+          $(this).closest('.selectbox-multiple').siblings('.selectbox-output').append(tagEl);
         }
     });
 
-    $(this).parent().find('.selectbox-multiple__value').on('mousedown click', function(e){
+    $(this).closest('.selectbox-multiple').find('.selectbox-multiple__value').on('mousedown click', function(e){
         e.preventDefault();
         e.stopPropagation();
         this.blur();
@@ -63,7 +71,7 @@ $('.selectbox-multiple select').each( function() {
         $(this).closest('.selectbox-multiple').addClass('active');
     });
 
-    $(this).parent().find('ul').on('click', function(){
+    $(this).closest('.selectbox-multiple').find('ul').on('click', function(){
         $(this).removeClass('active');
     });
 
@@ -71,10 +79,11 @@ $('.selectbox-multiple select').each( function() {
         $('.selectbox-multiple').removeClass('active');
     });
 
-    $('.selectbox-output li').on('click', function () {
+    $(document).on('click', '.selectbox-output li', function () {
       var selectedDel = $(this).data('option');
-      $(this).parent().siblings('.selectbox-multiple').find('select option[value="'+selectedDel+'"]').prop('selected', false);
-      $(this).parent().siblings('.selectbox-multiple').find('ul li[data-val="'+selectedDel+'"]').removeClass('selected');
+      $(this).closest('.selectbox-output').siblings('.selectbox-multiple').find('select option[value="'+selectedDel+'"]').prop('selected', false);
+      $(this).closest('.selectbox-output').siblings('.selectbox-multiple').find('ul li[data-val="'+selectedDel+'"]').removeClass('selected');
+      $(this).closest('.selectbox-output').siblings('.selectbox-multiple').find('ul li[data-val="'+selectedDel+'"]').find('use').attr('xlink:href', 'img/icon.svg#icon_plus');
       $(this).remove();
     });
 });

@@ -251,6 +251,8 @@ $('body').keydown(function (event) {
 
 //########
 
+//Begin scripts for form event create
+
 //form accordion
 
 $( ".accordion" ).accordion({
@@ -491,3 +493,14 @@ $(document).on('click', '.gift', function () {
     $('.form__label.active').removeClass('active');
   }
 });
+
+//gift collective or individual
+
+$(document).on('change', '#gift-availability', function () {
+  var giftType = $(this).val();
+  console.log('change');
+  $(this).closest('.accordion').find('.add-gifted').not('[data-gift-type="'+ giftType +'"]').addClass('hidden');
+  $(this).closest('.accordion').find('[data-gift-type="'+ giftType +'"]').removeClass('hidden');
+});
+
+//###END scripts for form event create

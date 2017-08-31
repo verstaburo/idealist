@@ -73,6 +73,7 @@ $(".js-photo").fancybox({
           voteCount = parseInt($(this).find('.like__counter').text()) + 1;
           $(this).find('.like__counter').text(voteCount);
           elem[0].setAttribute('data-like-counter', voteCount);
+          $(elem).find('.like__counter').text(voteCount);
         }
       });
     }
@@ -512,11 +513,23 @@ $(document).on('change', '#gift-availability', function () {
 
 //###END scripts for form event create
 
-$(document).on('load resize', function() {
+$(window).on('load resize', function() {
   console.log('click');
   if($('.congratulation').length > 0) {
     console.log('click');
     var pageHeight = $(window).height() - $('header').outerHeight() - $('footer').outerHeight();
     $('.congratulation').css({ 'min-height': pageHeight });
   }
+});
+
+
+//featches tabs
+
+$(document).on('click', '[data-tab-target]', function () {
+  var tabTarget = $(this).data('tab-target');
+  console.log('tab click');
+  $(this).siblings().removeClass('active', 0);
+  $(this).addClass('active', 0);
+  $(this).closest('.featches').find('.featches__content').find('[data-tab]').fadeOut(400, function() { $(this).removeClass('active', 0); });
+  $(this).closest('.featches').find('[data-tab="'+ tabTarget +'"]').fadeIn(400, function () { $(this).addClass('active', 0); });
 });

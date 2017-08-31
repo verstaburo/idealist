@@ -119,19 +119,17 @@
 
 <!-- ### main content ####################### !-->
 <section class="maps">
-	<div class="bigmap" id="googlemap"></div>
+	<div class="bigmap" id="googlemap-big"></div>
 	<div class="container">
 		<div class="column column_search">
 			<div class="search">
 				<p class="heading search__heading">Search</p>
-				<form action="" class="search__topform">
-					<input type="text" name="search" value="Crazy party">
-					<button type="submit"><img src="img/icon_search.svg" alt="@@"></button>
+				<form action="" id="crayzy-party-search">
 				</form>
 				<form action="" class="search__detailform">
 					<div class="search__field">
 						<p class="search__select">set date</p>
-						<p class="search__value">27.01.2016</p>
+						<p class="search__value">10.01.2016 - 18.01.2016</p>
 						<div class="search__hidden">
 							<div class="calendar search__calendar">
 								<div class="calendar__head">
@@ -197,7 +195,7 @@
 					</div>
 					<div class="search__field">
 						<p class="search__select">set time</p>
-						<p class="search__value">21:30</p>
+						<p class="search__value">20:00 - 21:30</p>
 						<div class="search__hidden">
 							<div class="search__time">
 								<input type="text" name="hours">
@@ -220,16 +218,234 @@
 							<a class="search__hidden-close">Close</a>
 						</div>
 					</div>
-					<div class="search__field">
+					<div class="search__field search__field_type">
 						<p class="search__select">type of event</p>
 						<p class="search__value">Party</p>
+					</div>
+					<div class="search__field">
+						<p class="search__select">music</p>
+						<p class="search__value" data-output="search-music">Deep House</p>
+						<div class="search__hidden">
+              <ul class="checkbox-tree scrollbar-inner">
+                <li class="checkbox-tree__item contact-group__item">
+                  <div class="checkbox">
+                    <input type="checkbox" name="filter-music" class="checkbox" id="music-all" data-group="search-music">
+                    <label class="checkbox__label" for="music-all">
+                      <p>Choose all</p>
+                      <div class="checkbox__check checkbox__check_square">
+                        <svg class="checkbox__icon checkbox__icon_check checkbox__icon_check_white">
+                          <use xlink:href="img/icon.svg#icon_check"></use>
+                        </svg>
+                      </div>
+                    </label>
+                  </div>
+                </li>
+                <li class="checkbox-tree__item contact-group__item">
+                  <div class="checkbox">
+                    <input type="checkbox" name="filter-music" class="checkbox" id="music-1" data-group-item="search-music">
+                    <label class="checkbox__label" for="music-1">
+                      <p>Ambient</p>
+                      <div class="checkbox__check">
+                        <svg class="checkbox__icon checkbox__icon_plus">
+                          <use xlink:href="img/icon.svg#icon_plus"></use>
+                        </svg>
+                        <svg class="checkbox__icon checkbox__icon_check">
+                          <use xlink:href="img/icon.svg#icon_check"></use>
+                        </svg>
+                      </div>
+                    </label>
+                  </div>
+                </li>
+                <li class="checkbox-tree__item contact-group__item">
+                  <div class="checkbox">
+                    <input type="checkbox" name="filter-music" class="checkbox" id="music-2" data-group-item="search-music" checked>
+                    <label class="checkbox__label" for="music-2">
+                      <p>Deep House</p>
+                      <div class="checkbox__check">
+                        <svg class="checkbox__icon checkbox__icon_plus">
+                          <use xlink:href="img/icon.svg#icon_plus"></use>
+                        </svg>
+                        <svg class="checkbox__icon checkbox__icon_check">
+                          <use xlink:href="img/icon.svg#icon_check"></use>
+                        </svg>
+                      </div>
+                    </label>
+                  </div>
+                </li>
+                <li class="checkbox-tree__item contact-group__item">
+                  <div class="checkbox">
+                    <input type="checkbox" name="filter-music" class="checkbox" id="music-3" data-group-item="search-music">
+                    <label class="checkbox__label" for="music-3">
+                      <p>Hip Hop</p>
+                      <div class="checkbox__check">
+                        <svg class="checkbox__icon checkbox__icon_plus">
+                          <use xlink:href="img/icon.svg#icon_plus"></use>
+                        </svg>
+                        <svg class="checkbox__icon checkbox__icon_check">
+                          <use xlink:href="img/icon.svg#icon_check"></use>
+                        </svg>
+                      </div>
+                    </label>
+                  </div>
+                </li>
+                <li class="checkbox-tree__item contact-group__item">
+                  <div class="checkbox">
+                    <input type="checkbox" name="filter-music" class="checkbox" id="music-4" data-group-item="search-music">
+                    <label class="checkbox__label" for="music-4">
+                      <p>Rap</p>
+                      <div class="checkbox__check">
+                        <svg class="checkbox__icon checkbox__icon_plus">
+                          <use xlink:href="img/icon.svg#icon_plus"></use>
+                        </svg>
+                        <svg class="checkbox__icon checkbox__icon_check">
+                          <use xlink:href="img/icon.svg#icon_check"></use>
+                        </svg>
+                      </div>
+                    </label>
+                  </div>
+                </li>
+                <li class="checkbox-tree__item contact-group__item">
+                  <div class="checkbox">
+                    <input type="checkbox" name="filter-music" class="checkbox" id="music-5" data-group-item="search-music">
+                    <label class="checkbox__label" for="music-5">
+                      <p>Reggae</p>
+                      <div class="checkbox__check">
+                        <svg class="checkbox__icon checkbox__icon_plus">
+                          <use xlink:href="img/icon.svg#icon_plus"></use>
+                        </svg>
+                        <svg class="checkbox__icon checkbox__icon_check">
+                          <use xlink:href="img/icon.svg#icon_check"></use>
+                        </svg>
+                      </div>
+                    </label>
+                  </div>
+                </li>
+              </ul>
+							<a class="search__hidden-close">Close</a>
+						</div>
+					</div>
+					<div class="search__field">
+						<p class="search__select">Costumes</p>
+						<p class="search__value" data-output="search-costumes">Jacket</p>
+						<div class="search__hidden">
+							<ul class="checkbox-tree scrollbar-inner">
+                <li class="checkbox-tree__item contact-group__item">
+                  <div class="checkbox">
+                    <input type="checkbox" name="filter-music" class="checkbox" id="costumes-all" data-group="search-costumes">
+                    <label class="checkbox__label" for="costumes-all">
+                      <p>Choose all</p>
+                      <div class="checkbox__check checkbox__check_square">
+                        <svg class="checkbox__icon checkbox__icon_check checkbox__icon_check_white">
+                          <use xlink:href="img/icon.svg#icon_check"></use>
+                        </svg>
+                      </div>
+                    </label>
+                  </div>
+                </li>
+                <li class="checkbox-tree__item contact-group__item">
+                  <div class="checkbox">
+                    <input type="checkbox" name="filter-music" class="checkbox" id="costumes-1" data-group-item="search-costumes">
+                    <label class="checkbox__label" for="costumes-1">
+                      <p>Carnival costumes</p>
+                      <div class="checkbox__check">
+                        <svg class="checkbox__icon checkbox__icon_plus">
+                          <use xlink:href="img/icon.svg#icon_plus"></use>
+                        </svg>
+                        <svg class="checkbox__icon checkbox__icon_check">
+                          <use xlink:href="img/icon.svg#icon_check"></use>
+                        </svg>
+                      </div>
+                    </label>
+                  </div>
+                </li>
+                <li class="checkbox-tree__item contact-group__item">
+                  <div class="checkbox">
+                    <input type="checkbox" name="filter-music" class="checkbox" id="costumes-2" data-group-item="search-costumes">
+                    <label class="checkbox__label" for="costumes-2">
+                      <p>Cocktail</p>
+                      <div class="checkbox__check">
+                        <svg class="checkbox__icon checkbox__icon_plus">
+                          <use xlink:href="img/icon.svg#icon_plus"></use>
+                        </svg>
+                        <svg class="checkbox__icon checkbox__icon_check">
+                          <use xlink:href="img/icon.svg#icon_check"></use>
+                        </svg>
+                      </div>
+                    </label>
+                  </div>
+                </li>
+                <li class="checkbox-tree__item contact-group__item">
+                  <div class="checkbox">
+                    <input type="checkbox" name="filter-music" class="checkbox" id="costumes-3" data-group-item="search-costumes" checked>
+                    <label class="checkbox__label" for="costumes-3">
+                      <p>Jacket</p>
+                      <div class="checkbox__check">
+                        <svg class="checkbox__icon checkbox__icon_plus">
+                          <use xlink:href="img/icon.svg#icon_plus"></use>
+                        </svg>
+                        <svg class="checkbox__icon checkbox__icon_check">
+                          <use xlink:href="img/icon.svg#icon_check"></use>
+                        </svg>
+                      </div>
+                    </label>
+                  </div>
+                </li>
+                <li class="checkbox-tree__item contact-group__item">
+                  <div class="checkbox">
+                    <input type="checkbox" name="filter-music" class="checkbox" id="costumes-4" data-group-item="search-costumes">
+                    <label class="checkbox__label" for="costumes-4">
+                      <p>Semi–Format</p>
+                      <div class="checkbox__check">
+                        <svg class="checkbox__icon checkbox__icon_plus">
+                          <use xlink:href="img/icon.svg#icon_plus"></use>
+                        </svg>
+                        <svg class="checkbox__icon checkbox__icon_check">
+                          <use xlink:href="img/icon.svg#icon_check"></use>
+                        </svg>
+                      </div>
+                    </label>
+                  </div>
+                </li>
+                <li class="checkbox-tree__item contact-group__item">
+                  <div class="checkbox">
+                    <input type="checkbox" name="filter-music" class="checkbox" id="costumes-5" data-group-item="search-costumes">
+                    <label class="checkbox__label" for="costumes-5">
+                      <p>White Tie</p>
+                      <div class="checkbox__check">
+                        <svg class="checkbox__icon checkbox__icon_plus">
+                          <use xlink:href="img/icon.svg#icon_plus"></use>
+                        </svg>
+                        <svg class="checkbox__icon checkbox__icon_check">
+                          <use xlink:href="img/icon.svg#icon_check"></use>
+                        </svg>
+                      </div>
+                    </label>
+                  </div>
+                </li>
+              </ul>
+							<a class="search__hidden-close">Close</a>
+						</div>
+					</div>
+					<div class="search__field">
+						<p class="search__select">Drinks</p>
+						<p class="search__value" data-output="search-drinks">Champagne</p>
+						<div class="search__hidden">
+							<div class="search__checkbox-list">
+
+							</div>
+							<a class="search__hidden-close">Close</a>
+						</div>
 					</div>
 					<div class="search__switch">
 						<p class="search__option active">All events</p>
 						<div class="search__selector"><span></span></div>
 						<p class="search__option">Followings</p>
 					</div>
-					<button class="button search__button">Show events (5)</button>
+					<div class="search__topform">
+            <input type="text" name="search" value="Crazy party" form="crazy-party-search">
+            <button type="submit"><img src="img/icon_search.svg" alt="@@" form="crazy-party-search"></button>
+          </div>
+					<button class="button search__button" type="submit">Show events (5)</button>
 				</form>
 			</div>
 		</div>

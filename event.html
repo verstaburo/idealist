@@ -183,6 +183,25 @@
 		<div class="event-page__top">
 			<div class="column column_big">
 				<div class="event event_banner">
+				  <div class="event__counters">
+				    <a href="#" class="event__counter event__counter_human">
+				      <svg>
+				        <use xlink:href="img/icon.svg#icon_human"></use>
+				      </svg>
+				      <span>370</span>
+				    </a>
+				    <a href="#" class="event__counter event__counter_camera">
+				      <svg>
+				        <use xlink:href="img/icon.svg#icon_camera"></use>
+				      </svg>
+				      <span>750</span>
+				    </a>
+				    <a href="#" class="event__counter event__counter_chat event__counter_new">
+				      <svg>
+				        <use xlink:href="img/icon.svg#icon_chat"></use>
+				      </svg>
+				    </a>
+				  </div>
 					<img src="img/banner2.jpg" alt="@@" class="event__bg">
 					<p class="event__type">Costume party</p>
 					<p class="event__name">Angels <br>fashion place</p>
@@ -192,7 +211,6 @@
 						<a href="#" class="button button_pink">Like</a>
 						<div>
 							<a href="#" class="event__likes"><img src="img/icon_like.svg" alt="@@">370</a>
-							<a href="#" class="event__watches"><img src="img/icon_camera.svg" alt="@@">750</a>
 						</div>
 					</div>
 				</div>
@@ -225,10 +243,6 @@
 			<div class="column column_med">
 				<div class="map-block">
 					<div class="smallmap" id="googlemap"></div>
-					<div class="map-block__zoom">
-						<span class="map-block__plus"></span>
-						<span class="map-block__minus"></span>
-					</div>
 					<span class="map-block__marker"></span>
 					<div class="map-block__info">
 						<p class="map-block__place">Club «Angels»</p>
@@ -239,7 +253,7 @@
 			<div class="column">
 				<div class="music">
 					<p class="heading music__heading">Music</p>
-					<ul class="music__list">
+					<ul class="music__list scrollbar-inner">
 						<li data-duration="3">
 							<p class="music__author">johnny Cash</p>
 							<p class="music__name">House of the rising sun</p>
@@ -277,35 +291,100 @@
 			</div>
 		</div>
 		<div class="photos">
+		  <div class="photos__header">
+		    <div class="column">
+		      <p class="heading photos__heading">Photos</p>
+		    </div>
+		    <div class="column">
+          <ul class="filter photos__filter">
+            <li class="active" data-filter="public">Public</li>
+            <li data-filter="private">Private</li>
+          </ul>
+		    </div>
+		  </div>
 			<div class="column" data-column="1">
-				<p class="heading photos__heading" data-priority="high">Photos</p>
-				<a href="img/gallery-photo.jpg" class="photos__card js-card-reveal js-photo" data-category="public" rel="all-photos" data-like-counter="150"><img src="img/photo_1.jpg" alt="@@"></a>
-				<a href="img/gallery-photo.jpg" class="photos__card js-card-reveal js-photo" data-category="public" rel="all-photos" data-like-counter="160"><img src="img/photo_5.jpg" alt="@@"></a>
-				<a href="img/gallery-photo.jpg" class="photos__card js-card-reveal js-photo" data-category="private" rel="all-photos" data-like-counter="170"><img src="img/photo_5.jpg" alt="@@"></a>
-				<a href="img/gallery-photo.jpg" class="photos__card js-card-reveal js-photo" data-category="private" rel="all-photos" data-like-counter="180"><img src="img/photo_5.jpg" alt="@@"></a>
+				<a href="img/gallery-photo.jpg" class="photos__card js-card-reveal js-photo" data-category="public" rel="all-photos" data-like-counter="25"><img src="img/photo_1.jpg" alt="@@"><span class="like"><svg><use xlink:href="img/icon.svg#icon_like"></use></svg><span class="like__counter">25</span></span></a>
+				<a href="img/gallery-photo.jpg" class="photos__card js-card-reveal js-photo" data-category="public" rel="all-photos" data-like-counter="11"><img src="img/photo_5.jpg" alt="@@"><span class="like"><svg><use xlink:href="img/icon.svg#icon_like"></use></svg><span class="like__counter">11</span></span></a>
+				<a href="img/gallery-photo.jpg" class="photos__card js-card-reveal js-photo" data-category="private" rel="all-photos" data-like-counter="25"><img src="img/photo_5.jpg" alt="@@"><span class="like"><svg><use xlink:href="img/icon.svg#icon_like"></use></svg><span class="like__counter">25</span></span>
+				</a>
+				<a href="img/gallery-photo.jpg" class="photos__card js-card-reveal js-photo" data-category="private" rel="all-photos" data-like-counter="11"><img src="img/photo_5.jpg" alt="@@">
+				<span class="like"><svg><use xlink:href="img/icon.svg#icon_like"></use></svg><span class="like__counter">11</span></span></a>
 			</div>
 			<div class="column" data-column="2">
-				<ul class="filter photos__filter" data-desktop="2" data-desktopsmall="2" data-tablet="2" data-mobile="1" data-priority="medium">
-					<li class="active" data-filter="public">Public</li>
-					<li data-filter="private">Private</li>
-				</ul>
-				<a href="img/gallery-photo.jpg" class="photos__card js-card-reveal js-photo" data-category="public" rel="all-photos" data-like-counter="190"><img src="img/photo_2.jpg" alt="@@"></a>
-				<a href="img/gallery-photo.jpg" class="photos__card js-card-reveal js-photo" data-category="public" rel="all-photos" data-like-counter="200"><img src="img/photo_6.jpg" alt="@@"></a>
-				<a href="img/gallery-photo.jpg" class="photos__card js-card-reveal js-photo" data-category="private" rel="all-photos" data-like-counter="150"><img src="img/photo_6.jpg" alt="@@"></a>
-				<a href="img/gallery-photo.jpg" class="photos__card js-card-reveal js-photo" data-category="private" rel="all-photos" data-like-counter="150"><img src="img/photo_6.jpg" alt="@@"></a>
+				<a href="img/gallery-photo.jpg" class="photos__card js-card-reveal js-photo" data-category="public" rel="all-photos" data-like-counter="10"><img src="img/photo_2.jpg" alt="@@"><span class="like"><svg><use xlink:href="img/icon.svg#icon_like"></use></svg><span class="like__counter">10</span></span></a>
+				<a href="img/gallery-photo.jpg" class="photos__card js-card-reveal js-photo" data-category="public" rel="all-photos" data-like-counter="25"><img src="img/photo_6.jpg" alt="@@"><span class="like"><svg><use xlink:href="img/icon.svg#icon_like"></use></svg><span class="like__counter">25</span></span></a>
+				<a href="img/gallery-photo.jpg" class="photos__card js-card-reveal js-photo" data-category="private" rel="all-photos" data-like-counter="10"><img src="img/photo_6.jpg" alt="@@"><span class="like"><svg><use xlink:href="img/icon.svg#icon_like"></use></svg><span class="like__counter">10</span></span></a>
+				<a href="img/gallery-photo.jpg" class="photos__card js-card-reveal js-photo" data-category="private" rel="all-photos" data-like-counter="25"><img src="img/photo_6.jpg" alt="@@"><span class="like"><svg><use xlink:href="img/icon.svg#icon_like"></use></svg><span class="like__counter">25</span></span></a>
 			</div>
 			<div class="column" data-column="3">
-				<a href="img/gallery-photo.jpg" class="photos__card js-card-reveal js-photo" data-category="public" rel="all-photos" data-like-counter="150"><img src="img/photo_3.jpg" alt="@@"></a>
-				<a href="img/gallery-photo.jpg" class="photos__card js-card-reveal js-photo" data-category="private" rel="all-photos" data-like-counter="150"><img src="img/photo_3.jpg" alt="@@"></a>
+				<a href="img/gallery-photo.jpg" class="photos__card js-card-reveal js-photo" data-category="public" rel="all-photos" data-like-counter="51"><img src="img/photo_3.jpg" alt="@@"><span class="like"><svg><use xlink:href="img/icon.svg#icon_like"></use></svg><span class="like__counter">51</span></span></a>
+				<a href="img/gallery-photo.jpg" class="photos__card js-card-reveal js-photo" data-category="private" rel="all-photos" data-like-counter="40"><img src="img/photo_3.jpg" alt="@@"><span class="like"><svg><use xlink:href="img/icon.svg#icon_like"></use></svg><span class="like__counter">40</span></span></a>
 				<a href="#all-photos" class="photos__card photos__card_more js-card-reveal fancybox js-popup" data-desktop="3" data-desktopsmall="1" data-tablet="3"><p class="photos__text"><span>+75</span>photos</p><img src="img/photo_7.jpg" alt="@@"></a>
 			</div>
 			<div class="column" data-column="4">
-				<a href="img/gallery-photo.jpg" class="photos__card js-card-reveal js-photo" data-desktop="4" data-desktopsmall="3" data-tablet="4" data-mobile="3" data-priority="high" data-category="public" rel="all-photos" data-like-counter="150"><img src="img/photo_4.jpg" alt="@@"></a>
-				<a href="img/gallery-photo.jpg" class="photos__card js-card-reveal js-photo" data-desktop="4" data-desktopsmall="3" data-tablet="4" data-mobile="3" data-priority="high" data-category="private" rel="all-photos" data-like-counter="150"><img src="img/photo_4.jpg" alt="@@"></a>
+				<a href="img/gallery-photo.jpg" class="photos__card js-card-reveal js-photo" data-desktop="4" data-desktopsmall="3" data-tablet="4" data-mobile="3" data-priority="high" data-category="public" rel="all-photos" data-like-counter="0"><img src="img/photo_4.jpg" alt="@@"><span class="like"><svg><use xlink:href="img/icon.svg#icon_like"></use></svg><span class="like__counter">0</span></span></a>
+				<a href="img/gallery-photo.jpg" class="photos__card js-card-reveal js-photo" data-desktop="4" data-desktopsmall="3" data-tablet="4" data-mobile="3" data-priority="high" data-category="private" rel="all-photos" data-like-counter="5"><img src="img/photo_4.jpg" alt="@@"><span class="like"><svg><use xlink:href="img/icon.svg#icon_like"></use></svg><span class="like__counter">25</span>5</span></a>
 				<a href="#" class="photos__card photos__card_upload js-card-reveal" data-desktop="4" data-desktopsmall="2" data-tablet="4" data-priority="low"><p><span>+</span>Upload photo</p></a>
 			</div>
 		</div>
-		<div class="costumes">
+    <div class="event-information">
+      <div class="featches">
+        <div class="featches__header">
+          <ul class="filter featches__filter">
+            <li class="active" data-tab-target="costumes">Costumes</li>
+            <li data-tab-target="gifts">Gifts</li>
+            <li data-tab-target="drinks">Drinks</li>
+            <li data-tab-target="accessory">Accessory</li>
+          </ul>
+        </div>
+        <div class="featches__content js-card-reveal">
+          <div class="featches__row active" data-tab="costumes">
+            <div class="column">
+              <a href="#" class="featches__card"><p>Carnaval<span>www.crnv.com</span></p><img src="img/costumes_1.jpg" alt="@@"></a>
+            </div>
+            <div class="column">
+              <a href="#" class="featches__card"><p>Ombre Swing Dress<span>www.idesdress.com</span></p><img src="img/costumes_2.jpg" alt="@@"></a>
+            </div>
+            <div class="column mobile-hide">
+              <a href="#" class="featches__card featches__card_empty"><img src="img/no-data.svg" alt="@@"><p>While the field is empty</p></a>
+            </div>
+          </div>
+          <div class="featches__row" data-tab="gifts">
+            <div class="column">
+              <a href="#" class="featches__card featches__card_empty"><img src="img/no-data.svg" alt="@@"><p>While the field is empty</p></a>
+            </div>
+            <div class="column">
+              <a href="#" class="featches__card featches__card_empty"><img src="img/no-data.svg" alt="@@"><p>While the field is empty</p></a>
+            </div>
+            <div class="column mobile-hide">
+              <a href="#" class="featches__card featches__card_empty"><img src="img/no-data.svg" alt="@@"><p>While the field is empty</p></a>
+            </div>
+          </div>
+          <div class="featches__row" data-tab="drinks">
+            <div class="column">
+              <a href="#" class="featches__card"><p>Red Bull<span>www.red.com</span></p><img src="img/gifts_1.jpg" alt="@@"></a>
+            </div>
+            <div class="column">
+              <a href="#" class="featches__card featches__card_empty"><img src="img/no-data.svg" alt="@@"><p>While the field is empty</p></a>
+            </div>
+            <div class="column mobile-hide">
+              <a href="#" class="featches__card featches__card_empty"><img src="img/no-data.svg" alt="@@"><p>While the field is empty</p></a>
+            </div>
+          </div>
+          <div class="featches__row" data-tab="accessory">
+            <div class="column">
+              <a href="#" class="featches__card featches__card_empty"><img src="img/no-data.svg" alt="@@"><p>While the field is empty</p></a>
+            </div>
+            <div class="column">
+              <a href="#" class="featches__card featches__card_empty"><img src="img/no-data.svg" alt="@@"><p>While the field is empty</p></a>
+            </div>
+            <div class="column mobile-hide">
+              <a href="#" class="featches__card featches__card_empty"><img src="img/no-data.svg" alt="@@"><p>While the field is empty</p></a>
+            </div>
+          </div>
+        </div>
+      </div>
+		<!--<div class="costumes">
 			<p class="heading costumes__heading">Costumes</p>
 			<div class="column">
 				<a href="#" class="costumes__card js-card-reveal"><p>Carnaval<span>www.crnv.com</span></p><img src="img/costumes_1.jpg" alt="@@"></a>
@@ -319,24 +398,25 @@
 			<div class="column">
 				<a href="#" class="gifts__card js-card-reveal"><p>Red Bull<span>www.red.com</span></p><img src="img/gifts_1.jpg" alt="@@"></a>
 			</div>
-		</div>
-		<div class="recommendation">
-			<div class="column">
-				<a href="#" class="recommendation__head"><span class="avatar"><img src="img/avatar1.png" alt="@@"></span>Dmitriy<span class="rectext">Recommends</span></a>
-				<div class="event event_card js-card-reveal">
-					<img src="img/event7.jpg" alt="@@" class="event__bg">
-					<p class="event__type">Home party</p>
-					<p class="event__name">Night rave</p>
-					<p class="event__date">21 DEC <span>&middot;</span> 21:00</p>
-					<div class="event__info">
-						<a href="#" class="event__organizer"><span class="avatar avatar_small"><img src="img/avatar1.png" alt="@@"></span>Alexander Longer</a>
-						<a href="#" class="event__likes"><img src="img/icon_like.svg" alt="@@">370</a>
-						<a href="#" class="event__watches"><img src="img/icon_camera.svg" alt="@@">750</a>
-						<a href="#" class="button button_small button_pink">Join</a>
-					</div>
-				</div>
-			</div>
-		</div>
+		</div>-->
+		  <div class="recommendation">
+        <div class="column">
+          <a href="#" class="recommendation__head"><span class="avatar"><img src="img/avatar1.png" alt="@@"></span>Dmitriy<span class="rectext">Recommends</span></a>
+          <div class="event event_card js-card-reveal">
+            <img src="img/event7.jpg" alt="@@" class="event__bg">
+            <p class="event__type">Home party</p>
+            <p class="event__name">Night rave</p>
+            <p class="event__date">21 DEC <span>&middot;</span> 21:00</p>
+            <div class="event__info">
+              <a href="#" class="event__organizer"><span class="avatar avatar_small"><img src="img/avatar1.png" alt="@@"></span>Alexander Longer</a>
+              <a href="#" class="event__likes"><img src="img/icon_like.svg" alt="@@">370</a>
+              <a href="#" class="event__watches"><img src="img/icon_camera.svg" alt="@@">750</a>
+              <a href="#" class="button button_small button_pink">Join</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 		<div class="comments">
 			<p class="heading comments__heading">All comments (5)</p>
 			<form action="" class="comments__form">

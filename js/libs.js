@@ -1,5 +1,5 @@
 svg4everybody();
-//objectFitImages();
+objectFitImages();
 
 // Кастомный скроллбар (jQuery Scrollbar)
 $(document).ready(function(){
@@ -302,6 +302,13 @@ $(document).on('click', '.js-next-form-section', function (event) {
   });
 });
 
+$(document).on('click', '.js-final-form', function(event) {
+  event.preventDefault();
+  var targetHref = $(this).attr('href');
+  $(this).closest('form')[0].submit();
+  document.location.replace(targetHref);
+});
+
 //#######
 
 //upload cover
@@ -504,3 +511,12 @@ $(document).on('change', '#gift-availability', function () {
 });
 
 //###END scripts for form event create
+
+$(document).on('load resize', function() {
+  console.log('click');
+  if($('.congratulation').length > 0) {
+    console.log('click');
+    var pageHeight = $(window).height() - $('header').outerHeight() - $('footer').outerHeight();
+    $('.congratulation').css({ 'min-height': pageHeight });
+  }
+});

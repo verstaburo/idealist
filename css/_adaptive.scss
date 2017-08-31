@@ -103,8 +103,9 @@
   .featches .column {margin-top: 20px;}
 	.tags {padding: 0 60px;}
 	.popup {width: 944px;}
-	.eventinfo__heading {width: 50%;}
-	.eventinfo__filter {padding-left: 10px;}
+	.eventinfo__filter {padding-left: 0;
+    li {margin-left: 35px;}
+  }
 
 	.profile .column_big .column {width: 50%;}
 	.profile .column_big .column:nth-child(3) {padding-right: 0;}
@@ -307,7 +308,7 @@
 	.tags {width: 100%; padding: 0; margin-top: 50px;}
 
 	.popup {width: 560px;}
-	.eventinfo__filter li {margin-left: 57px;}
+	.eventinfo__filter li {margin-left: 30px;}
 	.following__list li {padding-right: 55px;}
 	.login {flex-wrap: wrap;}
 	.login__left-side {order: 2; width: 100%; padding-bottom: 60px;}
@@ -383,8 +384,9 @@
 	.profile .column_big .column {width: 100%; padding: 0;}
 	.profile .eventinfo .column {margin-top: 20px;}
 	.eventinfo__head {flex-wrap: wrap; margin-bottom: 10px;}
-	.eventinfo__heading {width: 100%;}
-	.eventinfo__filter {margin-top: 20px;}
+	.eventinfo__heading {width: 100%; padding-left: 0; margin-right: 0;}
+	.eventinfo__filter {margin: 20px 0 0; width: 100%; order: 3}
+  .eventinfo__button {width: 100%; margin-top: 30px; margin-left: 0; order: 2;}
 	.profile .column_big .column_med {width: 100%; padding: 0;}
 	.settings__field {flex-wrap: wrap;}
 	.settings__fieldname {width: 100%; margin-bottom: 10px;}

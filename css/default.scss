@@ -492,6 +492,10 @@
 	&__address {letter-spacing: 0.05em; opacity: 0.5; line-height: 1.5em; margin-top: 13px;}
 }
 
+.hidden-text {
+  display: none;
+}
+
 /*----------------------------------------*/
 
 .music {background-color: #100824;box-sizing: border-box;
@@ -832,11 +836,12 @@
 /*----------------------------------------*/
 
 .eventinfo {padding-top: 48px; width: 100%;
-	&__head {display: flex; align-items: flex-end; margin-bottom: 21px;}
-	&__heading {padding-left: 21px; width: 33.3333%; box-sizing: border-box;}
-	&__filter {padding-left: 7px;
+	&__head {display: flex; align-items: baseline; margin-bottom: 6px;}
+	&__heading {padding-left: 21px; box-sizing: border-box; margin-right: 20px; }
+	&__filter {padding-left: 7px;margin: 0 auto;
 		li {margin-left: 71px;}
 	}
+  &__button {margin-left: 20px; padding: 0 24px;}
 	.event {margin-top: 20px;
 		img {bottom: auto;}
 	}

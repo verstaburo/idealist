@@ -533,3 +533,18 @@ $(document).on('click', '[data-tab-target]', function () {
   $(this).closest('.featches').find('.featches__content').find('[data-tab]').fadeOut(400, function() { $(this).removeClass('active', 0); });
   $(this).closest('.featches').find('[data-tab="'+ tabTarget +'"]').fadeIn(400, function () { $(this).addClass('active', 0); });
 });
+
+//show more text
+
+$(document).on('click', '.js-show-more', function (e) {
+  e.preventDefault();
+  if ($(this).hasClass('js-open')) {
+    $(this).removeClass('js-open');
+    $(this).text('read more');
+    $(this).siblings('.hidden-text').hide('blind', 300);
+  } else {
+    $(this).addClass('js-open');
+    $(this).text('back');
+    $(this).siblings('.hidden-text').show('blind', 300);
+  }
+});

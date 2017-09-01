@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Idealist</title>
+    <link rel="shortcut icon" href="favicon.ico?v=2" type="image/x-icon"/>
+    <link rel="icon" href="favicon.ico?v=2" type="image/x-icon"/>
+    <link rel="stylesheet" href="css/default.css?v=2"/>
+    <link rel="stylesheet" href="js/libs/scrollbar/jquery.scrollbar.css"/>
+    <link rel="stylesheet" href="js/libs/fancybox/jquery.fancybox.css"/>
+</head>
+
+<body>
+<!-- ### forms ####################### !-->
+<div class="overlay"></div>
+<div class="page-loading"><img src="img/loading-bars.svg" alt="@@"></div>
+
+<!-- ### header ####################### !-->
+<header class="header">
+	<div class="container">
+		<div class="header__leftside">
+			<a href="index.html" class="header__logo">
+				<img src="img/logo.svg" alt="@@">
+			</a>
+			<form action="#" method="post" class="header__searchfield">
+				<input type="text" placeholder="Search by name events">
+				<button type="submit"><img src="img/icon_search.svg" alt="@@"></button>
+			</form>
+			<div class="header__date">
+				<a class="header__link">Set date</a>
+				<div class="calendar header__calendar">
+					<div class="calendar__head">
+						<p class="calendar__month">December</p>
+						<div class="calendar__closest">
+							<a href="#">Today</a>
+							<a href="#">Tomorrow</a>
+						</div>
+					</div>
+					<div class="calendar__daysoftheweek">
+						<a href="#">Su</a>
+						<a href="#">Mo</a>
+						<a href="#">Tu</a>
+						<a href="#">We</a>
+						<a href="#">Th</a>
+						<a href="#">Fr</a>
+						<a href="#">Sa</a>
+					</div>
+					<div class="calendar__week">
+						<a href="#"></a>
+						<a href="#" class="active">01</a>
+						<a href="#">02</a>
+						<a href="#">03</a>
+						<a href="#">04</a>
+						<a href="#">05</a>
+						<a href="#">06</a>
+					</div>
+					<div class="calendar__week">
+						<a href="#">07</a>
+						<a href="#">08</a>
+						<a href="#">09</a>
+						<a href="#">10</a>
+						<a href="#">11</a>
+						<a href="#">12</a>
+						<a href="#">13</a>
+					</div>
+					<div class="calendar__week">
+						<a href="#">14</a>
+						<a href="#">15</a>
+						<a href="#">16</a>
+						<a href="#">17</a>
+						<a href="#">18</a>
+						<a href="#">19</a>
+						<a href="#">20</a>
+					</div>
+					<div class="calendar__week">
+						<a href="#">21</a>
+						<a href="#">22</a>
+						<a href="#">23</a>
+						<a href="#">24</a>
+						<a href="#">25</a>
+						<a href="#">26</a>
+						<a href="#">27</a>
+					</div>
+					<div class="calendar__week">
+						<a href="#">28</a>
+						<a href="#">29</a>
+						<a href="#">30</a>
+						<a href="#">31</a>
+						<a href="#" class="nextmonth">01</a>
+						<a href="#" class="nextmonth">02</a>
+						<a href="#" class="nextmonth">03</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="header__events">
+			<a href="#" class="header__link">All events</a>
+		</div>
+		<div class="header__account">
+			<a class="header__link">Log in</a>
+			<a class="header__link">Sign up</a>
+			<!-- Hint -->
+			<p class="header__hint"><span></span>Login to get access to personal account</p>
+			<!-- // Hint -->
+			<!-- Logged -->
+			<a class="header__username"><span class="avatar avatar_small"><img src="img/avatar17.png" alt="@@"></span>Alexander</a>
+			<ul class="header__usermenu">
+				<li><a href="#" class="header__link">My profile</a></li>
+				<li><a href="#" class="header__link">Settings</a></li>
+				<li><a href="#" class="header__link">Send profile</a></li>
+				<li class="logout"><a class="header__link">Log out</a></li>
+			</ul>
+			<!-- // Logged -->
+		</div>
+	</div>
+</header>
+
+<!-- ### main content ####################### !-->
+<section class="settings-page">
+	<div class="container">
+		<div class="column column_userinfo">
+			<div class="userinfo">
+				<div class="userinfo__head">
+					<div class="userinfo__avatar avatar">
+						<img src="img/avatar17.png" alt="@@">
+					</div>
+					<a class="userinfo__imgupload js-nopreload js-popup-nocross" href="#popup-upload">
+						<img src="img/icon_arrow.svg" alt="@@">
+					</a>
+					<p class="userinfo__name">Alexander Lovalsky</p>
+				</div>
+				<ul class="userinfo__tablinks">
+					<li><a class="userinfo__link" data-tab="events">Events<span class="userinfo__count">11</span></a></li>
+					<li><a class="userinfo__link">Followers<span class="userinfo__count">750</span></a></li>
+					<li><a class="userinfo__link" data-tab="following">Following<span class="userinfo__count">30</span></a></li>
+					<li><a class="userinfo__link" data-tab="following">Messages<span class="userinfo__count">2</span></a></li>
+				</ul>
+				<div class="userinfo__about">
+					<p class="userinfo__about-heading">About me</p>
+					<p class="userinfo__about-text">Composer with experience in writing for, and collaborating with various types of instrumental/vocal ensembles from solo instrumental to large orchestral as well as solo vocal and choral music.</p>
+				</div>
+				<p class="userinfo__registration-date">Registered: <span>October 3, 2012</span></p>
+			</div>
+			<a href="#" class="userinfo__delete">Delete profile</a>
+		</div>
+		<div class="column column_med">
+			<!-- Settings -->
+			<form class="settings" action="" id="settings">
+				<p class="heading settings__heading">Settings</p>
+				<div class="settings__field">
+					<p class="settings__fieldname">First name:</p>
+					<input type="text" name="firstname" value="Alexander" data-required>
+				</div>
+				<div class="settings__field settings__field_username">
+					<p class="settings__fieldname">Username:</p>
+					<input type="text" name="username" value="Stiffler" data-required>
+				</div>
+				<div class="settings__field">
+					<p class="settings__fieldname">E-Mail:</p>
+					<input type="email" name="email" value="alexander@al.com" data-required>
+				</div>
+				<div class="settings__field">
+					<p class="settings__fieldname">Telephon:</p>
+					<input type="tel" name="tel" value="+ 7 (960) 185 58 84" data-required>
+				</div>
+				<div class="settings__field settings__field_location">
+					<p class="settings__fieldname">Location:</p>
+					<div class="selectbox">
+						<select name="location">
+							<option value="Russia">Russian Federation</option>
+							<option value="USA">USA</option>
+						</select>
+						<ul></ul>
+					</div>
+					<input type="text" name="city" value="Moskow">
+				</div>
+				<div class="settings__field">
+					<p class="settings__fieldname">Sex:</p>
+					<div class="selectbox">
+						<select name="sex">
+							<option value="1">Male</option>
+							<option value="2">Female</option>
+						</select>
+						<ul></ul>
+					</div>
+				</div>
+				<div class="settings__field settings__field_birthday">
+					<p class="settings__fieldname">Birthday:</p>
+					<div class="selectbox">
+						<select name="day">
+							<option value="">Day</option>
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+						</select>
+						<ul></ul>
+					</div>
+					<div class="selectbox">
+						<select name="month">
+							<option value="">Month</option>
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+						</select>
+						<ul></ul>
+					</div>
+					<div class="selectbox">
+						<select name="year">
+							<option value="">Year</option>
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+						</select>
+						<ul></ul>
+					</div>
+				</div>
+				<div class="settings__field settings__field_textarea">
+					<p class="settings__fieldname">About me:</p>
+					<textarea name="about">Composer with experience in writing for, and collaborating with various types of instrumental/vocal ensembles from solo instrumental to large orchestral as well as solo vocal and choral music</textarea>
+				</div>
+				<button class="button button_pink settings__button js-validation js-nopreload" type="submit">Save</button>
+			</form>
+			<!-- // Settings -->
+		</div>
+	</div>
+</section>
+
+<!-- ### footer ####################### !-->
+<footer class="footer">
+	<div class="container">
+		<p class="footer__text">All rights reserved 2016</p>
+		<div class="footer__app">
+			<p class="footer__apptext">Available on the App Store and Google Play</p>
+			<a href="#" class="footer__appshop"><img src="img/google.svg" alt="@@" ></a>
+			<a href="#" class="footer__appshop"><img src="img/apple.svg" alt="@@"></a>
+		</div>
+		<a href="mailto:hi@idealist.com" class="footer__text footer__mail">hi@idealist.com</a>
+	</div>
+</footer>
+
+<div id="popup-upload" class="popup popup-upload">
+  <div class="popup-upload__wrapper">
+    <p class="popup-upload__title">Profile photo</p>
+    <div class="popup-upload__dropzone js-dropzone">
+      <div class="popup-upload__icon">
+        <img src="img/cloud.svg" alt="@@">
+      </div>
+      <label for="upload-file" class="popup-upload__button button button_pink button_bold">
+        Choose file
+        <input type="file" id="upload-file" class="popup-upload__input" value="Choose file" accept="image/*">
+      </label>
+      <p class="popup-upload__text">
+        or drag and drop here.
+      </p>
+    </div>
+    <form class="popup-upload__resize js-imagepreview" id="upload-form">
+      <div class="popup-upload__cropzone"></div>
+      <div class="popup-upload__buttons">
+        <button class="button button_pink button_bold popup-upload__submit" type="submit">Save</button>
+        <button class="button button_pink button_bordered button_bordered_pink button_bold popup-upload__back" type="button">Back</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- ################################### !-->
+<!-- ### libs ####################### !-->
+<!-- ################################### !-->
+<script src="js/libs/jquery-2.1.3.min.js"></script>
+
+<!-- JQuery UI -->
+<script src="js/libs/jquery-ui.min.js"></script>
+
+<!-- jQuery Scrollbar !-->
+<script src="js/libs/scrollbar/jquery.scrollbar.js"></script>
+
+<!-- Fancybox -->
+<script src="js/libs/fancybox/jquery.fancybox.js"></script>
+
+<!-- SVG support -->
+<script src="js/libs/svg4everybody.min.js"></script>
+
+<!-- Croppie croped img -->
+<script src="js/libs/croppie.min.js"></script>
+
+<!-- Object Fit -->
+<script src="js/libs/ofi.min.js"></script>
+
+<!-- ################################### !-->
+<!-- ### scripts ####################### !-->
+<!-- ################################### !-->
+
+<!-- main scripts !-->
+<script src="js/libs.js"></script>
+<script src="js/header-scripts.js?v=3"></script>
+<script src="js/page-loading.js"></script>
+<script src="js/custom-select.js"></script>
+</body>
+</html>

@@ -1,0 +1,1598 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Idealist</title>
+    <link rel="shortcut icon" href="favicon.ico?v=2" type="image/x-icon"/>
+    <link rel="icon" href="favicon.ico?v=2" type="image/x-icon"/>
+    <link rel="stylesheet" href="css/default.css?v=2"/>
+    <link rel="stylesheet" href="js/libs/scrollbar/jquery.scrollbar.css"/>
+    <link rel="stylesheet" href="js/libs/fancybox/jquery.fancybox.css"/>
+</head>
+
+<body>
+<!-- ### forms ####################### !-->
+<div class="overlay"></div>
+<div class="page-loading"><img src="img/loading-bars.svg" alt="@@"></div>
+
+<!-- ### header ####################### !-->
+<header class="header">
+	<div class="container">
+		<div class="header__leftside">
+			<a href="index.html" class="header__logo">
+				<img src="img/logo.svg" alt="@@">
+			</a>
+			<form action="#" method="post" class="header__searchfield">
+				<input type="text" placeholder="Search by name events">
+				<button type="submit"><img src="img/icon_search.svg" alt="@@"></button>
+			</form>
+			<div class="header__date">
+				<a class="header__link">Set date</a>
+				<div class="calendar header__calendar">
+					<div class="calendar__head">
+						<p class="calendar__month">December</p>
+						<div class="calendar__closest">
+							<a href="#">Today</a>
+							<a href="#">Tomorrow</a>
+						</div>
+					</div>
+					<div class="calendar__daysoftheweek">
+						<a href="#">Su</a>
+						<a href="#">Mo</a>
+						<a href="#">Tu</a>
+						<a href="#">We</a>
+						<a href="#">Th</a>
+						<a href="#">Fr</a>
+						<a href="#">Sa</a>
+					</div>
+					<div class="calendar__week">
+						<a href="#"></a>
+						<a href="#" class="active">01</a>
+						<a href="#">02</a>
+						<a href="#">03</a>
+						<a href="#">04</a>
+						<a href="#">05</a>
+						<a href="#">06</a>
+					</div>
+					<div class="calendar__week">
+						<a href="#">07</a>
+						<a href="#">08</a>
+						<a href="#">09</a>
+						<a href="#">10</a>
+						<a href="#">11</a>
+						<a href="#">12</a>
+						<a href="#">13</a>
+					</div>
+					<div class="calendar__week">
+						<a href="#">14</a>
+						<a href="#">15</a>
+						<a href="#">16</a>
+						<a href="#">17</a>
+						<a href="#">18</a>
+						<a href="#">19</a>
+						<a href="#">20</a>
+					</div>
+					<div class="calendar__week">
+						<a href="#">21</a>
+						<a href="#">22</a>
+						<a href="#">23</a>
+						<a href="#">24</a>
+						<a href="#">25</a>
+						<a href="#">26</a>
+						<a href="#">27</a>
+					</div>
+					<div class="calendar__week">
+						<a href="#">28</a>
+						<a href="#">29</a>
+						<a href="#">30</a>
+						<a href="#">31</a>
+						<a href="#" class="nextmonth">01</a>
+						<a href="#" class="nextmonth">02</a>
+						<a href="#" class="nextmonth">03</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="header__events">
+			<a href="#" class="header__link">All events</a>
+		</div>
+		<div class="header__account">
+			<a class="header__link">Log in</a>
+			<a class="header__link">Sign up</a>
+			<!-- Hint -->
+			<p class="header__hint"><span></span>Login to get access to personal account</p>
+			<!-- // Hint -->
+			<!-- Logged -->
+			<a class="header__username"><span class="avatar avatar_small"><img src="img/avatar17.png" alt="@@"></span>Alexander</a>
+			<ul class="header__usermenu">
+				<li><a href="#" class="header__link">My profile</a></li>
+				<li><a href="#" class="header__link">Settings</a></li>
+				<li><a href="#" class="header__link">Send profile</a></li>
+				<li class="logout"><a class="header__link">Log out</a></li>
+			</ul>
+			<!-- // Logged -->
+		</div>
+	</div>
+</header>
+
+<!-- ### main content ####################### !-->
+<form action="post" id="search-human"></form>
+<form action="post" id="search-human-by-email"></form>
+<form action="post" id="search-human-by-phone"></form>
+<form class="event-create form" id="create-event">
+	<div class="container">
+		<div class="column event-create__steps">
+		  <a class="event-create__step step active js-nopreload" data-step-target="step1">
+		    <p class="step__number">Step 1</p>
+		    <p class="step__title">Scenario</p>
+		    <p class="step__describe">Find a ready script or create your own party</p>
+		  </a>
+		  <a class="event-create__step step js-nopreload" data-step-target="step2">
+		    <p class="step__number">Step 2</p>
+		    <p class="step__title">Location and Time</p>
+		    <p class="step__describe">Tell your friends where and when you will hold a party</p>
+		  </a>
+		  <a class="event-create__step step js-nopreload" data-step-target="step3">
+		    <p class="step__number">Step 3</p>
+		    <p class="step__title">Invitation</p>
+		    <p class="step__describe">Invite your friends to celebrate all together</p>
+		  </a>
+		  <a class="event-create__step step js-nopreload" data-step-target="step4">
+		    <p class="step__number">Step 4</p>
+		    <p class="step__title">Gifts</p>
+		    <p class="step__describe">Select a gift that you want to be presented</p>
+		  </a>
+		  <a class="event-create__step step js-nopreload" data-step-target="step5">
+		    <p class="step__number">Step 5</p>
+		    <p class="step__title">Cover</p>
+		    <p class="step__describe">Upload photo for the cover of your event</p>
+		  </a>
+		</div>
+		<div class="column column_event-create event-create__content">
+			<section class="event-create__step-section active form__section" data-step="step1">
+			  <h2 class="form__title">Create a party</h2>
+			  <div class="form__row form__row_bigmargin">
+			    <div class="form__col">
+			      <label for="party-name" class="form__label">Name of your party:</label>
+			    </div>
+			    <div class="form__col form__col_main">
+			      <div class="form__wrapper">
+			        <input type="text" class="form__input" id="party-name">
+			      </div>
+			    </div>
+			  </div>
+			  <div class="form__row">
+			    <div class="form__col">
+			      <label for="event-subject" class="form__label">Subject:</label>
+			    </div>
+			    <div class="form__col form__col_main">
+			      <div class="form__wrapper">
+			        <div class="selectbox">
+                <select name="subject" id="event-subject">
+                  <option value="1">Birthday</option>
+                  <option value="2">Birthday</option>
+                  <option value="3">Birthday</option>
+                </select>
+                <ul></ul>
+              </div>
+			      </div>
+			    </div>
+			  </div>
+			  <div class="form__row">
+			    <div class="form__col">
+			      <label for="event-availability" class="form__label">Availability:</label>
+			    </div>
+			    <div class="form__col form__col_main">
+			      <div class="form__wrapper">
+			        <div class="selectbox">
+                <select name="availability" id="event-availability">
+                  <option value="1">Private</option>
+                  <option value="2">Private</option>
+                  <option value="3">Public</option>
+                </select>
+                <ul></ul>
+              </div>
+			      </div>
+			    </div>
+			  </div>
+			  <div class="form__row">
+			    <div class="form__col">
+			      <label for="event-scenario" class="form__label">Scenario:</label>
+			    </div>
+			    <div class="form__col form__col_main">
+			      <div class="form__wrapper">
+			        <div class="selectbox">
+                <select name="scenario" id="event-scenario">
+                  <option value="1">Space party</option>
+                  <option value="2">Space party</option>
+                  <option value="3">Space party</option>
+                </select>
+                <ul></ul>
+              </div>
+			      </div>
+			    </div>
+			  </div>
+			  <div class="form__accordion accordion">
+			    <div class="accordion__title form__accordion-title">
+			      <span class="accordion__legend">Extra options</span>
+            <span class="accordion__icon">
+              <span><svg>
+                  <use xlink:href="img/icon.svg#icon_arrow"></use>
+                </svg></span>
+            </span>
+			    </div>
+			    <div class="accordion__content form__accordion-content">
+            <div class="form__row">
+              <div class="form__col">
+                <label for="event-music" class="form__label">Music:</label>
+              </div>
+              <div class="form__col form__col_main">
+                <div class="form__wrapper">
+                  <div class="selectbox-multiple">
+                    <div class="selectbox-multiple__value">Music...</div>
+                    <select name="music" id="event-music" multiple>
+                      <option value="1" selected>Deep House</option>
+                      <option value="2" selected>Indie</option>
+                      <option value="3" selected>Reggae</option>
+                      <option value="4">Dark Ambient</option>
+                    </select>
+                    <ul class="scrollbar-inner"></ul>
+                  </div>
+                  <ul class="selectbox-output">
+                    <li data-option="1">Deep House<span class="selectbox-output__del"></span></li>
+                    <li data-option="2">Indie<span class="selectbox-output__del"></span></li>
+                    <li data-option="3">Reggae<span class="selectbox-output__del"></span></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="form__row">
+              <div class="form__col">
+                <label for="event-costumes" class="form__label">Costumes:</label>
+              </div>
+              <div class="form__col form__col_main">
+                <div class="form__wrapper">
+                  <div class="selectbox-multiple">
+                    <div class="selectbox-multiple__value">Costumes...</div>
+                    <select name="costumes" id="event-costumes" multiple>
+                      <option value="1">Black Tie</option>
+                      <option value="2" selected>Cocktail</option>
+                      <option value="3">Semi-Format</option>
+                      <option value="4" selected>White Tie</option>
+                      <option value="5" selected>Jackets</option>
+                    </select>
+                    <ul class="scrollbar-inner"></ul>
+                  </div>
+                  <ul class="selectbox-output">
+                    <li data-option="2">Cocktail<span class="selectbox-output__del"></span></li>
+                    <li data-option="4">White Tie<span class="selectbox-output__del"></span></li>
+                    <li data-option="5">Jackets<span class="selectbox-output__del"></span></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="form__row">
+              <div class="form__col">
+                <label for="event-beverage" class="form__label">Beverages:</label>
+              </div>
+              <div class="form__col form__col_main">
+                <div class="form__wrapper">
+                  <div class="selectbox">
+                    <select name="beverage" id="event-beverage">
+                      <option value="">Beverages...</option>
+                      <option value="1">Champagne</option>
+                      <option value="2">Beer</option>
+                      <option value="3">Wine</option>
+                    </select>
+                    <ul></ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form__row">
+              <div class="form__col">
+                <label for="event-food" class="form__label">Food:</label>
+              </div>
+              <div class="form__col form__col_main">
+                <div class="form__wrapper">
+                  <div class="selectbox">
+                    <select name="food" id="event-food">
+                      <option value="">Food...</option>
+                      <option value="1">No food</option>
+                      <option value="2">Snacks</option>
+                    </select>
+                    <ul></ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form__row">
+              <div class="form__col">
+                <label for="event-accessory" class="form__label">Accessory:</label>
+              </div>
+              <div class="form__col form__col_main">
+                <div class="form__wrapper">
+                  <div class="selectbox">
+                    <select name="accessory" id="event-accessory">
+                       <option value="">Accessory...</option>
+                      <option value="1" selected>No accessories</option>
+                      <option value="2" selected>Underground</option>
+                    </select>
+                    <ul></ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form__row">
+              <div class="form__col">
+                <label for="event-description" class="form__label">Description:</label>
+              </div>
+              <div class="form__col form__col_main">
+                <div class="form__wrapper">
+                  <textarea name="description" id="event-description" class="scrollbar-inner">Anyone who’s anyone knows that when yiu’re in Vegas. you want to party – not waste your time standing in line. That’s where the Club Crawl comes in handy.
+                  </textarea>
+                </div>
+              </div>
+            </div>
+			    </div>
+			  </div>
+			  <div class="form__row">
+			    <a href="#" class="button button_pink form__next form__next_centered js-next-form-section js-nopreload" data-step-target="step2">Next</a>
+			  </div>
+			</section>
+			<section class="event-create__step-section form__section" data-step="step2">
+			  <h2 class="form__title">Location and Time</h2>
+			  <div class="form__row form__row_bigmargin">
+			    <div class="form__col">
+			      <span class="form__label">Date:</span>
+			    </div>
+			    <div class="form__col form__col_main">
+			      <div class="form__wrapper form__wrapper_flex form__wrapper_flex">
+			        <input type="text" id="date-from" class="form__input form__input_date js-popup-nocross" placeholder="From" href="#popup-calendar">
+			        <input type="text" id="date-to" class="form__input form__input_date js-popup-nocross" placeholder="To" href="#popup-calendar">
+			      </div>
+			    </div>
+			  </div>
+			  <div class="form__row">
+			    <div class="form__col">
+			      <span class="form__label">Time:</span>
+			    </div>
+			    <div class="form__col form__col_main">
+			      <div class="form__wrapper form__wrapper_mobile-row form__wrapper_flex">
+              <span class="form__label form__label_inner">From</span>
+			        <input type="text" class="form__input form__input_time" placeholder="Hour">
+			        <span class="form__label form__label_dot">:</span>
+			        <input type="text" class="form__input form__input_time" placeholder="Min">
+			      </div>
+			    </div>
+			  </div>
+			  <div class="form__row form__row_bigmargin">
+			    <div class="form__col">
+			    </div>
+			    <div class="form__col form__col_main">
+			      <div class="form__wrapper form__wrapper_mobile-row  form__wrapper_flex">
+			        <span class="form__label form__label_inner">To</span>
+			        <input type="text" class="form__input form__input_time" placeholder="Hour">
+			        <span class="form__label form__label_dot">:</span>
+			        <input type="text" class="form__input form__input_time" placeholder="Min">
+			      </div>
+			    </div>
+			  </div>
+			  <div class="form__row">
+			    <div class="form__col">
+			      <label for="event-country" class="form__label">Address:</label>
+			    </div>
+			    <div class="form__col form__col_main">
+			      <div class="form__wrapper">
+			        <div class="selectbox">
+                <select name="country" id="event-country">
+                  <option value="1">Russian Federation</option>
+                  <option value="2">USA</option>
+                  <option value="3">Germany</option>
+                </select>
+                <ul></ul>
+              </div>
+			      </div>
+			    </div>
+			  </div>
+			  <div class="form__row">
+			    <div class="form__col">
+			    </div>
+			    <div class="form__col form__col_main">
+			      <div class="form__wrapper">
+			        <div class="selectbox">
+                <select name="city" id="event-city">
+                  <option>City</option>
+                  <option value="1">Moscow</option>
+                  <option value="2">St. Petersburg</option>
+                </select>
+                <ul></ul>
+              </div>
+			      </div>
+			    </div>
+			  </div>
+			  <div class="form__row">
+			    <div class="form__col">
+			    </div>
+			    <div class="form__col form__col_main">
+			      <div class="form__wrapper">
+			        <input type="text" class="form__input" placeholder="Street">
+			      </div>
+			    </div>
+			  </div>
+			  <div class="form__row form__row_bigmargin">
+			    <div class="form__col">
+			    </div>
+			    <div class="form__col form__col_main">
+			      <div class="form__wrapper">
+			        <input type="text" class="form__input" placeholder="House">
+			      </div>
+			    </div>
+			  </div>
+			  <div class="form__row">
+          <div class="form__col">
+			    </div>
+			    <div class="form__col form__col_main">
+			      <a href="#" class="button button_pink form__next form__next_centered js-next-form-section js-nopreload" data-step-target="step3">Next</a>
+          </div>
+			  </div>
+			</section>
+			<section class="event-create__step-section form__section" data-step="step3">
+			  <h2 class="form__title form__title_search">
+          <span>Invitation</span>
+          <div class="form-search">
+            <input type="search" class="form-search__input" placeholder="Enter username" form="search-human">
+            <button class="form-search__button" type="submit" form="search-human">
+              <svg class="form-search__icon">
+                <use xlink:href="img/icon.svg#icon_loupe"></use>
+              </svg>
+            </button>
+          </div>
+			  </h2>
+			  <div class="form__accordion accordion accordion_nomargin">
+			    <div class="accordion__title form__accordion-title">
+			      <span class="accordion__legend">Search e–mail</span>
+            <span class="accordion__icon">
+              <span><svg>
+                  <use xlink:href="img/icon.svg#icon_arrow"></use>
+                </svg></span>
+            </span>
+			    </div>
+			    <div class="accordion__content form__accordion-content">
+            <ul class="form__checkbox-tree checkbox-tree">
+              <li class="checkbox-tree__item">
+                <div class="checkbox-tree__group-head">
+                  <p class="members">Members: <span class="members__counter">2</span></p>
+                  <div class="form-search">
+                    <input type="search" class="form-search__input" placeholder="Enter  E–Mail" form="search-human-by-mail">
+                    <button class="form-search__button" type="submit" form="search-human-by-mail">
+                      <svg class="form-search__icon">
+                        <use xlink:href="img/icon.svg#icon_loupe"></use>
+                      </svg>
+                    </button>
+                  </div>
+                  <div class="checkbox checkbox_empty">
+                    <input type="checkbox" name="all-human-mail" class="checkbox__input" id="all-human-mail" data-group="all-mail" checked>
+                    <label class="checkbox__label" for="all-human-mail">
+                      <span class="checkbox__check checkbox__check_square">
+                        <svg class="checkbox__icon checkbox__icon_check checkbox__icon_check_white">
+                          <use xlink:href="img/icon.svg#icon_check"></use>
+                        </svg>
+                      </span>
+                    </label>
+                  </div>
+                </div>
+                <ul class="checkbox-tree__group">
+                  <li class="checkbox-tree__item">
+                    <div class="contact-group">
+                      <div class="candidate">
+                        <div class="avatar">
+                          <img src="img/avatar8.png" alt="@@">
+                        </div>
+                        <p class="candidate__name">Irina Kovaleva</p>
+                        <p class="candidate__info">Moskow, Russian Federation</p>
+                      </div>
+                      <div class="contact-group__open">
+                        <svg class="contact-group__icon">
+                          <use xlink:href="img/icon.svg#icon_arrow"></use>
+                        </svg>
+                      </div>
+                      <ul class="contact-group__list checkbox-tree__group">
+                        <li class="checkbox-tree__item contact-group__item">
+                          <div class="checkbox">
+                            <input type="checkbox" name="mail-candidate" class="checkbox" id="c1-m1" checked data-group-item="all-mail">
+                            <label class="checkbox__label" for="c1-m1">
+                              <p>Irina_kovaleva@mail.ru</p>
+                              <div class="checkbox__check">
+                                <svg class="checkbox__icon checkbox__icon_plus">
+                                  <use xlink:href="img/icon.svg#icon_plus"></use>
+                                </svg>
+                                <svg class="checkbox__icon checkbox__icon_check">
+                                  <use xlink:href="img/icon.svg#icon_check"></use>
+                                </svg>
+                              </div>
+                            </label>
+                          </div>
+                        </li>
+                        <li class="checkbox-tree__item contact-group__item">
+                          <div class="checkbox">
+                            <input type="checkbox" name="mail-candidate" class="checkbox" id="c1-m2" checked data-group-item="all-mail">
+                            <label class="checkbox__label" for="c1-m2">
+                              <p>Irina_1984@mail.ru</p>
+                              <div class="checkbox__check">
+                                <svg class="checkbox__icon checkbox__icon_plus">
+                                  <use xlink:href="img/icon.svg#icon_plus"></use>
+                                </svg>
+                                <svg class="checkbox__icon checkbox__icon_check">
+                                  <use xlink:href="img/icon.svg#icon_check"></use>
+                                </svg>
+                              </div>
+                            </label>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li class="checkbox-tree__item">
+                    <div class="checkbox">
+                      <input type="checkbox" name="mail-candidate" class="checkbox" id="c2-m" checked data-group-item="all-mail">
+                      <label class="checkbox__label" for="c2-m">
+                        <div class="candidate">
+                          <div class="avatar">
+                            <img src="img/avatar7.png" alt="@@">
+                          </div>
+                          <p class="candidate__name">Oxana Polishuk</p>
+                          <p class="candidate__info">Parice, France</p>
+                        </div>
+                        <div class="checkbox__check">
+                          <svg class="checkbox__icon checkbox__icon_plus">
+                            <use xlink:href="img/icon.svg#icon_plus"></use>
+                          </svg>
+                          <svg class="checkbox__icon checkbox__icon_check">
+                            <use xlink:href="img/icon.svg#icon_check"></use>
+                          </svg>
+                        </div>
+                      </label>
+                    </div>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="form__accordion accordion">
+			    <div class="accordion__title form__accordion-title">
+			      <span class="accordion__legend">Search phone number</span>
+            <span class="accordion__icon">
+              <span><svg>
+                  <use xlink:href="img/icon.svg#icon_arrow"></use>
+                </svg></span>
+            </span>
+			    </div>
+			    <div class="accordion__content form__accordion-content">
+            <ul class="form__checkbox-tree checkbox-tree">
+              <li class="checkbox-tree__item">
+                <div class="checkbox-tree__group-head">
+                  <p class="members">Members: <span class="members__counter">2</span></p>
+                  <div class="form-search">
+                    <input type="search" class="form-search__input" placeholder="Enter  phone number" form="search-human-by-phone">
+                    <button class="form-search__button" type="submit" form="search-human-by-phone">
+                      <svg class="form-search__icon">
+                        <use xlink:href="img/icon.svg#icon_loupe"></use>
+                      </svg>
+                    </button>
+                  </div>
+                  <div class="checkbox checkbox_empty">
+                    <input type="checkbox" name="all-human-phone" class="checkbox__input" id="all-human-phone" data-group="all-phone">
+                    <label class="checkbox__label" for="all-human-phone">
+                      <span class="checkbox__check checkbox__check_square">
+                        <svg class="checkbox__icon checkbox__icon_check checkbox__icon_check_white">
+                          <use xlink:href="img/icon.svg#icon_check"></use>
+                        </svg>
+                      </span>
+                    </label>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="form__row form__row_bigmargin">
+          <ul class="form__checkbox-tree checkbox-tree">
+            <li class="checkbox-tree__item">
+              <div class="checkbox-tree__group-head">
+                <span class="members">Members: <span class="members__counter">3</span></span>
+                <div class="checkbox checkbox_empty">
+                  <input type="checkbox" name="all-human" class="checkbox__input" id="all-human" data-group="all-human">
+                  <label class="checkbox__label" for="all-human">
+                    <span class="checkbox__check checkbox__check_square">
+                      <svg class="checkbox__icon checkbox__icon_check checkbox__icon_check_white">
+                        <use xlink:href="img/icon.svg#icon_check"></use>
+                      </svg>
+                    </span>
+                  </label>
+                </div>
+              </div>
+              <ul class="checkbox-tree__group">
+                <li class="checkbox-tree__item">
+                  <div class="checkbox">
+                    <input type="checkbox" name="human" class="checkbox__input" id="human-1" checked data-group-item="all-human">
+                    <label class="checkbox__label" for="human-1">
+                      <div class="candidate">
+                        <div class="avatar">
+                          <img src="img/avatar12.png" alt="@@">
+                        </div>
+                        <p class="candidate__name">Diana Gorobcova</p>
+                        <p class="candidate__info">Voronezh, USA</p>
+                      </div>
+                      <div class="checkbox__check">
+                        <svg class="checkbox__icon checkbox__icon_plus">
+                          <use xlink:href="img/icon.svg#icon_plus"></use>
+                        </svg>
+                        <svg class="checkbox__icon checkbox__icon_check">
+                          <use xlink:href="img/icon.svg#icon_check"></use>
+                        </svg>
+                      </div>
+                    </label>
+                  </div>
+                </li>
+                <li class="checkbox-tree__item">
+                  <div class="checkbox">
+                    <input type="checkbox" name="human" class="checkbox__input" id="human-2" checked data-group-item="all-human">
+                    <label class="checkbox__label" for="human-2">
+                      <div class="candidate">
+                        <div class="avatar">
+                          <img src="img/avatar9.png" alt="@@">
+                        </div>
+                        <p class="candidate__name">Igor Kavabanga</p>
+                        <p class="candidate__info">London, UK</p>
+                      </div>
+                      <div class="checkbox__check">
+                        <svg class="checkbox__icon checkbox__icon_plus">
+                          <use xlink:href="img/icon.svg#icon_plus"></use>
+                        </svg>
+                        <svg class="checkbox__icon checkbox__icon_check">
+                          <use xlink:href="img/icon.svg#icon_check"></use>
+                        </svg>
+                      </div>
+                    </label>
+                  </div>
+                </li>
+                <li class="checkbox-tree__item">
+                  <div class="checkbox">
+                    <input type="checkbox" name="human" class="checkbox__input" id="human-3" checked data-group-item="all-human">
+                    <label class="checkbox__label" for="human-3">
+                      <div class="candidate">
+                        <div class="avatar">
+                          <img src="img/avatar10.png" alt="@@">
+                        </div>
+                        <p class="candidate__name">Alexander Viking</p>
+                        <p class="candidate__info">Ullapool, Scotland</p>
+                      </div>
+                      <div class="checkbox__check">
+                        <svg class="checkbox__icon checkbox__icon_plus">
+                          <use xlink:href="img/icon.svg#icon_plus"></use>
+                        </svg>
+                        <svg class="checkbox__icon checkbox__icon_check">
+                          <use xlink:href="img/icon.svg#icon_check"></use>
+                        </svg>
+                      </div>
+                    </label>
+                  </div>
+                </li>
+                <li class="checkbox-tree__item">
+                  <div class="checkbox">
+                    <input type="checkbox" name="human" class="checkbox__input" id="human-4" data-group-item="all-human">
+                    <label class="checkbox__label" for="human-4">
+                      <div class="candidate">
+                        <div class="avatar">
+                          <img src="img/avatar11.png" alt="@@">
+                        </div>
+                        <p class="candidate__name">Sergey Basta</p>
+                        <p class="candidate__info">Voronezh, USA</p>
+                      </div>
+                      <div class="checkbox__check">
+                        <svg class="checkbox__icon checkbox__icon_plus">
+                          <use xlink:href="img/icon.svg#icon_plus"></use>
+                        </svg>
+                        <svg class="checkbox__icon checkbox__icon_check">
+                          <use xlink:href="img/icon.svg#icon_check"></use>
+                        </svg>
+                      </div>
+                    </label>
+                  </div>
+                </li>
+                <li class="checkbox-tree__item">
+                  <div class="checkbox">
+                    <input type="checkbox" name="human" class="checkbox__input" id="human-5" data-group-item="all-human">
+                    <label class="checkbox__label" for="human-5">
+                      <div class="candidate">
+                        <div class="avatar">
+                          <img src="img/avatar2.png" alt="@@">
+                        </div>
+                        <p class="candidate__name">Oxana Polishuk</p>
+                        <p class="candidate__info">Voronezh, Russian Federation</p>
+                      </div>
+                      <div class="checkbox__check">
+                        <svg class="checkbox__icon checkbox__icon_plus">
+                          <use xlink:href="img/icon.svg#icon_plus"></use>
+                        </svg>
+                        <svg class="checkbox__icon checkbox__icon_check">
+                          <use xlink:href="img/icon.svg#icon_check"></use>
+                        </svg>
+                      </div>
+                    </label>
+                  </div>
+                </li>
+                <li class="checkbox-tree__item">
+                  <div class="checkbox">
+                    <input type="checkbox" name="human" class="checkbox__input" id="human-6" data-group-item="all-human">
+                    <label class="checkbox__label" for="human-6">
+                      <div class="candidate">
+                        <div class="avatar">
+                          <img src="img/avatar8.png" alt="@@">
+                        </div>
+                        <p class="candidate__name">Irina Kovaleva</p>
+                        <p class="candidate__info">Moskow, Russian Federation</p>
+                      </div>
+                      <div class="checkbox__check">
+                        <svg class="checkbox__icon checkbox__icon_plus">
+                          <use xlink:href="img/icon.svg#icon_plus"></use>
+                        </svg>
+                        <svg class="checkbox__icon checkbox__icon_check">
+                          <use xlink:href="img/icon.svg#icon_check"></use>
+                        </svg>
+                      </div>
+                    </label>
+                  </div>
+                </li>
+                <li class="checkbox-tree__item">
+                  <div class="checkbox">
+                    <input type="checkbox" name="human" class="checkbox__input" id="human-7" data-group-item="all-human">
+                    <label class="checkbox__label" for="human-7">
+                      <div class="candidate">
+                        <div class="avatar">
+                          <img src="img/avatar7.png" alt="@@">
+                        </div>
+                        <p class="candidate__name">Oxana Polishuk</p>
+                        <p class="candidate__info">Parice, France</p>
+                      </div>
+                      <div class="checkbox__check">
+                        <svg class="checkbox__icon checkbox__icon_plus">
+                          <use xlink:href="img/icon.svg#icon_plus"></use>
+                        </svg>
+                        <svg class="checkbox__icon checkbox__icon_check">
+                          <use xlink:href="img/icon.svg#icon_check"></use>
+                        </svg>
+                      </div>
+                    </label>
+                  </div>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+			  <div class="form__row">
+			    <a href="#" class="button button_pink form__next form__next_centered js-next-form-section js-nopreload" data-step-target="step4">Next</a>
+			  </div>
+			</section>
+			<section class="event-create__step-section form__section" data-step="step4">
+			  <h2 class="form__title">Gifts</h2>
+			  <div class="form__accordion accordion accordion_wide-title">
+			    <div class="accordion__title form__accordion-title">
+			      <span class="accordion__legend">Gift 1</span>
+            <span class="accordion__icon">
+              <span><svg>
+                  <use xlink:href="img/icon.svg#icon_arrow"></use>
+                </svg></span>
+            </span>
+			    </div>
+			    <div class="accordion__content form__accordion-content">
+            <div class="form__row">
+              <div class="form__col form__col_small">
+                <span class="form__label">Gift name:</span>
+              </div>
+              <div class="form__col form__col_main form__col_main_big">
+                <div class="form__wrapper gift-choice">
+                  <input type="hidden" placeholder="" id="gift-name" class="gift-choice__input">
+                  <div class="form__input gift-choice__field"></div>
+                  <div class="gift-choice__overlay"></div>
+                  <ul class="gift-list gift-choice__list">
+                    <li class="gift-list__item gift gift_short" data-value="Iphone 7 Plus" data-partner="Amazon partner" data-image="img/gift-1.png">
+                      <div class="gift__col">
+                        <p class="gift__title">
+                          Iphone 7 Plus
+                        </p>
+                        <p>
+                          Amazon partner
+                        </p>
+                      </div>
+                      <div class="gift__col gift__col_price">
+                        <p class="gift__title">
+                          1000 $
+                        </p>
+                      </div>
+                    </li>
+                    <li class="gift-list__item gift gift_short" data-value="Ipod Shuffle" data-partner="Amazon partner" data-image="img/gift-2.png">
+                      <div class="gift__col">
+                        <p class="gift__title">
+                          Ipod Shuffle
+                        </p>
+                        <p>
+                          Amazon partner
+                        </p>
+                      </div>
+                      <div class="gift__col gift__col_price">
+                        <p class="gift__title">
+                          90 $
+                        </p>
+                      </div>
+                    </li>
+                    <li class="gift-list__item gift gift_short" data-value="Iphone 6S" data-partner="Ebay" data-image="img/gift-3.png">
+                      <div class="gift__col">
+                        <p class="gift__title">
+                          Iphone 6S
+                        </p>
+                        <p>
+                          Ebay
+                        </p>
+                      </div>
+                      <div class="gift__col gift__col_price">
+                        <p class="gift__title">
+                          990 $
+                        </p>
+                      </div>
+                    </li>
+                    <li class="gift-list__item gift gift_short" data-value="Iphone 6" data-partner="Amazon partner" data-image="img/gift-4.png">
+                      <div class="gift__col">
+                        <p class="gift__title">
+                          Iphone 6
+                        </p>
+                        <p>
+                          Amazon partner
+                        </p>
+                      </div>
+                      <div class="gift__col gift__col_price">
+                        <p class="gift__title">
+                          790 $
+                        </p>
+                      </div>
+                    </li>
+                    <li class="gift-list__item js-nochoose  gift gift_short js-mygift">
+                      <div class="gift__col">
+                        <p class="gift__title">
+                          My gift
+                        </p>
+                      </div>
+                      <div class="gift__col gift__col_price">
+                      </div>
+                    </li>
+                    <li class="gift-list__item js-nochoose">
+                      <a href="#popup-gift-choice" class="more js-nopreload js-popup-modal" id="gift-choice-1">
+                        <span class="more__icon"><svg>
+                            <use xlink:href="img/icon.svg#icon_plus"></use>
+                          </svg></span>
+                        See All (<span>25</span>)
+                      </a>
+                    </li>
+                  </ul>
+                  <div class="gift-choice__self">
+                    Gift - <span></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form__row">
+              <div class="form__col form__col_small">
+                <span class="form__label">Photo:</span>
+              </div>
+              <div class="form__col form__col_main form__col_main_big">
+                <div class="form__wrapper">
+                  <div class="form__action">
+                    <input type="file" name="gift-image[]" id="gift-image" class="form__upload-input" accept="image/*">
+                    <label class="form__input form__action-field js-upload-image" for="gift-image">
+                      Upload
+                      <span><svg>
+                          <use xlink:href="img/icon.svg#icon_plus"></use>
+                        </svg></span>
+                    </label>
+                  </div>
+                  <ul class="form__previews">
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="form__row">
+              <div class="form__col form__col_small">
+                <label class="form__label" for="gift-availability">Gift availability:</label>
+              </div>
+              <div class="form__col form__col_main form__col_main_big">
+                <div class="form__wrapper">
+                  <div class="selectbox">
+                    <select name="gift-availability" id="gift-availability">
+                      <option value="0">Collective gift</option>
+                      <option value="1">Collective</option>
+                      <option value="2">Individual</option>
+                    </select>
+                    <ul></ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form__row">
+              <div class="form__col form__col_small">
+                <span class="form__label">Member:</span>
+              </div>
+              <div class="form__col form__col_main form__col_main_big">
+                <div class="form__wrapper">
+                  <div class="form__action js-add-gifted add-gifted" data-gift-type="0">
+                    <input type="hidden" name="gifted" id="gift-member" placeholder="Enter the number of members">
+                    <a class="form__input form__action-field add-gifted__input js-nopreload js-popup-modal" href="#popup-add-gifted-members">
+                      Add members
+                      <span><svg>
+                          <use xlink:href="img/icon.svg#icon_plus"></use>
+                        </svg></span>
+                    </a>
+                  </div>
+                  <div class="form__action js-add-gifted add-gifted add-gifted_individual hidden" data-gift-type="2">
+                    <input type="hidden" name="gifted" id="gift-member" placeholder="Enter the number of members">
+                    <a class="form__input form__action-field add-gifted__input js-nopreload js-popup-modal" href="#popup-add-gifted-members">
+                      Add members
+                      <div class="add-gifted__indicator">18/30</div>
+                      <span><svg>
+                          <use xlink:href="img/icon.svg#icon_plus"></use>
+                        </svg></span>
+                    </a>
+                  </div>
+                  <div class="form__action js-add-gifted add-gifted add-gifted_collective hidden" data-gift-type="1">
+                    <input type="text" name="gifted" id="gift-member" placeholder="Enter the number of members">
+                    <div class="add-gifted__indicator">0/30</div>
+                  </div>
+                  <ul class="form__gifted gifted">
+                    <li class="gifted__item">
+                      <span class="avatar">
+                        <img src="img/avatar12.png" alt="@@">
+                      </span>
+                      <span class="gifted__remove">
+                        <span><svg>
+                            <use xlink:href="img/icon.svg#icon_cross"></use>
+                          </svg></span>
+                      </span>
+                    </li>
+                    <li class="gifted__item">
+                      <span class="avatar">
+                        <img src="img/avatar9.png" alt="@@">
+                      </span>
+                      <span class="gifted__remove">
+                        <span><svg>
+                            <use xlink:href="img/icon.svg#icon_cross"></use>
+                          </svg></span>
+                      </span>
+                    </li>
+                    <li class="gifted__item">
+                      <span class="avatar">
+                        <img src="img/avatar10.png" alt="@@">
+                      </span>
+                      <span class="gifted__remove">
+                        <span><svg>
+                            <use xlink:href="img/icon.svg#icon_cross"></use>
+                          </svg></span>
+                      </span>
+                    </li>
+                    <li class="gifted__item">
+                      <a class="gifted__link" href="#">
+                        +15
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="form_row add-line">
+          <a class="add-line__title  js-nopreload" href="#">
+			      <span class="add-line__legend">Add gift</span>
+            <span class="add-line__icon">
+              <span><svg>
+                  <use xlink:href="img/icon.svg#icon_plus"></use>
+                </svg></span>
+            </span>
+			    </a>
+        </div>
+			  <div class="form__row">
+			    <a href="#" class="button button_pink form__next form__next_centered js-next-form-section js-nopreload" data-step-target="step5">Next</a>
+			  </div>
+			</section>
+			<section class="event-create__step-section form__section event-create__step-section_cover" data-step="step5">
+			  <h2 class="form__title">Cover</h2>
+			  <div class="form__upload-image image-upload">
+			    <div class="image-upload__step event event_banner image-upload__result">
+			      <img src="" alt="@@" class="event__bg">
+            <p class="event__type">Costume party</p>
+            <p class="event__name">Angels <br>fashion place</p>
+            <p class="event__date">21 DEC <span>&middot;</span> 21:00 &mdash; 23:30</p>
+            <a href="#" class="button button_pink">Join</a>
+			    </div>
+			    <div class="form__upload-image image-upload__step image-upload__dropzone popup-upload__dropzone js-dropzone-cover active">
+			      <div class="popup-upload__icon">
+              <img src="img/cloud.svg" alt="@@">
+            </div>
+            <label for="upload-cover" class="popup-upload__button button button_pink button_bold">
+              Choose file
+              <input type="file" id="upload-cover" class="popup-upload__input" value="Choose file" accept="image/*">
+            </label>
+            <p class="popup-upload__text">
+              or drag and drop here.
+            </p>
+			    </div>
+			    <div class="form__upload-image image-upload__step impage-upload__resize js-coverpreview">
+			      <div class="image-upload__cropzone"></div>
+			    </div>
+			  </div>
+			  <div class="form__row image-upload__buttons">
+          <label for="upload-cover" class="button button_pink button_bordered button_bordered_pink button_bold button_text_pink image-upload__button image-upload__button_choose">Choose file</label>
+			    <button class="button button_pink button_bordered button_bordered_pink button_bold button_text_pink image-upload__button image-upload__button_edit" type="button">Edit cover</button>
+			    <button class="button button_pink image-upload__button image-upload__button_save" type="button">Save</button>
+			    <a href="congratulation.html" class="button button_pink form__next js-final-form image-upload__button image-upload__button_next">Next</a>
+			  </div>
+			</section>
+		</div>
+	</div>
+</form>
+
+<!-- ### footer ####################### !-->
+<footer class="footer">
+	<div class="container">
+		<p class="footer__text">All rights reserved 2016</p>
+		<div class="footer__app">
+			<p class="footer__apptext">Available on the App Store and Google Play</p>
+			<a href="#" class="footer__appshop"><img src="img/google.svg" alt="@@" ></a>
+			<a href="#" class="footer__appshop"><img src="img/apple.svg" alt="@@"></a>
+		</div>
+		<a href="mailto:hi@idealist.com" class="footer__text footer__mail">hi@idealist.com</a>
+	</div>
+</footer>
+
+<div id="popup-upload" class="popup popup-upload">
+  <div class="popup-upload__wrapper">
+    <p class="popup-upload__title">Profile photo</p>
+    <div class="popup-upload__dropzone js-dropzone">
+      <div class="popup-upload__icon">
+        <img src="img/cloud.svg" alt="@@">
+      </div>
+      <label for="upload-file" class="popup-upload__button button button_pink button_bold">
+        Choose file
+        <input type="file" id="upload-file" class="popup-upload__input" value="Choose file" accept="image/*">
+      </label>
+      <p class="popup-upload__text">
+        or drag and drop here.
+      </p>
+    </div>
+    <form class="popup-upload__resize js-imagepreview" id="upload-form">
+      <div class="popup-upload__cropzone"></div>
+      <div class="popup-upload__buttons">
+        <button class="button button_pink button_bold popup-upload__submit" type="submit">Save</button>
+        <button class="button button_pink button_bordered button_bordered_pink button_bold popup-upload__back" type="button">Back</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="popup gift-choose" id="popup-gift-choice">
+  <div class="gift-choose__wrapper">
+    <h2 class="heading">Gift choice</h2>
+    <ul class="gift-choose__list">
+      <li class="gift-choose__item gift" data-value="Iphone 7 Plus" data-partner="Amazon partner">
+        <div class="gift__col gift__col_image">
+          <div class="gift__image">
+            <img src="img/gift-1.png" alt="">
+          </div>
+        </div>
+        <div class="gift__col">
+          <p class="gift__title">
+            Iphone 7 Plus
+          </p>
+          <p>
+            36gb / 64 / 128gb, color Gold/Black/Silver</p>
+          <p>
+            Amazon partner
+          </p>
+        </div>
+        <div class="gift__col gift__col_price">
+          <p class="gift__title">
+            1000 $
+          </p>
+        </div>
+      </li>
+      <li class="gift-choose__item gift" data-value="Ipod Shuffle" data-partner="Amazon partner">
+        <div class="gift__col gift__col_image">
+          <div class="gift__image">
+            <img src="img/gift-2.png" alt="">
+          </div>
+        </div>
+        <div class="gift__col">
+          <p class="gift__title">
+            Ipod Shuffle
+          </p>
+          <p>
+            36gb / 64 / 128gb, color Gold/Black/Silver
+          </p>
+          <p>
+            Amazon partner
+          </p>
+        </div>
+        <div class="gift__col gift__col_price">
+          <p class="gift__title">
+            90 $
+          </p>
+        </div>
+      </li>
+      <li class="gift-choose__item gift" data-value="Iphone 6S" data-partner="Ebay">
+        <div class="gift__col gift__col_image">
+          <div class="gift__image">
+            <img src="img/gift-3.png" alt="">
+          </div>
+        </div>
+        <div class="gift__col">
+          <p class="gift__title">
+            Iphone 6S
+          </p>
+          <p>
+            36gb / 64 / 128gb, color Gold/Black/Silver
+          </p>
+          <p>
+            Ebay
+          </p>
+        </div>
+        <div class="gift__col gift__col_price">
+          <p class="gift__title">
+            990 $
+          </p>
+        </div>
+      </li>
+      <li class="gift-choose__item gift" data-value="Iphone 6" data-partner="Amazon partner">
+        <div class="gift__col gift__col_image">
+          <div class="gift__image">
+            <img src="img/gift-4.png" alt="">
+          </div>
+        </div>
+        <div class="gift__col">
+          <p class="gift__title">
+            Iphone 7
+          </p>
+          <p>
+            36gb / 64 / 128gb, color Gold/Black/Silver
+          </p>
+          <p>
+            Amazon partner
+          </p>
+        </div>
+        <div class="gift__col gift__col_price">
+          <p class="gift__title">
+            790 $
+          </p>
+        </div>
+      </li>
+      <li class="gift-choose__item gift" data-value="Iphone 7 Plus" data-partner="Amazon partner">
+        <div class="gift__col gift__col_image">
+          <div class="gift__image">
+            <img src="img/gift-1.png" alt="">
+          </div>
+        </div>
+        <div class="gift__col">
+          <p class="gift__title">
+            Iphone 7 Plus
+          </p>
+          <p>
+            36gb / 64 / 128gb, color Gold/Black/Silver</p>
+          <p>
+            Amazon partner
+          </p>
+        </div>
+        <div class="gift__col gift__col_price">
+          <p class="gift__title">
+            1000 $
+          </p>
+        </div>
+      </li>
+      <li class="gift-choose__item gift" data-value="Iphone 7 Plus" data-partner="Amazon partner">
+        <div class="gift__col gift__col_image">
+          <div class="gift__image">
+            <img src="img/gift-1.png" alt="">
+          </div>
+        </div>
+        <div class="gift__col">
+          <p class="gift__title">
+            Iphone 7 Plus
+          </p>
+          <p>
+            36gb / 64 / 128gb, color Gold/Black/Silver</p>
+          <p>
+            Amazon partner
+          </p>
+        </div>
+        <div class="gift__col gift__col_price">
+          <p class="gift__title">
+            1000 $
+          </p>
+        </div>
+      </li>
+      <li class="gift-choose__item gift" data-value="Iphone 7 Plus" data-partner="Amazon partner">
+        <div class="gift__col gift__col_image">
+          <div class="gift__image">
+            <img src="img/gift-1.png" alt="">
+          </div>
+        </div>
+        <div class="gift__col">
+          <p class="gift__title">
+            Iphone 7 Plus
+          </p>
+          <p>
+            36gb / 64 / 128gb, color Gold/Black/Silver</p>
+          <p>
+            Amazon partner
+          </p>
+        </div>
+        <div class="gift__col gift__col_price">
+          <p class="gift__title">
+            1000 $
+          </p>
+        </div>
+      </li>
+      <li class="gift-list__item js-mygift js-nochoose gift">
+        <div class="gift__col gift__col_image">
+          <div class="gift__image gift__image_empty">
+          </div>
+        </div>
+        <div class="gift__col">
+          <p class="gift__title">
+            My gift
+          </p>>
+        </div>
+        <div class="gift__col gift__col_price">
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="popup popup-add-gifted" id="popup-add-gifted-members">
+  <div class="popup-add-gifted__container">
+    <h2 class="popup-add-gifted__title">
+      <span>Add members</span>
+      <form class="form-search form" id="search-gifted">
+        <input type="search" class="form-search__input form__input" placeholder="Enter username">
+        <button class="form-search__button" type="submit">
+          <svg class="form-search__icon">
+            <use xlink:href="img/icon.svg#icon_loupe"></use>
+          </svg>
+        </button>
+      </form>
+    </h2>
+    <ul class="checkbox-tree">
+      <li class="checkbox-tree__item">
+        <div class="checkbox-tree__group-head">
+          <span class="members">Members: <span class="members__counter">3/9</span></span>
+          <div class="checkbox checkbox_empty">
+            <input type="checkbox" name="all-human" class="checkbox__input" id="all-gifted" data-group="all-gifted">
+            <label class="checkbox__label" for="all-gifted">
+              <span class="checkbox__check checkbox__check_square">
+                <svg class="checkbox__icon checkbox__icon_check checkbox__icon_check_white">
+                  <use xlink:href="img/icon.svg#icon_check"></use>
+                </svg>
+              </span>
+            </label>
+          </div>
+        </div>
+        <ul class="checkbox-tree__group">
+          <li class="checkbox-tree__item">
+            <div class="checkbox">
+              <input type="checkbox" name="human" class="checkbox__input" id="gifted-1" checked disabled>
+              <label class="checkbox__label" for="gifted-1">
+                <div class="candidate">
+                  <div class="avatar">
+                    <img src="img/avatar12.png" alt="@@">
+                  </div>
+                  <p class="candidate__name">Diana Gorobcova</p>
+                  <p class="candidate__info">Voronezh, USA</p>
+                </div>
+                <div class="checkbox__check">
+                  <span>Gift 1</span>
+                  <svg class="checkbox__icon checkbox__icon_plus">
+                    <use xlink:href="img/icon.svg#icon_plus"></use>
+                  </svg>
+                  <svg class="checkbox__icon checkbox__icon_check">
+                    <use xlink:href="img/icon.svg#icon_check"></use>
+                  </svg>
+                </div>
+              </label>
+            </div>
+          </li>
+          <li class="checkbox-tree__item">
+            <div class="checkbox">
+              <input type="checkbox" name="human" class="checkbox__input" id="gifted-2" checked data-group-item="all-gifted">
+              <label class="checkbox__label" for="gifted-2">
+                <div class="candidate">
+                  <div class="avatar">
+                    <img src="img/avatar9.png" alt="@@">
+                  </div>
+                  <p class="candidate__name">Igor Kavabanga</p>
+                  <p class="candidate__info">London, UK</p>
+                </div>
+                <div class="checkbox__check">
+                  <svg class="checkbox__icon checkbox__icon_plus">
+                    <use xlink:href="img/icon.svg#icon_plus"></use>
+                  </svg>
+                  <svg class="checkbox__icon checkbox__icon_check">
+                    <use xlink:href="img/icon.svg#icon_check"></use>
+                  </svg>
+                </div>
+              </label>
+            </div>
+          </li>
+          <li class="checkbox-tree__item">
+            <div class="checkbox">
+              <input type="checkbox" name="human" class="checkbox__input" id="gifted-3" checked data-group-item="all-gifted">
+              <label class="checkbox__label" for="gifted-3">
+                <div class="candidate">
+                  <div class="avatar">
+                    <img src="img/avatar10.png" alt="@@">
+                  </div>
+                  <p class="candidate__name">Alexander Viking</p>
+                  <p class="candidate__info">Ullapool, Scotland</p>
+                </div>
+                <div class="checkbox__check">
+                  <svg class="checkbox__icon checkbox__icon_plus">
+                    <use xlink:href="img/icon.svg#icon_plus"></use>
+                  </svg>
+                  <svg class="checkbox__icon checkbox__icon_check">
+                    <use xlink:href="img/icon.svg#icon_check"></use>
+                  </svg>
+                </div>
+              </label>
+            </div>
+          </li>
+          <li class="checkbox-tree__item">
+            <div class="checkbox">
+              <input type="checkbox" name="human" class="checkbox__input" id="gifted-4" data-group-item="all-gifted">
+              <label class="checkbox__label" for="gifted-4">
+                <div class="candidate">
+                  <div class="avatar">
+                    <img src="img/avatar11.png" alt="@@">
+                  </div>
+                  <p class="candidate__name">Sergey Basta</p>
+                  <p class="candidate__info">Voronezh, USA</p>
+                </div>
+                <div class="checkbox__check">
+                  <svg class="checkbox__icon checkbox__icon_plus">
+                    <use xlink:href="img/icon.svg#icon_plus"></use>
+                  </svg>
+                  <svg class="checkbox__icon checkbox__icon_check">
+                    <use xlink:href="img/icon.svg#icon_check"></use>
+                  </svg>
+                </div>
+              </label>
+            </div>
+          </li>
+          <li class="checkbox-tree__item">
+            <div class="checkbox">
+              <input type="checkbox" name="human" class="checkbox__input" id="gifted-5" data-group-item="all-gifted">
+              <label class="checkbox__label" for="gifted-5">
+                <div class="candidate">
+                  <div class="avatar">
+                    <img src="img/avatar2.png" alt="@@">
+                  </div>
+                  <p class="candidate__name">Oxana Polishuk</p>
+                  <p class="candidate__info">Voronezh, Russian Federation</p>
+                </div>
+                <div class="checkbox__check">
+                  <svg class="checkbox__icon checkbox__icon_plus">
+                    <use xlink:href="img/icon.svg#icon_plus"></use>
+                  </svg>
+                  <svg class="checkbox__icon checkbox__icon_check">
+                    <use xlink:href="img/icon.svg#icon_check"></use>
+                  </svg>
+                </div>
+              </label>
+            </div>
+          </li>
+          <li class="checkbox-tree__item">
+            <div class="checkbox">
+              <input type="checkbox" name="human" class="checkbox__input" id="gifted-6" data-group-item="all-gifted">
+              <label class="checkbox__label" for="gifted-6">
+                <div class="candidate">
+                  <div class="avatar">
+                    <img src="img/avatar8.png" alt="@@">
+                  </div>
+                  <p class="candidate__name">Irina Kovaleva</p>
+                  <p class="candidate__info">Moskow, Russian Federation</p>
+                </div>
+                <div class="checkbox__check">
+                  <svg class="checkbox__icon checkbox__icon_plus">
+                    <use xlink:href="img/icon.svg#icon_plus"></use>
+                  </svg>
+                  <svg class="checkbox__icon checkbox__icon_check">
+                    <use xlink:href="img/icon.svg#icon_check"></use>
+                  </svg>
+                </div>
+              </label>
+            </div>
+          </li>
+          <li class="checkbox-tree__item">
+            <div class="checkbox">
+              <input type="checkbox" name="human" class="checkbox__input" id="gifted-7" data-group-item="all-gifted">
+              <label class="checkbox__label" for="gifted-7">
+                <div class="candidate">
+                  <div class="avatar">
+                    <img src="img/avatar7.png" alt="@@">
+                  </div>
+                  <p class="candidate__name">Oxana Polishuk</p>
+                  <p class="candidate__info">Parice, France</p>
+                </div>
+                <div class="checkbox__check">
+                  <svg class="checkbox__icon checkbox__icon_plus">
+                    <use xlink:href="img/icon.svg#icon_plus"></use>
+                  </svg>
+                  <svg class="checkbox__icon checkbox__icon_check">
+                    <use xlink:href="img/icon.svg#icon_check"></use>
+                  </svg>
+                </div>
+              </label>
+            </div>
+          </li>
+          <li class="checkbox-tree__item">
+            <div class="checkbox">
+              <input type="checkbox" name="human" class="checkbox__input" id="gifted-8" data-group-item="all-gifted">
+              <label class="checkbox__label" for="gifted-8">
+                <div class="candidate">
+                  <div class="avatar">
+                    <img src="img/avatar1.png" alt="@@">
+                  </div>
+                  <p class="candidate__name">Afftor Boluchevsky</p>
+                  <p class="candidate__info">NY, USA</p>
+                </div>
+                <div class="checkbox__check">
+                  <svg class="checkbox__icon checkbox__icon_plus">
+                    <use xlink:href="img/icon.svg#icon_plus"></use>
+                  </svg>
+                  <svg class="checkbox__icon checkbox__icon_check">
+                    <use xlink:href="img/icon.svg#icon_check"></use>
+                  </svg>
+                </div>
+              </label>
+            </div>
+          </li>
+          <li class="checkbox-tree__item">
+            <div class="checkbox">
+              <input type="checkbox" name="human" class="checkbox__input" id="gifted-9" data-group-item="all-gifted">
+              <label class="checkbox__label" for="gifted-9">
+                <div class="candidate">
+                  <div class="avatar">
+                    <img src="img/avatar19.png" alt="@@">
+                  </div>
+                  <p class="candidate__name">Oxana Polishuk</p>
+                  <p class="candidate__info">Moskow, Russian Federation</p>
+                </div>
+                <div class="checkbox__check">
+                  <svg class="checkbox__icon checkbox__icon_plus">
+                    <use xlink:href="img/icon.svg#icon_plus"></use>
+                  </svg>
+                  <svg class="checkbox__icon checkbox__icon_check">
+                    <use xlink:href="img/icon.svg#icon_check"></use>
+                  </svg>
+                </div>
+              </label>
+            </div>
+          </li>
+        </ul>
+      </li>
+    </ul>
+    <div class="popup-add-gifted__buttons">
+      <button class="button button_pink popup-add-gifted__button js-popup-close" type="submit">Done</button>
+    </div>
+  </div>
+</div>
+
+<div class="popup" id="popup-calendar">
+  <div class="calendar">
+    <div class="calendar__head">
+      <p class="calendar__month">December</p>
+      <div class="calendar__closest">
+        <a href="#">Today</a>
+        <a href="#">Tomorrow</a>
+      </div>
+    </div>
+    <div class="calendar__daysoftheweek">
+      <a href="#">Su</a>
+      <a href="#">Mo</a>
+      <a href="#">Tu</a>
+      <a href="#">We</a>
+      <a href="#">Th</a>
+      <a href="#">Fr</a>
+      <a href="#">Sa</a>
+    </div>
+    <div class="calendar__week">
+      <a href="#"></a>
+      <a href="#" class="active">01</a>
+      <a href="#">02</a>
+      <a href="#">03</a>
+      <a href="#">04</a>
+      <a href="#">05</a>
+      <a href="#">06</a>
+    </div>
+    <div class="calendar__week">
+      <a href="#">07</a>
+      <a href="#">08</a>
+      <a href="#">09</a>
+      <a href="#">10</a>
+      <a href="#">11</a>
+      <a href="#">12</a>
+      <a href="#">13</a>
+    </div>
+    <div class="calendar__week">
+      <a href="#">14</a>
+      <a href="#">15</a>
+      <a href="#">16</a>
+      <a href="#">17</a>
+      <a href="#">18</a>
+      <a href="#">19</a>
+      <a href="#">20</a>
+    </div>
+    <div class="calendar__week">
+      <a href="#">21</a>
+      <a href="#">22</a>
+      <a href="#">23</a>
+      <a href="#">24</a>
+      <a href="#">25</a>
+      <a href="#">26</a>
+      <a href="#">27</a>
+    </div>
+    <div class="calendar__week">
+      <a href="#">28</a>
+      <a href="#">29</a>
+      <a href="#">30</a>
+      <a href="#">31</a>
+      <a href="#" class="nextmonth">01</a>
+      <a href="#" class="nextmonth">02</a>
+      <a href="#" class="nextmonth">03</a>
+    </div>
+  </div>
+</div>
+
+<!-- ################################### !-->
+<!-- ### libs ####################### !-->
+<!-- ################################### !-->
+<script src="js/libs/jquery.min.js"></script>
+
+<!-- JQuery UI -->
+<script src="js/libs/jquery-ui.min.js"></script>
+
+<!-- jQuery Scrollbar !-->
+<script src="js/libs/scrollbar/jquery.scrollbar.js"></script>
+
+<!-- Fancybox -->
+<script src="js/libs/fancybox/jquery.fancybox.js"></script>
+
+<!-- SVG support -->
+<script src="js/libs/svg4everybody.min.js"></script>
+
+<!-- Croppie croped img -->
+<script src="js/libs/croppie.min.js"></script>
+
+<!-- Object Fit -->
+<script src="js/libs/ofi.min.js"></script>
+
+<!-- ################################### !-->
+<!-- ### scripts ####################### !-->
+<!-- ################################### !-->
+
+<!-- main scripts !-->
+<script src="js/libs.js"></script>
+<script src="js/header-scripts.js?v=3"></script>
+<script src="js/page-loading.js"></script>
+<script src="js/custom-select.js"></script>
+</body>
+</html>

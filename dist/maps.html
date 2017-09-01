@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Idealist</title>
+    <link rel="shortcut icon" href="favicon.ico?v=2" type="image/x-icon"/>
+    <link rel="icon" href="favicon.ico?v=2" type="image/x-icon"/>
+    <link rel="stylesheet" href="css/default.css?v=2"/>
+    <link rel="stylesheet" href="js/libs/scrollbar/jquery.scrollbar.css"/>
+    <link rel="stylesheet" href="js/libs/fancybox/jquery.fancybox.css"/>
+</head>
+
+<body>
+<!-- ### forms ####################### !-->
+<div class="overlay"></div>
+<div class="page-loading"><img src="img/loading-bars.svg" alt="@@"></div>
+
+<!-- ### header ####################### !-->
+<header class="header">
+	<div class="container">
+		<div class="header__leftside">
+			<a href="index.html" class="header__logo">
+				<img src="img/logo.svg" alt="@@">
+			</a>
+			<form action="#" method="post" class="header__searchfield">
+				<input type="text" placeholder="Search by name events">
+				<button type="submit"><img src="img/icon_search.svg" alt="@@"></button>
+			</form>
+			<div class="header__date">
+				<a class="header__link">Set date</a>
+				<div class="calendar header__calendar">
+					<div class="calendar__head">
+						<p class="calendar__month">December</p>
+						<div class="calendar__closest">
+							<a href="#">Today</a>
+							<a href="#">Tomorrow</a>
+						</div>
+					</div>
+					<div class="calendar__daysoftheweek">
+						<a href="#">Su</a>
+						<a href="#">Mo</a>
+						<a href="#">Tu</a>
+						<a href="#">We</a>
+						<a href="#">Th</a>
+						<a href="#">Fr</a>
+						<a href="#">Sa</a>
+					</div>
+					<div class="calendar__week">
+						<a href="#"></a>
+						<a href="#" class="active">01</a>
+						<a href="#">02</a>
+						<a href="#">03</a>
+						<a href="#">04</a>
+						<a href="#">05</a>
+						<a href="#">06</a>
+					</div>
+					<div class="calendar__week">
+						<a href="#">07</a>
+						<a href="#">08</a>
+						<a href="#">09</a>
+						<a href="#">10</a>
+						<a href="#">11</a>
+						<a href="#">12</a>
+						<a href="#">13</a>
+					</div>
+					<div class="calendar__week">
+						<a href="#">14</a>
+						<a href="#">15</a>
+						<a href="#">16</a>
+						<a href="#">17</a>
+						<a href="#">18</a>
+						<a href="#">19</a>
+						<a href="#">20</a>
+					</div>
+					<div class="calendar__week">
+						<a href="#">21</a>
+						<a href="#">22</a>
+						<a href="#">23</a>
+						<a href="#">24</a>
+						<a href="#">25</a>
+						<a href="#">26</a>
+						<a href="#">27</a>
+					</div>
+					<div class="calendar__week">
+						<a href="#">28</a>
+						<a href="#">29</a>
+						<a href="#">30</a>
+						<a href="#">31</a>
+						<a href="#" class="nextmonth">01</a>
+						<a href="#" class="nextmonth">02</a>
+						<a href="#" class="nextmonth">03</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="header__events">
+			<a href="#" class="header__link">All events</a>
+		</div>
+		<div class="header__account">
+			<a class="header__link">Log in</a>
+			<a class="header__link">Sign up</a>
+			<!-- Hint -->
+			<p class="header__hint"><span></span>Login to get access to personal account</p>
+			<!-- // Hint -->
+			<!-- Logged -->
+			<a class="header__username"><span class="avatar avatar_small"><img src="img/avatar17.png" alt="@@"></span>Alexander</a>
+			<ul class="header__usermenu">
+				<li><a href="#" class="header__link">My profile</a></li>
+				<li><a href="#" class="header__link">Settings</a></li>
+				<li><a href="#" class="header__link">Send profile</a></li>
+				<li class="logout"><a class="header__link">Log out</a></li>
+			</ul>
+			<!-- // Logged -->
+		</div>
+	</div>
+</header>
+
+<!-- ### main content ####################### !-->
+<section class="maps">
+	<div class="bigmap" id="googlemap-big"></div>
+	<div class="container">
+		<div class="column column_search">
+			<div class="search">
+				<p class="heading search__heading">Search</p>
+				<form action="" id="crayzy-party-search">
+				</form>
+				<form action="" class="search__detailform">
+					<div class="search__field">
+						<p class="search__select">set date</p>
+						<p class="search__value">10.01.2016 - 18.01.2016</p>
+						<div class="search__hidden">
+							<div class="calendar search__calendar">
+								<div class="calendar__head">
+									<p class="calendar__month">December</p>
+								</div>
+								<div class="calendar__daysoftheweek">
+									<a href="#">Su</a>
+									<a href="#">Mo</a>
+									<a href="#">Tu</a>
+									<a href="#">We</a>
+									<a href="#">Th</a>
+									<a href="#">Fr</a>
+									<a href="#">Sa</a>
+								</div>
+								<div class="calendar__week">
+									<a href="#"></a>
+									<a href="#" class="active">01</a>
+									<a href="#">02</a>
+									<a href="#">03</a>
+									<a href="#">04</a>
+									<a href="#">05</a>
+									<a href="#">06</a>
+								</div>
+								<div class="calendar__week">
+									<a href="#">07</a>
+									<a href="#">08</a>
+									<a href="#">09</a>
+									<a href="#">10</a>
+									<a href="#">11</a>
+									<a href="#">12</a>
+									<a href="#">13</a>
+								</div>
+								<div class="calendar__week">
+									<a href="#">14</a>
+									<a href="#">15</a>
+									<a href="#">16</a>
+									<a href="#">17</a>
+									<a href="#">18</a>
+									<a href="#">19</a>
+									<a href="#">20</a>
+								</div>
+								<div class="calendar__week">
+									<a href="#">21</a>
+									<a href="#">22</a>
+									<a href="#">23</a>
+									<a href="#">24</a>
+									<a href="#">25</a>
+									<a href="#">26</a>
+									<a href="#">27</a>
+								</div>
+								<div class="calendar__week">
+									<a href="#">28</a>
+									<a href="#">29</a>
+									<a href="#">30</a>
+									<a href="#">31</a>
+									<a href="#" class="nextmonth">01</a>
+									<a href="#" class="nextmonth">02</a>
+									<a href="#" class="nextmonth">03</a>
+								</div>
+							</div>
+							<a class="search__hidden-close">Close</a>
+						</div>
+					</div>
+					<div class="search__field">
+						<p class="search__select">set time</p>
+						<p class="search__value">20:00 - 21:30</p>
+						<div class="search__hidden">
+							<div class="search__time">
+								<input type="text" name="hours">
+								<span>:</span>
+								<input type="text" name="minutes">
+							</div>
+							<a class="search__hidden-close">Close</a>
+						</div>
+					</div>
+					<div class="search__field">
+						<p class="search__select">address</p>
+						<p class="search__value">USA, New York ...</p>
+						<div class="search__hidden">
+							<div class="search__address">
+								<input type="text" name="country" placeholder="Country" value="USA">
+								<input type="text" name="city" placeholder="City">
+								<input type="text" name="street" placeholder="Street">
+								<input type="text" name="house" placeholder="House">
+							</div>
+							<a class="search__hidden-close">Close</a>
+						</div>
+					</div>
+					<div class="search__field search__field_type">
+						<p class="search__select">type of event</p>
+						<p class="search__value">Party</p>
+					</div>
+					<div class="search__field">
+						<p class="search__select">music</p>
+						<p class="search__value" data-output="search-music">Deep House</p>
+						<div class="search__hidden">
+              <ul class="checkbox-tree scrollbar-inner">
+                <li class="checkbox-tree__item contact-group__item">
+                  <div class="checkbox">
+                    <input type="checkbox" name="filter-music" class="checkbox" id="music-all" data-group="search-music">
+                    <label class="checkbox__label" for="music-all">
+                      <p>Choose all</p>
+                      <div class="checkbox__check checkbox__check_square">
+                        <svg class="checkbox__icon checkbox__icon_check checkbox__icon_check_white">
+                          <use xlink:href="img/icon.svg#icon_check"></use>
+                        </svg>
+                      </div>
+                    </label>
+                  </div>
+                </li>
+                <li class="checkbox-tree__item contact-group__item">
+                  <div class="checkbox">
+                    <input type="checkbox" name="filter-music" class="checkbox" id="music-1" data-group-item="search-music">
+                    <label class="checkbox__label" for="music-1">
+                      <p>Ambient</p>
+                      <div class="checkbox__check">
+                        <svg class="checkbox__icon checkbox__icon_plus">
+                          <use xlink:href="img/icon.svg#icon_plus"></use>
+                        </svg>
+                        <svg class="checkbox__icon checkbox__icon_check">
+                          <use xlink:href="img/icon.svg#icon_check"></use>
+                        </svg>
+                      </div>
+                    </label>
+                  </div>
+                </li>
+                <li class="checkbox-tree__item contact-group__item">
+                  <div class="checkbox">
+                    <input type="checkbox" name="filter-music" class="checkbox" id="music-2" data-group-item="search-music" checked>
+                    <label class="checkbox__label" for="music-2">
+                      <p>Deep House</p>
+                      <div class="checkbox__check">
+                        <svg class="checkbox__icon checkbox__icon_plus">
+                          <use xlink:href="img/icon.svg#icon_plus"></use>
+                        </svg>
+                        <svg class="checkbox__icon checkbox__icon_check">
+                          <use xlink:href="img/icon.svg#icon_check"></use>
+                        </svg>
+                      </div>
+                    </label>
+                  </div>
+                </li>
+                <li class="checkbox-tree__item contact-group__item">
+                  <div class="checkbox">
+                    <input type="checkbox" name="filter-music" class="checkbox" id="music-3" data-group-item="search-music">
+                    <label class="checkbox__label" for="music-3">
+                      <p>Hip Hop</p>
+                      <div class="checkbox__check">
+                        <svg class="checkbox__icon checkbox__icon_plus">
+                          <use xlink:href="img/icon.svg#icon_plus"></use>
+                        </svg>
+                        <svg class="checkbox__icon checkbox__icon_check">
+                          <use xlink:href="img/icon.svg#icon_check"></use>
+                        </svg>
+                      </div>
+                    </label>
+                  </div>
+                </li>
+                <li class="checkbox-tree__item contact-group__item">
+                  <div class="checkbox">
+                    <input type="checkbox" name="filter-music" class="checkbox" id="music-4" data-group-item="search-music">
+                    <label class="checkbox__label" for="music-4">
+                      <p>Rap</p>
+                      <div class="checkbox__check">
+                        <svg class="checkbox__icon checkbox__icon_plus">
+                          <use xlink:href="img/icon.svg#icon_plus"></use>
+                        </svg>
+                        <svg class="checkbox__icon checkbox__icon_check">
+                          <use xlink:href="img/icon.svg#icon_check"></use>
+                        </svg>
+                      </div>
+                    </label>
+                  </div>
+                </li>
+                <li class="checkbox-tree__item contact-group__item">
+                  <div class="checkbox">
+                    <input type="checkbox" name="filter-music" class="checkbox" id="music-5" data-group-item="search-music">
+                    <label class="checkbox__label" for="music-5">
+                      <p>Reggae</p>
+                      <div class="checkbox__check">
+                        <svg class="checkbox__icon checkbox__icon_plus">
+                          <use xlink:href="img/icon.svg#icon_plus"></use>
+                        </svg>
+                        <svg class="checkbox__icon checkbox__icon_check">
+                          <use xlink:href="img/icon.svg#icon_check"></use>
+                        </svg>
+                      </div>
+                    </label>
+                  </div>
+                </li>
+              </ul>
+							<a class="search__hidden-close">Close</a>
+						</div>
+					</div>
+					<div class="search__field">
+						<p class="search__select">Costumes</p>
+						<p class="search__value" data-output="search-costumes">Jacket</p>
+						<div class="search__hidden">
+							<ul class="checkbox-tree scrollbar-inner">
+                <li class="checkbox-tree__item contact-group__item">
+                  <div class="checkbox">
+                    <input type="checkbox" name="filter-music" class="checkbox" id="costumes-all" data-group="search-costumes">
+                    <label class="checkbox__label" for="costumes-all">
+                      <p>Choose all</p>
+                      <div class="checkbox__check checkbox__check_square">
+                        <svg class="checkbox__icon checkbox__icon_check checkbox__icon_check_white">
+                          <use xlink:href="img/icon.svg#icon_check"></use>
+                        </svg>
+                      </div>
+                    </label>
+                  </div>
+                </li>
+                <li class="checkbox-tree__item contact-group__item">
+                  <div class="checkbox">
+                    <input type="checkbox" name="filter-music" class="checkbox" id="costumes-1" data-group-item="search-costumes">
+                    <label class="checkbox__label" for="costumes-1">
+                      <p>Carnival costumes</p>
+                      <div class="checkbox__check">
+                        <svg class="checkbox__icon checkbox__icon_plus">
+                          <use xlink:href="img/icon.svg#icon_plus"></use>
+                        </svg>
+                        <svg class="checkbox__icon checkbox__icon_check">
+                          <use xlink:href="img/icon.svg#icon_check"></use>
+                        </svg>
+                      </div>
+                    </label>
+                  </div>
+                </li>
+                <li class="checkbox-tree__item contact-group__item">
+                  <div class="checkbox">
+                    <input type="checkbox" name="filter-music" class="checkbox" id="costumes-2" data-group-item="search-costumes">
+                    <label class="checkbox__label" for="costumes-2">
+                      <p>Cocktail</p>
+                      <div class="checkbox__check">
+                        <svg class="checkbox__icon checkbox__icon_plus">
+                          <use xlink:href="img/icon.svg#icon_plus"></use>
+                        </svg>
+                        <svg class="checkbox__icon checkbox__icon_check">
+                          <use xlink:href="img/icon.svg#icon_check"></use>
+                        </svg>
+                      </div>
+                    </label>
+                  </div>
+                </li>
+                <li class="checkbox-tree__item contact-group__item">
+                  <div class="checkbox">
+                    <input type="checkbox" name="filter-music" class="checkbox" id="costumes-3" data-group-item="search-costumes" checked>
+                    <label class="checkbox__label" for="costumes-3">
+                      <p>Jacket</p>
+                      <div class="checkbox__check">
+                        <svg class="checkbox__icon checkbox__icon_plus">
+                          <use xlink:href="img/icon.svg#icon_plus"></use>
+                        </svg>
+                        <svg class="checkbox__icon checkbox__icon_check">
+                          <use xlink:href="img/icon.svg#icon_check"></use>
+                        </svg>
+                      </div>
+                    </label>
+                  </div>
+                </li>
+                <li class="checkbox-tree__item contact-group__item">
+                  <div class="checkbox">
+                    <input type="checkbox" name="filter-music" class="checkbox" id="costumes-4" data-group-item="search-costumes">
+                    <label class="checkbox__label" for="costumes-4">
+                      <p>Semi–Format</p>
+                      <div class="checkbox__check">
+                        <svg class="checkbox__icon checkbox__icon_plus">
+                          <use xlink:href="img/icon.svg#icon_plus"></use>
+                        </svg>
+                        <svg class="checkbox__icon checkbox__icon_check">
+                          <use xlink:href="img/icon.svg#icon_check"></use>
+                        </svg>
+                      </div>
+                    </label>
+                  </div>
+                </li>
+                <li class="checkbox-tree__item contact-group__item">
+                  <div class="checkbox">
+                    <input type="checkbox" name="filter-music" class="checkbox" id="costumes-5" data-group-item="search-costumes">
+                    <label class="checkbox__label" for="costumes-5">
+                      <p>White Tie</p>
+                      <div class="checkbox__check">
+                        <svg class="checkbox__icon checkbox__icon_plus">
+                          <use xlink:href="img/icon.svg#icon_plus"></use>
+                        </svg>
+                        <svg class="checkbox__icon checkbox__icon_check">
+                          <use xlink:href="img/icon.svg#icon_check"></use>
+                        </svg>
+                      </div>
+                    </label>
+                  </div>
+                </li>
+              </ul>
+							<a class="search__hidden-close">Close</a>
+						</div>
+					</div>
+					<div class="search__field">
+						<p class="search__select">Drinks</p>
+						<p class="search__value" data-output="search-drinks">Champagne</p>
+						<div class="search__hidden">
+						</div>
+					</div>
+					<div class="search__switch">
+						<p class="search__option active">All events</p>
+						<div class="search__selector"><span></span></div>
+						<p class="search__option">Followings</p>
+					</div>
+					<div class="search__topform">
+            <input type="text" name="search" value="Crazy party" form="crazy-party-search">
+            <button type="submit"><img src="img/icon_search.svg" alt="@@" form="crazy-party-search"></button>
+          </div>
+					<button class="button search__button" type="submit">Show events (5)</button>
+				</form>
+			</div>
+		</div>
+		<div class="column column_big">
+		</div>
+	</div>
+</section>
+
+<!-- ### footer ####################### !-->
+<footer class="footer">
+	<div class="container">
+		<p class="footer__text">All rights reserved 2016</p>
+		<div class="footer__app">
+			<p class="footer__apptext">Available on the App Store and Google Play</p>
+			<a href="#" class="footer__appshop"><img src="img/google.svg" alt="@@" ></a>
+			<a href="#" class="footer__appshop"><img src="img/apple.svg" alt="@@"></a>
+		</div>
+		<a href="mailto:hi@idealist.com" class="footer__text footer__mail">hi@idealist.com</a>
+	</div>
+</footer>
+
+<!-- ################################### !-->
+<!-- ### libs ####################### !-->
+<!-- ################################### !-->
+<script src="js/libs/jquery-2.1.3.min.js"></script>
+
+<!-- JQuery UI -->
+<script src="js/libs/jquery-ui.min.js"></script>
+
+<!-- jQuery Scrollbar !-->
+<script src="js/libs/scrollbar/jquery.scrollbar.js"></script>
+
+<!-- Scroll animation effects !-->
+<script src="js/libs/scrollreveal.min.js"></script>
+
+<!-- Fancybox -->
+<script src="js/libs/fancybox/jquery.fancybox.js"></script>
+
+<!-- SVG support -->
+<script src="js/libs/svg4everybody.min.js"></script>
+
+<!-- Croppie croped img -->
+<script src="js/libs/croppie.min.js"></script>
+
+<!-- Object Fit -->
+<script src="js/libs/ofi.min.js"></script>
+
+<!-- ################################### !-->
+<!-- ### scripts ####################### !-->
+<!-- ################################### !-->
+
+<!-- main scripts !-->
+<script src="js/libs.js"></script>
+<script src="js/header-scripts.js?v=3"></script>
+<script src="js/index-columns.js"></script>
+<script src="js/content-changer.js"></script>
+<script src="js/map-search.js"></script>
+<script src="js/cards-reveal.js"></script>
+<script src="js/page-loading.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyCUaCNfcDZQL7nZK07DQmAHsEetCCMIQ5w"></script>
+<script src="js/CustomGoogleMapMarker.js"></script>
+<script src="js/googlemaps.js"></script>
+</body>
+</html>

@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Idealist</title>
+    <link rel="shortcut icon" href="favicon.ico?v=2" type="image/x-icon"/>
+    <link rel="icon" href="favicon.ico?v=2" type="image/x-icon"/>
+    <link rel="stylesheet" href="css/default.css?v=2"/>
+    <link rel="stylesheet" href="js/libs/scrollbar/jquery.scrollbar.css"/>
+    <link rel="stylesheet" href="js/libs/fancybox/jquery.fancybox.css"/>
+</head>
+
+<body>
+<!-- ### forms ####################### !-->
+<div class="overlay"></div>
+<div class="page-loading"><img src="img/loading-bars.svg" alt="@@"></div>
+
+<!-- ### header ####################### !-->
+<header class="header">
+	<div class="container">
+		<div class="header__leftside">
+			<a href="index.html" class="header__logo">
+				<img src="img/logo.svg" alt="@@">
+			</a>
+			<form action="#" method="post" class="header__searchfield">
+				<input type="text" placeholder="Search by name events">
+				<button type="submit"><img src="img/icon_search.svg" alt="@@"></button>
+			</form>
+			<div class="header__date">
+				<a class="header__link">Set date</a>
+				<div class="calendar header__calendar">
+					<div class="calendar__head">
+						<p class="calendar__month">December</p>
+						<div class="calendar__closest">
+							<a href="#">Today</a>
+							<a href="#">Tomorrow</a>
+						</div>
+					</div>
+					<div class="calendar__daysoftheweek">
+						<a href="#">Su</a>
+						<a href="#">Mo</a>
+						<a href="#">Tu</a>
+						<a href="#">We</a>
+						<a href="#">Th</a>
+						<a href="#">Fr</a>
+						<a href="#">Sa</a>
+					</div>
+					<div class="calendar__week">
+						<a href="#"></a>
+						<a href="#" class="active">01</a>
+						<a href="#">02</a>
+						<a href="#">03</a>
+						<a href="#">04</a>
+						<a href="#">05</a>
+						<a href="#">06</a>
+					</div>
+					<div class="calendar__week">
+						<a href="#">07</a>
+						<a href="#">08</a>
+						<a href="#">09</a>
+						<a href="#">10</a>
+						<a href="#">11</a>
+						<a href="#">12</a>
+						<a href="#">13</a>
+					</div>
+					<div class="calendar__week">
+						<a href="#">14</a>
+						<a href="#">15</a>
+						<a href="#">16</a>
+						<a href="#">17</a>
+						<a href="#">18</a>
+						<a href="#">19</a>
+						<a href="#">20</a>
+					</div>
+					<div class="calendar__week">
+						<a href="#">21</a>
+						<a href="#">22</a>
+						<a href="#">23</a>
+						<a href="#">24</a>
+						<a href="#">25</a>
+						<a href="#">26</a>
+						<a href="#">27</a>
+					</div>
+					<div class="calendar__week">
+						<a href="#">28</a>
+						<a href="#">29</a>
+						<a href="#">30</a>
+						<a href="#">31</a>
+						<a href="#" class="nextmonth">01</a>
+						<a href="#" class="nextmonth">02</a>
+						<a href="#" class="nextmonth">03</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="header__events">
+			<a href="#" class="header__link">All events</a>
+		</div>
+		<div class="header__account">
+			<a class="header__link">Log in</a>
+			<a class="header__link">Sign up</a>
+			<!-- Hint -->
+			<p class="header__hint"><span></span>Login to get access to personal account</p>
+			<!-- // Hint -->
+			<!-- Logged -->
+			<a class="header__username"><span class="avatar avatar_small"><img src="img/avatar17.png" alt="@@"></span>Alexander</a>
+			<ul class="header__usermenu">
+				<li><a href="#" class="header__link">My profile</a></li>
+				<li><a href="#" class="header__link">Settings</a></li>
+				<li><a href="#" class="header__link">Send profile</a></li>
+				<li class="logout"><a class="header__link">Log out</a></li>
+			</ul>
+			<!-- // Logged -->
+		</div>
+	</div>
+</header>
+
+<!-- ### main content ####################### !-->
+<section class="profile">
+	<div class="container">
+		<div class="column column_userinfo">
+			<div class="userinfo">
+				<div class="dots userinfo__dots">
+					<span></span>
+					<ul class="dots__menu">
+						<li class="unfollow"><a href="#">unfollow</a></li>
+						<li><a href="#">send message</a></li>
+						<li><a href="#">complain</a></li>
+						<li><a href="#">send profile to a friend</a></li>
+					</ul>
+				</div>
+				<div class="userinfo__head">
+					<div class="userinfo__avatar avatar">
+						<img src="img/avatar16.png" alt="@@">
+					</div>
+					<p class="userinfo__name">Diana Gorobcova</p>
+					<p class="userinfo__shortinfo">Moskow, Russian Federation</p>
+					<p class="userinfo__shortinfo">21 year, female</p>
+					<a href="#" class="button userinfo__button active">Unfollow</a>
+				</div>
+				<ul class="userinfo__tablinks">
+					<li><a class="userinfo__link">Events<span class="userinfo__count">8</span></a></li>
+					<li><a class="userinfo__link">Followers<span class="userinfo__count">50</span></a></li>
+					<li><a class="userinfo__link">Following<span class="userinfo__count">47</span></a></li>
+				</ul>
+				<div class="userinfo__about">
+					<p class="userinfo__about-heading">About me</p>
+					<p class="userinfo__about-text">I like to party</p>
+				</div>
+				<p class="userinfo__registration-date">Registered: <span>October 3, 2012</span></p>
+			</div>
+		</div>
+		<div class="column column_big">
+			<!-- Events -->
+			<div class="eventinfo">
+				<div class="eventinfo__head">
+					<p class="heading eventinfo__heading">Events</p>
+				</div>
+
+				<div class="column" data-column="1">
+					<div class="event event_card js-card-reveal">
+						<img src="img/event2.jpg" alt="@@" class="event__bg">
+						<p class="event__type">Home party</p>
+						<p class="event__name">DJ Atmos</p>
+						<p class="event__date">21 NOV <span>&middot;</span> 21:00</p>
+						<div class="event__info">
+							<a href="#" class="event__organizer"><span class="avatar avatar_small"><img src="img/avatar1.png" alt="@@"></span>Alexander Longer</a>
+							<a href="#" class="event__likes"><img src="img/icon_like.svg" alt="@@">370</a>
+							<a href="#" class="event__watches"><img src="img/icon_camera.svg" alt="@@">750</a>
+							<a href="#" class="button button_small button_pink">Join</a>
+						</div>
+					</div>
+					<div class="event event_card js-card-reveal">
+						<img src="img/event1.jpg" alt="@@" class="event__bg">
+						<p class="event__type">Disco</p>
+						<p class="event__name">Jazz funk</p>
+						<p class="event__date">17 DEC <span>&middot;</span> 22:30</p>
+						<div class="event__info">
+							<a href="#" class="event__organizer"><span class="avatar avatar_small"><img src="img/avatar1.png" alt="@@"></span>Alexander Longer</a>
+							<a href="#" class="event__likes"><img src="img/icon_like.svg" alt="@@">370</a>
+							<a href="#" class="event__watches"><img src="img/icon_camera.svg" alt="@@">750</a>
+							<a href="#" class="button button_small button_pink">Join</a>
+						</div>
+					</div>
+					<div class="event event_card js-card-reveal">
+						<img src="img/event6.jpg" alt="@@" class="event__bg">
+						<p class="event__type">Dj set</p>
+						<p class="event__name">DJ Atmos</p>
+						<p class="event__date">10 JAN <span>&middot;</span> 21:00</p>
+						<div class="event__info">
+							<a href="#" class="event__organizer"><span class="avatar avatar_small"><img src="img/avatar1.png" alt="@@"></span>Alexander Longer</a>
+							<a href="#" class="event__likes"><img src="img/icon_like.svg" alt="@@">370</a>
+							<a href="#" class="event__watches"><img src="img/icon_camera.svg" alt="@@">750</a>
+							<a href="#" class="button button_small button_pink">Join</a>
+						</div>
+					</div>
+				</div>
+
+				<div class="column" data-column="2">
+					<div class="event event_card js-card-reveal">
+						<img src="img/event3.jpg" alt="@@" class="event__bg">
+						<p class="event__type">DJ set</p>
+						<p class="event__name">New album <br>Kira Wong</p>
+						<p class="event__date">27 nov <span>&middot;</span> 22:00</p>
+						<div class="event__info">
+							<a href="#" class="event__organizer"><span class="avatar avatar_small"><img src="img/avatar1.png" alt="@@"></span>Alexander Longer</a>
+							<a href="#" class="event__likes"><img src="img/icon_like.svg" alt="@@">370</a>
+							<a href="#" class="event__watches"><img src="img/icon_camera.svg" alt="@@">750</a>
+							<a href="#" class="button button_small button_pink">Join</a>
+						</div>
+					</div>
+					<div class="event event_card js-card-reveal">
+						<img src="img/event7.jpg" alt="@@" class="event__bg">
+						<p class="event__type">Rave</p>
+						<p class="event__name">Night rave</p>
+						<p class="event__date">21 DEC <span>&middot;</span> 21:00</p>
+						<div class="event__info">
+							<a href="#" class="event__organizer"><span class="avatar avatar_small"><img src="img/avatar1.png" alt="@@"></span>Alexander Longer</a>
+							<a href="#" class="event__likes"><img src="img/icon_like.svg" alt="@@">370</a>
+							<a href="#" class="event__watches"><img src="img/icon_camera.svg" alt="@@">750</a>
+							<a href="#" class="button button_small button_pink">Join</a>
+						</div>
+					</div>
+					<div class="event event_card js-card-reveal">
+						<img src="img/banner.jpg" alt="@@" class="event__bg">
+						<p class="event__type">Home party</p>
+						<p class="event__name">Mad Onna <br>B-Day Party</p>
+						<p class="event__date">15 JAN <span>&middot;</span> 21:00</p>
+						<div class="event__info">
+							<a href="#" class="event__organizer"><span class="avatar avatar_small"><img src="img/avatar1.png" alt="@@"></span>Alexander Longer</a>
+							<a href="#" class="event__likes"><img src="img/icon_like.svg" alt="@@">370</a>
+							<a href="#" class="event__watches"><img src="img/icon_camera.svg" alt="@@">750</a>
+							<a href="#" class="button button_small button_pink">Join</a>
+						</div>
+					</div>
+				</div>
+
+				<div class="column" data-column="3">
+					<div class="event event_card js-card-reveal" data-desktop="3" data-desktopsmall="1" data-tablet="1" data-mobile="3">
+						<img src="img/event8.jpg" alt="@@" class="event__bg">
+						<p class="event__type">birthday</p>
+						<p class="event__name">Night rave</p>
+						<p class="event__date">14 DEC <span>&middot;</span> 19:00</p>
+						<div class="event__info">
+							<a href="#" class="event__organizer"><span class="avatar avatar_small"><img src="img/avatar1.png" alt="@@"></span>Alexander Longer</a>
+							<a href="#" class="event__likes"><img src="img/icon_like.svg" alt="@@">370</a>
+							<a href="#" class="event__watches"><img src="img/icon_camera.svg" alt="@@">750</a>
+							<a href="#" class="button button_small button_pink">Join</a>
+						</div>
+					</div>
+					<div class="event event_card js-card-reveal" data-desktop="3" data-desktopsmall="2" data-tablet="2" data-mobile="3">
+						<img src="img/event10.jpg" alt="@@" class="event__bg">
+						<p class="event__type">new Year</p>
+						<p class="event__name">New Year 2017</p>
+						<p class="event__date">31 DEC <span>&middot;</span> 20:00</p>
+						<div class="event__info">
+							<a href="#" class="event__organizer"><span class="avatar avatar_small"><img src="img/avatar1.png" alt="@@"></span>Alexander Longer</a>
+							<a href="#" class="event__likes"><img src="img/icon_like.svg" alt="@@">370</a>
+							<a href="#" class="event__watches"><img src="img/icon_camera.svg" alt="@@">750</a>
+							<a href="#" class="button button_small button_pink">Join</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- // Events -->
+		</div>
+	</div>
+</section>
+
+<!-- ### footer ####################### !-->
+<footer class="footer">
+	<div class="container">
+		<p class="footer__text">All rights reserved 2016</p>
+		<div class="footer__app">
+			<p class="footer__apptext">Available on the App Store and Google Play</p>
+			<a href="#" class="footer__appshop"><img src="img/google.svg" alt="@@" ></a>
+			<a href="#" class="footer__appshop"><img src="img/apple.svg" alt="@@"></a>
+		</div>
+		<a href="mailto:hi@idealist.com" class="footer__text footer__mail">hi@idealist.com</a>
+	</div>
+</footer>
+
+<!-- ################################### !-->
+<!-- ### libs ####################### !-->
+<!-- ################################### !-->
+<script src="js/libs/jquery-2.1.3.min.js"></script>
+
+<!-- JQuery UI -->
+<script src="js/libs/jquery-ui.min.js"></script>
+
+<!-- jQuery Scrollbar !-->
+<script src="js/libs/scrollbar/jquery.scrollbar.js"></script>
+
+<!-- Scroll animation effects !-->
+<script src="js/libs/scrollreveal.min.js"></script>
+
+<!-- Fancybox -->
+<script src="js/libs/fancybox/jquery.fancybox.js"></script>
+
+<!-- SVG support -->
+<script src="js/libs/svg4everybody.min.js"></script>
+
+<!-- Croppie croped img -->
+<script src="js/libs/croppie.min.js"></script>
+
+<!-- Object Fit -->
+<script src="js/libs/ofi.min.js"></script>
+<!-- ################################### !-->
+<!-- ### scripts ####################### !-->
+<!-- ################################### !-->
+
+<!-- main scripts !-->
+<script src="js/libs.js"></script>
+<script src="js/header-scripts.js?v=3"></script>
+<script src="js/index-columns.js"></script>
+<script src="js/dots-menu.js"></script>
+<script src="js/content-changer.js"></script>
+<script src="js/cards-reveal.js"></script>
+<script src="js/page-loading.js"></script>
+</body>
+</html>

@@ -612,7 +612,7 @@ function checkempty() {
 }
 
 // Убрать ошибку при изменении input'а
-$("form input").on("keyup change", function(){
+$(document).on("keyup change", 'form input', function(){
    $(this).parent().removeClass("error"); 
    $(this).parent().find('.error-message').remove();
     window.activeform = $(this).parents("form").attr("id");
@@ -655,4 +655,19 @@ $("form input").on("keyup change", function(){
     }
     
     console.log(formerrors);
+});
+
+//common check
+
+$(document).on('change', 'input[data-group]', function() {
+  var groupName = $(this).data('group');
+  if($(this).prop('checked')) {
+    $('[data-group-item="'+ groupName +'"]').each(function () {
+      $(this).prop('checked', true);
+    });
+  } else {
+    $('[data-group-item="'+ groupName +'"]').each(function () {
+      $(this).prop('checked', false);
+    });
+  }
 });

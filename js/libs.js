@@ -64,7 +64,6 @@ $(".js-photo").fancybox({
     loop: true,
     afterShow: function () {
       var elem = this.element;
-      console.log(elem);
       $(this.inner).find('.like__counter').text(this.element.data('like-counter'));
       $(this.inner).find('.like').click(function () {
         var voteCount = 0;
@@ -97,8 +96,6 @@ if ($('.create-party').length > 0) {
         stickyElHeight = $(stickyEl).outerHeight(),
         stopperTop = $('.footer').offset().top,
         diff = parentElTop + parentElHeight + stickyElHeight - stopperTop;
-
-    console.log(diff + ' ' + ($(window).scrollTop() + $(window).height()));
 
     if(($(window).scrollTop() + $(window).height()) <= parentElTop) {
       $(stickyEl).removeClass('not-sticky').addClass('sticky');
@@ -140,7 +137,6 @@ $(window).resize(messageHeight);
 //#####
 
 $('.like img').click(function (event) {
-  console.log('click');
   var voteCount = 0;
   if(!$(this).hasClass('vote')) {
     $(this).addClass('vote');
@@ -163,8 +159,6 @@ function readFile(input) {
       $.fancybox.update();
       $uploadCrop.croppie('bind', {
         url: e.target.result
-      }).then(function() {
-        console.log('jQuery bind complete');
       });
     }
 
@@ -291,7 +285,6 @@ $(document).on('click', '.event-create__step', function (event) {
 
 $(document).on('click', '.js-next-form-section', function (event) {
   var previousContent = $(this).parents('.event-create__step-section').data('step');
-  console.log(previousContent);
   var nextContent = $(this).data('step-target');
   $('.event-create__step.active').removeClass('active', 0).addClass('complete', 250);
   $('.event-create__step[data-step-target="' + nextContent + '"]').addClass('active');
@@ -506,7 +499,6 @@ $(document).on('click', '.gift', function () {
 
 $(document).on('change', '#gift-availability', function () {
   var giftType = $(this).val();
-  console.log('change');
   $(this).closest('.accordion').find('.add-gifted').not('[data-gift-type="'+ giftType +'"]').addClass('hidden');
   $(this).closest('.accordion').find('[data-gift-type="'+ giftType +'"]').removeClass('hidden');
 });
@@ -514,9 +506,7 @@ $(document).on('change', '#gift-availability', function () {
 //###END scripts for form event create
 
 $(window).on('load resize', function() {
-  console.log('click');
   if($('.congratulation').length > 0) {
-    console.log('click');
     var pageHeight = $(window).height() - $('header').outerHeight() - $('footer').outerHeight();
     $('.congratulation').css({ 'min-height': pageHeight });
   }
@@ -527,7 +517,6 @@ $(window).on('load resize', function() {
 
 $(document).on('click', '[data-tab-target]', function () {
   var tabTarget = $(this).data('tab-target');
-  console.log('tab click');
   $(this).siblings().removeClass('active', 0);
   $(this).addClass('active', 0);
   $(this).closest('.featches').find('.featches__content').find('[data-tab]').fadeOut(400, function() { $(this).removeClass('active', 0); });
@@ -653,8 +642,6 @@ $(document).on("keyup change", 'form input', function(){
     } else {
       $('#'+activeform+' input[type="tel"]').parent().removeClass("error");
     }
-    
-    console.log(formerrors);
 });
 
 //common check

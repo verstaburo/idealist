@@ -115,6 +115,7 @@ function initialize() {
 	}
 
 	//карта
+  
 	var map = new google.maps.Map(document.getElementById('googlemap'), mapOptions);
     map.setOptions({styles: styles});
 
@@ -132,7 +133,7 @@ function initialize() {
 		{
 			marker_id: 'event1',
       addclass: addClass
-		},
+		}
 	);
 }
 
@@ -177,7 +178,7 @@ function init() {
 
   newControlDiv.index = 1;
 
-  if ($(window).width > 768) {
+  if ($(window).width() > 768) {
     map.controls[google.maps.ControlPosition.RIGHT_TOP].push(newControlDiv);
   } else {
     map.controls[google.maps.ControlPosition.RIGHT_BOTTOM].push(newControlDiv);
@@ -190,7 +191,7 @@ function init() {
 		{
 			marker_id: 'event1',
       addclass: ''
-		},
+		}
 	);
 
   overlay = new CustomMarker(
@@ -199,7 +200,7 @@ function init() {
 		{
 			marker_id: 'event2',
       addclass: 'blue'
-		},
+		}
 	);
 
   overlay = new CustomMarker(
@@ -208,7 +209,7 @@ function init() {
 		{
 			marker_id: 'event3',
       addclass: 'blue'
-		},
+		}
 	);
 
   overlay = new CustomMarker(
@@ -217,7 +218,7 @@ function init() {
 		{
 			marker_id: 'event4',
       addclass: 'blue'
-		},
+		}
 	);
 
 
@@ -227,7 +228,7 @@ function init() {
 		{
 			marker_id: 'event5',
       addclass: 'pink'
-		},
+		}
 	);
 
   overlay = new CustomMarker(
@@ -237,12 +238,14 @@ function init() {
 			marker_id: 'event6',
       addclass: 'few',
       eventcount: '2'
-		},
+		}
 	);
 }
 
-
-google.maps.event.addDomListener(window, 'load', initialize);
-google.maps.event.addDomListener(window, 'resize', initialize);
-google.maps.event.addDomListener(window, 'load', init);
-google.maps.event.addDomListener(window, 'resize', init);
+if($('#googlemap-big').length > 0) {
+  google.maps.event.addDomListener(window, 'load', init);
+  google.maps.event.addDomListener(window, 'resize', init);
+} else {
+  google.maps.event.addDomListener(window, 'load', initialize);
+  google.maps.event.addDomListener(window, 'resize', initialize);
+}

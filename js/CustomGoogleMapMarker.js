@@ -15,7 +15,6 @@ CustomMarker.prototype.draw = function() {
 
   if(self.args.addclass) {addClass = "marker_" + self.args.addclass;} else {addClass = ''}
   if(self.args.eventcount) {count = self.args.eventcount;} else {count = '';}
-	console.log(addClass);
 	if (!div) {
 
 		div = this.div = document.createElement('div');

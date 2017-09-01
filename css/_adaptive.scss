@@ -288,7 +288,9 @@
 	.event .button {position: relative; right:0; bottom:0; margin-top: 20px; display: block; max-width: 130px;}
 	.event__name {max-width: 100%;}
 	.event_banner .event__name {font-size: 30px;}
-	.event_banner .event__date {margin-top: 20px; font-size: 14px; font-weight: 400;}
+	.event_banner .event__date {margin-top: 20px; font-size: 14px; font-weight: 400;
+    span {margin: 0 6px;}
+  }
 	.map-search {padding: 20px;}
 
 	.last-published {padding-bottom: 71px; margin-top: 20px;}
@@ -538,6 +540,9 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
+  }
+  .event_banner .event__date {
+    span {margin: 0;}
   }
 }
 

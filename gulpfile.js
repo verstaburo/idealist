@@ -36,10 +36,8 @@ gulp.task('styles', function () {
     .pipe(bulkSass())
     .pipe(sass())
     .pipe(postcss([
-      autoprefixer({browsers: [
-        'last 2 versions',
-        'iOS >= 7'
-      ]})
+      require('autoprefixer'),
+      require('postcss-discard-comments'),
     ]))
     .pipe(cssimport())
     .pipe(cssnano({ zIndex: false }))

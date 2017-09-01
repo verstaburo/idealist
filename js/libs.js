@@ -548,3 +548,111 @@ $(document).on('click', '.js-show-more', function (e) {
     $(this).siblings('.hidden-text').show('blind', 300);
   }
 });
+
+//validation settings
+
+$(document).on('click', '.js-validation', function (e) {
+  window.activeform = $(this).parents("form").attr("id");
+
+  e.preventDefault();
+  checkinputs();
+  checkandsubmit();
+  
+});
+
+function checkinputs() {
+    // Проверка обычных полей на заполненность
+    checkempty();
+    
+    // Проверка поля email
+    function isEmail(email) {
+        var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+        return regex.test(email);
+    }
+  
+    function isTel(tel) {
+        var regex = /^(\s*)?(\+)?([- _():=+]?\d[- _():=+]?){10,14}(\s*)?$/;
+        return regex.test(tel);
+    }
+  
+    if ( isEmail($('#'+activeform+' input[type="email"]').val()) === false) {
+        $('#'+activeform+' input[type="email"]').parent().addClass("error");
+        $('#'+activeform+' input[type="email"]').parent().append('<p class="error-message">Invalid mail input format</p>');
+    } else {
+      $('#'+activeform+' input[name="email"]').parent().removeClass("error");
+      $('#'+activeform+' input[type="email"]').parent().find('.error-message').remove();
+    }
+
+    // Проверка номера телефона
+    if ( isTel($('#'+activeform+' input[type="tel"]').val()) === false) {
+      $('#'+activeform+' input[type="tel"]').parent().addClass("error");
+      $('#'+activeform+' input[type="tel"]').parent().append('<p class="error-message">Invalid telephone format</p>');
+    } else {$('#'+activeform+' input[type="tel"]').parent().removeClass("error");
+           $('#'+activeform+' input[type="tel"]').parent().find('.error-message').remove();}
+}
+
+// 3. Проверка на ошибочные поля и отправка формы
+function checkandsubmit() {
+    window.formerrors = 0;
+    $('#'+activeform).find(".error").each(function(){
+        formerrors += 1; 
+    });
+    if (formerrors === 0) {
+        $('#'+activeform).submit();
+    }
+}
+
+// Скрипт проверки на пустое значение
+function checkempty() {
+    $('#'+activeform+' [data-required]').each(function(){
+        if (!$(this).val()) {
+            $(this).parent().addClass("error");
+        } else {$(this).parent().removeClass("error");}
+    });
+}
+
+// Убрать ошибку при изменении input'а
+$("form input").on("keyup change", function(){
+   $(this).parent().removeClass("error"); 
+   $(this).parent().find('.error-message').remove();
+    window.activeform = $(this).parents("form").attr("id");
+    var inputs = $('#'+activeform+' [data-required]').length;
+    window.formerrors = -1;
+    
+    $('#'+activeform+' [data-required]').each(function(){
+        if (!$(this).val()) {
+            formerrors += 1; 
+          $(this).parent().addClass("error");
+        } else {
+          $(this).parent().removeClass("error");
+        }
+    });
+    
+    // Проверка поля email
+    function isEmail(email) {
+        var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+        return regex.test(email);
+    }
+  
+    function isTel(tel) {
+        var regex = /^(\s*)?(\+)?([- _():=+]?\d[- _():=+]?){10,14}(\s*)?$/;
+        return regex.test(tel);
+    }
+  
+    if ( isEmail($('#'+activeform+' input[type="email"]').val()) === false) {
+        formerrors += 1; 
+      $('#'+activeform+' input[type="email"]').parent().addClass("error");
+    } else {
+      $('#'+activeform+' input[type="email"]').parent().removeClass("error");
+    }
+
+    // Проверка номера телефона
+    if ( isTel($('#'+activeform+' input[type="tel"]').val()) === false) {
+        formerrors += 1; 
+      $('#'+activeform+' input[type="tel"]').parent().addClass("error");
+    } else {
+      $('#'+activeform+' input[type="tel"]').parent().removeClass("error");
+    }
+    
+    console.log(formerrors);
+});

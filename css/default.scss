@@ -962,6 +962,31 @@
 		&_textarea {align-items: flex-start;
 			.settings__fieldname {margin-top: 18px;}
 		}
+    
+    &.error {
+      position: relative;
+      
+      input {
+        border-color: #df1054;
+      }
+      
+      .error-message {
+        position: absolute;
+        width: 110px;
+        top: 50%;
+        right: -33px;
+        transform: translate(100%, -50%);
+        
+        @media (max-width: 1170px) {
+          top: 100%;
+          right: auto;
+          left: 150px;
+          transform: translate(0, 0);
+          width: auto !important;
+          padding: 4px 0 0;
+        }
+      }
+    }
 	}
 	&__fieldname {font-weight: 300; opacity: 0.3; letter-spacing: 0.025em; width: 22%;}
 	&__button {margin-top: 60px; margin-left: -21px; padding: 0 45px;}
@@ -4071,8 +4096,8 @@
   box-sizing: border-box;
 
   &__heading {
-    padding: 43px 35px 8px 35px;
-    width: 180px;
+    padding: 43px 35px 8px 47px;
+    width: 192px;
     box-sizing: border-box;
   }
 
@@ -4090,6 +4115,15 @@
     padding: 0 25px 0 35px !important;
     box-sizing: border-box;
   }
+}
+
+.error-message {
+  color: #df1054;
+  font-family: $main-font;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.7em;
+  letter-spacing: .05em;
 }
 
 @import "adaptive";

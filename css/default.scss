@@ -1073,7 +1073,7 @@
 		:-ms-input-placeholder {font-weight: 400;}
 		:-moz-placeholder {font-weight: 400;}
 	}
-	&__field {padding: 0 43px 0 39px; display: flex; justify-content: space-between; margin-top: 36px; position: relative;
+	&__field {padding: 0 43px 0 39px; display: flex; justify-content: flex-start; margin-top: 36px; position: relative;
 		&:first-child {margin-top: 0;}
 		&.active {
 			.search__select:after {transform: rotate(180deg);}
@@ -1084,7 +1084,7 @@
 		&:after {content: ""; display: inline-block; width: 0; height: 0; border: 3px solid #fff; border-color: #fff transparent transparent transparent; position: absolute; top: 20%; right: 0; bottom: 0; margin: auto; transform-origin: 50% 25%; transition: all 0.25s ease-in-out;}
 		&:hover {opacity: 0.6;}
 	}
-	&__value {font-size: 14px; letter-spacing: 0.05em; color: #77787b; max-width: 118px; text-overflow: ellipsis; white-space: nowrap; overflow: hidden;}
+	&__value {font-size: 14px; letter-spacing: 0.05em; color: #77787b; max-width: 118px; text-overflow: ellipsis; white-space: nowrap; overflow: hidden; margin-left: auto;}
 	&__switch {border-top: 1px solid rgba(#5c1bbf,0.1); margin-top: 35px; padding: 43px 43px 43px 39px; display: flex; justify-content: space-between; align-items: center;}
 	&__option {font-size: 14px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: #77787b; transition: all 0.25s ease-in-out; cursor: pointer;
 		&:hover, &.active {color: #fff;}
@@ -2760,7 +2760,7 @@
     justify-content: center;
     align-items: center;
     padding: 0;
-    background-color: rgba($violet, .9);
+    background-color: rgba($violet, 1);
 
     &.active {
       display: flex;
@@ -4125,5 +4125,7 @@
   line-height: 1.7em;
   letter-spacing: .05em;
 }
+
+
 
 @import "adaptive";

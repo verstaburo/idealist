@@ -172,9 +172,30 @@
 	&__menu {position: absolute; right: -25px; top: 100%; width: 298px; z-index: 3; background-color: #100824; opacity: 0; pointer-events: none; transition: all 0.25s ease-in-out; padding-bottom: 34px; cursor: auto; text-align: left;
 		&:after {content: ""; border: 5px solid #100824; border-color: transparent transparent #100824 transparent; position: absolute; right: 40px; top: -10px;}
 		&.active {opacity: 1; pointer-events: all;}
-		li {margin: 24px auto 0;  padding: 0 42px;
+		li {margin: 24px auto 0;  padding: 0 42px; position: relative;
 			&:first-child {margin-top: 0;}
 			&.unfollow {padding: 33px 42px 31px; position: relative; border-bottom: 1px solid rgba(#5c1bbf,0.1); margin-bottom: 36px;}
+
+      span {
+        position: absolute;
+        top: 50%;
+        right: 33px;
+        width: 19px;
+        height: 19px;
+        border-radius: 50%;
+        background-color: $pink;
+        color: #fff;
+        font-family: $main-font;
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 19px;
+        text-align: center;
+        transform: translate(0, -50%);
+
+        &::before, &::after {
+          display: none;
+        }
+      }
 		}
 		a {font-size: 14px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase;
 			&:hover {opacity: 0.7;}
@@ -218,9 +239,9 @@
     	.event__info .event__organizer {transform:translate3d(0,0,0)}
     	.event__info .event__watches, .event__info .event__likes, .event__info .button {transform:translate3d(0,0,0);}
 	}
-	&_banner {height: 552px; padding: 62px; padding-top: 30px; border-radius: 0; background-color: transparent;
+	&_banner {height: 552px; padding: 62px; padding-top: 30px; border-radius: 0; background-color: transparent; justify-content: flex-start;
 		.event__bg {opacity: 1;}
-		.event__type {position: static; font-size: 14px; font-weight: 600; opacity: 1;}
+		.event__type {position: static; font-size: 14px; font-weight: 600; opacity: 1; margin-top: auto;}
 		.event__name {margin-top: 20px; font-size: 60px; letter-spacing: 0.025em; line-height: 1em;}
 		.event__date {margin-top: 38px; font-size: 16px; font-weight: 600;
 			span {margin: 0 15px;}
@@ -232,7 +253,7 @@
 		.event__watches {margin-left: 30px;}
     &:hover .event__info {background-color: transparent; z-index: 1;}
 	}
-	&_card {height: 180px; background-color:#120323}
+	&_card {height: 180px; background-color:#120323;}
 	&_bigcard, &_specialcard {height: 380px;
 		.event__info {padding: 18px 27px;
 			.button {bottom: 45% !important; right: 0 !important; left: 0 !important; margin: auto; top:auto !important}
@@ -259,6 +280,12 @@
 		.button {width: 99px; position: absolute; right: 15px !important; bottom: 15px !important;}
 		a:not(.button):hover {opacity: 0.6;}
 		&_viewonmap .button {position: absolute !important; left: 0 !important; right: 0 !important; top: 0 !important; bottom: 0 !important; margin: auto !important; width: 129px; height: 39px;}
+    &_centered {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+    }
 	}
 	&__likes {display: inline-block; font-size: 14px; margin-top: 79px; letter-spacing: 0.075em;
     font-weight: 300;
@@ -280,14 +307,24 @@
     justify-content: flex-start;
     align-items: center;
     box-sizing: border-box;
-    margin-bottom: auto;
     cursor: pointer;
+
+    &_small {
+
+      .event__counter {
+        &:not(:last-child) {
+          margin-right: 25px;
+        }
+      }
+    }
   }
 
   &__counter {
     position: relative;
+    display: inline-block;
     box-sizing: border-box;
     z-index: 2;
+    min-height: 17px;
     transition: all .25s ease-in-out;
 
     &:not(:last-child) {
@@ -342,9 +379,18 @@
         width: 23px;
         height: 23px;
       }
+
+      &_small {
+
+        svg {
+          width: 17px;
+          height: 17px;
+        }
+      }
     }
 
     &_new {
+      padding-left: 0;
 
       svg {
         position: relative;
@@ -363,6 +409,14 @@
         height: 11px;
         border-radius: 50%;
         background-color: $pink;
+      }
+
+      &_small {
+
+        &::after {
+          width: 8px;
+          height: 8px;
+        }
       }
     }
 
@@ -846,12 +900,22 @@
 		img {bottom: auto;}
 	}
 }
-
 /*----------------------------------------*/
 
 .following {width: 100%;
-	&__heading {width: 100%; margin-top: 48px; padding-left: 21px;}
-	&__nofollow {width: 100%; font-size: 16px; letter-spacing: 0.025em; color: #77787b; padding-left: 21px; margin-top: 34px;}
+	&__heading {width: 100%; margin-top: 20px; padding-left: 21px; display: flex; flex-direction: row; justify-content: flex-start; align-items: center; box-sizing: border-box;
+    flex-wrap: wrap; align-content: flex-start;
+    span {
+      margin-top: 14px;
+      margin-right: 30px;
+    }
+
+    .form-search {
+      margin-top: 14px;
+      margin-left: auto;
+    }
+  }
+	&__nofollow {width: 100%; font-size: 16px; letter-spacing: 0.025em; color: #77787b; padding-left: 21px; margin-top: 34px; padding-bottom: 30px;}
 	&__list {width: 100%; margin-top: 29px; padding-left: 22px;
 		> li {margin-top: 22px; padding: 7px 0; position: relative; padding-right: 55px;
 			&:first-child {margin-top: 0;}
@@ -866,7 +930,9 @@
 			&.active {opacity: 1; pointer-events: all;}
 		}
 	}
-	&__dots {position: absolute; right: 19px; top: -7px; bottom: 0; margin: auto;}
+	&__dots {position: absolute; right: 19px; top: -7px; bottom: 0; margin: auto;
+    ul {padding-top: 38px;}
+  }
 	&_followers .following__dots {right: 8px; top: -5px;}
 }
 
@@ -2481,6 +2547,7 @@
     transition: all .25s ease-in-out;
     letter-spacing: .05em;
     white-space: nowrap;
+    margin-right: auto;
   }
 
   &__icon {
@@ -3200,6 +3267,7 @@
     transition: all .25s ease-in-out;
     letter-spacing: .05em;
     white-space: nowrap;
+    margin-right: auto;
   }
 
   &__icon {
@@ -3966,6 +4034,61 @@
     &:hover {
       background-color: rgba(#fff, .8);
     }
+  }
+}
+
+.ban {
+  color: rgba(#fff, .5);
+
+  .avatar {
+    opacity: .5;
+  }
+
+
+  &__marker {
+    position: absolute;
+    top: -6px;
+    left: 38px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #000000;
+    color: #fff;
+    font-family: $main-font;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 20px;
+    text-transform: uppercase;
+    text-align: center;
+  }
+}
+
+.popular-users {
+  margin-top: 10px;
+  padding-bottom: 40px;
+  border-radius: 5px;
+  border: 1px solid rgba($light-violet, .8);
+  box-sizing: border-box;
+
+  &__heading {
+    padding: 43px 35px 8px 35px;
+    width: 180px;
+    box-sizing: border-box;
+  }
+
+  &__list {
+    height: 380px;
+    min-height: 380px;
+    box-sizing: border-box;
+
+    li {
+      padding-right: 0;
+    }
+  }
+
+  .scroll-content {
+    padding: 0 25px 0 35px !important;
+    box-sizing: border-box;
   }
 }
 

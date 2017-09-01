@@ -267,6 +267,10 @@
   .correspondence {width: 100%; padding-left: 0; padding-right: 0;
     &__list {padding-right: 0;}
   }
+  .following__heading {
+    span {width: 100%; margin-right: 0;}
+    .form-search {margin-left: 0;}
+  }
 }
 
 @media (max-width:768px) {

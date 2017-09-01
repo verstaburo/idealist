@@ -6,10 +6,6 @@ $(document).ready(function(){
 	$('.scrollbar-inner').scrollbar();
 });
 
-$(document).ready(function(){
-	$('.scrollbar-outer').scrollbar();
-});
-
 // Всплывающие окна
 $(".fancybox").fancybox({
     fitToView   : false,
@@ -83,6 +79,10 @@ $(".js-photo").fancybox({
 });
 
 $('.js-popup-close').click(function () {
+  $.fancybox.close();
+});
+
+$(document).on('click touch', '.fancybox-overlay', function () {
   $.fancybox.close();
 });
 
@@ -274,7 +274,7 @@ $( ".accordion" ).accordion({
 
 //swithch steps form
 
-$(document).on('click', '.event-create__step', function (event) {
+$(document).on('click touch', '.event-create__step', function (event) {
   var previousContent = $('.event-create__step.active').data('step-target');
   var nextContent = $(this).data('step-target');
   $('.event-create__step.active').removeClass('active', 250);
@@ -443,18 +443,26 @@ $(document).on('keydown', '.gift-choice__field', function (event) {
     $(this).closest('.gift-choice').removeClass('active');
     $(this).closest('.gift-choice').find('.gift-choice__self').css({opacity: '', 'z-index': ''});
     $(this).closest('.gift-choice').find('.gift-choice__list').css({opacity: '', 'pointer-events' : ''});
-    $(this).closest('.gift-choice').find('.gift-choice__field').attr('contenteditable', false)
+    $(this).closest('.gift-choice').find('.gift-choice__field').attr('contenteditable', false);
     return false;
   } else if(event.which == 13) {
     $(this).closest('.gift-choice').removeClass('active');
     $(this).closest('.gift-choice').find('.gift-choice__self').css({opacity: '', 'z-index': ''});
     $(this).closest('.gift-choice').find('.gift-choice__input').val(text);
     $(this).closest('.gift-choice').find('.gift-choice__list').css({opacity: '', 'pointer-events' : ''});
-    $(this).closest('.gift-choice').find('.gift-choice__field').attr('contenteditable', false)
+    $(this).closest('.gift-choice').find('.gift-choice__field').attr('contenteditable', false);
     return false;
   } else {
     $(this).closest('.gift-choice').find('.gift-choice__self span').html(text);
   }
+});
+
+$(document).on('click', '.gift-choice__overlay', function (event) {
+  $('.gift-choice').removeClass('active');
+  $('.gift-choice').find('.gift-choice__self').css({opacity: '', 'z-index': ''});
+  $('.gift-choice').find('.gift-choice__list').css({opacity: '', 'pointer-events' : ''});
+  $('.gift-choice').find('.gift-choice__field').attr('contenteditable', false);
+  return false;
 });
 
 $(document).on('click', '.gift', function () {

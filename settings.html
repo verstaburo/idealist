@@ -147,23 +147,23 @@
 		</div>
 		<div class="column column_med">
 			<!-- Settings -->
-			<form class="settings" action="">
+			<form class="settings" action="" id="settings">
 				<p class="heading settings__heading">Settings</p>
 				<div class="settings__field">
 					<p class="settings__fieldname">First name:</p>
-					<input type="text" name="firstname" value="Alexander">
+					<input type="text" name="firstname" value="Alexander" data-required>
 				</div>
 				<div class="settings__field settings__field_username">
 					<p class="settings__fieldname">Username:</p>
-					<input type="text" name="username" value="Stiffler">
+					<input type="text" name="username" value="Stiffler" data-required>
 				</div>
 				<div class="settings__field">
 					<p class="settings__fieldname">E-Mail:</p>
-					<input type="email" name="email" value="alexander@al.com">
+					<input type="email" name="email" value="alexander@al.com" data-required>
 				</div>
 				<div class="settings__field">
 					<p class="settings__fieldname">Telephon:</p>
-					<input type="tel" name="tel" value="+ 7 (960) 185 58 84">
+					<input type="tel" name="tel" value="+ 7 (960) 185 58 84" data-required>
 				</div>
 				<div class="settings__field settings__field_location">
 					<p class="settings__fieldname">Location:</p>
@@ -220,7 +220,7 @@
 					<p class="settings__fieldname">About me:</p>
 					<textarea name="about">Composer with experience in writing for, and collaborating with various types of instrumental/vocal ensembles from solo instrumental to large orchestral as well as solo vocal and choral music</textarea>
 				</div>
-				<button class="button button_pink settings__button">Save</button>
+				<button class="button button_pink settings__button js-validation js-nopreload" type="submit">Save</button>
 			</form>
 			<!-- // Settings -->
 		</div>

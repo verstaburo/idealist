@@ -249,7 +249,7 @@
 		.event__info {display: flex; flex-direction: column; justify-content: center; align-items: center; padding-top: 60px; background-color: transparent;
 			.button {position: static; padding: 0; min-width: 120px;}
 		}
-		.event__likes, .event__watches {margin-top: 29px; font-size: 16px;}
+		.event__likes, .event__watches {margin-top: 29px; font-size: 16px; white-space: nowrap}
 		.event__watches {margin-left: 30px;}
     &:hover .event__info {background-color: transparent; z-index: 1;}
 	}
@@ -287,11 +287,11 @@
       align-items: center;
     }
 	}
-	&__likes {display: inline-block; font-size: 14px; margin-top: 79px; letter-spacing: 0.075em;
+	&__likes {display: inline-block; font-size: 14px; margin-top: 79px; letter-spacing: 0.075em; white-space: nowrap;
     font-weight: 300;
 		img {vertical-align: middle; margin-right: 9px;     margin-top: -5px;}
 	}
-	&__watches {display: inline-block; font-size: 14px; margin-top: 79px; margin-left: 18px; letter-spacing: 0.075em;
+	&__watches {display: inline-block; font-size: 14px; margin-top: 79px; margin-left: 18px; letter-spacing: 0.075em; white-space: nowrap;
     font-weight: 300;
 		img {vertical-align: middle; margin-right: 9px;     margin-top: -5px;}
 	}
@@ -312,6 +312,8 @@
     &_small {
 
       .event__counter {
+        padding-left: 0;
+        
         &:not(:last-child) {
           margin-right: 25px;
         }
@@ -334,17 +336,22 @@
     &:last-child {
       margin-left: auto;
     }
-
-    svg {
+    
+    &__counter-icon {
+      display: inline-block;
       position: absolute;
       top: 50%;
       left: 0;
-      fill: #fff;
       transform: translate(0, -50%);
+      overflow: hidden;
+    }
+
+    svg {
+      fill: #fff;
       transition: all .25s ease-in-out;
     }
 
-    span {
+    span:not(.event__counter-icon) {
       margin-left: 8px;
       color: #fff;
       font-family: $main-font;
@@ -356,6 +363,11 @@
 
     &_human {
       padding-left: 18px;
+      
+      .event__counter-icon {
+        width: 18px;
+        height: 17px;
+      }
 
       svg {
         width: 18px;
@@ -365,6 +377,11 @@
 
     &_camera {
       padding-left: 19px;
+      
+      .event__counter-icon {
+        width: 19px;
+        height: 17px;
+      }
 
       svg {
         width: 19px;
@@ -374,6 +391,11 @@
 
     &_chat {
       padding-left: 23px;
+      
+      .event__counter-icon {
+        width: 23px;
+        height: 23px;
+      }
 
       svg {
         width: 23px;
@@ -381,6 +403,11 @@
       }
 
       &_small {
+        
+        .event__counter-icon {
+          width: 17px;
+          height: 17px;
+        }
 
         svg {
           width: 17px;
@@ -391,8 +418,8 @@
 
     &_new {
       padding-left: 0;
-
-      svg {
+      
+      &__counter-icon {
         position: relative;
         top: auto;
         left: auto;
@@ -904,7 +931,6 @@
 
 .following {width: 100%;
 	&__heading {width: 100%; margin-top: 20px; padding-left: 21px; display: flex; flex-direction: row; justify-content: flex-start; align-items: center; box-sizing: border-box;
-    flex-wrap: wrap; align-content: flex-start;
     span {
       margin-top: 14px;
       margin-right: 30px;
@@ -1434,7 +1460,9 @@
 
 .event-page {padding-bottom: 85px;
 	.column {padding: 0 10px;}
-	&__middle {display: flex; flex-direction: row; justify-content: flex-start; align-items: stretch; align-content: stretch; flex-wrap: wrap; margin-top: 15px; min-height: 380px;}
+	&__middle {display: flex; flex-direction: row; justify-content: flex-start; align-items: stretch; align-content: stretch; flex-wrap: wrap; margin-top: 15px; min-height: 380px;
+    .column_purple {background-clip: content-box; background-color: #100824;}
+  }
   &__bottom {display: flex; flex-direction: row; justify-content: space-between; align-items: flex-start; align-content: flex-start; flex-wrap: wrap;}
 }
 
@@ -2395,15 +2423,24 @@
           fill: rgba(#fff, .8);
         }
       }
-
-      svg {
+      
+      span {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
         position: absolute;
         top: 50%;
         right: 16px;
         width: 12px;
         height: 12px;
-        fill: #fff;
         transform: translate(0, -50%);
+      }
+
+      svg {
+        width: 12px;
+        height: 12px;
+        fill: #fff;
         transition: all .25s ease-in-out;
       }
     }
@@ -2543,9 +2580,15 @@
           color: $pink;
         }
 
-        &__icon svg {
-          fill: $pink;
-          transform: translate(0, -50%) rotate(180deg);
+        &__icon {
+          
+          svg {
+            fill: $pink;
+          }
+          
+          span {
+            transform: translate(0, -50%) rotate(180deg);
+          }
         }
       }
     }
@@ -2586,15 +2629,21 @@
     box-sizing: border-box;
     cursor: pointer;
 
-    svg {
+    span {
       position: absolute;
       top: 50%;
       left: 23px;
       width: 11px;
       height: 6px;
-      fill: #fff;
       transition: all .25s ease-in-out;
       transform: translate(0, -50%);
+    }
+    
+    svg {
+      width: 11px;
+      height: 6px;
+      fill: #fff;
+      transition: all .25s ease-in-out;
     }
   }
 
@@ -3270,9 +3319,14 @@
           color: $pink;
         }
 
-        &__icon svg {
-          fill: $pink;
-          transform: translate(0, -50%) rotate(180deg);
+        &__icon {
+          svg {
+            fill: $pink;
+          }
+          
+          span {
+            transform: translate(0, -50%) rotate(180deg);
+          }
         }
       }
     }
@@ -3305,16 +3359,22 @@
     background-color: $dark-violet;
     box-sizing: border-box;
     cursor: pointer;
-
-    svg {
+    
+    span {
       position: absolute;
       top: 50%;
       left: 21px;
       width: 12px;
       height: 12px;
-      fill: #fff;
       transition: all .25s ease-in-out;
       transform: translate(0, -50%);
+    }
+
+    svg {
+      width: 12px;
+      height: 12px;
+      fill: #fff;
+      transition: all .25s ease-in-out;
     }
   }
 }
@@ -3579,15 +3639,24 @@
   padding: 0 30px;
   margin-top: 4px;
   letter-spacing: .025em;
-
-  svg {
+  
+  &__icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     position: absolute;
     top: 50%;
     left: 0;
     width: 14px;
     height: 14px;
-    fill: #bb105f;
     transform: translate(0, -50%);
+  }
+
+  svg {
+    width: 14px;
+    height: 14px;
+    fill: #bb105f;
     transition: all .25s ease-in-out;
   }
 
@@ -3714,15 +3783,24 @@
     transition: all .25s ease-in-out;
     cursor: pointer;
     border-radius: 50%;
-
-    svg {
+    
+    span {
       position: absolute;
       top: 50%;
       left: 50%;
       width: 8px;
       height: 8px;
-      fill: #fff;
       transform: translate(-50%, -50%);
+    }
+
+    svg {
+      width: 8px;
+      height: 8px;
+      fill: #fff;
+    }
+    
+    &:hover {
+      background-color: $light-violet;
     }
   }
 }
@@ -3877,15 +3955,25 @@
       width: 30px;
       height: 30px;
     }
-
-    svg {
+    
+    span {
       position: absolute;
       top: 50%;
       left: 50%;
       width: 22px;
       height: 19px;
-      fill: #fff;
       transform: translate(-50%, -50%);
+
+      @media (max-width: 768px) {
+        width: 15px;
+        height: 13px;
+      }
+    }
+
+    svg {
+      width: 22px;
+      height: 19px;
+      fill: #fff;
 
       @media (max-width: 768px) {
         width: 15px;
@@ -3912,15 +4000,25 @@
       width: 30px;
       height: 30px;
     }
-
-    svg {
+    
+    span {
       position: absolute;
       top: 50%;
       left: 50%;
       width: 12px;
       height: 23px;
-      fill: #fff;
       transform: translate(-50%, -50%);
+
+      @media (max-width: 768px) {
+        width: 8px;
+        height: 19px;
+      }
+    }
+
+    svg {
+      width: 12px;
+      height: 23px;
+      fill: #fff;
 
       @media (max-width: 768px) {
         width: 8px;
@@ -3955,15 +4053,25 @@
       width: 30px;
       height: 30px;
     }
-
-    svg {
+    
+    span {
       position: absolute;
       top: 50%;
       left: 50%;
       width: 16px;
       height: 16px;
-      fill: #fff;
       transform: translate(-50%, -50%);
+
+      @media (max-width: 768px) {
+        width: 12px;
+        height: 12px;
+      }
+    }
+
+    svg {
+      width: 16px;
+      height: 16px;
+      fill: #fff;
 
       @media (max-width: 768px) {
         width: 12px;
@@ -3989,15 +4097,26 @@
       width: 30px;
       height: 30px;
     }
-
-    svg {
+    
+    span {
       position: absolute;
       top: 50%;
       left: 50%;
       width: 16px;
       height: 2px;
-      fill: #fff;
       transform: translate(-50%, -50%);
+      background-color: #fff;
+
+      @media (max-width: 768px) {
+        width: 12px;
+        height: 2px;
+      }
+    }
+
+    svg {
+      width: 16px;
+      height: 2px;
+      fill: transparent;
 
       @media (max-width: 768px) {
         width: 12px;
@@ -4006,8 +4125,8 @@
     }
 
     &:hover {
-      svg {
-        fill: rgba(#fff, .6);
+      span {
+        background-color: rgba(#fff, .6);
       }
     }
   }

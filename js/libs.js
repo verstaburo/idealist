@@ -6,6 +6,10 @@ $(document).ready(function(){
 	$('.scrollbar-inner').scrollbar();
 });
 
+$(document).ready(function(){
+	$('.scrollbar-outer').scrollbar();
+});
+
 // Всплывающие окна
 $(".fancybox").fancybox({
     fitToView   : false,

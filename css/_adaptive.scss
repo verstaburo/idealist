@@ -28,7 +28,6 @@
   .event-create__step-section {
     width: 100%;
   }
-  .add-line__icon {padding-right: 0; width: 32px;}
 
 }
 
@@ -112,6 +111,7 @@
 	.profile .column_big .column_med {width: 50%;}
 	.following__list {padding-left: 10px;}
 	.following__list li {padding-right: 50px;}
+  .following__heading {flex-wrap: wrap; align-content: flex-start;}
 	.settings-page .column_med {width: 66.6666%;}
 	.login__socialbutton img {left: 12px;}
 	.login__help {width: 100%;}
@@ -125,6 +125,7 @@
   .slider-arrow__right {right: -25px;}
   .form__col_main {padding-right: 0;}
   .accordion__icon {padding-right: 0; width: 34px; right: 0;}
+  .add-line__icon {padding-right: 0; width: 32px;}
   .form__checkbox-tree {padding-right: 0;}
   .form__title_search {padding-right: 0;}
 }

@@ -37,7 +37,8 @@ gulp.task('styles', function () {
     .pipe(sass())
     .pipe(postcss([
       autoprefixer({browsers: [
-        'last 2 versions', 'last 7 iOS version'
+        'last 2 versions',
+        'iOS >= 7'
       ]})
     ]))
     .pipe(cssimport())

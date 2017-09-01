@@ -35,13 +35,13 @@ function customControls(controlDiv, map) {
   //location
   var locationButton = document.createElement('div');
   locationButton.classList.add('map-controls__location');
-  locationButton.innerHTML = '<svg><use xlink:href="img/icon.svg#icon_location-marker"></svg>';
+  locationButton.innerHTML = '<span><svg><use xlink:href="img/icon.svg#icon_location-marker"></svg></span>';
   controlDiv.appendChild(locationButton);
 
   //pin
   var pinButton = document.createElement('div');
   pinButton.classList.add('map-controls__pin');
-  pinButton.innerHTML = '<svg><use xlink:href="img/icon.svg#icon_pin-marker"></svg>';
+  pinButton.innerHTML = '<span><svg><use xlink:href="img/icon.svg#icon_pin-marker"></svg></span>';
   controlDiv.appendChild(pinButton);
 
   //zoom
@@ -53,13 +53,13 @@ function customControls(controlDiv, map) {
   // Set CSS for the zoomIn
   var zoomInButton = document.createElement('div');
   zoomInButton.classList.add('map-controls__plus');
-  zoomInButton.innerHTML = '<svg><use xlink:href="img/icon.svg#icon_plus"></svg>';
+  zoomInButton.innerHTML = '<span><svg><use xlink:href="img/icon.svg#icon_plus"></svg></span>';
   zoomControl.appendChild(zoomInButton);
 
   // Set CSS for the zoomOut
   var zoomOutButton = document.createElement('div');
   zoomOutButton.classList.add('map-controls__minus');
-  zoomOutButton.innerHTML = '<svg><use xlink:href="img/icon.svg#icon_minus"></svg>';
+  zoomOutButton.innerHTML = '<span><svg><use xlink:href="img/icon.svg#icon_minus"></svg></span>';
   zoomControl.appendChild(zoomOutButton);
 
   // Setup the click event listener - zoomIn

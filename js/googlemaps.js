@@ -191,7 +191,8 @@ function init() {
 		map,
 		{
 			marker_id: 'event1',
-      addclass: ''
+      addclass: '',
+      eventcardid: 'event-card-1'
 		}
 	);
 
@@ -200,7 +201,8 @@ function init() {
 		map,
 		{
 			marker_id: 'event2',
-      addclass: 'blue'
+      addclass: 'blue',
+      eventcardid: 'event-card-2'
 		}
 	);
 
@@ -209,7 +211,8 @@ function init() {
 		map,
 		{
 			marker_id: 'event3',
-      addclass: 'blue'
+      addclass: 'blue',
+      eventcardid: 'event-card-1'
 		}
 	);
 
@@ -218,7 +221,8 @@ function init() {
 		map,
 		{
 			marker_id: 'event4',
-      addclass: 'blue'
+      addclass: 'blue',
+      eventcardid: 'event-card-2'
 		}
 	);
 
@@ -228,7 +232,8 @@ function init() {
 		map,
 		{
 			marker_id: 'event5',
-      addclass: 'pink'
+      addclass: 'pink',
+      eventcardid: 'event-card-1'
 		}
 	);
 

@@ -11,10 +11,11 @@ CustomMarker.prototype.draw = function() {
 	var self = this;
 
 	var div = this.div;
-  var addClass, count;
+  var addClass, count, eventCardId;
 
   if(self.args.addclass) {addClass = "marker_" + self.args.addclass;} else {addClass = ''}
   if(self.args.eventcount) {count = self.args.eventcount;} else {count = '';}
+  if(self.args.eventcardid) {eventCardId = ' data-result-event-id="' + self.args.eventcardid + '"';} else {eventCardId = '';}
 	if (!div) {
 
 		div = this.div = document.createElement('div');
@@ -24,7 +25,7 @@ CustomMarker.prototype.draw = function() {
 		div.style.position = 'absolute';
 		div.style.width = '1px';
 		div.style.height = '1px';
-        div.innerHTML = '<span class="marker ' + addClass + '">'+ count +'</span>';
+        div.innerHTML = '<span class="marker ' + addClass + '"' + eventCardId + '>'+ count +'</span>';
 
 
 		if (typeof(self.args.marker_id) !== 'undefined') {

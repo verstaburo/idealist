@@ -534,6 +534,8 @@ $(document).on('click', '[data-tab-target]', function () {
   $(this).addClass('active', 0);
   $(this).closest('.featches').find('.featches__content').find('[data-tab]').fadeOut(400, function() { $(this).removeClass('active', 0); });
   $(this).closest('.featches').find('[data-tab="'+ tabTarget +'"]').fadeIn(400, function () { $(this).addClass('active', 0); });
+  $(this).closest('.search__hidden').find('.search__tabs-container').find('[data-tab]').fadeOut(400, function() { $(this).removeClass('active', 0); });
+  $(this).closest('.search__hidden').find('[data-tab="'+ tabTarget +'"]').fadeIn(400, function () { $(this).addClass('active', 0); });
 });
 
 //show more text
@@ -670,4 +672,12 @@ $(document).on('change', 'input[data-group]', function() {
       $(this).prop('checked', false);
     });
   }
+});
+
+//map marker active
+
+$(document).on('click', '.marker', function(evt) {
+  var eventCardId = $(this).data('result-event-id');
+  $(this).toggleClass('active');
+  $('[data-card-id="'+ eventCardId +'"]').toggleClass('active');
 });

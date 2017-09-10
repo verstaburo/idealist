@@ -77,14 +77,15 @@ function customControls(controlDiv, map) {
   var radiusControl = document.createElement('div');
   radiusControl.classList.add('map-controls__radius')
   controlDiv.appendChild(radiusControl);
+  radiusControl.innerHTML = '<input type="range" id="map-radius" class="map-controls__range" name="map-radius" min="0" max="100">';
 
-  var barControl = document.createElement('div');
+  /*var barControl = document.createElement('div');
   barControl.classList.add('map-controls__bar')
   radiusControl.appendChild(barControl);
 
   var toggleControl = document.createElement('div');
   toggleControl.classList.add('map-controls__toggle')
-  barControl.appendChild(toggleControl);
+  barControl.appendChild(toggleControl);*/
 }
 
 function initialize() {
@@ -115,7 +116,7 @@ function initialize() {
 	}
 
 	//карта
-  
+
 	var map = new google.maps.Map(document.getElementById('googlemap'), mapOptions);
     map.setOptions({styles: styles});
 

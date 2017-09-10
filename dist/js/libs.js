@@ -57,7 +57,7 @@ $(".js-photo").fancybox({
     arrows: true,
     closeBtn: false,
     tpl: {
-      image: '<img class="fancybox-image" src="{href}" alt="" /><a href="#" class="like"><svg><use xlink:href="img/icon.svg#icon_like"></use></svg><span class="like__counter"></span></a>',
+      image: '<img class="fancybox-image" src="{href}" alt="" /><div class="like"><svg><use xlink:href="img/icon.svg#icon_like"></use></svg><span class="like__counter"></span><a href="#" class="button button_pink like__button">Like</a></div>',
       next: '<button title="Next" class="fancybox-nav slider-arrow slider-arrow__right" type="button"></button>',
 	    prev: '<button title="Previous" class="fancybox-nav slider-arrow slider-arrow__left" type="button"></button>'
     },
@@ -65,14 +65,15 @@ $(".js-photo").fancybox({
     afterShow: function () {
       var elem = this.element;
       $(this.inner).find('.like__counter').text(this.element.data('like-counter'));
-      $(this.inner).find('.like').click(function () {
+      $(this.inner).find('.like__button').click(function () {
         var voteCount = 0;
-        if(!$(this).hasClass('vote')) {
-          $(this).addClass('vote');
-          voteCount = parseInt($(this).find('.like__counter').text()) + 1;
-          $(this).find('.like__counter').text(voteCount);
+        if(!$(this).closest('.like').hasClass('vote')) {
+          $(this).closest('.like').addClass('vote');
+          voteCount = parseInt($(this).closest('.like').find('.like__counter').text()) + 1;
+          $(this).closest('.like').find('.like__counter').text(voteCount);
           elem[0].setAttribute('data-like-counter', voteCount);
           $(elem).find('.like__counter').text(voteCount);
+          return false;
         }
       });
     }
@@ -558,24 +559,24 @@ $(document).on('click', '.js-validation', function (e) {
   e.preventDefault();
   checkinputs();
   checkandsubmit();
-  
+
 });
 
 function checkinputs() {
     // Проверка обычных полей на заполненность
     checkempty();
-    
+
     // Проверка поля email
     function isEmail(email) {
         var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
         return regex.test(email);
     }
-  
+
     function isTel(tel) {
         var regex = /^(\s*)?(\+)?([- _():=+]?\d[- _():=+]?){10,14}(\s*)?$/;
         return regex.test(tel);
     }
-  
+
     if ( isEmail($('#'+activeform+' input[type="email"]').val()) === false) {
         $('#'+activeform+' input[type="email"]').parent().addClass("error");
         $('#'+activeform+' input[type="email"]').parent().append('<p class="error-message">Invalid mail input format</p>');
@@ -596,7 +597,7 @@ function checkinputs() {
 function checkandsubmit() {
     window.formerrors = 0;
     $('#'+activeform).find(".error").each(function(){
-        formerrors += 1; 
+        formerrors += 1;
     });
     if (formerrors === 0) {
         $('#'+activeform).submit();
@@ -614,34 +615,34 @@ function checkempty() {
 
 // Убрать ошибку при изменении input'а
 $(document).on("keyup change", 'form input', function(){
-   $(this).parent().removeClass("error"); 
+   $(this).parent().removeClass("error");
    $(this).parent().find('.error-message').remove();
     window.activeform = $(this).parents("form").attr("id");
     var inputs = $('#'+activeform+' [data-required]').length;
     window.formerrors = -1;
-    
+
     $('#'+activeform+' [data-required]').each(function(){
         if (!$(this).val()) {
-            formerrors += 1; 
+            formerrors += 1;
           $(this).parent().addClass("error");
         } else {
           $(this).parent().removeClass("error");
         }
     });
-    
+
     // Проверка поля email
     function isEmail(email) {
         var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
         return regex.test(email);
     }
-  
+
     function isTel(tel) {
         var regex = /^(\s*)?(\+)?([- _():=+]?\d[- _():=+]?){10,14}(\s*)?$/;
         return regex.test(tel);
     }
-  
+
     if ( isEmail($('#'+activeform+' input[type="email"]').val()) === false) {
-        formerrors += 1; 
+        formerrors += 1;
       $('#'+activeform+' input[type="email"]').parent().addClass("error");
     } else {
       $('#'+activeform+' input[type="email"]').parent().removeClass("error");
@@ -649,7 +650,7 @@ $(document).on("keyup change", 'form input', function(){
 
     // Проверка номера телефона
     if ( isTel($('#'+activeform+' input[type="tel"]').val()) === false) {
-        formerrors += 1; 
+        formerrors += 1;
       $('#'+activeform+' input[type="tel"]').parent().addClass("error");
     } else {
       $('#'+activeform+' input[type="tel"]').parent().removeClass("error");

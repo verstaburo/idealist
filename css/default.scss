@@ -313,7 +313,7 @@
 
       .event__counter {
         padding-left: 0;
-        
+
         &:not(:last-child) {
           margin-right: 25px;
         }
@@ -336,7 +336,7 @@
     &:last-child {
       margin-left: auto;
     }
-    
+
     &__counter-icon {
       display: inline-block;
       position: absolute;
@@ -363,7 +363,7 @@
 
     &_human {
       padding-left: 18px;
-      
+
       .event__counter-icon {
         width: 18px;
         height: 17px;
@@ -377,7 +377,7 @@
 
     &_camera {
       padding-left: 19px;
-      
+
       .event__counter-icon {
         width: 19px;
         height: 17px;
@@ -391,7 +391,7 @@
 
     &_chat {
       padding-left: 23px;
-      
+
       .event__counter-icon {
         width: 23px;
         height: 23px;
@@ -403,7 +403,7 @@
       }
 
       &_small {
-        
+
         .event__counter-icon {
           width: 17px;
           height: 17px;
@@ -418,7 +418,7 @@
 
     &_new {
       padding-left: 0;
-      
+
       &__counter-icon {
         position: relative;
         top: auto;
@@ -988,21 +988,21 @@
 		&_textarea {align-items: flex-start;
 			.settings__fieldname {margin-top: 18px;}
 		}
-    
+
     &.error {
       position: relative;
-      
+
       input {
         border-color: #df1054;
       }
-      
+
       .error-message {
         position: absolute;
         width: 110px;
         top: 50%;
         right: -33px;
         transform: translate(100%, -50%);
-        
+
         @media (max-width: 1170px) {
           top: 100%;
           right: auto;
@@ -1011,7 +1011,7 @@
           width: auto !important;
           padding: 4px 0 0;
         }
-        
+
         @media (max-width: 640px) {
           left: 0;
         }
@@ -1027,7 +1027,7 @@
 .login {position: fixed; top: 100px; left: 0; width: 100%; z-index: 11; opacity: 0; pointer-events: none; transition: all 0.25s ease-in-out; overflow-y: scroll; box-sizing: border-box; height: 100vh; display: flex; background-color: rgba(#050915,0.85);
 	&.active {opacity: 1; pointer-events: all;}
 	&__left-side {width: 50%; margin: auto; min-height: 100%; display: flex; justify-content: flex-end; align-items: center;}
-	&__help {background-color: #050915; width: 535px; height: 483px; box-sizing: border-box; padding: 30px 85px 20px 124px; display: flex; flex-direction: column; justify-content: center;
+	&__help {background-color: rgba(#050915, .8); width: 535px; height: 483px; box-sizing: border-box; padding: 30px 85px 20px 124px; display: flex; flex-direction: column; justify-content: center;
 		.button {min-width: 129px; align-self: flex-start; margin-top: 35px; padding: 0 20px;}
 	}
 	&__helptext {font-size: 16px; font-weight: 300; letter-spacing: 0.05em; opacity: 0.8; line-height: 1.9em; margin-top: 21px;}
@@ -1590,6 +1590,11 @@
     transition: all .25s ease-in-out;
   }
 
+  &__button {
+    margin-left: 33px;
+    padding: 0 47px;
+  }
+
   &:hover {
 
     svg {
@@ -1613,7 +1618,7 @@
 
 .fancybox-bg {background: #050915;}
 
-.all-invited {padding: 20px 8px 20px 15px;
+.all-invited {padding: 20px 8px 20px 15px;background-color: $dark-violet;
 	&__heading {padding-left: 7px;}
 	&__list {margin-top: 25px;}
 	&__row {margin-top: 39px; display: flex; justify-content: space-between; flex-wrap: wrap;
@@ -2427,7 +2432,7 @@
           fill: rgba(#fff, .8);
         }
       }
-      
+
       span {
         display: flex;
         flex-direction: column;
@@ -2585,11 +2590,11 @@
         }
 
         &__icon {
-          
+
           svg {
             fill: $pink;
           }
-          
+
           span {
             transform: translate(0, -50%) rotate(180deg);
           }
@@ -2642,7 +2647,7 @@
       transition: all .25s ease-in-out;
       transform: translate(0, -50%);
     }
-    
+
     svg {
       width: 11px;
       height: 6px;
@@ -3327,7 +3332,7 @@
           svg {
             fill: $pink;
           }
-          
+
           span {
             transform: translate(0, -50%) rotate(180deg);
           }
@@ -3363,7 +3368,7 @@
     background-color: $dark-violet;
     box-sizing: border-box;
     cursor: pointer;
-    
+
     span {
       position: absolute;
       top: 50%;
@@ -3643,7 +3648,7 @@
   padding: 0 30px;
   margin-top: 4px;
   letter-spacing: .025em;
-  
+
   &__icon {
     display: flex;
     flex-direction: column;
@@ -3787,7 +3792,7 @@
     transition: all .25s ease-in-out;
     cursor: pointer;
     border-radius: 50%;
-    
+
     span {
       position: absolute;
       top: 50%;
@@ -3802,7 +3807,7 @@
       height: 8px;
       fill: #fff;
     }
-    
+
     &:hover {
       background-color: $light-violet;
     }
@@ -3959,7 +3964,7 @@
       width: 30px;
       height: 30px;
     }
-    
+
     span {
       position: absolute;
       top: 50%;
@@ -4004,7 +4009,7 @@
       width: 30px;
       height: 30px;
     }
-    
+
     span {
       position: absolute;
       top: 50%;
@@ -4057,7 +4062,7 @@
       width: 30px;
       height: 30px;
     }
-    
+
     span {
       position: absolute;
       top: 50%;
@@ -4101,7 +4106,7 @@
       width: 30px;
       height: 30px;
     }
-    
+
     span {
       position: absolute;
       top: 50%;

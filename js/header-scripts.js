@@ -18,10 +18,21 @@ $('.header__date .header__link').click(function(e){
 	$(this).parent().toggleClass('active');
 });
 
+$(document).on('click', '.js-all-events', function(evt) {
+  console.log('event-click');
+  evt.preventDefault();
+	evt.stopPropagation();
+	$(this).toggleClass('active');
+	$('.overlay').toggleClass('active');
+	$(this).parent().toggleClass('active');
+});
+
 $('html').click(function(){
 	$('.overlay').removeClass('active');
 	$('.header__date').removeClass('active');
 	$('.header__date .header__link').removeClass('active');
+  $('.header__events').removeClass('active');
+  $('.js-all-events').removeClass('active');
 	$('.header__usermenu').removeClass('active');
 	$('.header__username').removeClass('active');
 	$('.header__account').removeClass('active');
